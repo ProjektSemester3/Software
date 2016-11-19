@@ -1,0 +1,27 @@
+Afstand uden genstand:
+	1
+
+Afstand med 10 cm:
+	134
+
+Afstand med 12 cm:
+	124
+
+Afstand med 14 cm:
+	107
+
+Afstand med 16 cm:
+	93
+
+Afstand med 18 cm:
+	80
+
+Afstand med 20 cm:
+	72
+
+Afstand med 22 cm:
+	70
+
+Afstand med 44 cm:
+	41
+
