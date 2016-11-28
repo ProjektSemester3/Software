@@ -1,0 +1,5 @@
+C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-motor-sensor\ToMotorerSensorer\Test2.cydsn\Test2.cyprj|4e7c16aa-52ab-44fb-a238-1d2f426150fd
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|554a3efc-4f4b-4d22-aab8-a03718a3cfe4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|92e3c298-e397-4cb0-bbc9-20caa643ce88
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|32f4afc8-5eb6-4416-b950-fbef6d3a3e0c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5a35e118-d313-4af7-ac35-8f09717407bc

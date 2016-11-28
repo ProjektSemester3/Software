@@ -1,0 +1,17 @@
+Afstand uden genstand:
+	1
+
+Afstand med 10 cm:
+	2241
+
+Afstand med 12 cm:
+	1870
+
+Afstand med 14 cm:
+	1704
+
+Afstand med 16 cm:
+	1279
+
+Afstand med 30 cm:
+	840
