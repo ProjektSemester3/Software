@@ -1,0 +1,5 @@
+C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-motor-sensor\EnMotorSensor\StepperMotor.cydsn\StepperMotor.cyprj|35c02325-f792-4330-ac18-a9508247e957
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d757c805-e8e7-4fcf-a966-3daaf167796d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a60fb273-2431-416d-866e-c7cddbc3d8a5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|7fe0a53a-cb64-4eb7-841b-797765f9b9e8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|55a3761b-27c4-44be-bcde-aed8a51bad07
