@@ -1,0 +1,5 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|6d0f218a-0dd6-407b-a17c-44a5f3c4d80f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|73f9e626-8df2-4c13-8eca-45add6fdf94a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|bb620605-e765-44dc-8fdb-0f51a1396bef
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2f26b8cc-6302-498a-8bb2-a204d91f69a4
+C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\Bipolar.cyprj|b47258fc-9794-4cc2-a69e-ee9e31e35df2

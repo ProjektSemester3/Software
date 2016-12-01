@@ -1,0 +1,5 @@
+C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\SlaveBottom.cydsn\SlaveBottom.cyprj|9be02153-c093-45c1-a45c-a259e031fbd8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c002f7ff-316f-416e-8683-38404d77c306
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|686a6bd6-c711-4052-9056-964491308470
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d4009b1a-1557-4b3f-8849-710d3d4e8a06
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|285331e2-cf50-4581-a44c-dabd2ff83a9c

@@ -250,14 +250,14 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
+      <Data key="3f1d2e38-3f16-4590-b4c3-8a768eaf8004" value="Direction_1" />
       <Data key="6ca57954-d03b-433c-8d42-2f07595a070a" value="MotorOut_1" />
       <Data key="7acb2a68-1e04-4b25-8386-6e2d91dcf353" value="MOSI_1" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="SS_1" />
       <Data key="42a1c22f-6008-4c86-b67d-059696ab6bd0" value="SCLK_1" />
       <Data key="432eb1e3-d2f2-444c-b1c3-580f67df9a97" value="MISO_1" />
-      <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="Rx_1" />
+      <Data key="900b5879-c926-4a0e-8042-d270e678131f" value="Step_1" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="Enable_1" />
-      <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="Tx_1" />
     </Group>
   </Group>
   <Group key="EEPROM">
@@ -3344,18 +3344,23 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="3f1d2e38-3f16-4590-b4c3-8a768eaf8004">
+      <Group key="0">
+        <Data key="Port Format" value="1,6" />
+      </Group>
+    </Group>
     <Group key="6ca57954-d03b-433c-8d42-2f07595a070a">
       <Group key="0">
-        <Data key="Port Format" value="2,0" />
+        <Data key="Port Format" value="3,0" />
       </Group>
       <Group key="1">
-        <Data key="Port Format" value="2,1" />
+        <Data key="Port Format" value="3,1" />
       </Group>
       <Group key="2">
-        <Data key="Port Format" value="2,2" />
+        <Data key="Port Format" value="3,2" />
       </Group>
       <Group key="3">
-        <Data key="Port Format" value="2,3" />
+        <Data key="Port Format" value="3,3" />
       </Group>
     </Group>
     <Group key="7acb2a68-1e04-4b25-8386-6e2d91dcf353">
@@ -3378,7 +3383,7 @@
         <Data key="Port Format" value="12,3" />
       </Group>
     </Group>
-    <Group key="1425177d-0d0e-4468-8bcc-e638e5509a9b">
+    <Group key="900b5879-c926-4a0e-8042-d270e678131f">
       <Group key="0">
         <Data key="Port Format" value="12,6" />
       </Group>
@@ -3386,11 +3391,6 @@
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
         <Data key="Port Format" value="1,2" />
-      </Group>
-    </Group>
-    <Group key="ed092b9b-d398-4703-be89-cebf998501f6">
-      <Group key="0">
-        <Data key="Port Format" value="12,7" />
       </Group>
     </Group>
   </Group>

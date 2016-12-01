@@ -1,5 +1,5 @@
-C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\SlaveBottom.cyprj|79e5e699-328d-4e21-8566-cdcbe0274efd
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f3da7b61-6894-41b4-9fda-2f6e51b7fa52
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|baca6b40-b10b-463f-b160-1fbdf5a9bc26
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|90552b08-22d4-4d76-82a6-c213f722fe6d
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|21abb5c3-8fea-45cf-b10c-2d7ee090e774
+C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\SlaveBottom.cyprj|7a332ee7-4c09-4462-941e-9c65be05fea0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|3f4b3b51-f886-429d-9ac4-bc6ee9ea0c8a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|faba6474-a0db-4d68-87d4-f9a38d77a61b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e8f793a9-3f0a-4df5-b786-94052b878c6b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e402b920-ebe4-4116-a2d8-8dc173da436a

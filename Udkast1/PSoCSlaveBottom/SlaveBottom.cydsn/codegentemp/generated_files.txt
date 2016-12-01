@@ -20,31 +20,44 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\UART_1.c" value="SOURCE_C;CortexM3;;;;UART_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\UART_1.h" value="HEADER;;;;;UART_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\UART_1_PM.c" value="SOURCE_C;CortexM3;;;;UART_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\UART_1_INT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\UART_1_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\isr_RxD.c" value="SOURCE_C;CortexM3;;;;isr_RxD" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\isr_RxD.h" value="HEADER;;;;;isr_RxD" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MOSI_1_aliases.h" value="HEADER;;;;;MOSI_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MOSI_1.c" value="SOURCE_C;CortexM3;;;;MOSI_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MOSI_1.h" value="HEADER;;;;;MOSI_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SCLK_1_aliases.h" value="HEADER;;;;;SCLK_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SCLK_1.c" value="SOURCE_C;CortexM3;;;;SCLK_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SCLK_1.h" value="HEADER;;;;;SCLK_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MISO_1_aliases.h" value="HEADER;;;;;MISO_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MISO_1.c" value="SOURCE_C;CortexM3;;;;MISO_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MISO_1.h" value="HEADER;;;;;MISO_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SS_1_aliases.h" value="HEADER;;;;;SS_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SS_1.c" value="SOURCE_C;CortexM3;;;;SS_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SS_1.h" value="HEADER;;;;;SS_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\isr_1.c" value="SOURCE_C;CortexM3;;;;isr_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\isr_1.h" value="HEADER;;;;;isr_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SPIS_1.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SPIS_1.h" value="HEADER;;;;;SPIS_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SPIS_1_PM.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SPIS_1_INT.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SPIS_1_BOOT.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SPIS_1_PVT.h" value="HEADER;;;;;SPIS_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\PWM_1.c" value="SOURCE_C;CortexM3;;;;PWM_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\PWM_1.h" value="HEADER;;;;;PWM_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\PWM_1_PM.c" value="SOURCE_C;CortexM3;;;;PWM_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MotorOut_1_aliases.h" value="HEADER;;;;;MotorOut_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MotorOut_1.c" value="SOURCE_C;CortexM3;;;;MotorOut_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\MotorOut_1.h" value="HEADER;;;;;MotorOut_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Step_1_aliases.h" value="HEADER;;;;;Step_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Step_1.c" value="SOURCE_C;CortexM3;;;;Step_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Step_1.h" value="HEADER;;;;;Step_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Enable_1_aliases.h" value="HEADER;;;;;Enable_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Enable_1.c" value="SOURCE_C;CortexM3;;;;Enable_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Enable_1.h" value="HEADER;;;;;Enable_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\stepindex_1.h" value="HEADER;;;;;stepindex_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\stepindex_1.c" value="SOURCE_C;CortexM3;;;;stepindex_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\stepindex_1_PM.c" value="SOURCE_C;CortexM3;;;;stepindex_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Direction_1_aliases.h" value="HEADER;;;;;Direction_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Direction_1.c" value="SOURCE_C;CortexM3;;;;Direction_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Direction_1.h" value="HEADER;;;;;Direction_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\pwm_isr_1.c" value="SOURCE_C;CortexM3;;;;pwm_isr_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\pwm_isr_1.h" value="HEADER;;;;;pwm_isr_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\UART_1_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_1_IntClock" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\UART_1_IntClock.h" value="HEADER;;;;;UART_1_IntClock" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SPIS_1_IntClock.c" value="SOURCE_C;CortexM3;;;;SPIS_1_IntClock" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\SPIS_1_IntClock.h" value="HEADER;;;;;SPIS_1_IntClock" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Cm3RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast1\PSoCSlaveBottom\SlaveBottom.cydsn\codegentemp\Cm3Start.c" value="SOURCE_C;CortexM3;;;;cy_boot" />

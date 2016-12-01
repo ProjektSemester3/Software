@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
   29:Generated_Source\PSoC5/stepindex_1_PM.c **** *
   30:Generated_Source\PSoC5/stepindex_1_PM.c **** * Summary:
   31:Generated_Source\PSoC5/stepindex_1_PM.c **** *  Saves the control register value.
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 2
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 2
 
 
   32:Generated_Source\PSoC5/stepindex_1_PM.c **** *
@@ -86,7 +86,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
   38              	.L3:
   39 000a 00BF     		.align	2
   40              	.L2:
-  41 000c 79650040 		.word	1073767801
+  41 000c 7A640040 		.word	1073767546
   42 0010 00000000 		.word	.LANCHOR0
   43              		.cfi_endproc
   44              	.LFE0:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
   59:Generated_Source\PSoC5/stepindex_1_PM.c **** *
   60:Generated_Source\PSoC5/stepindex_1_PM.c **** *******************************************************************************/
   61:Generated_Source\PSoC5/stepindex_1_PM.c **** void stepindex_1_RestoreConfig(void) 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 3
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 3
 
 
   62:Generated_Source\PSoC5/stepindex_1_PM.c **** {
@@ -138,7 +138,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
   66 000a 00BF     		.align	2
   67              	.L5:
   68 000c 00000000 		.word	.LANCHOR0
-  69 0010 79650040 		.word	1073767801
+  69 0010 7A640040 		.word	1073767546
   70              		.cfi_endproc
   71              	.LFE1:
   72              		.size	stepindex_1_RestoreConfig, .-stepindex_1_RestoreConfig
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
   87              		.cfi_offset 3, -8
   88              		.cfi_offset 14, -4
   83:Generated_Source\PSoC5/stepindex_1_PM.c ****     stepindex_1_SaveConfig();
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 4
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 4
 
 
   89              		.loc 1 83 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  123              		.size	stepindex_1_backup, 1
  124              	stepindex_1_backup:
  125 0000 00       		.space	1
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 5
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 5
 
 
  126 0001 000000   		.text
@@ -252,45 +252,45 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  134 0006 00000000 		.4byte	.Ldebug_abbrev0
  135 000a 04       		.byte	0x4
  136 000b 01       		.uleb128 0x1
- 137 000c 5D010000 		.4byte	.LASF19
+ 137 000c EA000000 		.4byte	.LASF19
  138 0010 01       		.byte	0x1
- 139 0011 AD000000 		.4byte	.LASF20
- 140 0015 34000000 		.4byte	.LASF21
+ 139 0011 3A000000 		.4byte	.LASF20
+ 140 0015 9C010000 		.4byte	.LASF21
  141 0019 00000000 		.4byte	.Ldebug_ranges0+0
  142 001d 00000000 		.4byte	0
  143 0021 00000000 		.4byte	.Ldebug_line0
  144 0025 02       		.uleb128 0x2
  145 0026 01       		.byte	0x1
  146 0027 06       		.byte	0x6
- 147 0028 4E020000 		.4byte	.LASF0
+ 147 0028 43020000 		.4byte	.LASF0
  148 002c 02       		.uleb128 0x2
  149 002d 01       		.byte	0x1
  150 002e 08       		.byte	0x8
- 151 002f D5000000 		.4byte	.LASF1
+ 151 002f 62000000 		.4byte	.LASF1
  152 0033 02       		.uleb128 0x2
  153 0034 02       		.byte	0x2
  154 0035 05       		.byte	0x5
- 155 0036 35020000 		.4byte	.LASF2
+ 155 0036 2A020000 		.4byte	.LASF2
  156 003a 02       		.uleb128 0x2
  157 003b 02       		.byte	0x2
  158 003c 07       		.byte	0x7
- 159 003d FA000000 		.4byte	.LASF3
+ 159 003d 87000000 		.4byte	.LASF3
  160 0041 02       		.uleb128 0x2
  161 0042 04       		.byte	0x4
  162 0043 05       		.byte	0x5
- 163 0044 45020000 		.4byte	.LASF4
+ 163 0044 3A020000 		.4byte	.LASF4
  164 0048 02       		.uleb128 0x2
  165 0049 04       		.byte	0x4
  166 004a 07       		.byte	0x7
- 167 004b E8000000 		.4byte	.LASF5
+ 167 004b 75000000 		.4byte	.LASF5
  168 004f 02       		.uleb128 0x2
  169 0050 08       		.byte	0x8
  170 0051 05       		.byte	0x5
- 171 0052 0F020000 		.4byte	.LASF6
+ 171 0052 04020000 		.4byte	.LASF6
  172 0056 02       		.uleb128 0x2
  173 0057 08       		.byte	0x8
  174 0058 07       		.byte	0x7
- 175 0059 F8010000 		.4byte	.LASF7
+ 175 0059 85010000 		.4byte	.LASF7
  176 005d 03       		.uleb128 0x3
  177 005e 04       		.byte	0x4
  178 005f 05       		.byte	0x5
@@ -298,29 +298,29 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  180 0064 02       		.uleb128 0x2
  181 0065 04       		.byte	0x4
  182 0066 07       		.byte	0x7
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 6
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 6
 
 
- 183 0067 EB010000 		.4byte	.LASF8
+ 183 0067 78010000 		.4byte	.LASF8
  184 006b 04       		.uleb128 0x4
- 185 006c 3F020000 		.4byte	.LASF12
+ 185 006c 34020000 		.4byte	.LASF12
  186 0070 02       		.byte	0x2
  187 0071 9201     		.2byte	0x192
  188 0073 2C000000 		.4byte	0x2c
  189 0077 02       		.uleb128 0x2
  190 0078 04       		.byte	0x4
  191 0079 04       		.byte	0x4
- 192 007a A7000000 		.4byte	.LASF9
+ 192 007a 34000000 		.4byte	.LASF9
  193 007e 02       		.uleb128 0x2
  194 007f 08       		.byte	0x8
  195 0080 04       		.byte	0x4
- 196 0081 2C010000 		.4byte	.LASF10
+ 196 0081 B9000000 		.4byte	.LASF10
  197 0085 02       		.uleb128 0x2
  198 0086 01       		.byte	0x1
  199 0087 08       		.byte	0x8
- 200 0088 1D020000 		.4byte	.LASF11
+ 200 0088 12020000 		.4byte	.LASF11
  201 008c 04       		.uleb128 0x4
- 202 008d E3000000 		.4byte	.LASF13
+ 202 008d 70000000 		.4byte	.LASF13
  203 0091 02       		.byte	0x2
  204 0092 3C02     		.2byte	0x23c
  205 0094 98000000 		.4byte	0x98
@@ -332,7 +332,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  211 00a0 1C       		.byte	0x1c
  212 00a1 B2000000 		.4byte	0xb2
  213 00a5 07       		.uleb128 0x7
- 214 00a6 0D010000 		.4byte	.LASF22
+ 214 00a6 9A000000 		.4byte	.LASF22
  215 00aa 03       		.byte	0x3
  216 00ab 1E       		.byte	0x1e
  217 00ac 6B000000 		.4byte	0x6b
@@ -344,7 +344,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  223 00b8 20       		.byte	0x20
  224 00b9 9D000000 		.4byte	0x9d
  225 00bd 09       		.uleb128 0x9
- 226 00be 33010000 		.4byte	.LASF15
+ 226 00be C0000000 		.4byte	.LASF15
  227 00c2 01       		.byte	0x1
  228 00c3 28       		.byte	0x28
  229 00c4 00000000 		.4byte	.LFB0
@@ -358,12 +358,12 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  237 00d5 00000000 		.4byte	.LFB1
  238 00d9 14000000 		.4byte	.LFE1-.LFB1
  239 00dd 01       		.uleb128 0x1
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 7
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 7
 
 
  240 00de 9C       		.byte	0x9c
  241 00df 0A       		.uleb128 0xa
- 242 00e0 1A010000 		.4byte	.LASF17
+ 242 00e0 A7000000 		.4byte	.LASF17
  243 00e4 01       		.byte	0x1
  244 00e5 51       		.byte	0x51
  245 00e6 00000000 		.4byte	.LFB2
@@ -376,7 +376,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  252 00f9 BD000000 		.4byte	0xbd
  253 00fd 00       		.byte	0
  254 00fe 0A       		.uleb128 0xa
- 255 00ff 22020000 		.4byte	.LASF18
+ 255 00ff 17020000 		.4byte	.LASF18
  256 0103 01       		.byte	0x1
  257 0104 65       		.byte	0x65
  258 0105 00000000 		.4byte	.LFB3
@@ -389,7 +389,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  265 0118 CE000000 		.4byte	0xce
  266 011c 00       		.byte	0
  267 011d 0C       		.uleb128 0xc
- 268 011e 4A010000 		.4byte	.LASF23
+ 268 011e D7000000 		.4byte	.LASF23
  269 0122 01       		.byte	0x1
  270 0123 17       		.byte	0x17
  271 0124 B2000000 		.4byte	0xb2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  294 0010 17       		.uleb128 0x17
  295 0011 00       		.byte	0
  296 0012 00       		.byte	0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 8
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 8
 
 
  297 0013 02       		.uleb128 0x2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  351 0049 00       		.byte	0
  352 004a 07       		.uleb128 0x7
  353 004b 0D       		.uleb128 0xd
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 9
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 9
 
 
  354 004c 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  408 0083 03       		.uleb128 0x3
  409 0084 0E       		.uleb128 0xe
  410 0085 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 10
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 10
 
 
  411 0086 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  465 0020 00000000 		.4byte	.LFB2
  466 0024 08000000 		.4byte	.LFE2-.LFB2
  467 0028 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 11
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 11
 
 
  468 002c 08000000 		.4byte	.LFE3-.LFB3
@@ -635,137 +635,135 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 1
  489      785F315F 
  489      52657374 
  489      6F726543 
- 490              	.LASF21:
- 491 0034 433A5C55 		.ascii	"C:\\Users\\Bettefanden\\Documents\\IHA\\Semester 3\\"
- 491      73657273 
- 491      5C426574 
- 491      74656661 
- 491      6E64656E 
- 492 0062 53656D65 		.ascii	"Semesterprojekt 3\\Software\\Udkast1\\PSoCSlaveBott"
- 492      73746572 
- 492      70726F6A 
- 492      656B7420 
- 492      335C536F 
- 493 0092 6F6D5C53 		.ascii	"om\\SlaveBottom.cydsn\000"
- 493      6C617665 
- 493      426F7474 
- 493      6F6D2E63 
- 493      7964736E 
- 494              	.LASF9:
- 495 00a7 666C6F61 		.ascii	"float\000"
- 495      7400
- 496              	.LASF20:
- 497 00ad 47656E65 		.ascii	"Generated_Source\\PSoC5\\stepindex_1_PM.c\000"
- 497      72617465 
- 497      645F536F 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 12
+ 490              	.LASF9:
+ 491 0034 666C6F61 		.ascii	"float\000"
+ 491      7400
+ 492              	.LASF20:
+ 493 003a 47656E65 		.ascii	"Generated_Source\\PSoC5\\stepindex_1_PM.c\000"
+ 493      72617465 
+ 493      645F536F 
+ 493      75726365 
+ 493      5C50536F 
+ 494              	.LASF1:
+ 495 0062 756E7369 		.ascii	"unsigned char\000"
+ 495      676E6564 
+ 495      20636861 
+ 495      7200
+ 496              	.LASF13:
+ 497 0070 72656738 		.ascii	"reg8\000"
+ 497      00
+ 498              	.LASF5:
+ 499 0075 6C6F6E67 		.ascii	"long unsigned int\000"
+ 499      20756E73 
+ 499      69676E65 
+ 499      6420696E 
+ 499      7400
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 12
 
 
- 497      75726365 
- 497      5C50536F 
- 498              	.LASF1:
- 499 00d5 756E7369 		.ascii	"unsigned char\000"
- 499      676E6564 
- 499      20636861 
- 499      7200
- 500              	.LASF13:
- 501 00e3 72656738 		.ascii	"reg8\000"
- 501      00
- 502              	.LASF5:
- 503 00e8 6C6F6E67 		.ascii	"long unsigned int\000"
- 503      20756E73 
- 503      69676E65 
- 503      6420696E 
- 503      7400
- 504              	.LASF3:
- 505 00fa 73686F72 		.ascii	"short unsigned int\000"
- 505      7420756E 
- 505      7369676E 
- 505      65642069 
- 505      6E7400
- 506              	.LASF22:
- 507 010d 636F6E74 		.ascii	"controlState\000"
- 507      726F6C53 
- 507      74617465 
- 507      00
- 508              	.LASF17:
- 509 011a 73746570 		.ascii	"stepindex_1_Sleep\000"
+ 500              	.LASF3:
+ 501 0087 73686F72 		.ascii	"short unsigned int\000"
+ 501      7420756E 
+ 501      7369676E 
+ 501      65642069 
+ 501      6E7400
+ 502              	.LASF22:
+ 503 009a 636F6E74 		.ascii	"controlState\000"
+ 503      726F6C53 
+ 503      74617465 
+ 503      00
+ 504              	.LASF17:
+ 505 00a7 73746570 		.ascii	"stepindex_1_Sleep\000"
+ 505      696E6465 
+ 505      785F315F 
+ 505      536C6565 
+ 505      7000
+ 506              	.LASF10:
+ 507 00b9 646F7562 		.ascii	"double\000"
+ 507      6C6500
+ 508              	.LASF15:
+ 509 00c0 73746570 		.ascii	"stepindex_1_SaveConfig\000"
  509      696E6465 
  509      785F315F 
- 509      536C6565 
- 509      7000
- 510              	.LASF10:
- 511 012c 646F7562 		.ascii	"double\000"
- 511      6C6500
- 512              	.LASF15:
- 513 0133 73746570 		.ascii	"stepindex_1_SaveConfig\000"
- 513      696E6465 
- 513      785F315F 
- 513      53617665 
- 513      436F6E66 
- 514              	.LASF23:
- 515 014a 73746570 		.ascii	"stepindex_1_backup\000"
- 515      696E6465 
- 515      785F315F 
- 515      6261636B 
- 515      757000
- 516              	.LASF19:
- 517 015d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 517      4320342E 
- 517      392E3320 
- 517      32303135 
- 517      30333033 
- 518 0190 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 518      20726576 
- 518      6973696F 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cch4KmA8.s 			page 13
+ 509      53617665 
+ 509      436F6E66 
+ 510              	.LASF23:
+ 511 00d7 73746570 		.ascii	"stepindex_1_backup\000"
+ 511      696E6465 
+ 511      785F315F 
+ 511      6261636B 
+ 511      757000
+ 512              	.LASF19:
+ 513 00ea 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 513      4320342E 
+ 513      392E3320 
+ 513      32303135 
+ 513      30333033 
+ 514 011d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 514      20726576 
+ 514      6973696F 
+ 514      6E203232 
+ 514      31323230 
+ 515 0150 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 515      66756E63 
+ 515      74696F6E 
+ 515      2D736563 
+ 515      74696F6E 
+ 516              	.LASF8:
+ 517 0178 756E7369 		.ascii	"unsigned int\000"
+ 517      676E6564 
+ 517      20696E74 
+ 517      00
+ 518              	.LASF7:
+ 519 0185 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 519      206C6F6E 
+ 519      6720756E 
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccRdIwdp.s 			page 13
 
 
- 518      6E203232 
- 518      31323230 
- 519 01c3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 519      66756E63 
- 519      74696F6E 
- 519      2D736563 
- 519      74696F6E 
- 520              	.LASF8:
- 521 01eb 756E7369 		.ascii	"unsigned int\000"
- 521      676E6564 
- 521      20696E74 
- 521      00
- 522              	.LASF7:
- 523 01f8 6C6F6E67 		.ascii	"long long unsigned int\000"
- 523      206C6F6E 
- 523      6720756E 
- 523      7369676E 
- 523      65642069 
+ 519      7369676E 
+ 519      65642069 
+ 520              	.LASF21:
+ 521 019c 433A5C55 		.ascii	"C:\\Users\\Bettefanden\\Documents\\PSoC Creator\\Se"
+ 521      73657273 
+ 521      5C426574 
+ 521      74656661 
+ 521      6E64656E 
+ 522 01ca 6D657374 		.ascii	"mesterprojekt3\\MotorControl\\SlaveBottom\\SlaveBot"
+ 522      65727072 
+ 522      6F6A656B 
+ 522      74335C4D 
+ 522      6F746F72 
+ 523 01fa 746F6D2E 		.ascii	"tom.cydsn\000"
+ 523      63796473 
+ 523      6E00
  524              	.LASF6:
- 525 020f 6C6F6E67 		.ascii	"long long int\000"
+ 525 0204 6C6F6E67 		.ascii	"long long int\000"
  525      206C6F6E 
  525      6720696E 
  525      7400
  526              	.LASF11:
- 527 021d 63686172 		.ascii	"char\000"
+ 527 0212 63686172 		.ascii	"char\000"
  527      00
  528              	.LASF18:
- 529 0222 73746570 		.ascii	"stepindex_1_Wakeup\000"
+ 529 0217 73746570 		.ascii	"stepindex_1_Wakeup\000"
  529      696E6465 
  529      785F315F 
  529      57616B65 
  529      757000
  530              	.LASF2:
- 531 0235 73686F72 		.ascii	"short int\000"
+ 531 022a 73686F72 		.ascii	"short int\000"
  531      7420696E 
  531      7400
  532              	.LASF12:
- 533 023f 75696E74 		.ascii	"uint8\000"
+ 533 0234 75696E74 		.ascii	"uint8\000"
  533      3800
  534              	.LASF4:
- 535 0245 6C6F6E67 		.ascii	"long int\000"
+ 535 023a 6C6F6E67 		.ascii	"long int\000"
  535      20696E74 
  535      00
  536              	.LASF0:
- 537 024e 7369676E 		.ascii	"signed char\000"
+ 537 0243 7369676E 		.ascii	"signed char\000"
  537      65642063 
  537      68617200 
  538              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

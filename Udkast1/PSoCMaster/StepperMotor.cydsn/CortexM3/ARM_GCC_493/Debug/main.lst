@@ -1,0 +1,2508 @@
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.updateStatus,"ax",%progbits
+  19              		.align	2
+  20              		.global	updateStatus
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	updateStatus, %function
+  24              	updateStatus:
+  25              	.LFB66:
+  26              		.file 1 "main.c"
+   1:main.c        **** #include "project.h"
+   2:main.c        **** #include <stdio.h>
+   3:main.c        **** 
+   4:main.c        **** uint8 status;
+   5:main.c        **** 
+   6:main.c        **** void updateStatus(uint8);
+   7:main.c        **** void writeToXY(uint8);
+   8:main.c        **** void writeToZ(uint8);   // Sensor used on x-axis is also used on z-axis
+   9:main.c        **** 
+  10:main.c        **** enum SPI_protocol {
+  11:main.c        ****     
+  12:main.c        ****     // Commands from DK8k to PSoC-master/from PSoC-master to -slaves
+  13:main.c        ****     GET_STATUS = 0x00,
+  14:main.c        ****     LOCATE_XY = 0x01,
+  15:main.c        ****     LOCATE_Z_1 = 0x02,
+  16:main.c        ****     LOCATE_Z_2 = 0x03,
+  17:main.c        ****     OPEN_BOTTLE = 0x04,
+  18:main.c        ****     
+  19:main.c        ****     // Command from PSoC-master to -slaves
+  20:main.c        ****     RESET = 0x05,
+  21:main.c        ****     DISPENSE_CORK = 0x06,
+  22:main.c        ****     
+  23:main.c        ****     // Feedback messages from PSoC-slaves to -master
+  24:main.c        ****     VALID_XY = 0x10,
+  25:main.c        ****     INVALID_XY = 0x20,
+  26:main.c        ****     RESET_XY_ON_SUCCESS = 0x35, // Only if bottle has been opened
+  27:main.c        ****     MOVED_Z_1 = 0x11,
+  28:main.c        ****     MOVED_Z_2 = 0x12,
+  29:main.c        ****     VALID_Z = 0x13,
+  30:main.c        ****     RESET_Z = 0x34,
+  31:main.c        ****     OPENING_SUCCESSFUL = 0x15,
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 2
+
+
+  32:main.c        ****     CORK_DISPENSED = 0x16,
+  33:main.c        ****     READY_TO_DRINK = 0x17,
+  34:main.c        ****     
+  35:main.c        ****     // Feedback messages from PSoC-master to DK8k/from PSoC-slaves to -master
+  36:main.c        ****     VALID_TYPE = 0x14,
+  37:main.c        ****     INVALID_TYPE = 0x21,
+  38:main.c        ****     NO_BOTTLE = 0x22,
+  39:main.c        ****     DEFAULT = 0x30,
+  40:main.c        ****     WRONG_COMMAND = 0x31,
+  41:main.c        ****     WRONG_DEVICE = 0x32,
+  42:main.c        ****     IN_PROCESS = 0x33,
+  43:main.c        **** };
+  44:main.c        **** 
+  45:main.c        **** CY_ISR(isr_1)
+  46:main.c        **** {
+  47:main.c        ****     uint16 rxvalue;
+  48:main.c        **** 	uint8 cmd;
+  49:main.c        **** 	uint8 addr;
+  50:main.c        ****     
+  51:main.c        ****     rxvalue = SPIS_1_ReadRxData(); // This also clears Rx Status Register
+  52:main.c        ****     SPIS_1_ClearRxBuffer();
+  53:main.c        ****     
+  54:main.c        ****     /* Protocol - Write 8-bit: 
+  55:main.c        **** 	 * |CMD|  ADDR  |    DATA    |
+  56:main.c        **** 	 *  1 1 1      8 7          0
+  57:main.c        **** 	 *	5 4 3
+  58:main.c        **** 	 */
+  59:main.c        **** 
+  60:main.c        **** 	/* Protocol - Read 16-bit: 
+  61:main.c        **** 	 * |CMD|  ADDR  |  Not Used  |       |           DATA          |
+  62:main.c        **** 	 *  1 1 1      8 7          0         1                       0
+  63:main.c        **** 	 *	5 4 3                             5
+  64:main.c        **** 	 */
+  65:main.c        ****     
+  66:main.c        ****     cmd = (rxvalue >> 14) & 0x3;  // cmd = rdvalue[15:14]
+  67:main.c        **** 	addr = (rxvalue >> 8) & 0x3f; // addr = rdvalue[13:8]
+  68:main.c        ****     
+  69:main.c        ****     switch (addr) {
+  70:main.c        **** 		case 0x1:
+  71:main.c        **** 			switch(cmd) {
+  72:main.c        ****                 
+  73:main.c        ****                 // Write status of bottle to DK8k
+  74:main.c        **** 				case GET_STATUS:
+  75:main.c        **** 					updateStatus(status);
+  76:main.c        ****                     
+  77:main.c        ****                     if(status != IN_PROCESS || status != VALID_TYPE) {
+  78:main.c        ****                         status = DEFAULT;
+  79:main.c        ****                     }
+  80:main.c        **** 					break;
+  81:main.c        ****                 
+  82:main.c        ****                 // Registrate bottle
+  83:main.c        **** 				case LOCATE_XY:
+  84:main.c        ****                     updateStatus(IN_PROCESS);
+  85:main.c        ****                     
+  86:main.c        ****                     // Validate thickness of bottle neck
+  87:main.c        ****                     writeToXY(cmd);
+  88:main.c        **** 					break;
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 3
+
+
+  89:main.c        ****                 
+  90:main.c        ****                 // Open bottle
+  91:main.c        ****                 case OPEN_BOTTLE:
+  92:main.c        ****                     updateStatus(IN_PROCESS);
+  93:main.c        ****                     
+  94:main.c        ****                     // Open bottle
+  95:main.c        ****                     writeToXY(cmd);
+  96:main.c        ****                     break;
+  97:main.c        ****                 
+  98:main.c        ****                 // Unidentified command
+  99:main.c        ****                 default:
+ 100:main.c        ****                     updateStatus(WRONG_COMMAND);
+ 101:main.c        ****                     break;
+ 102:main.c        ****             }
+ 103:main.c        **** 			break;
+ 104:main.c        ****         
+ 105:main.c        ****         // Unidentified address
+ 106:main.c        **** 		default:
+ 107:main.c        **** 			updateStatus(WRONG_DEVICE);
+ 108:main.c        **** 			break;
+ 109:main.c        **** 	}
+ 110:main.c        **** }
+ 111:main.c        **** 
+ 112:main.c        **** CY_ISR(isr_2)
+ 113:main.c        **** {
+ 114:main.c        ****     uint8 fb;
+ 115:main.c        ****     fb = SPIM_1_ReadRxData();
+ 116:main.c        ****     SPIM_1_ClearRxBuffer();
+ 117:main.c        ****     
+ 118:main.c        ****     switch(fb) {
+ 119:main.c        ****         
+ 120:main.c        ****         // Thickness of bottle neck OK
+ 121:main.c        ****         case VALID_XY:
+ 122:main.c        ****             
+ 123:main.c        ****             // Position x-sensor to just under top of bottle
+ 124:main.c        ****             writeToZ(LOCATE_Z_1);
+ 125:main.c        ****             break;
+ 126:main.c        ****         
+ 127:main.c        ****         // X-sensor positioned to just under top of bottle
+ 128:main.c        ****         case MOVED_Z_1:
+ 129:main.c        ****             
+ 130:main.c        ****             // Validate top of bottle detected
+ 131:main.c        ****             writeToXY(LOCATE_Z_1);
+ 132:main.c        ****             break;
+ 133:main.c        ****         
+ 134:main.c        ****         // Top of bottle detected
+ 135:main.c        ****         case VALID_Z:
+ 136:main.c        ****             
+ 137:main.c        ****             // Position x-sensor to just over top of bottle
+ 138:main.c        ****             writeToZ(LOCATE_Z_2);
+ 139:main.c        ****             break;
+ 140:main.c        ****         
+ 141:main.c        ****         // X-sensor positioned to just over top of bottle
+ 142:main.c        ****         case MOVED_Z_2:
+ 143:main.c        ****             
+ 144:main.c        ****             // Validate no bottle detected
+ 145:main.c        ****             writeToXY(LOCATE_Z_2);
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 4
+
+
+ 146:main.c        ****             break;
+ 147:main.c        ****         
+ 148:main.c        ****         // Valid bottle
+ 149:main.c        ****         case VALID_TYPE:
+ 150:main.c        ****             updateStatus(fb);
+ 151:main.c        ****             break;
+ 152:main.c        ****         
+ 153:main.c        ****         // Bottle open and ready to drink
+ 154:main.c        ****         case OPENING_SUCCESSFUL:
+ 155:main.c        ****             writeToZ(RESET);
+ 156:main.c        ****             break;
+ 157:main.c        ****         
+ 158:main.c        ****         // X-sensor positioned to start-position on z-axis
+ 159:main.c        ****         case RESET_Z:
+ 160:main.c        ****             
+ 161:main.c        ****             // Position x- and y-sensor to start-positions on respectively x- and y-axes
+ 162:main.c        ****             writeToXY(RESET);
+ 163:main.c        ****             break;
+ 164:main.c        ****         
+ 165:main.c        ****         // X- and y-sensor positioned to start-positions on respectively x- and y-axes
+ 166:main.c        ****         case RESET_XY_ON_SUCCESS:
+ 167:main.c        ****             
+ 168:main.c        ****             // Dispense of cork
+ 169:main.c        ****             writeToXY(DISPENSE_CORK);
+ 170:main.c        ****             break;
+ 171:main.c        ****         
+ 172:main.c        ****         // Cork dispensed of
+ 173:main.c        ****         case CORK_DISPENSED:
+ 174:main.c        ****             updateStatus(READY_TO_DRINK);
+ 175:main.c        ****             break;
+ 176:main.c        ****         
+ 177:main.c        ****         // No bottle detected
+ 178:main.c        ****         case NO_BOTTLE:
+ 179:main.c        ****             updateStatus(fb);
+ 180:main.c        ****             
+ 181:main.c        ****             // Position x- and y-sensor to start positions on respectively x- and y-axes
+ 182:main.c        ****             writeToXY(RESET);
+ 183:main.c        ****             break;
+ 184:main.c        ****         
+ 185:main.c        ****         // Invalid object inserted
+ 186:main.c        ****         case INVALID_XY:
+ 187:main.c        ****             updateStatus(INVALID_TYPE);
+ 188:main.c        ****             
+ 189:main.c        ****             // Position x- and y-sensor to start positions on respectively x- and y-axes
+ 190:main.c        ****             writeToXY(RESET);
+ 191:main.c        ****             break;
+ 192:main.c        ****         
+ 193:main.c        ****         // Invalid object inserted/Bottle open
+ 194:main.c        ****         case INVALID_TYPE:
+ 195:main.c        ****             updateStatus(fb);
+ 196:main.c        ****             
+ 197:main.c        ****             // Position x-sensor to start-position on z-axis
+ 198:main.c        ****             writeToZ(RESET);
+ 199:main.c        ****             break;
+ 200:main.c        ****         
+ 201:main.c        ****         default:
+ 202:main.c        ****             updateStatus(fb);
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 5
+
+
+ 203:main.c        ****             break;
+ 204:main.c        ****     }
+ 205:main.c        **** }
+ 206:main.c        **** 
+ 207:main.c        **** int main()
+ 208:main.c        **** {
+ 209:main.c        ****     updateStatus(DEFAULT);
+ 210:main.c        ****     CyGlobalIntEnable;
+ 211:main.c        ****     
+ 212:main.c        ****     SPIS_1_Start();
+ 213:main.c        **** 	SPIS_1_EnableRxInt();
+ 214:main.c        ****     isr_1_StartEx(isr_1);
+ 215:main.c        **** 	SPIS_1_ClearFIFO();
+ 216:main.c        **** 	SPIS_1_ClearTxBuffer();
+ 217:main.c        ****     
+ 218:main.c        ****     SPIM_1_Start();
+ 219:main.c        ****     SPIM_1_EnableRxInt();
+ 220:main.c        ****     isr_2_StartEx(isr_2);
+ 221:main.c        **** 	SPIM_1_ClearFIFO();
+ 222:main.c        **** 	SPIM_1_ClearTxBuffer();
+ 223:main.c        **** 
+ 224:main.c        ****     for(;;)
+ 225:main.c        ****     {
+ 226:main.c        ****     }
+ 227:main.c        **** }
+ 228:main.c        **** 
+ 229:main.c        **** // Update status of master-PSoC/message to be sent to DK8k
+ 230:main.c        **** void updateStatus(uint8 stat)
+ 231:main.c        **** {
+  27              		.loc 1 231 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+ 232:main.c        ****     status = stat;
+  36              		.loc 1 232 0
+  37 0002 044C     		ldr	r4, .L3
+  38 0004 2070     		strb	r0, [r4]
+ 233:main.c        ****     SPIS_1_ClearTxBuffer();
+  39              		.loc 1 233 0
+  40 0006 FFF7FEFF 		bl	SPIS_1_ClearTxBuffer
+  41              	.LVL1:
+ 234:main.c        ****     SPIS_1_WriteTxData(status);
+  42              		.loc 1 234 0
+  43 000a 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+  44 000c FFF7FEFF 		bl	SPIS_1_WriteTxData
+  45              	.LVL2:
+  46 0010 10BD     		pop	{r4, pc}
+  47              	.L4:
+  48 0012 00BF     		.align	2
+  49              	.L3:
+  50 0014 00000000 		.word	status
+  51              		.cfi_endproc
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 6
+
+
+  52              	.LFE66:
+  53              		.size	updateStatus, .-updateStatus
+  54              		.section	.text.main,"ax",%progbits
+  55              		.align	2
+  56              		.global	main
+  57              		.thumb
+  58              		.thumb_func
+  59              		.type	main, %function
+  60              	main:
+  61              	.LFB65:
+ 208:main.c        ****     updateStatus(DEFAULT);
+  62              		.loc 1 208 0
+  63              		.cfi_startproc
+  64              		@ Volatile: function does not return.
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 08B5     		push	{r3, lr}
+  68              		.cfi_def_cfa_offset 8
+  69              		.cfi_offset 3, -8
+  70              		.cfi_offset 14, -4
+ 209:main.c        ****     CyGlobalIntEnable;
+  71              		.loc 1 209 0
+  72 0002 3020     		movs	r0, #48
+  73 0004 FFF7FEFF 		bl	updateStatus
+  74              	.LVL3:
+ 210:main.c        ****     
+  75              		.loc 1 210 0
+  76              	@ 210 "main.c" 1
+  77 0008 62B6     		CPSIE   i
+  78              	@ 0 "" 2
+ 212:main.c        **** 	SPIS_1_EnableRxInt();
+  79              		.loc 1 212 0
+  80              		.thumb
+  81 000a FFF7FEFF 		bl	SPIS_1_Start
+  82              	.LVL4:
+ 213:main.c        ****     isr_1_StartEx(isr_1);
+  83              		.loc 1 213 0
+  84 000e FFF7FEFF 		bl	SPIS_1_EnableRxInt
+  85              	.LVL5:
+ 214:main.c        **** 	SPIS_1_ClearFIFO();
+  86              		.loc 1 214 0
+  87 0012 0948     		ldr	r0, .L8
+  88 0014 FFF7FEFF 		bl	isr_1_StartEx
+  89              	.LVL6:
+ 215:main.c        **** 	SPIS_1_ClearTxBuffer();
+  90              		.loc 1 215 0
+  91 0018 FFF7FEFF 		bl	SPIS_1_ClearFIFO
+  92              	.LVL7:
+ 216:main.c        ****     
+  93              		.loc 1 216 0
+  94 001c FFF7FEFF 		bl	SPIS_1_ClearTxBuffer
+  95              	.LVL8:
+ 218:main.c        ****     SPIM_1_EnableRxInt();
+  96              		.loc 1 218 0
+  97 0020 FFF7FEFF 		bl	SPIM_1_Start
+  98              	.LVL9:
+ 219:main.c        ****     isr_2_StartEx(isr_2);
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 7
+
+
+  99              		.loc 1 219 0
+ 100 0024 FFF7FEFF 		bl	SPIM_1_EnableRxInt
+ 101              	.LVL10:
+ 220:main.c        **** 	SPIM_1_ClearFIFO();
+ 102              		.loc 1 220 0
+ 103 0028 0448     		ldr	r0, .L8+4
+ 104 002a FFF7FEFF 		bl	isr_2_StartEx
+ 105              	.LVL11:
+ 221:main.c        **** 	SPIM_1_ClearTxBuffer();
+ 106              		.loc 1 221 0
+ 107 002e FFF7FEFF 		bl	SPIM_1_ClearFIFO
+ 108              	.LVL12:
+ 222:main.c        **** 
+ 109              		.loc 1 222 0
+ 110 0032 FFF7FEFF 		bl	SPIM_1_ClearTxBuffer
+ 111              	.LVL13:
+ 112              	.L6:
+ 226:main.c        **** }
+ 113              		.loc 1 226 0 discriminator 1
+ 114 0036 FEE7     		b	.L6
+ 115              	.L9:
+ 116              		.align	2
+ 117              	.L8:
+ 118 0038 00000000 		.word	isr_1
+ 119 003c 00000000 		.word	isr_2
+ 120              		.cfi_endproc
+ 121              	.LFE65:
+ 122              		.size	main, .-main
+ 123              		.section	.text.writeToXY,"ax",%progbits
+ 124              		.align	2
+ 125              		.global	writeToXY
+ 126              		.thumb
+ 127              		.thumb_func
+ 128              		.type	writeToXY, %function
+ 129              	writeToXY:
+ 130              	.LFB67:
+ 235:main.c        **** }
+ 236:main.c        **** 
+ 237:main.c        **** // Write command to PSoC-slave 1
+ 238:main.c        **** void writeToXY(uint8 cmd)
+ 239:main.c        **** {
+ 131              		.loc 1 239 0
+ 132              		.cfi_startproc
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135              	.LVL14:
+ 136 0000 10B5     		push	{r4, lr}
+ 137              		.cfi_def_cfa_offset 8
+ 138              		.cfi_offset 4, -8
+ 139              		.cfi_offset 14, -4
+ 140 0002 0446     		mov	r4, r0
+ 240:main.c        ****     SPIM_1_ClearTxBuffer();
+ 141              		.loc 1 240 0
+ 142 0004 FFF7FEFF 		bl	SPIM_1_ClearTxBuffer
+ 143              	.LVL15:
+ 241:main.c        ****     SS_XY_Write(0);
+ 144              		.loc 1 241 0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 8
+
+
+ 145 0008 0020     		movs	r0, #0
+ 146 000a FFF7FEFF 		bl	SS_XY_Write
+ 147              	.LVL16:
+ 242:main.c        ****     SPIM_1_WriteTxData(cmd);
+ 148              		.loc 1 242 0
+ 149 000e 2046     		mov	r0, r4
+ 150 0010 FFF7FEFF 		bl	SPIM_1_WriteTxData
+ 151              	.LVL17:
+ 243:main.c        ****     SS_XY_Write(1);
+ 152              		.loc 1 243 0
+ 153 0014 0120     		movs	r0, #1
+ 154 0016 FFF7FEFF 		bl	SS_XY_Write
+ 155              	.LVL18:
+ 156 001a 10BD     		pop	{r4, pc}
+ 157              		.cfi_endproc
+ 158              	.LFE67:
+ 159              		.size	writeToXY, .-writeToXY
+ 160              		.section	.text.isr_1,"ax",%progbits
+ 161              		.align	2
+ 162              		.global	isr_1
+ 163              		.thumb
+ 164              		.thumb_func
+ 165              		.type	isr_1, %function
+ 166              	isr_1:
+ 167              	.LFB63:
+  46:main.c        ****     uint16 rxvalue;
+ 168              		.loc 1 46 0
+ 169              		.cfi_startproc
+ 170              		@ args = 0, pretend = 0, frame = 0
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172 0000 38B5     		push	{r3, r4, r5, lr}
+ 173              		.cfi_def_cfa_offset 16
+ 174              		.cfi_offset 3, -16
+ 175              		.cfi_offset 4, -12
+ 176              		.cfi_offset 5, -8
+ 177              		.cfi_offset 14, -4
+  51:main.c        ****     SPIS_1_ClearRxBuffer();
+ 178              		.loc 1 51 0
+ 179 0002 FFF7FEFF 		bl	SPIS_1_ReadRxData
+ 180              	.LVL19:
+ 181 0006 84B2     		uxth	r4, r0
+ 182              	.LVL20:
+  52:main.c        ****     
+ 183              		.loc 1 52 0
+ 184 0008 FFF7FEFF 		bl	SPIS_1_ClearRxBuffer
+ 185              	.LVL21:
+  66:main.c        **** 	addr = (rxvalue >> 8) & 0x3f; // addr = rdvalue[13:8]
+ 186              		.loc 1 66 0
+ 187 000c A50B     		lsrs	r5, r4, #14
+ 188              	.LVL22:
+  67:main.c        ****     
+ 189              		.loc 1 67 0
+ 190 000e C4F30524 		ubfx	r4, r4, #8, #6
+ 191              	.LVL23:
+  69:main.c        **** 		case 0x1:
+ 192              		.loc 1 69 0
+ 193 0012 012C     		cmp	r4, #1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 9
+
+
+ 194 0014 14D1     		bne	.L20
+  71:main.c        ****                 
+ 195              		.loc 1 71 0
+ 196 0016 012D     		cmp	r5, #1
+ 197 0018 07D0     		beq	.L16
+ 198 001a 6DB9     		cbnz	r5, .L21
+  75:main.c        ****                     
+ 199              		.loc 1 75 0
+ 200 001c 0A4C     		ldr	r4, .L23
+ 201              	.LVL24:
+ 202 001e 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 203 0020 FFF7FEFF 		bl	updateStatus
+ 204              	.LVL25:
+  78:main.c        ****                     }
+ 205              		.loc 1 78 0
+ 206 0024 3023     		movs	r3, #48
+ 207 0026 2370     		strb	r3, [r4]
+ 208 0028 38BD     		pop	{r3, r4, r5, pc}
+ 209              	.LVL26:
+ 210              	.L16:
+  84:main.c        ****                     
+ 211              		.loc 1 84 0
+ 212 002a 3320     		movs	r0, #51
+ 213 002c FFF7FEFF 		bl	updateStatus
+ 214              	.LVL27:
+  87:main.c        **** 					break;
+ 215              		.loc 1 87 0
+ 216 0030 2846     		mov	r0, r5
+ 217 0032 FFF7FEFF 		bl	writeToXY
+ 218              	.LVL28:
+  88:main.c        ****                 
+ 219              		.loc 1 88 0
+ 220 0036 38BD     		pop	{r3, r4, r5, pc}
+ 221              	.LVL29:
+ 222              	.L21:
+ 100:main.c        ****                     break;
+ 223              		.loc 1 100 0
+ 224 0038 3120     		movs	r0, #49
+ 225 003a FFF7FEFF 		bl	updateStatus
+ 226              	.LVL30:
+ 101:main.c        ****             }
+ 227              		.loc 1 101 0
+ 228 003e 38BD     		pop	{r3, r4, r5, pc}
+ 229              	.LVL31:
+ 230              	.L20:
+ 107:main.c        **** 			break;
+ 231              		.loc 1 107 0
+ 232 0040 3220     		movs	r0, #50
+ 233 0042 FFF7FEFF 		bl	updateStatus
+ 234              	.LVL32:
+ 235 0046 38BD     		pop	{r3, r4, r5, pc}
+ 236              	.LVL33:
+ 237              	.L24:
+ 238              		.align	2
+ 239              	.L23:
+ 240 0048 00000000 		.word	status
+ 241              		.cfi_endproc
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 10
+
+
+ 242              	.LFE63:
+ 243              		.size	isr_1, .-isr_1
+ 244              		.section	.text.writeToZ,"ax",%progbits
+ 245              		.align	2
+ 246              		.global	writeToZ
+ 247              		.thumb
+ 248              		.thumb_func
+ 249              		.type	writeToZ, %function
+ 250              	writeToZ:
+ 251              	.LFB68:
+ 244:main.c        **** }
+ 245:main.c        **** 
+ 246:main.c        **** // Write command to PSoC-slave 2
+ 247:main.c        **** void writeToZ(uint8 cmd)
+ 248:main.c        **** {
+ 252              		.loc 1 248 0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              	.LVL34:
+ 257 0000 10B5     		push	{r4, lr}
+ 258              		.cfi_def_cfa_offset 8
+ 259              		.cfi_offset 4, -8
+ 260              		.cfi_offset 14, -4
+ 261 0002 0446     		mov	r4, r0
+ 249:main.c        ****     SPIM_1_ClearTxBuffer();
+ 262              		.loc 1 249 0
+ 263 0004 FFF7FEFF 		bl	SPIM_1_ClearTxBuffer
+ 264              	.LVL35:
+ 250:main.c        ****     SS_Z_Write(0);
+ 265              		.loc 1 250 0
+ 266 0008 0020     		movs	r0, #0
+ 267 000a FFF7FEFF 		bl	SS_Z_Write
+ 268              	.LVL36:
+ 251:main.c        ****     SPIM_1_WriteTxData(cmd);
+ 269              		.loc 1 251 0
+ 270 000e 2046     		mov	r0, r4
+ 271 0010 FFF7FEFF 		bl	SPIM_1_WriteTxData
+ 272              	.LVL37:
+ 252:main.c        ****     SS_Z_Write(1);
+ 273              		.loc 1 252 0
+ 274 0014 0120     		movs	r0, #1
+ 275 0016 FFF7FEFF 		bl	SS_Z_Write
+ 276              	.LVL38:
+ 277 001a 10BD     		pop	{r4, pc}
+ 278              		.cfi_endproc
+ 279              	.LFE68:
+ 280              		.size	writeToZ, .-writeToZ
+ 281              		.section	.text.isr_2,"ax",%progbits
+ 282              		.align	2
+ 283              		.global	isr_2
+ 284              		.thumb
+ 285              		.thumb_func
+ 286              		.type	isr_2, %function
+ 287              	isr_2:
+ 288              	.LFB64:
+ 113:main.c        ****     uint8 fb;
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 11
+
+
+ 289              		.loc 1 113 0
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 0
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293 0000 10B5     		push	{r4, lr}
+ 294              		.cfi_def_cfa_offset 8
+ 295              		.cfi_offset 4, -8
+ 296              		.cfi_offset 14, -4
+ 115:main.c        ****     SPIM_1_ClearRxBuffer();
+ 297              		.loc 1 115 0
+ 298 0002 FFF7FEFF 		bl	SPIM_1_ReadRxData
+ 299              	.LVL39:
+ 300 0006 0446     		mov	r4, r0
+ 301              	.LVL40:
+ 116:main.c        ****     
+ 302              		.loc 1 116 0
+ 303 0008 FFF7FEFF 		bl	SPIM_1_ClearRxBuffer
+ 304              	.LVL41:
+ 118:main.c        ****         
+ 305              		.loc 1 118 0
+ 306 000c A4F11003 		sub	r3, r4, #16
+ 307 0010 252B     		cmp	r3, #37
+ 308 0012 4DD8     		bhi	.L28
+ 309 0014 DFE803F0 		tbb	[pc, r3]
+ 310              	.L30:
+ 311 0018 13       		.byte	(.L29-.L30)/2
+ 312 0019 17       		.byte	(.L31-.L30)/2
+ 313 001a 1F       		.byte	(.L32-.L30)/2
+ 314 001b 1B       		.byte	(.L33-.L30)/2
+ 315 001c 23       		.byte	(.L34-.L30)/2
+ 316 001d 27       		.byte	(.L35-.L30)/2
+ 317 001e 33       		.byte	(.L36-.L30)/2
+ 318 001f 4C       		.byte	(.L28-.L30)/2
+ 319 0020 4C       		.byte	(.L28-.L30)/2
+ 320 0021 4C       		.byte	(.L28-.L30)/2
+ 321 0022 4C       		.byte	(.L28-.L30)/2
+ 322 0023 4C       		.byte	(.L28-.L30)/2
+ 323 0024 4C       		.byte	(.L28-.L30)/2
+ 324 0025 4C       		.byte	(.L28-.L30)/2
+ 325 0026 4C       		.byte	(.L28-.L30)/2
+ 326 0027 4C       		.byte	(.L28-.L30)/2
+ 327 0028 3E       		.byte	(.L37-.L30)/2
+ 328 0029 45       		.byte	(.L38-.L30)/2
+ 329 002a 37       		.byte	(.L39-.L30)/2
+ 330 002b 4C       		.byte	(.L28-.L30)/2
+ 331 002c 4C       		.byte	(.L28-.L30)/2
+ 332 002d 4C       		.byte	(.L28-.L30)/2
+ 333 002e 4C       		.byte	(.L28-.L30)/2
+ 334 002f 4C       		.byte	(.L28-.L30)/2
+ 335 0030 4C       		.byte	(.L28-.L30)/2
+ 336 0031 4C       		.byte	(.L28-.L30)/2
+ 337 0032 4C       		.byte	(.L28-.L30)/2
+ 338 0033 4C       		.byte	(.L28-.L30)/2
+ 339 0034 4C       		.byte	(.L28-.L30)/2
+ 340 0035 4C       		.byte	(.L28-.L30)/2
+ 341 0036 4C       		.byte	(.L28-.L30)/2
+ 342 0037 4C       		.byte	(.L28-.L30)/2
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 12
+
+
+ 343 0038 4C       		.byte	(.L28-.L30)/2
+ 344 0039 4C       		.byte	(.L28-.L30)/2
+ 345 003a 4C       		.byte	(.L28-.L30)/2
+ 346 003b 4C       		.byte	(.L28-.L30)/2
+ 347 003c 2B       		.byte	(.L40-.L30)/2
+ 348 003d 2F       		.byte	(.L41-.L30)/2
+ 349              		.p2align 1
+ 350              	.L29:
+ 124:main.c        ****             break;
+ 351              		.loc 1 124 0
+ 352 003e 0220     		movs	r0, #2
+ 353 0040 FFF7FEFF 		bl	writeToZ
+ 354              	.LVL42:
+ 125:main.c        ****         
+ 355              		.loc 1 125 0
+ 356 0044 10BD     		pop	{r4, pc}
+ 357              	.LVL43:
+ 358              	.L31:
+ 131:main.c        ****             break;
+ 359              		.loc 1 131 0
+ 360 0046 0220     		movs	r0, #2
+ 361 0048 FFF7FEFF 		bl	writeToXY
+ 362              	.LVL44:
+ 132:main.c        ****         
+ 363              		.loc 1 132 0
+ 364 004c 10BD     		pop	{r4, pc}
+ 365              	.LVL45:
+ 366              	.L33:
+ 138:main.c        ****             break;
+ 367              		.loc 1 138 0
+ 368 004e 0320     		movs	r0, #3
+ 369 0050 FFF7FEFF 		bl	writeToZ
+ 370              	.LVL46:
+ 139:main.c        ****         
+ 371              		.loc 1 139 0
+ 372 0054 10BD     		pop	{r4, pc}
+ 373              	.LVL47:
+ 374              	.L32:
+ 145:main.c        ****             break;
+ 375              		.loc 1 145 0
+ 376 0056 0320     		movs	r0, #3
+ 377 0058 FFF7FEFF 		bl	writeToXY
+ 378              	.LVL48:
+ 146:main.c        ****         
+ 379              		.loc 1 146 0
+ 380 005c 10BD     		pop	{r4, pc}
+ 381              	.LVL49:
+ 382              	.L34:
+ 150:main.c        ****             break;
+ 383              		.loc 1 150 0
+ 384 005e 2046     		mov	r0, r4
+ 385 0060 FFF7FEFF 		bl	updateStatus
+ 386              	.LVL50:
+ 151:main.c        ****         
+ 387              		.loc 1 151 0
+ 388 0064 10BD     		pop	{r4, pc}
+ 389              	.LVL51:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 13
+
+
+ 390              	.L35:
+ 155:main.c        ****             break;
+ 391              		.loc 1 155 0
+ 392 0066 0520     		movs	r0, #5
+ 393 0068 FFF7FEFF 		bl	writeToZ
+ 394              	.LVL52:
+ 156:main.c        ****         
+ 395              		.loc 1 156 0
+ 396 006c 10BD     		pop	{r4, pc}
+ 397              	.LVL53:
+ 398              	.L40:
+ 162:main.c        ****             break;
+ 399              		.loc 1 162 0
+ 400 006e 0520     		movs	r0, #5
+ 401 0070 FFF7FEFF 		bl	writeToXY
+ 402              	.LVL54:
+ 163:main.c        ****         
+ 403              		.loc 1 163 0
+ 404 0074 10BD     		pop	{r4, pc}
+ 405              	.LVL55:
+ 406              	.L41:
+ 169:main.c        ****             break;
+ 407              		.loc 1 169 0
+ 408 0076 0620     		movs	r0, #6
+ 409 0078 FFF7FEFF 		bl	writeToXY
+ 410              	.LVL56:
+ 170:main.c        ****         
+ 411              		.loc 1 170 0
+ 412 007c 10BD     		pop	{r4, pc}
+ 413              	.LVL57:
+ 414              	.L36:
+ 174:main.c        ****             break;
+ 415              		.loc 1 174 0
+ 416 007e 1720     		movs	r0, #23
+ 417 0080 FFF7FEFF 		bl	updateStatus
+ 418              	.LVL58:
+ 175:main.c        ****         
+ 419              		.loc 1 175 0
+ 420 0084 10BD     		pop	{r4, pc}
+ 421              	.LVL59:
+ 422              	.L39:
+ 179:main.c        ****             
+ 423              		.loc 1 179 0
+ 424 0086 2046     		mov	r0, r4
+ 425 0088 FFF7FEFF 		bl	updateStatus
+ 426              	.LVL60:
+ 182:main.c        ****             break;
+ 427              		.loc 1 182 0
+ 428 008c 0520     		movs	r0, #5
+ 429 008e FFF7FEFF 		bl	writeToXY
+ 430              	.LVL61:
+ 183:main.c        ****         
+ 431              		.loc 1 183 0
+ 432 0092 10BD     		pop	{r4, pc}
+ 433              	.LVL62:
+ 434              	.L37:
+ 187:main.c        ****             
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 14
+
+
+ 435              		.loc 1 187 0
+ 436 0094 2120     		movs	r0, #33
+ 437 0096 FFF7FEFF 		bl	updateStatus
+ 438              	.LVL63:
+ 190:main.c        ****             break;
+ 439              		.loc 1 190 0
+ 440 009a 0520     		movs	r0, #5
+ 441 009c FFF7FEFF 		bl	writeToXY
+ 442              	.LVL64:
+ 191:main.c        ****         
+ 443              		.loc 1 191 0
+ 444 00a0 10BD     		pop	{r4, pc}
+ 445              	.LVL65:
+ 446              	.L38:
+ 195:main.c        ****             
+ 447              		.loc 1 195 0
+ 448 00a2 2046     		mov	r0, r4
+ 449 00a4 FFF7FEFF 		bl	updateStatus
+ 450              	.LVL66:
+ 198:main.c        ****             break;
+ 451              		.loc 1 198 0
+ 452 00a8 0520     		movs	r0, #5
+ 453 00aa FFF7FEFF 		bl	writeToZ
+ 454              	.LVL67:
+ 199:main.c        ****         
+ 455              		.loc 1 199 0
+ 456 00ae 10BD     		pop	{r4, pc}
+ 457              	.LVL68:
+ 458              	.L28:
+ 202:main.c        ****             break;
+ 459              		.loc 1 202 0
+ 460 00b0 2046     		mov	r0, r4
+ 461 00b2 FFF7FEFF 		bl	updateStatus
+ 462              	.LVL69:
+ 463 00b6 10BD     		pop	{r4, pc}
+ 464              		.cfi_endproc
+ 465              	.LFE64:
+ 466              		.size	isr_2, .-isr_2
+ 467              		.comm	status,1,1
+ 468              		.text
+ 469              	.Letext0:
+ 470              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 471              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 472              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 473              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 474              		.file 6 "Generated_Source\\PSoC5/SPIS_1.h"
+ 475              		.file 7 "Generated_Source\\PSoC5/isr_1.h"
+ 476              		.file 8 "Generated_Source\\PSoC5/SPIM_1.h"
+ 477              		.file 9 "Generated_Source\\PSoC5/isr_2.h"
+ 478              		.file 10 "Generated_Source\\PSoC5/SS_XY.h"
+ 479              		.file 11 "Generated_Source\\PSoC5/SS_Z.h"
+ 480              		.section	.debug_info,"",%progbits
+ 481              	.Ldebug_info0:
+ 482 0000 F8050000 		.4byte	0x5f8
+ 483 0004 0400     		.2byte	0x4
+ 484 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 485 000a 04       		.byte	0x4
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 15
+
+
+ 486 000b 01       		.uleb128 0x1
+ 487 000c 8A020000 		.4byte	.LASF71
+ 488 0010 01       		.byte	0x1
+ 489 0011 88030000 		.4byte	.LASF72
+ 490 0015 A6000000 		.4byte	.LASF73
+ 491 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 492 001d 00000000 		.4byte	0
+ 493 0021 00000000 		.4byte	.Ldebug_line0
+ 494 0025 02       		.uleb128 0x2
+ 495 0026 01       		.byte	0x1
+ 496 0027 06       		.byte	0x6
+ 497 0028 13020000 		.4byte	.LASF0
+ 498 002c 02       		.uleb128 0x2
+ 499 002d 01       		.byte	0x1
+ 500 002e 08       		.byte	0x8
+ 501 002f EE010000 		.4byte	.LASF1
+ 502 0033 02       		.uleb128 0x2
+ 503 0034 02       		.byte	0x2
+ 504 0035 05       		.byte	0x5
+ 505 0036 32000000 		.4byte	.LASF2
+ 506 003a 02       		.uleb128 0x2
+ 507 003b 02       		.byte	0x2
+ 508 003c 07       		.byte	0x7
+ 509 003d 6B020000 		.4byte	.LASF3
+ 510 0041 03       		.uleb128 0x3
+ 511 0042 07040000 		.4byte	.LASF9
+ 512 0046 02       		.byte	0x2
+ 513 0047 3F       		.byte	0x3f
+ 514 0048 4C000000 		.4byte	0x4c
+ 515 004c 02       		.uleb128 0x2
+ 516 004d 04       		.byte	0x4
+ 517 004e 05       		.byte	0x5
+ 518 004f 81010000 		.4byte	.LASF4
+ 519 0053 02       		.uleb128 0x2
+ 520 0054 04       		.byte	0x4
+ 521 0055 07       		.byte	0x7
+ 522 0056 9E030000 		.4byte	.LASF5
+ 523 005a 02       		.uleb128 0x2
+ 524 005b 08       		.byte	0x8
+ 525 005c 05       		.byte	0x5
+ 526 005d 42010000 		.4byte	.LASF6
+ 527 0061 02       		.uleb128 0x2
+ 528 0062 08       		.byte	0x8
+ 529 0063 07       		.byte	0x7
+ 530 0064 50010000 		.4byte	.LASF7
+ 531 0068 04       		.uleb128 0x4
+ 532 0069 04       		.byte	0x4
+ 533 006a 05       		.byte	0x5
+ 534 006b 696E7400 		.ascii	"int\000"
+ 535 006f 02       		.uleb128 0x2
+ 536 0070 04       		.byte	0x4
+ 537 0071 07       		.byte	0x7
+ 538 0072 34020000 		.4byte	.LASF8
+ 539 0076 03       		.uleb128 0x3
+ 540 0077 28030000 		.4byte	.LASF10
+ 541 007b 03       		.byte	0x3
+ 542 007c 2C       		.byte	0x2c
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 16
+
+
+ 543 007d 41000000 		.4byte	0x41
+ 544 0081 05       		.uleb128 0x5
+ 545 0082 03010000 		.4byte	.LASF11
+ 546 0086 04       		.byte	0x4
+ 547 0087 9201     		.2byte	0x192
+ 548 0089 2C000000 		.4byte	0x2c
+ 549 008d 05       		.uleb128 0x5
+ 550 008e 9F000000 		.4byte	.LASF12
+ 551 0092 04       		.byte	0x4
+ 552 0093 9301     		.2byte	0x193
+ 553 0095 3A000000 		.4byte	0x3a
+ 554 0099 02       		.uleb128 0x2
+ 555 009a 04       		.byte	0x4
+ 556 009b 04       		.byte	0x4
+ 557 009c 33010000 		.4byte	.LASF13
+ 558 00a0 02       		.uleb128 0x2
+ 559 00a1 08       		.byte	0x8
+ 560 00a2 04       		.byte	0x4
+ 561 00a3 B0030000 		.4byte	.LASF14
+ 562 00a7 02       		.uleb128 0x2
+ 563 00a8 01       		.byte	0x1
+ 564 00a9 08       		.byte	0x8
+ 565 00aa 85020000 		.4byte	.LASF15
+ 566 00ae 05       		.uleb128 0x5
+ 567 00af 06020000 		.4byte	.LASF16
+ 568 00b3 04       		.byte	0x4
+ 569 00b4 4E02     		.2byte	0x24e
+ 570 00b6 BA000000 		.4byte	0xba
+ 571 00ba 06       		.uleb128 0x6
+ 572 00bb 04       		.byte	0x4
+ 573 00bc C0000000 		.4byte	0xc0
+ 574 00c0 07       		.uleb128 0x7
+ 575 00c1 02       		.uleb128 0x2
+ 576 00c2 04       		.byte	0x4
+ 577 00c3 07       		.byte	0x7
+ 578 00c4 3C000000 		.4byte	.LASF17
+ 579 00c8 08       		.uleb128 0x8
+ 580 00c9 09010000 		.4byte	.LASF74
+ 581 00cd 01       		.byte	0x1
+ 582 00ce 01       		.byte	0x1
+ 583 00cf 0A       		.byte	0xa
+ 584 00d0 65010000 		.4byte	0x165
+ 585 00d4 09       		.uleb128 0x9
+ 586 00d5 42030000 		.4byte	.LASF18
+ 587 00d9 00       		.sleb128 0
+ 588 00da 09       		.uleb128 0x9
+ 589 00db 4E020000 		.4byte	.LASF19
+ 590 00df 01       		.sleb128 1
+ 591 00e0 09       		.uleb128 0x9
+ 592 00e1 B7030000 		.4byte	.LASF20
+ 593 00e5 02       		.sleb128 2
+ 594 00e6 09       		.uleb128 0x9
+ 595 00e7 C2030000 		.4byte	.LASF21
+ 596 00eb 03       		.sleb128 3
+ 597 00ec 09       		.uleb128 0x9
+ 598 00ed 67010000 		.4byte	.LASF22
+ 599 00f1 04       		.sleb128 4
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 17
+
+
+ 600 00f2 09       		.uleb128 0x9
+ 601 00f3 4D030000 		.4byte	.LASF23
+ 602 00f7 05       		.sleb128 5
+ 603 00f8 09       		.uleb128 0x9
+ 604 00f9 73010000 		.4byte	.LASF24
+ 605 00fd 06       		.sleb128 6
+ 606 00fe 09       		.uleb128 0x9
+ 607 00ff 14000000 		.4byte	.LASF25
+ 608 0103 10       		.sleb128 16
+ 609 0104 09       		.uleb128 0x9
+ 610 0105 DA030000 		.4byte	.LASF26
+ 611 0109 20       		.sleb128 32
+ 612 010a 09       		.uleb128 0x9
+ 613 010b 66030000 		.4byte	.LASF27
+ 614 010f 35       		.sleb128 53
+ 615 0110 09       		.uleb128 0x9
+ 616 0111 11040000 		.4byte	.LASF28
+ 617 0115 11       		.sleb128 17
+ 618 0116 09       		.uleb128 0x9
+ 619 0117 1B040000 		.4byte	.LASF29
+ 620 011b 12       		.sleb128 18
+ 621 011c 09       		.uleb128 0x9
+ 622 011d 5A000000 		.4byte	.LASF30
+ 623 0121 13       		.sleb128 19
+ 624 0122 09       		.uleb128 0x9
+ 625 0123 00000000 		.4byte	.LASF31
+ 626 0127 34       		.sleb128 52
+ 627 0128 09       		.uleb128 0x9
+ 628 0129 8C000000 		.4byte	.LASF32
+ 629 012d 15       		.sleb128 21
+ 630 012e 09       		.uleb128 0x9
+ 631 012f 62000000 		.4byte	.LASF33
+ 632 0133 16       		.sleb128 22
+ 633 0134 09       		.uleb128 0x9
+ 634 0135 8F030000 		.4byte	.LASF34
+ 635 0139 17       		.sleb128 23
+ 636 013a 09       		.uleb128 0x9
+ 637 013b 16010000 		.4byte	.LASF35
+ 638 013f 14       		.sleb128 20
+ 639 0140 09       		.uleb128 0x9
+ 640 0141 E5030000 		.4byte	.LASF36
+ 641 0145 21       		.sleb128 33
+ 642 0146 09       		.uleb128 0x9
+ 643 0147 FC010000 		.4byte	.LASF37
+ 644 014b 22       		.sleb128 34
+ 645 014c 09       		.uleb128 0x9
+ 646 014d 45000000 		.4byte	.LASF38
+ 647 0151 30       		.sleb128 48
+ 648 0152 09       		.uleb128 0x9
+ 649 0153 B5010000 		.4byte	.LASF39
+ 650 0157 31       		.sleb128 49
+ 651 0158 09       		.uleb128 0x9
+ 652 0159 41020000 		.4byte	.LASF40
+ 653 015d 32       		.sleb128 50
+ 654 015e 09       		.uleb128 0x9
+ 655 015f 43040000 		.4byte	.LASF41
+ 656 0163 33       		.sleb128 51
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 18
+
+
+ 657 0164 00       		.byte	0
+ 658 0165 0A       		.uleb128 0xa
+ 659 0166 CD030000 		.4byte	.LASF42
+ 660 016a 01       		.byte	0x1
+ 661 016b E6       		.byte	0xe6
+ 662 016c 00000000 		.4byte	.LFB66
+ 663 0170 18000000 		.4byte	.LFE66-.LFB66
+ 664 0174 01       		.uleb128 0x1
+ 665 0175 9C       		.byte	0x9c
+ 666 0176 9C010000 		.4byte	0x19c
+ 667 017a 0B       		.uleb128 0xb
+ 668 017b 31040000 		.4byte	.LASF45
+ 669 017f 01       		.byte	0x1
+ 670 0180 E6       		.byte	0xe6
+ 671 0181 81000000 		.4byte	0x81
+ 672 0185 00000000 		.4byte	.LLST0
+ 673 0189 0C       		.uleb128 0xc
+ 674 018a 0A000000 		.4byte	.LVL1
+ 675 018e 39050000 		.4byte	0x539
+ 676 0192 0C       		.uleb128 0xc
+ 677 0193 10000000 		.4byte	.LVL2
+ 678 0197 40050000 		.4byte	0x540
+ 679 019b 00       		.byte	0
+ 680 019c 0D       		.uleb128 0xd
+ 681 019d 18030000 		.4byte	.LASF43
+ 682 01a1 01       		.byte	0x1
+ 683 01a2 CF       		.byte	0xcf
+ 684 01a3 68000000 		.4byte	0x68
+ 685 01a7 00000000 		.4byte	.LFB65
+ 686 01ab 40000000 		.4byte	.LFE65-.LFB65
+ 687 01af 01       		.uleb128 0x1
+ 688 01b0 9C       		.byte	0x9c
+ 689 01b1 40020000 		.4byte	0x240
+ 690 01b5 0E       		.uleb128 0xe
+ 691 01b6 08000000 		.4byte	.LVL3
+ 692 01ba 65010000 		.4byte	0x165
+ 693 01be C9010000 		.4byte	0x1c9
+ 694 01c2 0F       		.uleb128 0xf
+ 695 01c3 01       		.uleb128 0x1
+ 696 01c4 50       		.byte	0x50
+ 697 01c5 02       		.uleb128 0x2
+ 698 01c6 08       		.byte	0x8
+ 699 01c7 30       		.byte	0x30
+ 700 01c8 00       		.byte	0
+ 701 01c9 0C       		.uleb128 0xc
+ 702 01ca 0E000000 		.4byte	.LVL4
+ 703 01ce 51050000 		.4byte	0x551
+ 704 01d2 0C       		.uleb128 0xc
+ 705 01d3 12000000 		.4byte	.LVL5
+ 706 01d7 58050000 		.4byte	0x558
+ 707 01db 0E       		.uleb128 0xe
+ 708 01dc 18000000 		.4byte	.LVL6
+ 709 01e0 5F050000 		.4byte	0x55f
+ 710 01e4 F2010000 		.4byte	0x1f2
+ 711 01e8 0F       		.uleb128 0xf
+ 712 01e9 01       		.uleb128 0x1
+ 713 01ea 50       		.byte	0x50
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 19
+
+
+ 714 01eb 05       		.uleb128 0x5
+ 715 01ec 03       		.byte	0x3
+ 716 01ed 00000000 		.4byte	isr_1
+ 717 01f1 00       		.byte	0
+ 718 01f2 0C       		.uleb128 0xc
+ 719 01f3 1C000000 		.4byte	.LVL7
+ 720 01f7 70050000 		.4byte	0x570
+ 721 01fb 0C       		.uleb128 0xc
+ 722 01fc 20000000 		.4byte	.LVL8
+ 723 0200 39050000 		.4byte	0x539
+ 724 0204 0C       		.uleb128 0xc
+ 725 0205 24000000 		.4byte	.LVL9
+ 726 0209 77050000 		.4byte	0x577
+ 727 020d 0C       		.uleb128 0xc
+ 728 020e 28000000 		.4byte	.LVL10
+ 729 0212 7E050000 		.4byte	0x57e
+ 730 0216 0E       		.uleb128 0xe
+ 731 0217 2E000000 		.4byte	.LVL11
+ 732 021b 85050000 		.4byte	0x585
+ 733 021f 2D020000 		.4byte	0x22d
+ 734 0223 0F       		.uleb128 0xf
+ 735 0224 01       		.uleb128 0x1
+ 736 0225 50       		.byte	0x50
+ 737 0226 05       		.uleb128 0x5
+ 738 0227 03       		.byte	0x3
+ 739 0228 00000000 		.4byte	isr_2
+ 740 022c 00       		.byte	0
+ 741 022d 0C       		.uleb128 0xc
+ 742 022e 32000000 		.4byte	.LVL12
+ 743 0232 96050000 		.4byte	0x596
+ 744 0236 0C       		.uleb128 0xc
+ 745 0237 36000000 		.4byte	.LVL13
+ 746 023b 9D050000 		.4byte	0x59d
+ 747 023f 00       		.byte	0
+ 748 0240 0A       		.uleb128 0xa
+ 749 0241 D1010000 		.4byte	.LASF44
+ 750 0245 01       		.byte	0x1
+ 751 0246 EE       		.byte	0xee
+ 752 0247 00000000 		.4byte	.LFB67
+ 753 024b 1C000000 		.4byte	.LFE67-.LFB67
+ 754 024f 01       		.uleb128 0x1
+ 755 0250 9C       		.byte	0x9c
+ 756 0251 A4020000 		.4byte	0x2a4
+ 757 0255 10       		.uleb128 0x10
+ 758 0256 636D6400 		.ascii	"cmd\000"
+ 759 025a 01       		.byte	0x1
+ 760 025b EE       		.byte	0xee
+ 761 025c 81000000 		.4byte	0x81
+ 762 0260 21000000 		.4byte	.LLST1
+ 763 0264 0C       		.uleb128 0xc
+ 764 0265 08000000 		.4byte	.LVL15
+ 765 0269 9D050000 		.4byte	0x59d
+ 766 026d 0E       		.uleb128 0xe
+ 767 026e 0E000000 		.4byte	.LVL16
+ 768 0272 A4050000 		.4byte	0x5a4
+ 769 0276 80020000 		.4byte	0x280
+ 770 027a 0F       		.uleb128 0xf
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 20
+
+
+ 771 027b 01       		.uleb128 0x1
+ 772 027c 50       		.byte	0x50
+ 773 027d 01       		.uleb128 0x1
+ 774 027e 30       		.byte	0x30
+ 775 027f 00       		.byte	0
+ 776 0280 0E       		.uleb128 0xe
+ 777 0281 14000000 		.4byte	.LVL17
+ 778 0285 B5050000 		.4byte	0x5b5
+ 779 0289 94020000 		.4byte	0x294
+ 780 028d 0F       		.uleb128 0xf
+ 781 028e 01       		.uleb128 0x1
+ 782 028f 50       		.byte	0x50
+ 783 0290 02       		.uleb128 0x2
+ 784 0291 74       		.byte	0x74
+ 785 0292 00       		.sleb128 0
+ 786 0293 00       		.byte	0
+ 787 0294 11       		.uleb128 0x11
+ 788 0295 1A000000 		.4byte	.LVL18
+ 789 0299 A4050000 		.4byte	0x5a4
+ 790 029d 0F       		.uleb128 0xf
+ 791 029e 01       		.uleb128 0x1
+ 792 029f 50       		.byte	0x50
+ 793 02a0 01       		.uleb128 0x1
+ 794 02a1 31       		.byte	0x31
+ 795 02a2 00       		.byte	0
+ 796 02a3 00       		.byte	0
+ 797 02a4 0A       		.uleb128 0xa
+ 798 02a5 08000000 		.4byte	.LASF46
+ 799 02a9 01       		.byte	0x1
+ 800 02aa 2D       		.byte	0x2d
+ 801 02ab 00000000 		.4byte	.LFB63
+ 802 02af 4C000000 		.4byte	.LFE63-.LFB63
+ 803 02b3 01       		.uleb128 0x1
+ 804 02b4 9C       		.byte	0x9c
+ 805 02b5 4E030000 		.4byte	0x34e
+ 806 02b9 12       		.uleb128 0x12
+ 807 02ba 84000000 		.4byte	.LASF47
+ 808 02be 01       		.byte	0x1
+ 809 02bf 2F       		.byte	0x2f
+ 810 02c0 8D000000 		.4byte	0x8d
+ 811 02c4 42000000 		.4byte	.LLST2
+ 812 02c8 13       		.uleb128 0x13
+ 813 02c9 636D6400 		.ascii	"cmd\000"
+ 814 02cd 01       		.byte	0x1
+ 815 02ce 30       		.byte	0x30
+ 816 02cf 81000000 		.4byte	0x81
+ 817 02d3 55000000 		.4byte	.LLST3
+ 818 02d7 12       		.uleb128 0x12
+ 819 02d8 8A010000 		.4byte	.LASF48
+ 820 02dc 01       		.byte	0x1
+ 821 02dd 31       		.byte	0x31
+ 822 02de 81000000 		.4byte	0x81
+ 823 02e2 68000000 		.4byte	.LLST4
+ 824 02e6 0C       		.uleb128 0xc
+ 825 02e7 06000000 		.4byte	.LVL19
+ 826 02eb C6050000 		.4byte	0x5c6
+ 827 02ef 0C       		.uleb128 0xc
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 21
+
+
+ 828 02f0 0C000000 		.4byte	.LVL21
+ 829 02f4 D1050000 		.4byte	0x5d1
+ 830 02f8 0C       		.uleb128 0xc
+ 831 02f9 24000000 		.4byte	.LVL25
+ 832 02fd 65010000 		.4byte	0x165
+ 833 0301 0E       		.uleb128 0xe
+ 834 0302 30000000 		.4byte	.LVL27
+ 835 0306 65010000 		.4byte	0x165
+ 836 030a 15030000 		.4byte	0x315
+ 837 030e 0F       		.uleb128 0xf
+ 838 030f 01       		.uleb128 0x1
+ 839 0310 50       		.byte	0x50
+ 840 0311 02       		.uleb128 0x2
+ 841 0312 08       		.byte	0x8
+ 842 0313 33       		.byte	0x33
+ 843 0314 00       		.byte	0
+ 844 0315 0E       		.uleb128 0xe
+ 845 0316 36000000 		.4byte	.LVL28
+ 846 031a 40020000 		.4byte	0x240
+ 847 031e 29030000 		.4byte	0x329
+ 848 0322 0F       		.uleb128 0xf
+ 849 0323 01       		.uleb128 0x1
+ 850 0324 50       		.byte	0x50
+ 851 0325 02       		.uleb128 0x2
+ 852 0326 75       		.byte	0x75
+ 853 0327 00       		.sleb128 0
+ 854 0328 00       		.byte	0
+ 855 0329 0E       		.uleb128 0xe
+ 856 032a 3E000000 		.4byte	.LVL30
+ 857 032e 65010000 		.4byte	0x165
+ 858 0332 3D030000 		.4byte	0x33d
+ 859 0336 0F       		.uleb128 0xf
+ 860 0337 01       		.uleb128 0x1
+ 861 0338 50       		.byte	0x50
+ 862 0339 02       		.uleb128 0x2
+ 863 033a 08       		.byte	0x8
+ 864 033b 31       		.byte	0x31
+ 865 033c 00       		.byte	0
+ 866 033d 11       		.uleb128 0x11
+ 867 033e 46000000 		.4byte	.LVL32
+ 868 0342 65010000 		.4byte	0x165
+ 869 0346 0F       		.uleb128 0xf
+ 870 0347 01       		.uleb128 0x1
+ 871 0348 50       		.byte	0x50
+ 872 0349 02       		.uleb128 0x2
+ 873 034a 08       		.byte	0x8
+ 874 034b 32       		.byte	0x32
+ 875 034c 00       		.byte	0
+ 876 034d 00       		.byte	0
+ 877 034e 0A       		.uleb128 0xa
+ 878 034f 39010000 		.4byte	.LASF49
+ 879 0353 01       		.byte	0x1
+ 880 0354 F7       		.byte	0xf7
+ 881 0355 00000000 		.4byte	.LFB68
+ 882 0359 1C000000 		.4byte	.LFE68-.LFB68
+ 883 035d 01       		.uleb128 0x1
+ 884 035e 9C       		.byte	0x9c
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 22
+
+
+ 885 035f B2030000 		.4byte	0x3b2
+ 886 0363 10       		.uleb128 0x10
+ 887 0364 636D6400 		.ascii	"cmd\000"
+ 888 0368 01       		.byte	0x1
+ 889 0369 F7       		.byte	0xf7
+ 890 036a 81000000 		.4byte	0x81
+ 891 036e 86000000 		.4byte	.LLST5
+ 892 0372 0C       		.uleb128 0xc
+ 893 0373 08000000 		.4byte	.LVL35
+ 894 0377 9D050000 		.4byte	0x59d
+ 895 037b 0E       		.uleb128 0xe
+ 896 037c 0E000000 		.4byte	.LVL36
+ 897 0380 D8050000 		.4byte	0x5d8
+ 898 0384 8E030000 		.4byte	0x38e
+ 899 0388 0F       		.uleb128 0xf
+ 900 0389 01       		.uleb128 0x1
+ 901 038a 50       		.byte	0x50
+ 902 038b 01       		.uleb128 0x1
+ 903 038c 30       		.byte	0x30
+ 904 038d 00       		.byte	0
+ 905 038e 0E       		.uleb128 0xe
+ 906 038f 14000000 		.4byte	.LVL37
+ 907 0393 B5050000 		.4byte	0x5b5
+ 908 0397 A2030000 		.4byte	0x3a2
+ 909 039b 0F       		.uleb128 0xf
+ 910 039c 01       		.uleb128 0x1
+ 911 039d 50       		.byte	0x50
+ 912 039e 02       		.uleb128 0x2
+ 913 039f 74       		.byte	0x74
+ 914 03a0 00       		.sleb128 0
+ 915 03a1 00       		.byte	0
+ 916 03a2 11       		.uleb128 0x11
+ 917 03a3 1A000000 		.4byte	.LVL38
+ 918 03a7 D8050000 		.4byte	0x5d8
+ 919 03ab 0F       		.uleb128 0xf
+ 920 03ac 01       		.uleb128 0x1
+ 921 03ad 50       		.byte	0x50
+ 922 03ae 01       		.uleb128 0x1
+ 923 03af 31       		.byte	0x31
+ 924 03b0 00       		.byte	0
+ 925 03b1 00       		.byte	0
+ 926 03b2 0A       		.uleb128 0xa
+ 927 03b3 0E000000 		.4byte	.LASF50
+ 928 03b7 01       		.byte	0x1
+ 929 03b8 70       		.byte	0x70
+ 930 03b9 00000000 		.4byte	.LFB64
+ 931 03bd B8000000 		.4byte	.LFE64-.LFB64
+ 932 03c1 01       		.uleb128 0x1
+ 933 03c2 9C       		.byte	0x9c
+ 934 03c3 17050000 		.4byte	0x517
+ 935 03c7 14       		.uleb128 0x14
+ 936 03c8 666200   		.ascii	"fb\000"
+ 937 03cb 01       		.byte	0x1
+ 938 03cc 72       		.byte	0x72
+ 939 03cd 81000000 		.4byte	0x81
+ 940 03d1 01       		.uleb128 0x1
+ 941 03d2 54       		.byte	0x54
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 23
+
+
+ 942 03d3 0C       		.uleb128 0xc
+ 943 03d4 06000000 		.4byte	.LVL39
+ 944 03d8 E9050000 		.4byte	0x5e9
+ 945 03dc 0C       		.uleb128 0xc
+ 946 03dd 0C000000 		.4byte	.LVL41
+ 947 03e1 F4050000 		.4byte	0x5f4
+ 948 03e5 0E       		.uleb128 0xe
+ 949 03e6 44000000 		.4byte	.LVL42
+ 950 03ea 4E030000 		.4byte	0x34e
+ 951 03ee F8030000 		.4byte	0x3f8
+ 952 03f2 0F       		.uleb128 0xf
+ 953 03f3 01       		.uleb128 0x1
+ 954 03f4 50       		.byte	0x50
+ 955 03f5 01       		.uleb128 0x1
+ 956 03f6 32       		.byte	0x32
+ 957 03f7 00       		.byte	0
+ 958 03f8 0E       		.uleb128 0xe
+ 959 03f9 4C000000 		.4byte	.LVL44
+ 960 03fd 40020000 		.4byte	0x240
+ 961 0401 0B040000 		.4byte	0x40b
+ 962 0405 0F       		.uleb128 0xf
+ 963 0406 01       		.uleb128 0x1
+ 964 0407 50       		.byte	0x50
+ 965 0408 01       		.uleb128 0x1
+ 966 0409 32       		.byte	0x32
+ 967 040a 00       		.byte	0
+ 968 040b 0E       		.uleb128 0xe
+ 969 040c 54000000 		.4byte	.LVL46
+ 970 0410 4E030000 		.4byte	0x34e
+ 971 0414 1E040000 		.4byte	0x41e
+ 972 0418 0F       		.uleb128 0xf
+ 973 0419 01       		.uleb128 0x1
+ 974 041a 50       		.byte	0x50
+ 975 041b 01       		.uleb128 0x1
+ 976 041c 33       		.byte	0x33
+ 977 041d 00       		.byte	0
+ 978 041e 0E       		.uleb128 0xe
+ 979 041f 5C000000 		.4byte	.LVL48
+ 980 0423 40020000 		.4byte	0x240
+ 981 0427 31040000 		.4byte	0x431
+ 982 042b 0F       		.uleb128 0xf
+ 983 042c 01       		.uleb128 0x1
+ 984 042d 50       		.byte	0x50
+ 985 042e 01       		.uleb128 0x1
+ 986 042f 33       		.byte	0x33
+ 987 0430 00       		.byte	0
+ 988 0431 0E       		.uleb128 0xe
+ 989 0432 64000000 		.4byte	.LVL50
+ 990 0436 65010000 		.4byte	0x165
+ 991 043a 45040000 		.4byte	0x445
+ 992 043e 0F       		.uleb128 0xf
+ 993 043f 01       		.uleb128 0x1
+ 994 0440 50       		.byte	0x50
+ 995 0441 02       		.uleb128 0x2
+ 996 0442 74       		.byte	0x74
+ 997 0443 00       		.sleb128 0
+ 998 0444 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 24
+
+
+ 999 0445 0E       		.uleb128 0xe
+ 1000 0446 6C000000 		.4byte	.LVL52
+ 1001 044a 4E030000 		.4byte	0x34e
+ 1002 044e 58040000 		.4byte	0x458
+ 1003 0452 0F       		.uleb128 0xf
+ 1004 0453 01       		.uleb128 0x1
+ 1005 0454 50       		.byte	0x50
+ 1006 0455 01       		.uleb128 0x1
+ 1007 0456 35       		.byte	0x35
+ 1008 0457 00       		.byte	0
+ 1009 0458 0E       		.uleb128 0xe
+ 1010 0459 74000000 		.4byte	.LVL54
+ 1011 045d 40020000 		.4byte	0x240
+ 1012 0461 6B040000 		.4byte	0x46b
+ 1013 0465 0F       		.uleb128 0xf
+ 1014 0466 01       		.uleb128 0x1
+ 1015 0467 50       		.byte	0x50
+ 1016 0468 01       		.uleb128 0x1
+ 1017 0469 35       		.byte	0x35
+ 1018 046a 00       		.byte	0
+ 1019 046b 0E       		.uleb128 0xe
+ 1020 046c 7C000000 		.4byte	.LVL56
+ 1021 0470 40020000 		.4byte	0x240
+ 1022 0474 7E040000 		.4byte	0x47e
+ 1023 0478 0F       		.uleb128 0xf
+ 1024 0479 01       		.uleb128 0x1
+ 1025 047a 50       		.byte	0x50
+ 1026 047b 01       		.uleb128 0x1
+ 1027 047c 36       		.byte	0x36
+ 1028 047d 00       		.byte	0
+ 1029 047e 0E       		.uleb128 0xe
+ 1030 047f 84000000 		.4byte	.LVL58
+ 1031 0483 65010000 		.4byte	0x165
+ 1032 0487 91040000 		.4byte	0x491
+ 1033 048b 0F       		.uleb128 0xf
+ 1034 048c 01       		.uleb128 0x1
+ 1035 048d 50       		.byte	0x50
+ 1036 048e 01       		.uleb128 0x1
+ 1037 048f 47       		.byte	0x47
+ 1038 0490 00       		.byte	0
+ 1039 0491 0E       		.uleb128 0xe
+ 1040 0492 8C000000 		.4byte	.LVL60
+ 1041 0496 65010000 		.4byte	0x165
+ 1042 049a A5040000 		.4byte	0x4a5
+ 1043 049e 0F       		.uleb128 0xf
+ 1044 049f 01       		.uleb128 0x1
+ 1045 04a0 50       		.byte	0x50
+ 1046 04a1 02       		.uleb128 0x2
+ 1047 04a2 74       		.byte	0x74
+ 1048 04a3 00       		.sleb128 0
+ 1049 04a4 00       		.byte	0
+ 1050 04a5 0E       		.uleb128 0xe
+ 1051 04a6 92000000 		.4byte	.LVL61
+ 1052 04aa 40020000 		.4byte	0x240
+ 1053 04ae B8040000 		.4byte	0x4b8
+ 1054 04b2 0F       		.uleb128 0xf
+ 1055 04b3 01       		.uleb128 0x1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 25
+
+
+ 1056 04b4 50       		.byte	0x50
+ 1057 04b5 01       		.uleb128 0x1
+ 1058 04b6 35       		.byte	0x35
+ 1059 04b7 00       		.byte	0
+ 1060 04b8 0E       		.uleb128 0xe
+ 1061 04b9 9A000000 		.4byte	.LVL63
+ 1062 04bd 65010000 		.4byte	0x165
+ 1063 04c1 CC040000 		.4byte	0x4cc
+ 1064 04c5 0F       		.uleb128 0xf
+ 1065 04c6 01       		.uleb128 0x1
+ 1066 04c7 50       		.byte	0x50
+ 1067 04c8 02       		.uleb128 0x2
+ 1068 04c9 08       		.byte	0x8
+ 1069 04ca 21       		.byte	0x21
+ 1070 04cb 00       		.byte	0
+ 1071 04cc 0E       		.uleb128 0xe
+ 1072 04cd A0000000 		.4byte	.LVL64
+ 1073 04d1 40020000 		.4byte	0x240
+ 1074 04d5 DF040000 		.4byte	0x4df
+ 1075 04d9 0F       		.uleb128 0xf
+ 1076 04da 01       		.uleb128 0x1
+ 1077 04db 50       		.byte	0x50
+ 1078 04dc 01       		.uleb128 0x1
+ 1079 04dd 35       		.byte	0x35
+ 1080 04de 00       		.byte	0
+ 1081 04df 0E       		.uleb128 0xe
+ 1082 04e0 A8000000 		.4byte	.LVL66
+ 1083 04e4 65010000 		.4byte	0x165
+ 1084 04e8 F3040000 		.4byte	0x4f3
+ 1085 04ec 0F       		.uleb128 0xf
+ 1086 04ed 01       		.uleb128 0x1
+ 1087 04ee 50       		.byte	0x50
+ 1088 04ef 02       		.uleb128 0x2
+ 1089 04f0 74       		.byte	0x74
+ 1090 04f1 00       		.sleb128 0
+ 1091 04f2 00       		.byte	0
+ 1092 04f3 0E       		.uleb128 0xe
+ 1093 04f4 AE000000 		.4byte	.LVL67
+ 1094 04f8 4E030000 		.4byte	0x34e
+ 1095 04fc 06050000 		.4byte	0x506
+ 1096 0500 0F       		.uleb128 0xf
+ 1097 0501 01       		.uleb128 0x1
+ 1098 0502 50       		.byte	0x50
+ 1099 0503 01       		.uleb128 0x1
+ 1100 0504 35       		.byte	0x35
+ 1101 0505 00       		.byte	0
+ 1102 0506 11       		.uleb128 0x11
+ 1103 0507 B6000000 		.4byte	.LVL69
+ 1104 050b 65010000 		.4byte	0x165
+ 1105 050f 0F       		.uleb128 0xf
+ 1106 0510 01       		.uleb128 0x1
+ 1107 0511 50       		.byte	0x50
+ 1108 0512 02       		.uleb128 0x2
+ 1109 0513 74       		.byte	0x74
+ 1110 0514 00       		.sleb128 0
+ 1111 0515 00       		.byte	0
+ 1112 0516 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 26
+
+
+ 1113 0517 15       		.uleb128 0x15
+ 1114 0518 4E040000 		.4byte	.LASF51
+ 1115 051c 05       		.byte	0x5
+ 1116 051d 9606     		.2byte	0x696
+ 1117 051f 23050000 		.4byte	0x523
+ 1118 0523 16       		.uleb128 0x16
+ 1119 0524 76000000 		.4byte	0x76
+ 1120 0528 17       		.uleb128 0x17
+ 1121 0529 7E020000 		.4byte	.LASF52
+ 1122 052d 01       		.byte	0x1
+ 1123 052e 04       		.byte	0x4
+ 1124 052f 81000000 		.4byte	0x81
+ 1125 0533 05       		.uleb128 0x5
+ 1126 0534 03       		.byte	0x3
+ 1127 0535 00000000 		.4byte	status
+ 1128 0539 18       		.uleb128 0x18
+ 1129 053a 1D000000 		.4byte	.LASF53
+ 1130 053e 06       		.byte	0x6
+ 1131 053f 60       		.byte	0x60
+ 1132 0540 19       		.uleb128 0x19
+ 1133 0541 58020000 		.4byte	.LASF56
+ 1134 0545 06       		.byte	0x6
+ 1135 0546 55       		.byte	0x55
+ 1136 0547 51050000 		.4byte	0x551
+ 1137 054b 1A       		.uleb128 0x1a
+ 1138 054c 81000000 		.4byte	0x81
+ 1139 0550 00       		.byte	0
+ 1140 0551 18       		.uleb128 0x18
+ 1141 0552 4D000000 		.4byte	.LASF54
+ 1142 0556 06       		.byte	0x6
+ 1143 0557 4B       		.byte	0x4b
+ 1144 0558 18       		.uleb128 0x18
+ 1145 0559 53030000 		.4byte	.LASF55
+ 1146 055d 06       		.byte	0x6
+ 1147 055e 4E       		.byte	0x4e
+ 1148 055f 19       		.uleb128 0x19
+ 1149 0560 C3010000 		.4byte	.LASF57
+ 1150 0564 07       		.byte	0x7
+ 1151 0565 18       		.byte	0x18
+ 1152 0566 70050000 		.4byte	0x570
+ 1153 056a 1A       		.uleb128 0x1a
+ 1154 056b AE000000 		.4byte	0xae
+ 1155 056f 00       		.byte	0
+ 1156 0570 18       		.uleb128 0x18
+ 1157 0571 5B040000 		.4byte	.LASF58
+ 1158 0575 06       		.byte	0x6
+ 1159 0576 68       		.byte	0x68
+ 1160 0577 18       		.uleb128 0x18
+ 1161 0578 36040000 		.4byte	.LASF59
+ 1162 057c 08       		.byte	0x8
+ 1163 057d 53       		.byte	0x53
+ 1164 057e 18       		.uleb128 0x18
+ 1165 057f 71000000 		.4byte	.LASF60
+ 1166 0583 08       		.byte	0x8
+ 1167 0584 57       		.byte	0x57
+ 1168 0585 19       		.uleb128 0x19
+ 1169 0586 7A030000 		.4byte	.LASF61
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 27
+
+
+ 1170 058a 09       		.byte	0x9
+ 1171 058b 18       		.byte	0x18
+ 1172 058c 96050000 		.4byte	0x596
+ 1173 0590 1A       		.uleb128 0x1a
+ 1174 0591 AE000000 		.4byte	0xae
+ 1175 0595 00       		.byte	0
+ 1176 0596 18       		.uleb128 0x18
+ 1177 0597 8F010000 		.4byte	.LASF62
+ 1178 059b 08       		.byte	0x8
+ 1179 059c 6C       		.byte	0x6c
+ 1180 059d 18       		.uleb128 0x18
+ 1181 059e F2030000 		.4byte	.LASF63
+ 1182 05a2 08       		.byte	0x8
+ 1183 05a3 6B       		.byte	0x6b
+ 1184 05a4 19       		.uleb128 0x19
+ 1185 05a5 25040000 		.4byte	.LASF64
+ 1186 05a9 0A       		.byte	0xa
+ 1187 05aa 26       		.byte	0x26
+ 1188 05ab B5050000 		.4byte	0x5b5
+ 1189 05af 1A       		.uleb128 0x1a
+ 1190 05b0 81000000 		.4byte	0x81
+ 1191 05b4 00       		.byte	0
+ 1192 05b5 19       		.uleb128 0x19
+ 1193 05b6 DB010000 		.4byte	.LASF65
+ 1194 05ba 08       		.byte	0x8
+ 1195 05bb 64       		.byte	0x64
+ 1196 05bc C6050000 		.4byte	0x5c6
+ 1197 05c0 1A       		.uleb128 0x1a
+ 1198 05c1 81000000 		.4byte	0x81
+ 1199 05c5 00       		.byte	0
+ 1200 05c6 1B       		.uleb128 0x1b
+ 1201 05c7 21010000 		.4byte	.LASF68
+ 1202 05cb 06       		.byte	0x6
+ 1203 05cc 5C       		.byte	0x5c
+ 1204 05cd 81000000 		.4byte	0x81
+ 1205 05d1 18       		.uleb128 0x18
+ 1206 05d2 A0010000 		.4byte	.LASF66
+ 1207 05d6 06       		.byte	0x6
+ 1208 05d7 5F       		.byte	0x5f
+ 1209 05d8 19       		.uleb128 0x19
+ 1210 05d9 1D030000 		.4byte	.LASF67
+ 1211 05dd 0B       		.byte	0xb
+ 1212 05de 26       		.byte	0x26
+ 1213 05df E9050000 		.4byte	0x5e9
+ 1214 05e3 1A       		.uleb128 0x1a
+ 1215 05e4 81000000 		.4byte	0x81
+ 1216 05e8 00       		.byte	0
+ 1217 05e9 1B       		.uleb128 0x1b
+ 1218 05ea 30030000 		.4byte	.LASF69
+ 1219 05ee 08       		.byte	0x8
+ 1220 05ef 66       		.byte	0x66
+ 1221 05f0 81000000 		.4byte	0x81
+ 1222 05f4 18       		.uleb128 0x18
+ 1223 05f5 1F020000 		.4byte	.LASF70
+ 1224 05f9 08       		.byte	0x8
+ 1225 05fa 6A       		.byte	0x6a
+ 1226 05fb 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 28
+
+
+ 1227              		.section	.debug_abbrev,"",%progbits
+ 1228              	.Ldebug_abbrev0:
+ 1229 0000 01       		.uleb128 0x1
+ 1230 0001 11       		.uleb128 0x11
+ 1231 0002 01       		.byte	0x1
+ 1232 0003 25       		.uleb128 0x25
+ 1233 0004 0E       		.uleb128 0xe
+ 1234 0005 13       		.uleb128 0x13
+ 1235 0006 0B       		.uleb128 0xb
+ 1236 0007 03       		.uleb128 0x3
+ 1237 0008 0E       		.uleb128 0xe
+ 1238 0009 1B       		.uleb128 0x1b
+ 1239 000a 0E       		.uleb128 0xe
+ 1240 000b 55       		.uleb128 0x55
+ 1241 000c 17       		.uleb128 0x17
+ 1242 000d 11       		.uleb128 0x11
+ 1243 000e 01       		.uleb128 0x1
+ 1244 000f 10       		.uleb128 0x10
+ 1245 0010 17       		.uleb128 0x17
+ 1246 0011 00       		.byte	0
+ 1247 0012 00       		.byte	0
+ 1248 0013 02       		.uleb128 0x2
+ 1249 0014 24       		.uleb128 0x24
+ 1250 0015 00       		.byte	0
+ 1251 0016 0B       		.uleb128 0xb
+ 1252 0017 0B       		.uleb128 0xb
+ 1253 0018 3E       		.uleb128 0x3e
+ 1254 0019 0B       		.uleb128 0xb
+ 1255 001a 03       		.uleb128 0x3
+ 1256 001b 0E       		.uleb128 0xe
+ 1257 001c 00       		.byte	0
+ 1258 001d 00       		.byte	0
+ 1259 001e 03       		.uleb128 0x3
+ 1260 001f 16       		.uleb128 0x16
+ 1261 0020 00       		.byte	0
+ 1262 0021 03       		.uleb128 0x3
+ 1263 0022 0E       		.uleb128 0xe
+ 1264 0023 3A       		.uleb128 0x3a
+ 1265 0024 0B       		.uleb128 0xb
+ 1266 0025 3B       		.uleb128 0x3b
+ 1267 0026 0B       		.uleb128 0xb
+ 1268 0027 49       		.uleb128 0x49
+ 1269 0028 13       		.uleb128 0x13
+ 1270 0029 00       		.byte	0
+ 1271 002a 00       		.byte	0
+ 1272 002b 04       		.uleb128 0x4
+ 1273 002c 24       		.uleb128 0x24
+ 1274 002d 00       		.byte	0
+ 1275 002e 0B       		.uleb128 0xb
+ 1276 002f 0B       		.uleb128 0xb
+ 1277 0030 3E       		.uleb128 0x3e
+ 1278 0031 0B       		.uleb128 0xb
+ 1279 0032 03       		.uleb128 0x3
+ 1280 0033 08       		.uleb128 0x8
+ 1281 0034 00       		.byte	0
+ 1282 0035 00       		.byte	0
+ 1283 0036 05       		.uleb128 0x5
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 29
+
+
+ 1284 0037 16       		.uleb128 0x16
+ 1285 0038 00       		.byte	0
+ 1286 0039 03       		.uleb128 0x3
+ 1287 003a 0E       		.uleb128 0xe
+ 1288 003b 3A       		.uleb128 0x3a
+ 1289 003c 0B       		.uleb128 0xb
+ 1290 003d 3B       		.uleb128 0x3b
+ 1291 003e 05       		.uleb128 0x5
+ 1292 003f 49       		.uleb128 0x49
+ 1293 0040 13       		.uleb128 0x13
+ 1294 0041 00       		.byte	0
+ 1295 0042 00       		.byte	0
+ 1296 0043 06       		.uleb128 0x6
+ 1297 0044 0F       		.uleb128 0xf
+ 1298 0045 00       		.byte	0
+ 1299 0046 0B       		.uleb128 0xb
+ 1300 0047 0B       		.uleb128 0xb
+ 1301 0048 49       		.uleb128 0x49
+ 1302 0049 13       		.uleb128 0x13
+ 1303 004a 00       		.byte	0
+ 1304 004b 00       		.byte	0
+ 1305 004c 07       		.uleb128 0x7
+ 1306 004d 15       		.uleb128 0x15
+ 1307 004e 00       		.byte	0
+ 1308 004f 27       		.uleb128 0x27
+ 1309 0050 19       		.uleb128 0x19
+ 1310 0051 00       		.byte	0
+ 1311 0052 00       		.byte	0
+ 1312 0053 08       		.uleb128 0x8
+ 1313 0054 04       		.uleb128 0x4
+ 1314 0055 01       		.byte	0x1
+ 1315 0056 03       		.uleb128 0x3
+ 1316 0057 0E       		.uleb128 0xe
+ 1317 0058 0B       		.uleb128 0xb
+ 1318 0059 0B       		.uleb128 0xb
+ 1319 005a 3A       		.uleb128 0x3a
+ 1320 005b 0B       		.uleb128 0xb
+ 1321 005c 3B       		.uleb128 0x3b
+ 1322 005d 0B       		.uleb128 0xb
+ 1323 005e 01       		.uleb128 0x1
+ 1324 005f 13       		.uleb128 0x13
+ 1325 0060 00       		.byte	0
+ 1326 0061 00       		.byte	0
+ 1327 0062 09       		.uleb128 0x9
+ 1328 0063 28       		.uleb128 0x28
+ 1329 0064 00       		.byte	0
+ 1330 0065 03       		.uleb128 0x3
+ 1331 0066 0E       		.uleb128 0xe
+ 1332 0067 1C       		.uleb128 0x1c
+ 1333 0068 0D       		.uleb128 0xd
+ 1334 0069 00       		.byte	0
+ 1335 006a 00       		.byte	0
+ 1336 006b 0A       		.uleb128 0xa
+ 1337 006c 2E       		.uleb128 0x2e
+ 1338 006d 01       		.byte	0x1
+ 1339 006e 3F       		.uleb128 0x3f
+ 1340 006f 19       		.uleb128 0x19
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 30
+
+
+ 1341 0070 03       		.uleb128 0x3
+ 1342 0071 0E       		.uleb128 0xe
+ 1343 0072 3A       		.uleb128 0x3a
+ 1344 0073 0B       		.uleb128 0xb
+ 1345 0074 3B       		.uleb128 0x3b
+ 1346 0075 0B       		.uleb128 0xb
+ 1347 0076 27       		.uleb128 0x27
+ 1348 0077 19       		.uleb128 0x19
+ 1349 0078 11       		.uleb128 0x11
+ 1350 0079 01       		.uleb128 0x1
+ 1351 007a 12       		.uleb128 0x12
+ 1352 007b 06       		.uleb128 0x6
+ 1353 007c 40       		.uleb128 0x40
+ 1354 007d 18       		.uleb128 0x18
+ 1355 007e 9742     		.uleb128 0x2117
+ 1356 0080 19       		.uleb128 0x19
+ 1357 0081 01       		.uleb128 0x1
+ 1358 0082 13       		.uleb128 0x13
+ 1359 0083 00       		.byte	0
+ 1360 0084 00       		.byte	0
+ 1361 0085 0B       		.uleb128 0xb
+ 1362 0086 05       		.uleb128 0x5
+ 1363 0087 00       		.byte	0
+ 1364 0088 03       		.uleb128 0x3
+ 1365 0089 0E       		.uleb128 0xe
+ 1366 008a 3A       		.uleb128 0x3a
+ 1367 008b 0B       		.uleb128 0xb
+ 1368 008c 3B       		.uleb128 0x3b
+ 1369 008d 0B       		.uleb128 0xb
+ 1370 008e 49       		.uleb128 0x49
+ 1371 008f 13       		.uleb128 0x13
+ 1372 0090 02       		.uleb128 0x2
+ 1373 0091 17       		.uleb128 0x17
+ 1374 0092 00       		.byte	0
+ 1375 0093 00       		.byte	0
+ 1376 0094 0C       		.uleb128 0xc
+ 1377 0095 898201   		.uleb128 0x4109
+ 1378 0098 00       		.byte	0
+ 1379 0099 11       		.uleb128 0x11
+ 1380 009a 01       		.uleb128 0x1
+ 1381 009b 31       		.uleb128 0x31
+ 1382 009c 13       		.uleb128 0x13
+ 1383 009d 00       		.byte	0
+ 1384 009e 00       		.byte	0
+ 1385 009f 0D       		.uleb128 0xd
+ 1386 00a0 2E       		.uleb128 0x2e
+ 1387 00a1 01       		.byte	0x1
+ 1388 00a2 3F       		.uleb128 0x3f
+ 1389 00a3 19       		.uleb128 0x19
+ 1390 00a4 03       		.uleb128 0x3
+ 1391 00a5 0E       		.uleb128 0xe
+ 1392 00a6 3A       		.uleb128 0x3a
+ 1393 00a7 0B       		.uleb128 0xb
+ 1394 00a8 3B       		.uleb128 0x3b
+ 1395 00a9 0B       		.uleb128 0xb
+ 1396 00aa 49       		.uleb128 0x49
+ 1397 00ab 13       		.uleb128 0x13
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 31
+
+
+ 1398 00ac 11       		.uleb128 0x11
+ 1399 00ad 01       		.uleb128 0x1
+ 1400 00ae 12       		.uleb128 0x12
+ 1401 00af 06       		.uleb128 0x6
+ 1402 00b0 40       		.uleb128 0x40
+ 1403 00b1 18       		.uleb128 0x18
+ 1404 00b2 9742     		.uleb128 0x2117
+ 1405 00b4 19       		.uleb128 0x19
+ 1406 00b5 01       		.uleb128 0x1
+ 1407 00b6 13       		.uleb128 0x13
+ 1408 00b7 00       		.byte	0
+ 1409 00b8 00       		.byte	0
+ 1410 00b9 0E       		.uleb128 0xe
+ 1411 00ba 898201   		.uleb128 0x4109
+ 1412 00bd 01       		.byte	0x1
+ 1413 00be 11       		.uleb128 0x11
+ 1414 00bf 01       		.uleb128 0x1
+ 1415 00c0 31       		.uleb128 0x31
+ 1416 00c1 13       		.uleb128 0x13
+ 1417 00c2 01       		.uleb128 0x1
+ 1418 00c3 13       		.uleb128 0x13
+ 1419 00c4 00       		.byte	0
+ 1420 00c5 00       		.byte	0
+ 1421 00c6 0F       		.uleb128 0xf
+ 1422 00c7 8A8201   		.uleb128 0x410a
+ 1423 00ca 00       		.byte	0
+ 1424 00cb 02       		.uleb128 0x2
+ 1425 00cc 18       		.uleb128 0x18
+ 1426 00cd 9142     		.uleb128 0x2111
+ 1427 00cf 18       		.uleb128 0x18
+ 1428 00d0 00       		.byte	0
+ 1429 00d1 00       		.byte	0
+ 1430 00d2 10       		.uleb128 0x10
+ 1431 00d3 05       		.uleb128 0x5
+ 1432 00d4 00       		.byte	0
+ 1433 00d5 03       		.uleb128 0x3
+ 1434 00d6 08       		.uleb128 0x8
+ 1435 00d7 3A       		.uleb128 0x3a
+ 1436 00d8 0B       		.uleb128 0xb
+ 1437 00d9 3B       		.uleb128 0x3b
+ 1438 00da 0B       		.uleb128 0xb
+ 1439 00db 49       		.uleb128 0x49
+ 1440 00dc 13       		.uleb128 0x13
+ 1441 00dd 02       		.uleb128 0x2
+ 1442 00de 17       		.uleb128 0x17
+ 1443 00df 00       		.byte	0
+ 1444 00e0 00       		.byte	0
+ 1445 00e1 11       		.uleb128 0x11
+ 1446 00e2 898201   		.uleb128 0x4109
+ 1447 00e5 01       		.byte	0x1
+ 1448 00e6 11       		.uleb128 0x11
+ 1449 00e7 01       		.uleb128 0x1
+ 1450 00e8 31       		.uleb128 0x31
+ 1451 00e9 13       		.uleb128 0x13
+ 1452 00ea 00       		.byte	0
+ 1453 00eb 00       		.byte	0
+ 1454 00ec 12       		.uleb128 0x12
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 32
+
+
+ 1455 00ed 34       		.uleb128 0x34
+ 1456 00ee 00       		.byte	0
+ 1457 00ef 03       		.uleb128 0x3
+ 1458 00f0 0E       		.uleb128 0xe
+ 1459 00f1 3A       		.uleb128 0x3a
+ 1460 00f2 0B       		.uleb128 0xb
+ 1461 00f3 3B       		.uleb128 0x3b
+ 1462 00f4 0B       		.uleb128 0xb
+ 1463 00f5 49       		.uleb128 0x49
+ 1464 00f6 13       		.uleb128 0x13
+ 1465 00f7 02       		.uleb128 0x2
+ 1466 00f8 17       		.uleb128 0x17
+ 1467 00f9 00       		.byte	0
+ 1468 00fa 00       		.byte	0
+ 1469 00fb 13       		.uleb128 0x13
+ 1470 00fc 34       		.uleb128 0x34
+ 1471 00fd 00       		.byte	0
+ 1472 00fe 03       		.uleb128 0x3
+ 1473 00ff 08       		.uleb128 0x8
+ 1474 0100 3A       		.uleb128 0x3a
+ 1475 0101 0B       		.uleb128 0xb
+ 1476 0102 3B       		.uleb128 0x3b
+ 1477 0103 0B       		.uleb128 0xb
+ 1478 0104 49       		.uleb128 0x49
+ 1479 0105 13       		.uleb128 0x13
+ 1480 0106 02       		.uleb128 0x2
+ 1481 0107 17       		.uleb128 0x17
+ 1482 0108 00       		.byte	0
+ 1483 0109 00       		.byte	0
+ 1484 010a 14       		.uleb128 0x14
+ 1485 010b 34       		.uleb128 0x34
+ 1486 010c 00       		.byte	0
+ 1487 010d 03       		.uleb128 0x3
+ 1488 010e 08       		.uleb128 0x8
+ 1489 010f 3A       		.uleb128 0x3a
+ 1490 0110 0B       		.uleb128 0xb
+ 1491 0111 3B       		.uleb128 0x3b
+ 1492 0112 0B       		.uleb128 0xb
+ 1493 0113 49       		.uleb128 0x49
+ 1494 0114 13       		.uleb128 0x13
+ 1495 0115 02       		.uleb128 0x2
+ 1496 0116 18       		.uleb128 0x18
+ 1497 0117 00       		.byte	0
+ 1498 0118 00       		.byte	0
+ 1499 0119 15       		.uleb128 0x15
+ 1500 011a 34       		.uleb128 0x34
+ 1501 011b 00       		.byte	0
+ 1502 011c 03       		.uleb128 0x3
+ 1503 011d 0E       		.uleb128 0xe
+ 1504 011e 3A       		.uleb128 0x3a
+ 1505 011f 0B       		.uleb128 0xb
+ 1506 0120 3B       		.uleb128 0x3b
+ 1507 0121 05       		.uleb128 0x5
+ 1508 0122 49       		.uleb128 0x49
+ 1509 0123 13       		.uleb128 0x13
+ 1510 0124 3F       		.uleb128 0x3f
+ 1511 0125 19       		.uleb128 0x19
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 33
+
+
+ 1512 0126 3C       		.uleb128 0x3c
+ 1513 0127 19       		.uleb128 0x19
+ 1514 0128 00       		.byte	0
+ 1515 0129 00       		.byte	0
+ 1516 012a 16       		.uleb128 0x16
+ 1517 012b 35       		.uleb128 0x35
+ 1518 012c 00       		.byte	0
+ 1519 012d 49       		.uleb128 0x49
+ 1520 012e 13       		.uleb128 0x13
+ 1521 012f 00       		.byte	0
+ 1522 0130 00       		.byte	0
+ 1523 0131 17       		.uleb128 0x17
+ 1524 0132 34       		.uleb128 0x34
+ 1525 0133 00       		.byte	0
+ 1526 0134 03       		.uleb128 0x3
+ 1527 0135 0E       		.uleb128 0xe
+ 1528 0136 3A       		.uleb128 0x3a
+ 1529 0137 0B       		.uleb128 0xb
+ 1530 0138 3B       		.uleb128 0x3b
+ 1531 0139 0B       		.uleb128 0xb
+ 1532 013a 49       		.uleb128 0x49
+ 1533 013b 13       		.uleb128 0x13
+ 1534 013c 3F       		.uleb128 0x3f
+ 1535 013d 19       		.uleb128 0x19
+ 1536 013e 02       		.uleb128 0x2
+ 1537 013f 18       		.uleb128 0x18
+ 1538 0140 00       		.byte	0
+ 1539 0141 00       		.byte	0
+ 1540 0142 18       		.uleb128 0x18
+ 1541 0143 2E       		.uleb128 0x2e
+ 1542 0144 00       		.byte	0
+ 1543 0145 3F       		.uleb128 0x3f
+ 1544 0146 19       		.uleb128 0x19
+ 1545 0147 03       		.uleb128 0x3
+ 1546 0148 0E       		.uleb128 0xe
+ 1547 0149 3A       		.uleb128 0x3a
+ 1548 014a 0B       		.uleb128 0xb
+ 1549 014b 3B       		.uleb128 0x3b
+ 1550 014c 0B       		.uleb128 0xb
+ 1551 014d 27       		.uleb128 0x27
+ 1552 014e 19       		.uleb128 0x19
+ 1553 014f 3C       		.uleb128 0x3c
+ 1554 0150 19       		.uleb128 0x19
+ 1555 0151 00       		.byte	0
+ 1556 0152 00       		.byte	0
+ 1557 0153 19       		.uleb128 0x19
+ 1558 0154 2E       		.uleb128 0x2e
+ 1559 0155 01       		.byte	0x1
+ 1560 0156 3F       		.uleb128 0x3f
+ 1561 0157 19       		.uleb128 0x19
+ 1562 0158 03       		.uleb128 0x3
+ 1563 0159 0E       		.uleb128 0xe
+ 1564 015a 3A       		.uleb128 0x3a
+ 1565 015b 0B       		.uleb128 0xb
+ 1566 015c 3B       		.uleb128 0x3b
+ 1567 015d 0B       		.uleb128 0xb
+ 1568 015e 27       		.uleb128 0x27
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 34
+
+
+ 1569 015f 19       		.uleb128 0x19
+ 1570 0160 3C       		.uleb128 0x3c
+ 1571 0161 19       		.uleb128 0x19
+ 1572 0162 01       		.uleb128 0x1
+ 1573 0163 13       		.uleb128 0x13
+ 1574 0164 00       		.byte	0
+ 1575 0165 00       		.byte	0
+ 1576 0166 1A       		.uleb128 0x1a
+ 1577 0167 05       		.uleb128 0x5
+ 1578 0168 00       		.byte	0
+ 1579 0169 49       		.uleb128 0x49
+ 1580 016a 13       		.uleb128 0x13
+ 1581 016b 00       		.byte	0
+ 1582 016c 00       		.byte	0
+ 1583 016d 1B       		.uleb128 0x1b
+ 1584 016e 2E       		.uleb128 0x2e
+ 1585 016f 00       		.byte	0
+ 1586 0170 3F       		.uleb128 0x3f
+ 1587 0171 19       		.uleb128 0x19
+ 1588 0172 03       		.uleb128 0x3
+ 1589 0173 0E       		.uleb128 0xe
+ 1590 0174 3A       		.uleb128 0x3a
+ 1591 0175 0B       		.uleb128 0xb
+ 1592 0176 3B       		.uleb128 0x3b
+ 1593 0177 0B       		.uleb128 0xb
+ 1594 0178 27       		.uleb128 0x27
+ 1595 0179 19       		.uleb128 0x19
+ 1596 017a 49       		.uleb128 0x49
+ 1597 017b 13       		.uleb128 0x13
+ 1598 017c 3C       		.uleb128 0x3c
+ 1599 017d 19       		.uleb128 0x19
+ 1600 017e 00       		.byte	0
+ 1601 017f 00       		.byte	0
+ 1602 0180 00       		.byte	0
+ 1603              		.section	.debug_loc,"",%progbits
+ 1604              	.Ldebug_loc0:
+ 1605              	.LLST0:
+ 1606 0000 00000000 		.4byte	.LVL0
+ 1607 0004 09000000 		.4byte	.LVL1-1
+ 1608 0008 0100     		.2byte	0x1
+ 1609 000a 50       		.byte	0x50
+ 1610 000b 09000000 		.4byte	.LVL1-1
+ 1611 000f 18000000 		.4byte	.LFE66
+ 1612 0013 0400     		.2byte	0x4
+ 1613 0015 F3       		.byte	0xf3
+ 1614 0016 01       		.uleb128 0x1
+ 1615 0017 50       		.byte	0x50
+ 1616 0018 9F       		.byte	0x9f
+ 1617 0019 00000000 		.4byte	0
+ 1618 001d 00000000 		.4byte	0
+ 1619              	.LLST1:
+ 1620 0021 00000000 		.4byte	.LVL14
+ 1621 0025 07000000 		.4byte	.LVL15-1
+ 1622 0029 0100     		.2byte	0x1
+ 1623 002b 50       		.byte	0x50
+ 1624 002c 07000000 		.4byte	.LVL15-1
+ 1625 0030 1C000000 		.4byte	.LFE67
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 35
+
+
+ 1626 0034 0400     		.2byte	0x4
+ 1627 0036 F3       		.byte	0xf3
+ 1628 0037 01       		.uleb128 0x1
+ 1629 0038 50       		.byte	0x50
+ 1630 0039 9F       		.byte	0x9f
+ 1631 003a 00000000 		.4byte	0
+ 1632 003e 00000000 		.4byte	0
+ 1633              	.LLST2:
+ 1634 0042 08000000 		.4byte	.LVL20
+ 1635 0046 12000000 		.4byte	.LVL23
+ 1636 004a 0100     		.2byte	0x1
+ 1637 004c 54       		.byte	0x54
+ 1638 004d 00000000 		.4byte	0
+ 1639 0051 00000000 		.4byte	0
+ 1640              	.LLST3:
+ 1641 0055 0E000000 		.4byte	.LVL22
+ 1642 0059 48000000 		.4byte	.LVL33
+ 1643 005d 0100     		.2byte	0x1
+ 1644 005f 55       		.byte	0x55
+ 1645 0060 00000000 		.4byte	0
+ 1646 0064 00000000 		.4byte	0
+ 1647              	.LLST4:
+ 1648 0068 12000000 		.4byte	.LVL23
+ 1649 006c 1E000000 		.4byte	.LVL24
+ 1650 0070 0100     		.2byte	0x1
+ 1651 0072 54       		.byte	0x54
+ 1652 0073 2A000000 		.4byte	.LVL26
+ 1653 0077 48000000 		.4byte	.LVL33
+ 1654 007b 0100     		.2byte	0x1
+ 1655 007d 54       		.byte	0x54
+ 1656 007e 00000000 		.4byte	0
+ 1657 0082 00000000 		.4byte	0
+ 1658              	.LLST5:
+ 1659 0086 00000000 		.4byte	.LVL34
+ 1660 008a 07000000 		.4byte	.LVL35-1
+ 1661 008e 0100     		.2byte	0x1
+ 1662 0090 50       		.byte	0x50
+ 1663 0091 07000000 		.4byte	.LVL35-1
+ 1664 0095 1C000000 		.4byte	.LFE68
+ 1665 0099 0400     		.2byte	0x4
+ 1666 009b F3       		.byte	0xf3
+ 1667 009c 01       		.uleb128 0x1
+ 1668 009d 50       		.byte	0x50
+ 1669 009e 9F       		.byte	0x9f
+ 1670 009f 00000000 		.4byte	0
+ 1671 00a3 00000000 		.4byte	0
+ 1672              		.section	.debug_aranges,"",%progbits
+ 1673 0000 44000000 		.4byte	0x44
+ 1674 0004 0200     		.2byte	0x2
+ 1675 0006 00000000 		.4byte	.Ldebug_info0
+ 1676 000a 04       		.byte	0x4
+ 1677 000b 00       		.byte	0
+ 1678 000c 0000     		.2byte	0
+ 1679 000e 0000     		.2byte	0
+ 1680 0010 00000000 		.4byte	.LFB66
+ 1681 0014 18000000 		.4byte	.LFE66-.LFB66
+ 1682 0018 00000000 		.4byte	.LFB65
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 36
+
+
+ 1683 001c 40000000 		.4byte	.LFE65-.LFB65
+ 1684 0020 00000000 		.4byte	.LFB67
+ 1685 0024 1C000000 		.4byte	.LFE67-.LFB67
+ 1686 0028 00000000 		.4byte	.LFB63
+ 1687 002c 4C000000 		.4byte	.LFE63-.LFB63
+ 1688 0030 00000000 		.4byte	.LFB68
+ 1689 0034 1C000000 		.4byte	.LFE68-.LFB68
+ 1690 0038 00000000 		.4byte	.LFB64
+ 1691 003c B8000000 		.4byte	.LFE64-.LFB64
+ 1692 0040 00000000 		.4byte	0
+ 1693 0044 00000000 		.4byte	0
+ 1694              		.section	.debug_ranges,"",%progbits
+ 1695              	.Ldebug_ranges0:
+ 1696 0000 00000000 		.4byte	.LFB66
+ 1697 0004 18000000 		.4byte	.LFE66
+ 1698 0008 00000000 		.4byte	.LFB65
+ 1699 000c 40000000 		.4byte	.LFE65
+ 1700 0010 00000000 		.4byte	.LFB67
+ 1701 0014 1C000000 		.4byte	.LFE67
+ 1702 0018 00000000 		.4byte	.LFB63
+ 1703 001c 4C000000 		.4byte	.LFE63
+ 1704 0020 00000000 		.4byte	.LFB68
+ 1705 0024 1C000000 		.4byte	.LFE68
+ 1706 0028 00000000 		.4byte	.LFB64
+ 1707 002c B8000000 		.4byte	.LFE64
+ 1708 0030 00000000 		.4byte	0
+ 1709 0034 00000000 		.4byte	0
+ 1710              		.section	.debug_line,"",%progbits
+ 1711              	.Ldebug_line0:
+ 1712 0000 3D020000 		.section	.debug_str,"MS",%progbits,1
+ 1712      02008A01 
+ 1712      00000201 
+ 1712      FB0E0D00 
+ 1712      01010101 
+ 1713              	.LASF31:
+ 1714 0000 52455345 		.ascii	"RESET_Z\000"
+ 1714      545F5A00 
+ 1715              	.LASF46:
+ 1716 0008 6973725F 		.ascii	"isr_1\000"
+ 1716      3100
+ 1717              	.LASF50:
+ 1718 000e 6973725F 		.ascii	"isr_2\000"
+ 1718      3200
+ 1719              	.LASF25:
+ 1720 0014 56414C49 		.ascii	"VALID_XY\000"
+ 1720      445F5859 
+ 1720      00
+ 1721              	.LASF53:
+ 1722 001d 53504953 		.ascii	"SPIS_1_ClearTxBuffer\000"
+ 1722      5F315F43 
+ 1722      6C656172 
+ 1722      54784275 
+ 1722      66666572 
+ 1723              	.LASF2:
+ 1724 0032 73686F72 		.ascii	"short int\000"
+ 1724      7420696E 
+ 1724      7400
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 37
+
+
+ 1725              	.LASF17:
+ 1726 003c 73697A65 		.ascii	"sizetype\000"
+ 1726      74797065 
+ 1726      00
+ 1727              	.LASF38:
+ 1728 0045 44454641 		.ascii	"DEFAULT\000"
+ 1728      554C5400 
+ 1729              	.LASF54:
+ 1730 004d 53504953 		.ascii	"SPIS_1_Start\000"
+ 1730      5F315F53 
+ 1730      74617274 
+ 1730      00
+ 1731              	.LASF30:
+ 1732 005a 56414C49 		.ascii	"VALID_Z\000"
+ 1732      445F5A00 
+ 1733              	.LASF33:
+ 1734 0062 434F524B 		.ascii	"CORK_DISPENSED\000"
+ 1734      5F444953 
+ 1734      50454E53 
+ 1734      454400
+ 1735              	.LASF60:
+ 1736 0071 5350494D 		.ascii	"SPIM_1_EnableRxInt\000"
+ 1736      5F315F45 
+ 1736      6E61626C 
+ 1736      65527849 
+ 1736      6E7400
+ 1737              	.LASF47:
+ 1738 0084 72787661 		.ascii	"rxvalue\000"
+ 1738      6C756500 
+ 1739              	.LASF32:
+ 1740 008c 4F50454E 		.ascii	"OPENING_SUCCESSFUL\000"
+ 1740      494E475F 
+ 1740      53554343 
+ 1740      45535346 
+ 1740      554C00
+ 1741              	.LASF12:
+ 1742 009f 75696E74 		.ascii	"uint16\000"
+ 1742      313600
+ 1743              	.LASF73:
+ 1744 00a6 433A5C55 		.ascii	"C:\\Users\\Bettefanden\\Documents\\PSoC Creator\\Se"
+ 1744      73657273 
+ 1744      5C426574 
+ 1744      74656661 
+ 1744      6E64656E 
+ 1745 00d4 6D657374 		.ascii	"mesterprojekt3\\MotorControl\\StepperMotor.cydsn\000"
+ 1745      65727072 
+ 1745      6F6A656B 
+ 1745      74335C4D 
+ 1745      6F746F72 
+ 1746              	.LASF11:
+ 1747 0103 75696E74 		.ascii	"uint8\000"
+ 1747      3800
+ 1748              	.LASF74:
+ 1749 0109 5350495F 		.ascii	"SPI_protocol\000"
+ 1749      70726F74 
+ 1749      6F636F6C 
+ 1749      00
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 38
+
+
+ 1750              	.LASF35:
+ 1751 0116 56414C49 		.ascii	"VALID_TYPE\000"
+ 1751      445F5459 
+ 1751      504500
+ 1752              	.LASF68:
+ 1753 0121 53504953 		.ascii	"SPIS_1_ReadRxData\000"
+ 1753      5F315F52 
+ 1753      65616452 
+ 1753      78446174 
+ 1753      6100
+ 1754              	.LASF13:
+ 1755 0133 666C6F61 		.ascii	"float\000"
+ 1755      7400
+ 1756              	.LASF49:
+ 1757 0139 77726974 		.ascii	"writeToZ\000"
+ 1757      65546F5A 
+ 1757      00
+ 1758              	.LASF6:
+ 1759 0142 6C6F6E67 		.ascii	"long long int\000"
+ 1759      206C6F6E 
+ 1759      6720696E 
+ 1759      7400
+ 1760              	.LASF7:
+ 1761 0150 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1761      206C6F6E 
+ 1761      6720756E 
+ 1761      7369676E 
+ 1761      65642069 
+ 1762              	.LASF22:
+ 1763 0167 4F50454E 		.ascii	"OPEN_BOTTLE\000"
+ 1763      5F424F54 
+ 1763      544C4500 
+ 1764              	.LASF24:
+ 1765 0173 44495350 		.ascii	"DISPENSE_CORK\000"
+ 1765      454E5345 
+ 1765      5F434F52 
+ 1765      4B00
+ 1766              	.LASF4:
+ 1767 0181 6C6F6E67 		.ascii	"long int\000"
+ 1767      20696E74 
+ 1767      00
+ 1768              	.LASF48:
+ 1769 018a 61646472 		.ascii	"addr\000"
+ 1769      00
+ 1770              	.LASF62:
+ 1771 018f 5350494D 		.ascii	"SPIM_1_ClearFIFO\000"
+ 1771      5F315F43 
+ 1771      6C656172 
+ 1771      4649464F 
+ 1771      00
+ 1772              	.LASF66:
+ 1773 01a0 53504953 		.ascii	"SPIS_1_ClearRxBuffer\000"
+ 1773      5F315F43 
+ 1773      6C656172 
+ 1773      52784275 
+ 1773      66666572 
+ 1774              	.LASF39:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 39
+
+
+ 1775 01b5 57524F4E 		.ascii	"WRONG_COMMAND\000"
+ 1775      475F434F 
+ 1775      4D4D414E 
+ 1775      4400
+ 1776              	.LASF57:
+ 1777 01c3 6973725F 		.ascii	"isr_1_StartEx\000"
+ 1777      315F5374 
+ 1777      61727445 
+ 1777      7800
+ 1778              	.LASF44:
+ 1779 01d1 77726974 		.ascii	"writeToXY\000"
+ 1779      65546F58 
+ 1779      5900
+ 1780              	.LASF65:
+ 1781 01db 5350494D 		.ascii	"SPIM_1_WriteTxData\000"
+ 1781      5F315F57 
+ 1781      72697465 
+ 1781      54784461 
+ 1781      746100
+ 1782              	.LASF1:
+ 1783 01ee 756E7369 		.ascii	"unsigned char\000"
+ 1783      676E6564 
+ 1783      20636861 
+ 1783      7200
+ 1784              	.LASF37:
+ 1785 01fc 4E4F5F42 		.ascii	"NO_BOTTLE\000"
+ 1785      4F54544C 
+ 1785      4500
+ 1786              	.LASF16:
+ 1787 0206 63796973 		.ascii	"cyisraddress\000"
+ 1787      72616464 
+ 1787      72657373 
+ 1787      00
+ 1788              	.LASF0:
+ 1789 0213 7369676E 		.ascii	"signed char\000"
+ 1789      65642063 
+ 1789      68617200 
+ 1790              	.LASF70:
+ 1791 021f 5350494D 		.ascii	"SPIM_1_ClearRxBuffer\000"
+ 1791      5F315F43 
+ 1791      6C656172 
+ 1791      52784275 
+ 1791      66666572 
+ 1792              	.LASF8:
+ 1793 0234 756E7369 		.ascii	"unsigned int\000"
+ 1793      676E6564 
+ 1793      20696E74 
+ 1793      00
+ 1794              	.LASF40:
+ 1795 0241 57524F4E 		.ascii	"WRONG_DEVICE\000"
+ 1795      475F4445 
+ 1795      56494345 
+ 1795      00
+ 1796              	.LASF19:
+ 1797 024e 4C4F4341 		.ascii	"LOCATE_XY\000"
+ 1797      54455F58 
+ 1797      5900
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 40
+
+
+ 1798              	.LASF56:
+ 1799 0258 53504953 		.ascii	"SPIS_1_WriteTxData\000"
+ 1799      5F315F57 
+ 1799      72697465 
+ 1799      54784461 
+ 1799      746100
+ 1800              	.LASF3:
+ 1801 026b 73686F72 		.ascii	"short unsigned int\000"
+ 1801      7420756E 
+ 1801      7369676E 
+ 1801      65642069 
+ 1801      6E7400
+ 1802              	.LASF52:
+ 1803 027e 73746174 		.ascii	"status\000"
+ 1803      757300
+ 1804              	.LASF15:
+ 1805 0285 63686172 		.ascii	"char\000"
+ 1805      00
+ 1806              	.LASF71:
+ 1807 028a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1807      4320342E 
+ 1807      392E3320 
+ 1807      32303135 
+ 1807      30333033 
+ 1808 02bd 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1808      20726576 
+ 1808      6973696F 
+ 1808      6E203232 
+ 1808      31323230 
+ 1809 02f0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1809      66756E63 
+ 1809      74696F6E 
+ 1809      2D736563 
+ 1809      74696F6E 
+ 1810              	.LASF43:
+ 1811 0318 6D61696E 		.ascii	"main\000"
+ 1811      00
+ 1812              	.LASF67:
+ 1813 031d 53535F5A 		.ascii	"SS_Z_Write\000"
+ 1813      5F577269 
+ 1813      746500
+ 1814              	.LASF10:
+ 1815 0328 696E7433 		.ascii	"int32_t\000"
+ 1815      325F7400 
+ 1816              	.LASF69:
+ 1817 0330 5350494D 		.ascii	"SPIM_1_ReadRxData\000"
+ 1817      5F315F52 
+ 1817      65616452 
+ 1817      78446174 
+ 1817      6100
+ 1818              	.LASF18:
+ 1819 0342 4745545F 		.ascii	"GET_STATUS\000"
+ 1819      53544154 
+ 1819      555300
+ 1820              	.LASF23:
+ 1821 034d 52455345 		.ascii	"RESET\000"
+ 1821      5400
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 41
+
+
+ 1822              	.LASF55:
+ 1823 0353 53504953 		.ascii	"SPIS_1_EnableRxInt\000"
+ 1823      5F315F45 
+ 1823      6E61626C 
+ 1823      65527849 
+ 1823      6E7400
+ 1824              	.LASF27:
+ 1825 0366 52455345 		.ascii	"RESET_XY_ON_SUCCESS\000"
+ 1825      545F5859 
+ 1825      5F4F4E5F 
+ 1825      53554343 
+ 1825      45535300 
+ 1826              	.LASF61:
+ 1827 037a 6973725F 		.ascii	"isr_2_StartEx\000"
+ 1827      325F5374 
+ 1827      61727445 
+ 1827      7800
+ 1828              	.LASF72:
+ 1829 0388 6D61696E 		.ascii	"main.c\000"
+ 1829      2E6300
+ 1830              	.LASF34:
+ 1831 038f 52454144 		.ascii	"READY_TO_DRINK\000"
+ 1831      595F544F 
+ 1831      5F445249 
+ 1831      4E4B00
+ 1832              	.LASF5:
+ 1833 039e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1833      20756E73 
+ 1833      69676E65 
+ 1833      6420696E 
+ 1833      7400
+ 1834              	.LASF14:
+ 1835 03b0 646F7562 		.ascii	"double\000"
+ 1835      6C6500
+ 1836              	.LASF20:
+ 1837 03b7 4C4F4341 		.ascii	"LOCATE_Z_1\000"
+ 1837      54455F5A 
+ 1837      5F3100
+ 1838              	.LASF21:
+ 1839 03c2 4C4F4341 		.ascii	"LOCATE_Z_2\000"
+ 1839      54455F5A 
+ 1839      5F3200
+ 1840              	.LASF42:
+ 1841 03cd 75706461 		.ascii	"updateStatus\000"
+ 1841      74655374 
+ 1841      61747573 
+ 1841      00
+ 1842              	.LASF26:
+ 1843 03da 494E5641 		.ascii	"INVALID_XY\000"
+ 1843      4C49445F 
+ 1843      585900
+ 1844              	.LASF36:
+ 1845 03e5 494E5641 		.ascii	"INVALID_TYPE\000"
+ 1845      4C49445F 
+ 1845      54595045 
+ 1845      00
+ 1846              	.LASF63:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccJ1jzjF.s 			page 42
+
+
+ 1847 03f2 5350494D 		.ascii	"SPIM_1_ClearTxBuffer\000"
+ 1847      5F315F43 
+ 1847      6C656172 
+ 1847      54784275 
+ 1847      66666572 
+ 1848              	.LASF9:
+ 1849 0407 5F5F696E 		.ascii	"__int32_t\000"
+ 1849      7433325F 
+ 1849      7400
+ 1850              	.LASF28:
+ 1851 0411 4D4F5645 		.ascii	"MOVED_Z_1\000"
+ 1851      445F5A5F 
+ 1851      3100
+ 1852              	.LASF29:
+ 1853 041b 4D4F5645 		.ascii	"MOVED_Z_2\000"
+ 1853      445F5A5F 
+ 1853      3200
+ 1854              	.LASF64:
+ 1855 0425 53535F58 		.ascii	"SS_XY_Write\000"
+ 1855      595F5772 
+ 1855      69746500 
+ 1856              	.LASF45:
+ 1857 0431 73746174 		.ascii	"stat\000"
+ 1857      00
+ 1858              	.LASF59:
+ 1859 0436 5350494D 		.ascii	"SPIM_1_Start\000"
+ 1859      5F315F53 
+ 1859      74617274 
+ 1859      00
+ 1860              	.LASF41:
+ 1861 0443 494E5F50 		.ascii	"IN_PROCESS\000"
+ 1861      524F4345 
+ 1861      535300
+ 1862              	.LASF51:
+ 1863 044e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1863      52784275 
+ 1863      66666572 
+ 1863      00
+ 1864              	.LASF58:
+ 1865 045b 53504953 		.ascii	"SPIS_1_ClearFIFO\000"
+ 1865      5F315F43 
+ 1865      6C656172 
+ 1865      4649464F 
+ 1865      00
+ 1866              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

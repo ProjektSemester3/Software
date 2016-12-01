@@ -1,0 +1,1641 @@
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.isr_RxD,"ax",%progbits
+  19              		.align	2
+  20              		.global	isr_RxD
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	isr_RxD, %function
+  24              	isr_RxD:
+  25              	.LFB63:
+  26              		.file 1 "main.c"
+   1:main.c        **** #include "project.h"
+   2:main.c        **** 
+   3:main.c        **** uint16 zStepCount = 0;
+   4:main.c        **** uint8 step = 0b1100; // Start position for motor - global variabel
+   5:main.c        **** uint8 enabled = 0;
+   6:main.c        **** uint8 zDirection;
+   7:main.c        **** 
+   8:main.c        **** void moveC();
+   9:main.c        **** void moveCC();
+  10:main.c        **** 
+  11:main.c        **** enum SPI_protocol {
+  12:main.c        ****     
+  13:main.c        ****     // Command from PSoC-master to -slave
+  14:main.c        ****     MOVE_CLOCKWISE = 0x01,
+  15:main.c        ****     MOVE_COUNTERCLOCKWISE = 0x02,
+  16:main.c        ****     STOP_MOVING = 0x03,
+  17:main.c        **** };
+  18:main.c        **** 
+  19:main.c        **** enum bottleInfo {
+  20:main.c        ****     BELOW_TOP = 10,             // Random value
+  21:main.c        ****     ABOVE_TOP = 11,             // Random value
+  22:main.c        **** };
+  23:main.c        **** 
+  24:main.c        **** enum operation {
+  25:main.c        ****     CLOCK = 1,
+  26:main.c        ****     COUNTERCLOCK = 2,
+  27:main.c        ****     STOP = 3,
+  28:main.c        **** };
+  29:main.c        **** 
+  30:main.c        **** enum dir
+  31:main.c        **** {
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 2
+
+
+  32:main.c        ****     NO = 0,
+  33:main.c        ****     FW = 1,
+  34:main.c        ****     BW = 2,
+  35:main.c        **** };
+  36:main.c        **** 
+  37:main.c        **** CY_ISR(isr_RxD)
+  38:main.c        **** {
+  27              		.loc 1 38 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 4, -8
+  34              		.cfi_offset 14, -4
+  39:main.c        ****     uint8 rxCmd;
+  40:main.c        ****     UART_1_ClearTxBuffer();
+  35              		.loc 1 40 0
+  36 0002 FFF7FEFF 		bl	UART_1_ClearTxBuffer
+  37              	.LVL0:
+  41:main.c        ****     
+  42:main.c        ****     rxCmd = UART_1_ReadRxData();
+  38              		.loc 1 42 0
+  39 0006 FFF7FEFF 		bl	UART_1_ReadRxData
+  40              	.LVL1:
+  41 000a 0446     		mov	r4, r0
+  42              	.LVL2:
+  43:main.c        ****     UART_1_ClearRxBuffer();
+  43              		.loc 1 43 0
+  44 000c FFF7FEFF 		bl	UART_1_ClearRxBuffer
+  45              	.LVL3:
+  44:main.c        ****     
+  45:main.c        ****     rxCmd -= 0x30;
+  46              		.loc 1 45 0
+  47 0010 A4F13000 		sub	r0, r4, #48
+  48 0014 C0B2     		uxtb	r0, r0
+  49              	.LVL4:
+  46:main.c        ****     
+  47:main.c        ****     switch(rxCmd) {
+  50              		.loc 1 47 0
+  51 0016 0228     		cmp	r0, #2
+  52 0018 0AD0     		beq	.L3
+  53 001a 0328     		cmp	r0, #3
+  54 001c 0FD0     		beq	.L4
+  55 001e 0128     		cmp	r0, #1
+  56 0020 13D1     		bne	.L1
+  48:main.c        ****         
+  49:main.c        ****         // Position x-sensor to just under top of bottle
+  50:main.c        ****         case MOVE_CLOCKWISE:
+  51:main.c        ****             zDirection = BW;
+  57              		.loc 1 51 0
+  58 0022 0222     		movs	r2, #2
+  59 0024 094B     		ldr	r3, .L7
+  60 0026 1A70     		strb	r2, [r3]
+  52:main.c        ****             enabled = CLOCK;
+  61              		.loc 1 52 0
+  62 0028 0122     		movs	r2, #1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 3
+
+
+  63 002a 094B     		ldr	r3, .L7+4
+  64 002c 1A70     		strb	r2, [r3]
+  53:main.c        ****             break;
+  65              		.loc 1 53 0
+  66 002e 10BD     		pop	{r4, pc}
+  67              	.L3:
+  54:main.c        ****         
+  55:main.c        ****         // Position x-sensor to just over top of bottle
+  56:main.c        ****         case MOVE_COUNTERCLOCKWISE:
+  57:main.c        ****             zDirection = FW;
+  68              		.loc 1 57 0
+  69 0030 0122     		movs	r2, #1
+  70 0032 064B     		ldr	r3, .L7
+  71 0034 1A70     		strb	r2, [r3]
+  58:main.c        ****             enabled = COUNTERCLOCK;
+  72              		.loc 1 58 0
+  73 0036 0222     		movs	r2, #2
+  74 0038 054B     		ldr	r3, .L7+4
+  75 003a 1A70     		strb	r2, [r3]
+  59:main.c        ****             break;
+  76              		.loc 1 59 0
+  77 003c 10BD     		pop	{r4, pc}
+  78              	.L4:
+  60:main.c        ****         
+  61:main.c        ****         // Position x- and y-sensor to start-positions on respectively x- and y-axes
+  62:main.c        ****         case STOP_MOVING:
+  63:main.c        ****             zDirection = NO;
+  79              		.loc 1 63 0
+  80 003e 0022     		movs	r2, #0
+  81 0040 024B     		ldr	r3, .L7
+  82 0042 1A70     		strb	r2, [r3]
+  64:main.c        ****             enabled = STOP;
+  83              		.loc 1 64 0
+  84 0044 0322     		movs	r2, #3
+  85 0046 024B     		ldr	r3, .L7+4
+  86 0048 1A70     		strb	r2, [r3]
+  87              	.L1:
+  88 004a 10BD     		pop	{r4, pc}
+  89              	.L8:
+  90              		.align	2
+  91              	.L7:
+  92 004c 00000000 		.word	zDirection
+  93 0050 00000000 		.word	.LANCHOR0
+  94              		.cfi_endproc
+  95              	.LFE63:
+  96              		.size	isr_RxD, .-isr_RxD
+  97              		.section	.text.rotateRight,"ax",%progbits
+  98              		.align	2
+  99              		.global	rotateRight
+ 100              		.thumb
+ 101              		.thumb_func
+ 102              		.type	rotateRight, %function
+ 103              	rotateRight:
+ 104              	.LFB64:
+  65:main.c        ****             break;
+  66:main.c        ****             
+  67:main.c        ****         default:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 4
+
+
+  68:main.c        ****             break;
+  69:main.c        ****     }
+  70:main.c        **** }
+  71:main.c        **** 
+  72:main.c        **** uint8 rotateRight(uint8 value)      // Shifter bit en til højre
+  73:main.c        **** {
+ 105              		.loc 1 73 0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109              		@ link register save eliminated.
+ 110              	.LVL5:
+  74:main.c        ****     return  (value >> 1) | ( (value << 3) & 15);
+ 111              		.loc 1 74 0
+ 112 0000 C300     		lsls	r3, r0, #3
+ 113 0002 03F00F03 		and	r3, r3, #15
+  75:main.c        **** }
+ 114              		.loc 1 75 0
+ 115 0006 43EA5000 		orr	r0, r3, r0, lsr #1
+ 116              	.LVL6:
+ 117 000a 7047     		bx	lr
+ 118              		.cfi_endproc
+ 119              	.LFE64:
+ 120              		.size	rotateRight, .-rotateRight
+ 121              		.section	.text.rotateLeft,"ax",%progbits
+ 122              		.align	2
+ 123              		.global	rotateLeft
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.type	rotateLeft, %function
+ 127              	rotateLeft:
+ 128              	.LFB65:
+  76:main.c        **** 
+  77:main.c        **** uint8 rotateLeft(uint8 value)      // Shifter bit en til venstre
+  78:main.c        **** {
+ 129              		.loc 1 78 0
+ 130              		.cfi_startproc
+ 131              		@ args = 0, pretend = 0, frame = 0
+ 132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 133              		@ link register save eliminated.
+ 134              	.LVL7:
+  79:main.c        ****     return  (value >> 3) | ( (value << 1) & 15);
+ 135              		.loc 1 79 0
+ 136 0000 4300     		lsls	r3, r0, #1
+ 137 0002 03F00F03 		and	r3, r3, #15
+  80:main.c        **** }
+ 138              		.loc 1 80 0
+ 139 0006 43EAD000 		orr	r0, r3, r0, lsr #3
+ 140              	.LVL8:
+ 141 000a 7047     		bx	lr
+ 142              		.cfi_endproc
+ 143              	.LFE65:
+ 144              		.size	rotateLeft, .-rotateLeft
+ 145              		.section	.text.moveC,"ax",%progbits
+ 146              		.align	2
+ 147              		.global	moveC
+ 148              		.thumb
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 5
+
+
+ 149              		.thumb_func
+ 150              		.type	moveC, %function
+ 151              	moveC:
+ 152              	.LFB67:
+  81:main.c        **** 
+  82:main.c        **** int main(void)
+  83:main.c        **** {
+  84:main.c        ****     CyGlobalIntEnable;
+  85:main.c        **** 
+  86:main.c        ****     UART_1_Start();
+  87:main.c        ****     isr_RxD_StartEx(isr_RxD);
+  88:main.c        **** 
+  89:main.c        ****     for(;;)
+  90:main.c        ****     {
+  91:main.c        ****         switch(enabled) {
+  92:main.c        ****             
+  93:main.c        ****             // Position x-sensor to just under top of bottle
+  94:main.c        ****             case CLOCK:
+  95:main.c        ****                 moveC();
+  96:main.c        ****                 break;
+  97:main.c        ****             
+  98:main.c        ****             // Position x-sensor to just over top of bottle
+  99:main.c        ****             case COUNTERCLOCK:
+ 100:main.c        ****                 moveCC();
+ 101:main.c        ****                 break;
+ 102:main.c        ****             
+ 103:main.c        ****             default:
+ 104:main.c        ****                 break;
+ 105:main.c        ****         }
+ 106:main.c        ****     }
+ 107:main.c        ****     
+ 108:main.c        ****     return 0;
+ 109:main.c        **** }
+ 110:main.c        **** 
+ 111:main.c        **** void moveC()
+ 112:main.c        **** {
+ 153              		.loc 1 112 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157 0000 10B5     		push	{r4, lr}
+ 158              		.cfi_def_cfa_offset 8
+ 159              		.cfi_offset 4, -8
+ 160              		.cfi_offset 14, -4
+ 113:main.c        ****     while(zDirection == BW) {
+ 161              		.loc 1 113 0
+ 162 0002 0CE0     		b	.L12
+ 163              	.L13:
+ 114:main.c        ****         step = rotateRight(step);
+ 164              		.loc 1 114 0
+ 165 0004 084C     		ldr	r4, .L15
+ 166 0006 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 167 0008 FFF7FEFF 		bl	rotateRight
+ 168              	.LVL9:
+ 169 000c 2070     		strb	r0, [r4]
+ 115:main.c        ****         Coils_1_Write((step << 4) | step);              // Skriver til pins fra TopDesign (Coils)
+ 170              		.loc 1 115 0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 6
+
+
+ 171 000e 40EA0010 		orr	r0, r0, r0, lsl #4
+ 172 0012 C0B2     		uxtb	r0, r0
+ 173 0014 FFF7FEFF 		bl	Coils_1_Write
+ 174              	.LVL10:
+ 116:main.c        ****         CyDelay(2);
+ 175              		.loc 1 116 0
+ 176 0018 0220     		movs	r0, #2
+ 177 001a FFF7FEFF 		bl	CyDelay
+ 178              	.LVL11:
+ 179              	.L12:
+ 113:main.c        ****         step = rotateRight(step);
+ 180              		.loc 1 113 0
+ 181 001e 034B     		ldr	r3, .L15+4
+ 182 0020 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 183 0022 022B     		cmp	r3, #2
+ 184 0024 EED0     		beq	.L13
+ 117:main.c        ****     }
+ 118:main.c        **** }
+ 185              		.loc 1 118 0
+ 186 0026 10BD     		pop	{r4, pc}
+ 187              	.L16:
+ 188              		.align	2
+ 189              	.L15:
+ 190 0028 00000000 		.word	.LANCHOR1
+ 191 002c 00000000 		.word	zDirection
+ 192              		.cfi_endproc
+ 193              	.LFE67:
+ 194              		.size	moveC, .-moveC
+ 195              		.section	.text.moveCC,"ax",%progbits
+ 196              		.align	2
+ 197              		.global	moveCC
+ 198              		.thumb
+ 199              		.thumb_func
+ 200              		.type	moveCC, %function
+ 201              	moveCC:
+ 202              	.LFB68:
+ 119:main.c        **** 
+ 120:main.c        **** void moveCC()
+ 121:main.c        **** {
+ 203              		.loc 1 121 0
+ 204              		.cfi_startproc
+ 205              		@ args = 0, pretend = 0, frame = 0
+ 206              		@ frame_needed = 0, uses_anonymous_args = 0
+ 207 0000 10B5     		push	{r4, lr}
+ 208              		.cfi_def_cfa_offset 8
+ 209              		.cfi_offset 4, -8
+ 210              		.cfi_offset 14, -4
+ 122:main.c        ****     while(zDirection == FW) {
+ 211              		.loc 1 122 0
+ 212 0002 0CE0     		b	.L18
+ 213              	.L19:
+ 123:main.c        ****         step = rotateLeft(step);
+ 214              		.loc 1 123 0
+ 215 0004 084C     		ldr	r4, .L21
+ 216 0006 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 217 0008 FFF7FEFF 		bl	rotateLeft
+ 218              	.LVL12:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 7
+
+
+ 219 000c 2070     		strb	r0, [r4]
+ 124:main.c        ****         Coils_1_Write((step << 4) | step);              // Skriver til pins fra TopDesign (Coils)
+ 220              		.loc 1 124 0
+ 221 000e 40EA0010 		orr	r0, r0, r0, lsl #4
+ 222 0012 C0B2     		uxtb	r0, r0
+ 223 0014 FFF7FEFF 		bl	Coils_1_Write
+ 224              	.LVL13:
+ 125:main.c        ****         CyDelay(2);
+ 225              		.loc 1 125 0
+ 226 0018 0220     		movs	r0, #2
+ 227 001a FFF7FEFF 		bl	CyDelay
+ 228              	.LVL14:
+ 229              	.L18:
+ 122:main.c        ****         step = rotateLeft(step);
+ 230              		.loc 1 122 0
+ 231 001e 034B     		ldr	r3, .L21+4
+ 232 0020 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 233 0022 012B     		cmp	r3, #1
+ 234 0024 EED0     		beq	.L19
+ 126:main.c        ****     }
+ 127:main.c        **** }
+ 235              		.loc 1 127 0
+ 236 0026 10BD     		pop	{r4, pc}
+ 237              	.L22:
+ 238              		.align	2
+ 239              	.L21:
+ 240 0028 00000000 		.word	.LANCHOR1
+ 241 002c 00000000 		.word	zDirection
+ 242              		.cfi_endproc
+ 243              	.LFE68:
+ 244              		.size	moveCC, .-moveCC
+ 245              		.section	.text.main,"ax",%progbits
+ 246              		.align	2
+ 247              		.global	main
+ 248              		.thumb
+ 249              		.thumb_func
+ 250              		.type	main, %function
+ 251              	main:
+ 252              	.LFB66:
+  83:main.c        ****     CyGlobalIntEnable;
+ 253              		.loc 1 83 0
+ 254              		.cfi_startproc
+ 255              		@ Volatile: function does not return.
+ 256              		@ args = 0, pretend = 0, frame = 0
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258 0000 08B5     		push	{r3, lr}
+ 259              		.cfi_def_cfa_offset 8
+ 260              		.cfi_offset 3, -8
+ 261              		.cfi_offset 14, -4
+  84:main.c        **** 
+ 262              		.loc 1 84 0
+ 263              	@ 84 "main.c" 1
+ 264 0002 62B6     		CPSIE   i
+ 265              	@ 0 "" 2
+  86:main.c        ****     isr_RxD_StartEx(isr_RxD);
+ 266              		.loc 1 86 0
+ 267              		.thumb
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 8
+
+
+ 268 0004 FFF7FEFF 		bl	UART_1_Start
+ 269              	.LVL15:
+  87:main.c        **** 
+ 270              		.loc 1 87 0
+ 271 0008 0748     		ldr	r0, .L30
+ 272 000a FFF7FEFF 		bl	isr_RxD_StartEx
+ 273              	.LVL16:
+ 274              	.L25:
+  91:main.c        ****             
+ 275              		.loc 1 91 0
+ 276 000e 074B     		ldr	r3, .L30+4
+ 277 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 278 0012 012B     		cmp	r3, #1
+ 279 0014 02D0     		beq	.L26
+ 280 0016 022B     		cmp	r3, #2
+ 281 0018 03D0     		beq	.L27
+ 282 001a F8E7     		b	.L25
+ 283              	.L26:
+  95:main.c        ****                 break;
+ 284              		.loc 1 95 0
+ 285 001c FFF7FEFF 		bl	moveC
+ 286              	.LVL17:
+  96:main.c        ****             
+ 287              		.loc 1 96 0
+ 288 0020 F5E7     		b	.L25
+ 289              	.L27:
+ 100:main.c        ****                 break;
+ 290              		.loc 1 100 0
+ 291 0022 FFF7FEFF 		bl	moveCC
+ 292              	.LVL18:
+ 101:main.c        ****             
+ 293              		.loc 1 101 0
+ 294 0026 F2E7     		b	.L25
+ 295              	.L31:
+ 296              		.align	2
+ 297              	.L30:
+ 298 0028 00000000 		.word	isr_RxD
+ 299 002c 00000000 		.word	.LANCHOR0
+ 300              		.cfi_endproc
+ 301              	.LFE66:
+ 302              		.size	main, .-main
+ 303              		.comm	zDirection,1,1
+ 304              		.global	enabled
+ 305              		.global	step
+ 306              		.global	zStepCount
+ 307              		.data
+ 308              		.set	.LANCHOR1,. + 0
+ 309              		.type	step, %object
+ 310              		.size	step, 1
+ 311              	step:
+ 312 0000 0C       		.byte	12
+ 313              		.bss
+ 314              		.align	1
+ 315              		.set	.LANCHOR0,. + 0
+ 316              		.type	enabled, %object
+ 317              		.size	enabled, 1
+ 318              	enabled:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 9
+
+
+ 319 0000 00       		.space	1
+ 320 0001 00       		.space	1
+ 321              		.type	zStepCount, %object
+ 322              		.size	zStepCount, 2
+ 323              	zStepCount:
+ 324 0002 0000     		.space	2
+ 325              		.text
+ 326              	.Letext0:
+ 327              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 328              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 329              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 330              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 331              		.file 6 "Generated_Source\\PSoC5/UART_1.h"
+ 332              		.file 7 "Generated_Source\\PSoC5/Coils_1.h"
+ 333              		.file 8 "Generated_Source\\PSoC5/CyLib.h"
+ 334              		.file 9 "Generated_Source\\PSoC5/isr_RxD.h"
+ 335              		.section	.debug_info,"",%progbits
+ 336              	.Ldebug_info0:
+ 337 0000 1B030000 		.4byte	0x31b
+ 338 0004 0400     		.2byte	0x4
+ 339 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 340 000a 04       		.byte	0x4
+ 341 000b 01       		.uleb128 0x1
+ 342 000c 68010000 		.4byte	.LASF43
+ 343 0010 01       		.byte	0x1
+ 344 0011 76020000 		.4byte	.LASF44
+ 345 0015 B5000000 		.4byte	.LASF45
+ 346 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 347 001d 00000000 		.4byte	0
+ 348 0021 00000000 		.4byte	.Ldebug_line0
+ 349 0025 02       		.uleb128 0x2
+ 350 0026 01       		.byte	0x1
+ 351 0027 06       		.byte	0x6
+ 352 0028 EF020000 		.4byte	.LASF0
+ 353 002c 02       		.uleb128 0x2
+ 354 002d 01       		.byte	0x1
+ 355 002e 08       		.byte	0x8
+ 356 002f 65000000 		.4byte	.LASF1
+ 357 0033 02       		.uleb128 0x2
+ 358 0034 02       		.byte	0x2
+ 359 0035 05       		.byte	0x5
+ 360 0036 98020000 		.4byte	.LASF2
+ 361 003a 02       		.uleb128 0x2
+ 362 003b 02       		.byte	0x2
+ 363 003c 07       		.byte	0x7
+ 364 003d 97000000 		.4byte	.LASF3
+ 365 0041 03       		.uleb128 0x3
+ 366 0042 22000000 		.4byte	.LASF9
+ 367 0046 02       		.byte	0x2
+ 368 0047 3F       		.byte	0x3f
+ 369 0048 4C000000 		.4byte	0x4c
+ 370 004c 02       		.uleb128 0x2
+ 371 004d 04       		.byte	0x4
+ 372 004e 05       		.byte	0x5
+ 373 004f DE020000 		.4byte	.LASF4
+ 374 0053 02       		.uleb128 0x2
+ 375 0054 04       		.byte	0x4
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 10
+
+
+ 376 0055 07       		.byte	0x7
+ 377 0056 73000000 		.4byte	.LASF5
+ 378 005a 02       		.uleb128 0x2
+ 379 005b 08       		.byte	0x8
+ 380 005c 05       		.byte	0x5
+ 381 005d 68020000 		.4byte	.LASF6
+ 382 0061 02       		.uleb128 0x2
+ 383 0062 08       		.byte	0x8
+ 384 0063 07       		.byte	0x7
+ 385 0064 17020000 		.4byte	.LASF7
+ 386 0068 04       		.uleb128 0x4
+ 387 0069 04       		.byte	0x4
+ 388 006a 05       		.byte	0x5
+ 389 006b 696E7400 		.ascii	"int\000"
+ 390 006f 02       		.uleb128 0x2
+ 391 0070 04       		.byte	0x4
+ 392 0071 07       		.byte	0x7
+ 393 0072 04020000 		.4byte	.LASF8
+ 394 0076 03       		.uleb128 0x3
+ 395 0077 88020000 		.4byte	.LASF10
+ 396 007b 03       		.byte	0x3
+ 397 007c 2C       		.byte	0x2c
+ 398 007d 41000000 		.4byte	0x41
+ 399 0081 05       		.uleb128 0x5
+ 400 0082 4D000000 		.4byte	.LASF11
+ 401 0086 04       		.byte	0x4
+ 402 0087 9201     		.2byte	0x192
+ 403 0089 2C000000 		.4byte	0x2c
+ 404 008d 05       		.uleb128 0x5
+ 405 008e 4D010000 		.4byte	.LASF12
+ 406 0092 04       		.byte	0x4
+ 407 0093 9301     		.2byte	0x193
+ 408 0095 3A000000 		.4byte	0x3a
+ 409 0099 05       		.uleb128 0x5
+ 410 009a 61010000 		.4byte	.LASF13
+ 411 009e 04       		.byte	0x4
+ 412 009f 9401     		.2byte	0x194
+ 413 00a1 53000000 		.4byte	0x53
+ 414 00a5 02       		.uleb128 0x2
+ 415 00a6 04       		.byte	0x4
+ 416 00a7 04       		.byte	0x4
+ 417 00a8 53000000 		.4byte	.LASF14
+ 418 00ac 02       		.uleb128 0x2
+ 419 00ad 08       		.byte	0x8
+ 420 00ae 04       		.byte	0x4
+ 421 00af 46000000 		.4byte	.LASF15
+ 422 00b3 02       		.uleb128 0x2
+ 423 00b4 01       		.byte	0x1
+ 424 00b5 08       		.byte	0x8
+ 425 00b6 7D020000 		.4byte	.LASF16
+ 426 00ba 05       		.uleb128 0x5
+ 427 00bb 3F020000 		.4byte	.LASF17
+ 428 00bf 04       		.byte	0x4
+ 429 00c0 4E02     		.2byte	0x24e
+ 430 00c2 C6000000 		.4byte	0xc6
+ 431 00c6 06       		.uleb128 0x6
+ 432 00c7 04       		.byte	0x4
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 11
+
+
+ 433 00c8 CC000000 		.4byte	0xcc
+ 434 00cc 07       		.uleb128 0x7
+ 435 00cd 02       		.uleb128 0x2
+ 436 00ce 04       		.byte	0x4
+ 437 00cf 07       		.byte	0x7
+ 438 00d0 5F020000 		.4byte	.LASF18
+ 439 00d4 08       		.uleb128 0x8
+ 440 00d5 54010000 		.4byte	.LASF22
+ 441 00d9 01       		.byte	0x1
+ 442 00da 01       		.byte	0x1
+ 443 00db 0B       		.byte	0xb
+ 444 00dc F3000000 		.4byte	0xf3
+ 445 00e0 09       		.uleb128 0x9
+ 446 00e1 00000000 		.4byte	.LASF19
+ 447 00e5 01       		.sleb128 1
+ 448 00e6 09       		.uleb128 0x9
+ 449 00e7 22010000 		.4byte	.LASF20
+ 450 00eb 02       		.sleb128 2
+ 451 00ec 09       		.uleb128 0x9
+ 452 00ed C2020000 		.4byte	.LASF21
+ 453 00f1 03       		.sleb128 3
+ 454 00f2 00       		.byte	0
+ 455 00f3 08       		.uleb128 0x8
+ 456 00f4 35020000 		.4byte	.LASF23
+ 457 00f8 01       		.byte	0x1
+ 458 00f9 01       		.byte	0x1
+ 459 00fa 18       		.byte	0x18
+ 460 00fb 12010000 		.4byte	0x112
+ 461 00ff 09       		.uleb128 0x9
+ 462 0100 59020000 		.4byte	.LASF24
+ 463 0104 01       		.sleb128 1
+ 464 0105 09       		.uleb128 0x9
+ 465 0106 FB020000 		.4byte	.LASF25
+ 466 010a 02       		.sleb128 2
+ 467 010b 09       		.uleb128 0x9
+ 468 010c 48010000 		.4byte	.LASF26
+ 469 0110 03       		.sleb128 3
+ 470 0111 00       		.byte	0
+ 471 0112 0A       		.uleb128 0xa
+ 472 0113 64697200 		.ascii	"dir\000"
+ 473 0117 01       		.byte	0x1
+ 474 0118 01       		.byte	0x1
+ 475 0119 1E       		.byte	0x1e
+ 476 011a 2E010000 		.4byte	0x12e
+ 477 011e 0B       		.uleb128 0xb
+ 478 011f 4E4F00   		.ascii	"NO\000"
+ 479 0122 00       		.sleb128 0
+ 480 0123 0B       		.uleb128 0xb
+ 481 0124 465700   		.ascii	"FW\000"
+ 482 0127 01       		.sleb128 1
+ 483 0128 0B       		.uleb128 0xb
+ 484 0129 425700   		.ascii	"BW\000"
+ 485 012c 02       		.sleb128 2
+ 486 012d 00       		.byte	0
+ 487 012e 0C       		.uleb128 0xc
+ 488 012f E7020000 		.4byte	.LASF46
+ 489 0133 01       		.byte	0x1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 12
+
+
+ 490 0134 25       		.byte	0x25
+ 491 0135 00000000 		.4byte	.LFB63
+ 492 0139 54000000 		.4byte	.LFE63-.LFB63
+ 493 013d 01       		.uleb128 0x1
+ 494 013e 9C       		.byte	0x9c
+ 495 013f 6E010000 		.4byte	0x16e
+ 496 0143 0D       		.uleb128 0xd
+ 497 0144 11020000 		.4byte	.LASF47
+ 498 0148 01       		.byte	0x1
+ 499 0149 27       		.byte	0x27
+ 500 014a 81000000 		.4byte	0x81
+ 501 014e 00000000 		.4byte	.LLST0
+ 502 0152 0E       		.uleb128 0xe
+ 503 0153 06000000 		.4byte	.LVL0
+ 504 0157 CF020000 		.4byte	0x2cf
+ 505 015b 0E       		.uleb128 0xe
+ 506 015c 0A000000 		.4byte	.LVL1
+ 507 0160 D6020000 		.4byte	0x2d6
+ 508 0164 0E       		.uleb128 0xe
+ 509 0165 10000000 		.4byte	.LVL3
+ 510 0169 E1020000 		.4byte	0x2e1
+ 511 016d 00       		.byte	0
+ 512 016e 0F       		.uleb128 0xf
+ 513 016f 59000000 		.4byte	.LASF27
+ 514 0173 01       		.byte	0x1
+ 515 0174 48       		.byte	0x48
+ 516 0175 81000000 		.4byte	0x81
+ 517 0179 00000000 		.4byte	.LFB64
+ 518 017d 0C000000 		.4byte	.LFE64-.LFB64
+ 519 0181 01       		.uleb128 0x1
+ 520 0182 9C       		.byte	0x9c
+ 521 0183 97010000 		.4byte	0x197
+ 522 0187 10       		.uleb128 0x10
+ 523 0188 1C000000 		.4byte	.LASF29
+ 524 018c 01       		.byte	0x1
+ 525 018d 48       		.byte	0x48
+ 526 018e 81000000 		.4byte	0x81
+ 527 0192 1E000000 		.4byte	.LLST1
+ 528 0196 00       		.byte	0
+ 529 0197 0F       		.uleb128 0xf
+ 530 0198 AA000000 		.4byte	.LASF28
+ 531 019c 01       		.byte	0x1
+ 532 019d 4D       		.byte	0x4d
+ 533 019e 81000000 		.4byte	0x81
+ 534 01a2 00000000 		.4byte	.LFB65
+ 535 01a6 0C000000 		.4byte	.LFE65-.LFB65
+ 536 01aa 01       		.uleb128 0x1
+ 537 01ab 9C       		.byte	0x9c
+ 538 01ac C0010000 		.4byte	0x1c0
+ 539 01b0 10       		.uleb128 0x10
+ 540 01b1 1C000000 		.4byte	.LASF29
+ 541 01b5 01       		.byte	0x1
+ 542 01b6 4D       		.byte	0x4d
+ 543 01b7 81000000 		.4byte	0x81
+ 544 01bb 3F000000 		.4byte	.LLST2
+ 545 01bf 00       		.byte	0
+ 546 01c0 11       		.uleb128 0x11
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 13
+
+
+ 547 01c1 82020000 		.4byte	.LASF30
+ 548 01c5 01       		.byte	0x1
+ 549 01c6 6F       		.byte	0x6f
+ 550 01c7 00000000 		.4byte	.LFB67
+ 551 01cb 30000000 		.4byte	.LFE67-.LFB67
+ 552 01cf 01       		.uleb128 0x1
+ 553 01d0 9C       		.byte	0x9c
+ 554 01d1 F7010000 		.4byte	0x1f7
+ 555 01d5 0E       		.uleb128 0xe
+ 556 01d6 0C000000 		.4byte	.LVL9
+ 557 01da 6E010000 		.4byte	0x16e
+ 558 01de 0E       		.uleb128 0xe
+ 559 01df 18000000 		.4byte	.LVL10
+ 560 01e3 E8020000 		.4byte	0x2e8
+ 561 01e7 12       		.uleb128 0x12
+ 562 01e8 1E000000 		.4byte	.LVL11
+ 563 01ec F9020000 		.4byte	0x2f9
+ 564 01f0 13       		.uleb128 0x13
+ 565 01f1 01       		.uleb128 0x1
+ 566 01f2 50       		.byte	0x50
+ 567 01f3 01       		.uleb128 0x1
+ 568 01f4 32       		.byte	0x32
+ 569 01f5 00       		.byte	0
+ 570 01f6 00       		.byte	0
+ 571 01f7 11       		.uleb128 0x11
+ 572 01f8 2E020000 		.4byte	.LASF31
+ 573 01fc 01       		.byte	0x1
+ 574 01fd 78       		.byte	0x78
+ 575 01fe 00000000 		.4byte	.LFB68
+ 576 0202 30000000 		.4byte	.LFE68-.LFB68
+ 577 0206 01       		.uleb128 0x1
+ 578 0207 9C       		.byte	0x9c
+ 579 0208 2E020000 		.4byte	0x22e
+ 580 020c 0E       		.uleb128 0xe
+ 581 020d 0C000000 		.4byte	.LVL12
+ 582 0211 97010000 		.4byte	0x197
+ 583 0215 0E       		.uleb128 0xe
+ 584 0216 18000000 		.4byte	.LVL13
+ 585 021a E8020000 		.4byte	0x2e8
+ 586 021e 12       		.uleb128 0x12
+ 587 021f 1E000000 		.4byte	.LVL14
+ 588 0223 F9020000 		.4byte	0x2f9
+ 589 0227 13       		.uleb128 0x13
+ 590 0228 01       		.uleb128 0x1
+ 591 0229 50       		.byte	0x50
+ 592 022a 01       		.uleb128 0x1
+ 593 022b 32       		.byte	0x32
+ 594 022c 00       		.byte	0
+ 595 022d 00       		.byte	0
+ 596 022e 0F       		.uleb128 0xf
+ 597 022f 38010000 		.4byte	.LASF32
+ 598 0233 01       		.byte	0x1
+ 599 0234 52       		.byte	0x52
+ 600 0235 68000000 		.4byte	0x68
+ 601 0239 00000000 		.4byte	.LFB66
+ 602 023d 30000000 		.4byte	.LFE66-.LFB66
+ 603 0241 01       		.uleb128 0x1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 14
+
+
+ 604 0242 9C       		.byte	0x9c
+ 605 0243 7A020000 		.4byte	0x27a
+ 606 0247 0E       		.uleb128 0xe
+ 607 0248 08000000 		.4byte	.LVL15
+ 608 024c 0A030000 		.4byte	0x30a
+ 609 0250 14       		.uleb128 0x14
+ 610 0251 0E000000 		.4byte	.LVL16
+ 611 0255 11030000 		.4byte	0x311
+ 612 0259 67020000 		.4byte	0x267
+ 613 025d 13       		.uleb128 0x13
+ 614 025e 01       		.uleb128 0x1
+ 615 025f 50       		.byte	0x50
+ 616 0260 05       		.uleb128 0x5
+ 617 0261 03       		.byte	0x3
+ 618 0262 00000000 		.4byte	isr_RxD
+ 619 0266 00       		.byte	0
+ 620 0267 0E       		.uleb128 0xe
+ 621 0268 20000000 		.4byte	.LVL17
+ 622 026c C0010000 		.4byte	0x1c0
+ 623 0270 0E       		.uleb128 0xe
+ 624 0271 26000000 		.4byte	.LVL18
+ 625 0275 F7010000 		.4byte	0x1f7
+ 626 0279 00       		.byte	0
+ 627 027a 15       		.uleb128 0x15
+ 628 027b 4C020000 		.4byte	.LASF33
+ 629 027f 05       		.byte	0x5
+ 630 0280 9606     		.2byte	0x696
+ 631 0282 86020000 		.4byte	0x286
+ 632 0286 16       		.uleb128 0x16
+ 633 0287 76000000 		.4byte	0x76
+ 634 028b 17       		.uleb128 0x17
+ 635 028c 3D010000 		.4byte	.LASF34
+ 636 0290 01       		.byte	0x1
+ 637 0291 03       		.byte	0x3
+ 638 0292 8D000000 		.4byte	0x8d
+ 639 0296 05       		.uleb128 0x5
+ 640 0297 03       		.byte	0x3
+ 641 0298 00000000 		.4byte	zStepCount
+ 642 029c 17       		.uleb128 0x17
+ 643 029d 2C000000 		.4byte	.LASF35
+ 644 02a1 01       		.byte	0x1
+ 645 02a2 04       		.byte	0x4
+ 646 02a3 81000000 		.4byte	0x81
+ 647 02a7 05       		.uleb128 0x5
+ 648 02a8 03       		.byte	0x3
+ 649 02a9 00000000 		.4byte	step
+ 650 02ad 17       		.uleb128 0x17
+ 651 02ae 90020000 		.4byte	.LASF36
+ 652 02b2 01       		.byte	0x1
+ 653 02b3 05       		.byte	0x5
+ 654 02b4 81000000 		.4byte	0x81
+ 655 02b8 05       		.uleb128 0x5
+ 656 02b9 03       		.byte	0x3
+ 657 02ba 00000000 		.4byte	enabled
+ 658 02be 17       		.uleb128 0x17
+ 659 02bf B7020000 		.4byte	.LASF37
+ 660 02c3 01       		.byte	0x1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 15
+
+
+ 661 02c4 06       		.byte	0x6
+ 662 02c5 81000000 		.4byte	0x81
+ 663 02c9 05       		.uleb128 0x5
+ 664 02ca 03       		.byte	0x3
+ 665 02cb 00000000 		.4byte	zDirection
+ 666 02cf 18       		.uleb128 0x18
+ 667 02d0 A2020000 		.4byte	.LASF38
+ 668 02d4 06       		.byte	0x6
+ 669 02d5 8F       		.byte	0x8f
+ 670 02d6 19       		.uleb128 0x19
+ 671 02d7 85000000 		.4byte	.LASF48
+ 672 02db 06       		.byte	0x6
+ 673 02dc 6F       		.byte	0x6f
+ 674 02dd 81000000 		.4byte	0x81
+ 675 02e1 18       		.uleb128 0x18
+ 676 02e2 31000000 		.4byte	.LASF39
+ 677 02e6 06       		.byte	0x6
+ 678 02e7 75       		.byte	0x75
+ 679 02e8 1A       		.uleb128 0x1a
+ 680 02e9 F6010000 		.4byte	.LASF40
+ 681 02ed 07       		.byte	0x7
+ 682 02ee 26       		.byte	0x26
+ 683 02ef F9020000 		.4byte	0x2f9
+ 684 02f3 1B       		.uleb128 0x1b
+ 685 02f4 81000000 		.4byte	0x81
+ 686 02f8 00       		.byte	0
+ 687 02f9 1A       		.uleb128 0x1a
+ 688 02fa 08030000 		.4byte	.LASF41
+ 689 02fe 08       		.byte	0x8
+ 690 02ff 76       		.byte	0x76
+ 691 0300 0A030000 		.4byte	0x30a
+ 692 0304 1B       		.uleb128 0x1b
+ 693 0305 99000000 		.4byte	0x99
+ 694 0309 00       		.byte	0
+ 695 030a 18       		.uleb128 0x18
+ 696 030b 0F000000 		.4byte	.LASF42
+ 697 030f 06       		.byte	0x6
+ 698 0310 54       		.byte	0x54
+ 699 0311 1C       		.uleb128 0x1c
+ 700 0312 CE020000 		.4byte	.LASF49
+ 701 0316 09       		.byte	0x9
+ 702 0317 18       		.byte	0x18
+ 703 0318 1B       		.uleb128 0x1b
+ 704 0319 BA000000 		.4byte	0xba
+ 705 031d 00       		.byte	0
+ 706 031e 00       		.byte	0
+ 707              		.section	.debug_abbrev,"",%progbits
+ 708              	.Ldebug_abbrev0:
+ 709 0000 01       		.uleb128 0x1
+ 710 0001 11       		.uleb128 0x11
+ 711 0002 01       		.byte	0x1
+ 712 0003 25       		.uleb128 0x25
+ 713 0004 0E       		.uleb128 0xe
+ 714 0005 13       		.uleb128 0x13
+ 715 0006 0B       		.uleb128 0xb
+ 716 0007 03       		.uleb128 0x3
+ 717 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 16
+
+
+ 718 0009 1B       		.uleb128 0x1b
+ 719 000a 0E       		.uleb128 0xe
+ 720 000b 55       		.uleb128 0x55
+ 721 000c 17       		.uleb128 0x17
+ 722 000d 11       		.uleb128 0x11
+ 723 000e 01       		.uleb128 0x1
+ 724 000f 10       		.uleb128 0x10
+ 725 0010 17       		.uleb128 0x17
+ 726 0011 00       		.byte	0
+ 727 0012 00       		.byte	0
+ 728 0013 02       		.uleb128 0x2
+ 729 0014 24       		.uleb128 0x24
+ 730 0015 00       		.byte	0
+ 731 0016 0B       		.uleb128 0xb
+ 732 0017 0B       		.uleb128 0xb
+ 733 0018 3E       		.uleb128 0x3e
+ 734 0019 0B       		.uleb128 0xb
+ 735 001a 03       		.uleb128 0x3
+ 736 001b 0E       		.uleb128 0xe
+ 737 001c 00       		.byte	0
+ 738 001d 00       		.byte	0
+ 739 001e 03       		.uleb128 0x3
+ 740 001f 16       		.uleb128 0x16
+ 741 0020 00       		.byte	0
+ 742 0021 03       		.uleb128 0x3
+ 743 0022 0E       		.uleb128 0xe
+ 744 0023 3A       		.uleb128 0x3a
+ 745 0024 0B       		.uleb128 0xb
+ 746 0025 3B       		.uleb128 0x3b
+ 747 0026 0B       		.uleb128 0xb
+ 748 0027 49       		.uleb128 0x49
+ 749 0028 13       		.uleb128 0x13
+ 750 0029 00       		.byte	0
+ 751 002a 00       		.byte	0
+ 752 002b 04       		.uleb128 0x4
+ 753 002c 24       		.uleb128 0x24
+ 754 002d 00       		.byte	0
+ 755 002e 0B       		.uleb128 0xb
+ 756 002f 0B       		.uleb128 0xb
+ 757 0030 3E       		.uleb128 0x3e
+ 758 0031 0B       		.uleb128 0xb
+ 759 0032 03       		.uleb128 0x3
+ 760 0033 08       		.uleb128 0x8
+ 761 0034 00       		.byte	0
+ 762 0035 00       		.byte	0
+ 763 0036 05       		.uleb128 0x5
+ 764 0037 16       		.uleb128 0x16
+ 765 0038 00       		.byte	0
+ 766 0039 03       		.uleb128 0x3
+ 767 003a 0E       		.uleb128 0xe
+ 768 003b 3A       		.uleb128 0x3a
+ 769 003c 0B       		.uleb128 0xb
+ 770 003d 3B       		.uleb128 0x3b
+ 771 003e 05       		.uleb128 0x5
+ 772 003f 49       		.uleb128 0x49
+ 773 0040 13       		.uleb128 0x13
+ 774 0041 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 17
+
+
+ 775 0042 00       		.byte	0
+ 776 0043 06       		.uleb128 0x6
+ 777 0044 0F       		.uleb128 0xf
+ 778 0045 00       		.byte	0
+ 779 0046 0B       		.uleb128 0xb
+ 780 0047 0B       		.uleb128 0xb
+ 781 0048 49       		.uleb128 0x49
+ 782 0049 13       		.uleb128 0x13
+ 783 004a 00       		.byte	0
+ 784 004b 00       		.byte	0
+ 785 004c 07       		.uleb128 0x7
+ 786 004d 15       		.uleb128 0x15
+ 787 004e 00       		.byte	0
+ 788 004f 27       		.uleb128 0x27
+ 789 0050 19       		.uleb128 0x19
+ 790 0051 00       		.byte	0
+ 791 0052 00       		.byte	0
+ 792 0053 08       		.uleb128 0x8
+ 793 0054 04       		.uleb128 0x4
+ 794 0055 01       		.byte	0x1
+ 795 0056 03       		.uleb128 0x3
+ 796 0057 0E       		.uleb128 0xe
+ 797 0058 0B       		.uleb128 0xb
+ 798 0059 0B       		.uleb128 0xb
+ 799 005a 3A       		.uleb128 0x3a
+ 800 005b 0B       		.uleb128 0xb
+ 801 005c 3B       		.uleb128 0x3b
+ 802 005d 0B       		.uleb128 0xb
+ 803 005e 01       		.uleb128 0x1
+ 804 005f 13       		.uleb128 0x13
+ 805 0060 00       		.byte	0
+ 806 0061 00       		.byte	0
+ 807 0062 09       		.uleb128 0x9
+ 808 0063 28       		.uleb128 0x28
+ 809 0064 00       		.byte	0
+ 810 0065 03       		.uleb128 0x3
+ 811 0066 0E       		.uleb128 0xe
+ 812 0067 1C       		.uleb128 0x1c
+ 813 0068 0D       		.uleb128 0xd
+ 814 0069 00       		.byte	0
+ 815 006a 00       		.byte	0
+ 816 006b 0A       		.uleb128 0xa
+ 817 006c 04       		.uleb128 0x4
+ 818 006d 01       		.byte	0x1
+ 819 006e 03       		.uleb128 0x3
+ 820 006f 08       		.uleb128 0x8
+ 821 0070 0B       		.uleb128 0xb
+ 822 0071 0B       		.uleb128 0xb
+ 823 0072 3A       		.uleb128 0x3a
+ 824 0073 0B       		.uleb128 0xb
+ 825 0074 3B       		.uleb128 0x3b
+ 826 0075 0B       		.uleb128 0xb
+ 827 0076 01       		.uleb128 0x1
+ 828 0077 13       		.uleb128 0x13
+ 829 0078 00       		.byte	0
+ 830 0079 00       		.byte	0
+ 831 007a 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 18
+
+
+ 832 007b 28       		.uleb128 0x28
+ 833 007c 00       		.byte	0
+ 834 007d 03       		.uleb128 0x3
+ 835 007e 08       		.uleb128 0x8
+ 836 007f 1C       		.uleb128 0x1c
+ 837 0080 0D       		.uleb128 0xd
+ 838 0081 00       		.byte	0
+ 839 0082 00       		.byte	0
+ 840 0083 0C       		.uleb128 0xc
+ 841 0084 2E       		.uleb128 0x2e
+ 842 0085 01       		.byte	0x1
+ 843 0086 3F       		.uleb128 0x3f
+ 844 0087 19       		.uleb128 0x19
+ 845 0088 03       		.uleb128 0x3
+ 846 0089 0E       		.uleb128 0xe
+ 847 008a 3A       		.uleb128 0x3a
+ 848 008b 0B       		.uleb128 0xb
+ 849 008c 3B       		.uleb128 0x3b
+ 850 008d 0B       		.uleb128 0xb
+ 851 008e 27       		.uleb128 0x27
+ 852 008f 19       		.uleb128 0x19
+ 853 0090 11       		.uleb128 0x11
+ 854 0091 01       		.uleb128 0x1
+ 855 0092 12       		.uleb128 0x12
+ 856 0093 06       		.uleb128 0x6
+ 857 0094 40       		.uleb128 0x40
+ 858 0095 18       		.uleb128 0x18
+ 859 0096 9742     		.uleb128 0x2117
+ 860 0098 19       		.uleb128 0x19
+ 861 0099 01       		.uleb128 0x1
+ 862 009a 13       		.uleb128 0x13
+ 863 009b 00       		.byte	0
+ 864 009c 00       		.byte	0
+ 865 009d 0D       		.uleb128 0xd
+ 866 009e 34       		.uleb128 0x34
+ 867 009f 00       		.byte	0
+ 868 00a0 03       		.uleb128 0x3
+ 869 00a1 0E       		.uleb128 0xe
+ 870 00a2 3A       		.uleb128 0x3a
+ 871 00a3 0B       		.uleb128 0xb
+ 872 00a4 3B       		.uleb128 0x3b
+ 873 00a5 0B       		.uleb128 0xb
+ 874 00a6 49       		.uleb128 0x49
+ 875 00a7 13       		.uleb128 0x13
+ 876 00a8 02       		.uleb128 0x2
+ 877 00a9 17       		.uleb128 0x17
+ 878 00aa 00       		.byte	0
+ 879 00ab 00       		.byte	0
+ 880 00ac 0E       		.uleb128 0xe
+ 881 00ad 898201   		.uleb128 0x4109
+ 882 00b0 00       		.byte	0
+ 883 00b1 11       		.uleb128 0x11
+ 884 00b2 01       		.uleb128 0x1
+ 885 00b3 31       		.uleb128 0x31
+ 886 00b4 13       		.uleb128 0x13
+ 887 00b5 00       		.byte	0
+ 888 00b6 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 19
+
+
+ 889 00b7 0F       		.uleb128 0xf
+ 890 00b8 2E       		.uleb128 0x2e
+ 891 00b9 01       		.byte	0x1
+ 892 00ba 3F       		.uleb128 0x3f
+ 893 00bb 19       		.uleb128 0x19
+ 894 00bc 03       		.uleb128 0x3
+ 895 00bd 0E       		.uleb128 0xe
+ 896 00be 3A       		.uleb128 0x3a
+ 897 00bf 0B       		.uleb128 0xb
+ 898 00c0 3B       		.uleb128 0x3b
+ 899 00c1 0B       		.uleb128 0xb
+ 900 00c2 27       		.uleb128 0x27
+ 901 00c3 19       		.uleb128 0x19
+ 902 00c4 49       		.uleb128 0x49
+ 903 00c5 13       		.uleb128 0x13
+ 904 00c6 11       		.uleb128 0x11
+ 905 00c7 01       		.uleb128 0x1
+ 906 00c8 12       		.uleb128 0x12
+ 907 00c9 06       		.uleb128 0x6
+ 908 00ca 40       		.uleb128 0x40
+ 909 00cb 18       		.uleb128 0x18
+ 910 00cc 9742     		.uleb128 0x2117
+ 911 00ce 19       		.uleb128 0x19
+ 912 00cf 01       		.uleb128 0x1
+ 913 00d0 13       		.uleb128 0x13
+ 914 00d1 00       		.byte	0
+ 915 00d2 00       		.byte	0
+ 916 00d3 10       		.uleb128 0x10
+ 917 00d4 05       		.uleb128 0x5
+ 918 00d5 00       		.byte	0
+ 919 00d6 03       		.uleb128 0x3
+ 920 00d7 0E       		.uleb128 0xe
+ 921 00d8 3A       		.uleb128 0x3a
+ 922 00d9 0B       		.uleb128 0xb
+ 923 00da 3B       		.uleb128 0x3b
+ 924 00db 0B       		.uleb128 0xb
+ 925 00dc 49       		.uleb128 0x49
+ 926 00dd 13       		.uleb128 0x13
+ 927 00de 02       		.uleb128 0x2
+ 928 00df 17       		.uleb128 0x17
+ 929 00e0 00       		.byte	0
+ 930 00e1 00       		.byte	0
+ 931 00e2 11       		.uleb128 0x11
+ 932 00e3 2E       		.uleb128 0x2e
+ 933 00e4 01       		.byte	0x1
+ 934 00e5 3F       		.uleb128 0x3f
+ 935 00e6 19       		.uleb128 0x19
+ 936 00e7 03       		.uleb128 0x3
+ 937 00e8 0E       		.uleb128 0xe
+ 938 00e9 3A       		.uleb128 0x3a
+ 939 00ea 0B       		.uleb128 0xb
+ 940 00eb 3B       		.uleb128 0x3b
+ 941 00ec 0B       		.uleb128 0xb
+ 942 00ed 11       		.uleb128 0x11
+ 943 00ee 01       		.uleb128 0x1
+ 944 00ef 12       		.uleb128 0x12
+ 945 00f0 06       		.uleb128 0x6
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 20
+
+
+ 946 00f1 40       		.uleb128 0x40
+ 947 00f2 18       		.uleb128 0x18
+ 948 00f3 9742     		.uleb128 0x2117
+ 949 00f5 19       		.uleb128 0x19
+ 950 00f6 01       		.uleb128 0x1
+ 951 00f7 13       		.uleb128 0x13
+ 952 00f8 00       		.byte	0
+ 953 00f9 00       		.byte	0
+ 954 00fa 12       		.uleb128 0x12
+ 955 00fb 898201   		.uleb128 0x4109
+ 956 00fe 01       		.byte	0x1
+ 957 00ff 11       		.uleb128 0x11
+ 958 0100 01       		.uleb128 0x1
+ 959 0101 31       		.uleb128 0x31
+ 960 0102 13       		.uleb128 0x13
+ 961 0103 00       		.byte	0
+ 962 0104 00       		.byte	0
+ 963 0105 13       		.uleb128 0x13
+ 964 0106 8A8201   		.uleb128 0x410a
+ 965 0109 00       		.byte	0
+ 966 010a 02       		.uleb128 0x2
+ 967 010b 18       		.uleb128 0x18
+ 968 010c 9142     		.uleb128 0x2111
+ 969 010e 18       		.uleb128 0x18
+ 970 010f 00       		.byte	0
+ 971 0110 00       		.byte	0
+ 972 0111 14       		.uleb128 0x14
+ 973 0112 898201   		.uleb128 0x4109
+ 974 0115 01       		.byte	0x1
+ 975 0116 11       		.uleb128 0x11
+ 976 0117 01       		.uleb128 0x1
+ 977 0118 31       		.uleb128 0x31
+ 978 0119 13       		.uleb128 0x13
+ 979 011a 01       		.uleb128 0x1
+ 980 011b 13       		.uleb128 0x13
+ 981 011c 00       		.byte	0
+ 982 011d 00       		.byte	0
+ 983 011e 15       		.uleb128 0x15
+ 984 011f 34       		.uleb128 0x34
+ 985 0120 00       		.byte	0
+ 986 0121 03       		.uleb128 0x3
+ 987 0122 0E       		.uleb128 0xe
+ 988 0123 3A       		.uleb128 0x3a
+ 989 0124 0B       		.uleb128 0xb
+ 990 0125 3B       		.uleb128 0x3b
+ 991 0126 05       		.uleb128 0x5
+ 992 0127 49       		.uleb128 0x49
+ 993 0128 13       		.uleb128 0x13
+ 994 0129 3F       		.uleb128 0x3f
+ 995 012a 19       		.uleb128 0x19
+ 996 012b 3C       		.uleb128 0x3c
+ 997 012c 19       		.uleb128 0x19
+ 998 012d 00       		.byte	0
+ 999 012e 00       		.byte	0
+ 1000 012f 16       		.uleb128 0x16
+ 1001 0130 35       		.uleb128 0x35
+ 1002 0131 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 21
+
+
+ 1003 0132 49       		.uleb128 0x49
+ 1004 0133 13       		.uleb128 0x13
+ 1005 0134 00       		.byte	0
+ 1006 0135 00       		.byte	0
+ 1007 0136 17       		.uleb128 0x17
+ 1008 0137 34       		.uleb128 0x34
+ 1009 0138 00       		.byte	0
+ 1010 0139 03       		.uleb128 0x3
+ 1011 013a 0E       		.uleb128 0xe
+ 1012 013b 3A       		.uleb128 0x3a
+ 1013 013c 0B       		.uleb128 0xb
+ 1014 013d 3B       		.uleb128 0x3b
+ 1015 013e 0B       		.uleb128 0xb
+ 1016 013f 49       		.uleb128 0x49
+ 1017 0140 13       		.uleb128 0x13
+ 1018 0141 3F       		.uleb128 0x3f
+ 1019 0142 19       		.uleb128 0x19
+ 1020 0143 02       		.uleb128 0x2
+ 1021 0144 18       		.uleb128 0x18
+ 1022 0145 00       		.byte	0
+ 1023 0146 00       		.byte	0
+ 1024 0147 18       		.uleb128 0x18
+ 1025 0148 2E       		.uleb128 0x2e
+ 1026 0149 00       		.byte	0
+ 1027 014a 3F       		.uleb128 0x3f
+ 1028 014b 19       		.uleb128 0x19
+ 1029 014c 03       		.uleb128 0x3
+ 1030 014d 0E       		.uleb128 0xe
+ 1031 014e 3A       		.uleb128 0x3a
+ 1032 014f 0B       		.uleb128 0xb
+ 1033 0150 3B       		.uleb128 0x3b
+ 1034 0151 0B       		.uleb128 0xb
+ 1035 0152 27       		.uleb128 0x27
+ 1036 0153 19       		.uleb128 0x19
+ 1037 0154 3C       		.uleb128 0x3c
+ 1038 0155 19       		.uleb128 0x19
+ 1039 0156 00       		.byte	0
+ 1040 0157 00       		.byte	0
+ 1041 0158 19       		.uleb128 0x19
+ 1042 0159 2E       		.uleb128 0x2e
+ 1043 015a 00       		.byte	0
+ 1044 015b 3F       		.uleb128 0x3f
+ 1045 015c 19       		.uleb128 0x19
+ 1046 015d 03       		.uleb128 0x3
+ 1047 015e 0E       		.uleb128 0xe
+ 1048 015f 3A       		.uleb128 0x3a
+ 1049 0160 0B       		.uleb128 0xb
+ 1050 0161 3B       		.uleb128 0x3b
+ 1051 0162 0B       		.uleb128 0xb
+ 1052 0163 27       		.uleb128 0x27
+ 1053 0164 19       		.uleb128 0x19
+ 1054 0165 49       		.uleb128 0x49
+ 1055 0166 13       		.uleb128 0x13
+ 1056 0167 3C       		.uleb128 0x3c
+ 1057 0168 19       		.uleb128 0x19
+ 1058 0169 00       		.byte	0
+ 1059 016a 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 22
+
+
+ 1060 016b 1A       		.uleb128 0x1a
+ 1061 016c 2E       		.uleb128 0x2e
+ 1062 016d 01       		.byte	0x1
+ 1063 016e 3F       		.uleb128 0x3f
+ 1064 016f 19       		.uleb128 0x19
+ 1065 0170 03       		.uleb128 0x3
+ 1066 0171 0E       		.uleb128 0xe
+ 1067 0172 3A       		.uleb128 0x3a
+ 1068 0173 0B       		.uleb128 0xb
+ 1069 0174 3B       		.uleb128 0x3b
+ 1070 0175 0B       		.uleb128 0xb
+ 1071 0176 27       		.uleb128 0x27
+ 1072 0177 19       		.uleb128 0x19
+ 1073 0178 3C       		.uleb128 0x3c
+ 1074 0179 19       		.uleb128 0x19
+ 1075 017a 01       		.uleb128 0x1
+ 1076 017b 13       		.uleb128 0x13
+ 1077 017c 00       		.byte	0
+ 1078 017d 00       		.byte	0
+ 1079 017e 1B       		.uleb128 0x1b
+ 1080 017f 05       		.uleb128 0x5
+ 1081 0180 00       		.byte	0
+ 1082 0181 49       		.uleb128 0x49
+ 1083 0182 13       		.uleb128 0x13
+ 1084 0183 00       		.byte	0
+ 1085 0184 00       		.byte	0
+ 1086 0185 1C       		.uleb128 0x1c
+ 1087 0186 2E       		.uleb128 0x2e
+ 1088 0187 01       		.byte	0x1
+ 1089 0188 3F       		.uleb128 0x3f
+ 1090 0189 19       		.uleb128 0x19
+ 1091 018a 03       		.uleb128 0x3
+ 1092 018b 0E       		.uleb128 0xe
+ 1093 018c 3A       		.uleb128 0x3a
+ 1094 018d 0B       		.uleb128 0xb
+ 1095 018e 3B       		.uleb128 0x3b
+ 1096 018f 0B       		.uleb128 0xb
+ 1097 0190 27       		.uleb128 0x27
+ 1098 0191 19       		.uleb128 0x19
+ 1099 0192 3C       		.uleb128 0x3c
+ 1100 0193 19       		.uleb128 0x19
+ 1101 0194 00       		.byte	0
+ 1102 0195 00       		.byte	0
+ 1103 0196 00       		.byte	0
+ 1104              		.section	.debug_loc,"",%progbits
+ 1105              	.Ldebug_loc0:
+ 1106              	.LLST0:
+ 1107 0000 0C000000 		.4byte	.LVL2
+ 1108 0004 16000000 		.4byte	.LVL4
+ 1109 0008 0100     		.2byte	0x1
+ 1110 000a 54       		.byte	0x54
+ 1111 000b 16000000 		.4byte	.LVL4
+ 1112 000f 54000000 		.4byte	.LFE63
+ 1113 0013 0100     		.2byte	0x1
+ 1114 0015 50       		.byte	0x50
+ 1115 0016 00000000 		.4byte	0
+ 1116 001a 00000000 		.4byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 23
+
+
+ 1117              	.LLST1:
+ 1118 001e 00000000 		.4byte	.LVL5
+ 1119 0022 0A000000 		.4byte	.LVL6
+ 1120 0026 0100     		.2byte	0x1
+ 1121 0028 50       		.byte	0x50
+ 1122 0029 0A000000 		.4byte	.LVL6
+ 1123 002d 0C000000 		.4byte	.LFE64
+ 1124 0031 0400     		.2byte	0x4
+ 1125 0033 F3       		.byte	0xf3
+ 1126 0034 01       		.uleb128 0x1
+ 1127 0035 50       		.byte	0x50
+ 1128 0036 9F       		.byte	0x9f
+ 1129 0037 00000000 		.4byte	0
+ 1130 003b 00000000 		.4byte	0
+ 1131              	.LLST2:
+ 1132 003f 00000000 		.4byte	.LVL7
+ 1133 0043 0A000000 		.4byte	.LVL8
+ 1134 0047 0100     		.2byte	0x1
+ 1135 0049 50       		.byte	0x50
+ 1136 004a 0A000000 		.4byte	.LVL8
+ 1137 004e 0C000000 		.4byte	.LFE65
+ 1138 0052 0400     		.2byte	0x4
+ 1139 0054 F3       		.byte	0xf3
+ 1140 0055 01       		.uleb128 0x1
+ 1141 0056 50       		.byte	0x50
+ 1142 0057 9F       		.byte	0x9f
+ 1143 0058 00000000 		.4byte	0
+ 1144 005c 00000000 		.4byte	0
+ 1145              		.section	.debug_aranges,"",%progbits
+ 1146 0000 44000000 		.4byte	0x44
+ 1147 0004 0200     		.2byte	0x2
+ 1148 0006 00000000 		.4byte	.Ldebug_info0
+ 1149 000a 04       		.byte	0x4
+ 1150 000b 00       		.byte	0
+ 1151 000c 0000     		.2byte	0
+ 1152 000e 0000     		.2byte	0
+ 1153 0010 00000000 		.4byte	.LFB63
+ 1154 0014 54000000 		.4byte	.LFE63-.LFB63
+ 1155 0018 00000000 		.4byte	.LFB64
+ 1156 001c 0C000000 		.4byte	.LFE64-.LFB64
+ 1157 0020 00000000 		.4byte	.LFB65
+ 1158 0024 0C000000 		.4byte	.LFE65-.LFB65
+ 1159 0028 00000000 		.4byte	.LFB67
+ 1160 002c 30000000 		.4byte	.LFE67-.LFB67
+ 1161 0030 00000000 		.4byte	.LFB68
+ 1162 0034 30000000 		.4byte	.LFE68-.LFB68
+ 1163 0038 00000000 		.4byte	.LFB66
+ 1164 003c 30000000 		.4byte	.LFE66-.LFB66
+ 1165 0040 00000000 		.4byte	0
+ 1166 0044 00000000 		.4byte	0
+ 1167              		.section	.debug_ranges,"",%progbits
+ 1168              	.Ldebug_ranges0:
+ 1169 0000 00000000 		.4byte	.LFB63
+ 1170 0004 54000000 		.4byte	.LFE63
+ 1171 0008 00000000 		.4byte	.LFB64
+ 1172 000c 0C000000 		.4byte	.LFE64
+ 1173 0010 00000000 		.4byte	.LFB65
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 24
+
+
+ 1174 0014 0C000000 		.4byte	.LFE65
+ 1175 0018 00000000 		.4byte	.LFB67
+ 1176 001c 30000000 		.4byte	.LFE67
+ 1177 0020 00000000 		.4byte	.LFB68
+ 1178 0024 30000000 		.4byte	.LFE68
+ 1179 0028 00000000 		.4byte	.LFB66
+ 1180 002c 30000000 		.4byte	.LFE66
+ 1181 0030 00000000 		.4byte	0
+ 1182 0034 00000000 		.4byte	0
+ 1183              		.section	.debug_line,"",%progbits
+ 1184              	.Ldebug_line0:
+ 1185 0000 02020000 		.section	.debug_str,"MS",%progbits,1
+ 1185      02007801 
+ 1185      00000201 
+ 1185      FB0E0D00 
+ 1185      01010101 
+ 1186              	.LASF19:
+ 1187 0000 4D4F5645 		.ascii	"MOVE_CLOCKWISE\000"
+ 1187      5F434C4F 
+ 1187      434B5749 
+ 1187      534500
+ 1188              	.LASF42:
+ 1189 000f 55415254 		.ascii	"UART_1_Start\000"
+ 1189      5F315F53 
+ 1189      74617274 
+ 1189      00
+ 1190              	.LASF29:
+ 1191 001c 76616C75 		.ascii	"value\000"
+ 1191      6500
+ 1192              	.LASF9:
+ 1193 0022 5F5F696E 		.ascii	"__int32_t\000"
+ 1193      7433325F 
+ 1193      7400
+ 1194              	.LASF35:
+ 1195 002c 73746570 		.ascii	"step\000"
+ 1195      00
+ 1196              	.LASF39:
+ 1197 0031 55415254 		.ascii	"UART_1_ClearRxBuffer\000"
+ 1197      5F315F43 
+ 1197      6C656172 
+ 1197      52784275 
+ 1197      66666572 
+ 1198              	.LASF15:
+ 1199 0046 646F7562 		.ascii	"double\000"
+ 1199      6C6500
+ 1200              	.LASF11:
+ 1201 004d 75696E74 		.ascii	"uint8\000"
+ 1201      3800
+ 1202              	.LASF14:
+ 1203 0053 666C6F61 		.ascii	"float\000"
+ 1203      7400
+ 1204              	.LASF27:
+ 1205 0059 726F7461 		.ascii	"rotateRight\000"
+ 1205      74655269 
+ 1205      67687400 
+ 1206              	.LASF1:
+ 1207 0065 756E7369 		.ascii	"unsigned char\000"
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 25
+
+
+ 1207      676E6564 
+ 1207      20636861 
+ 1207      7200
+ 1208              	.LASF5:
+ 1209 0073 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1209      20756E73 
+ 1209      69676E65 
+ 1209      6420696E 
+ 1209      7400
+ 1210              	.LASF48:
+ 1211 0085 55415254 		.ascii	"UART_1_ReadRxData\000"
+ 1211      5F315F52 
+ 1211      65616452 
+ 1211      78446174 
+ 1211      6100
+ 1212              	.LASF3:
+ 1213 0097 73686F72 		.ascii	"short unsigned int\000"
+ 1213      7420756E 
+ 1213      7369676E 
+ 1213      65642069 
+ 1213      6E7400
+ 1214              	.LASF28:
+ 1215 00aa 726F7461 		.ascii	"rotateLeft\000"
+ 1215      74654C65 
+ 1215      667400
+ 1216              	.LASF45:
+ 1217 00b5 433A5C55 		.ascii	"C:\\Users\\Bettefanden\\Documents\\IHA\\Semester 3\\"
+ 1217      73657273 
+ 1217      5C426574 
+ 1217      74656661 
+ 1217      6E64656E 
+ 1218 00e3 53656D65 		.ascii	"Semesterprojekt 3\\Software\\Test\\PSoC-bipolar\\Sl"
+ 1218      73746572 
+ 1218      70726F6A 
+ 1218      656B7420 
+ 1218      335C536F 
+ 1219 0112 61766542 		.ascii	"aveBottom.cydsn\000"
+ 1219      6F74746F 
+ 1219      6D2E6379 
+ 1219      64736E00 
+ 1220              	.LASF20:
+ 1221 0122 4D4F5645 		.ascii	"MOVE_COUNTERCLOCKWISE\000"
+ 1221      5F434F55 
+ 1221      4E544552 
+ 1221      434C4F43 
+ 1221      4B574953 
+ 1222              	.LASF32:
+ 1223 0138 6D61696E 		.ascii	"main\000"
+ 1223      00
+ 1224              	.LASF34:
+ 1225 013d 7A537465 		.ascii	"zStepCount\000"
+ 1225      70436F75 
+ 1225      6E7400
+ 1226              	.LASF26:
+ 1227 0148 53544F50 		.ascii	"STOP\000"
+ 1227      00
+ 1228              	.LASF12:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 26
+
+
+ 1229 014d 75696E74 		.ascii	"uint16\000"
+ 1229      313600
+ 1230              	.LASF22:
+ 1231 0154 5350495F 		.ascii	"SPI_protocol\000"
+ 1231      70726F74 
+ 1231      6F636F6C 
+ 1231      00
+ 1232              	.LASF13:
+ 1233 0161 75696E74 		.ascii	"uint32\000"
+ 1233      333200
+ 1234              	.LASF43:
+ 1235 0168 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1235      4320342E 
+ 1235      392E3320 
+ 1235      32303135 
+ 1235      30333033 
+ 1236 019b 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1236      20726576 
+ 1236      6973696F 
+ 1236      6E203232 
+ 1236      31323230 
+ 1237 01ce 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1237      66756E63 
+ 1237      74696F6E 
+ 1237      2D736563 
+ 1237      74696F6E 
+ 1238              	.LASF40:
+ 1239 01f6 436F696C 		.ascii	"Coils_1_Write\000"
+ 1239      735F315F 
+ 1239      57726974 
+ 1239      6500
+ 1240              	.LASF8:
+ 1241 0204 756E7369 		.ascii	"unsigned int\000"
+ 1241      676E6564 
+ 1241      20696E74 
+ 1241      00
+ 1242              	.LASF47:
+ 1243 0211 7278436D 		.ascii	"rxCmd\000"
+ 1243      6400
+ 1244              	.LASF7:
+ 1245 0217 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1245      206C6F6E 
+ 1245      6720756E 
+ 1245      7369676E 
+ 1245      65642069 
+ 1246              	.LASF31:
+ 1247 022e 6D6F7665 		.ascii	"moveCC\000"
+ 1247      434300
+ 1248              	.LASF23:
+ 1249 0235 6F706572 		.ascii	"operation\000"
+ 1249      6174696F 
+ 1249      6E00
+ 1250              	.LASF17:
+ 1251 023f 63796973 		.ascii	"cyisraddress\000"
+ 1251      72616464 
+ 1251      72657373 
+ 1251      00
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 27
+
+
+ 1252              	.LASF33:
+ 1253 024c 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1253      52784275 
+ 1253      66666572 
+ 1253      00
+ 1254              	.LASF24:
+ 1255 0259 434C4F43 		.ascii	"CLOCK\000"
+ 1255      4B00
+ 1256              	.LASF18:
+ 1257 025f 73697A65 		.ascii	"sizetype\000"
+ 1257      74797065 
+ 1257      00
+ 1258              	.LASF6:
+ 1259 0268 6C6F6E67 		.ascii	"long long int\000"
+ 1259      206C6F6E 
+ 1259      6720696E 
+ 1259      7400
+ 1260              	.LASF44:
+ 1261 0276 6D61696E 		.ascii	"main.c\000"
+ 1261      2E6300
+ 1262              	.LASF16:
+ 1263 027d 63686172 		.ascii	"char\000"
+ 1263      00
+ 1264              	.LASF30:
+ 1265 0282 6D6F7665 		.ascii	"moveC\000"
+ 1265      4300
+ 1266              	.LASF10:
+ 1267 0288 696E7433 		.ascii	"int32_t\000"
+ 1267      325F7400 
+ 1268              	.LASF36:
+ 1269 0290 656E6162 		.ascii	"enabled\000"
+ 1269      6C656400 
+ 1270              	.LASF2:
+ 1271 0298 73686F72 		.ascii	"short int\000"
+ 1271      7420696E 
+ 1271      7400
+ 1272              	.LASF38:
+ 1273 02a2 55415254 		.ascii	"UART_1_ClearTxBuffer\000"
+ 1273      5F315F43 
+ 1273      6C656172 
+ 1273      54784275 
+ 1273      66666572 
+ 1274              	.LASF37:
+ 1275 02b7 7A446972 		.ascii	"zDirection\000"
+ 1275      65637469 
+ 1275      6F6E00
+ 1276              	.LASF21:
+ 1277 02c2 53544F50 		.ascii	"STOP_MOVING\000"
+ 1277      5F4D4F56 
+ 1277      494E4700 
+ 1278              	.LASF49:
+ 1279 02ce 6973725F 		.ascii	"isr_RxD_StartEx\000"
+ 1279      5278445F 
+ 1279      53746172 
+ 1279      74457800 
+ 1280              	.LASF4:
+ 1281 02de 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc2yuJuN.s 			page 28
+
+
+ 1281      20696E74 
+ 1281      00
+ 1282              	.LASF46:
+ 1283 02e7 6973725F 		.ascii	"isr_RxD\000"
+ 1283      52784400 
+ 1284              	.LASF0:
+ 1285 02ef 7369676E 		.ascii	"signed char\000"
+ 1285      65642063 
+ 1285      68617200 
+ 1286              	.LASF25:
+ 1287 02fb 434F554E 		.ascii	"COUNTERCLOCK\000"
+ 1287      54455243 
+ 1287      4C4F434B 
+ 1287      00
+ 1288              	.LASF41:
+ 1289 0308 43794465 		.ascii	"CyDelay\000"
+ 1289      6C617900 
+ 1290              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

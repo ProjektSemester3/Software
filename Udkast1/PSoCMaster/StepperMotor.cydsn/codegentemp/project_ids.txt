@@ -1,0 +1,5 @@
+C:\Users\Bettefanden\Documents\PSoC Creator\Semesterprojekt3\MotorControl\StepperMotor.cydsn\StepperMotor.cyprj|c1239df7-4236-4d2d-8b99-94c3aa3618b9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|8229ff61-2062-4584-8f63-233f4e87c719
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d8144e4b-0879-4545-a566-22474bb4bb2b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|6ef72268-4c7b-4a24-8446-bdea4bde2d25
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|62032b66-cf73-48f3-8102-358a00e9caed

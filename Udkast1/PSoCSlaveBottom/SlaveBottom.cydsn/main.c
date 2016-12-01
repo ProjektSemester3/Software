@@ -2,18 +2,29 @@
 
 uint16 zStepCount = 0;
 uint8 enabled = 0;
-uint8 zDirection;
 
-void moveC();
-void moveCC();
-void stop();
+uint8 status;
+
+void moveZ(uint8);
+void reset();
+void updateStatus(uint8);
 
 enum SPI_protocol {
     
     // Command from PSoC-master to -slave
-    MOVE_CLOCKWISE = 0x01,
-    MOVE_COUNTERCLOCKWISE = 0x02,
-    STOP_MOVING = 0x03,
+    GET_STATUS = 0x00,
+    LOCATE_Z_1 = 0x02,
+    LOCATE_Z_2 = 0x03,
+    HOLD_BOTTLE = 0x06,
+    RESET = 0x05,
+    
+    // Feedback messages from PSoC-slave to -master
+    MOVED_Z_1 = 0x11,
+    MOVED_Z_2 = 0x12,
+    RESET_Z = 0x34,
+    DEFAULT = 0x30,
+    WRONG_COMMAND = 0x31,
+    IN_PROCESS = 0x33,
 };
 
 enum bottleInfo {
@@ -22,9 +33,9 @@ enum bottleInfo {
 };
 
 enum operation {
-    CLOCK = 1,
-    COUNTERCLOCK = 2,
-    STOP = 3,
+    POSITION_Z_1 = 1,
+    POSITION_Z_2 = 2,
+    RESET_AXIS = 3,
 };
 
 enum dir
@@ -32,96 +43,95 @@ enum dir
     FW = 0,
     BW = 1,
 };
+uint8 zDirection = FW;
 
-CY_ISR(isr_RxD)
+CY_ISR(isr_1)
 {
-    uint8 rxCmd;
-    uint8 enpin;
-    enpin = Enable_1_Read();
-    UART_1_ClearTxBuffer();
-    UART_1_WriteTxData(enpin);
-    zDirection = 3;
+    uint8 cmd;
     
-    rxCmd = UART_1_ReadRxData();
-    UART_1_ClearRxBuffer();
+    cmd = SPIS_1_ReadRxData(); // This also clears Rx Status Register
     
-    rxCmd -= 0x30;
-    
-    switch(rxCmd) {
+	switch(cmd) {
+        
+        // Write status of bottle to master-PSoC
+		case GET_STATUS:
+			updateStatus(status);
+			break;
         
         // Position x-sensor to just under top of bottle
-        case MOVE_CLOCKWISE:
-            zDirection = BW;
-            enabled = CLOCK;
+        case LOCATE_Z_1:
+            zDirection = FW;
+            enabled = POSITION_Z_1;
             break;
         
         // Position x-sensor to just over top of bottle
-        case MOVE_COUNTERCLOCKWISE:
+        case LOCATE_Z_2:
             zDirection = FW;
-            enabled = COUNTERCLOCK;
+            enabled = POSITION_Z_2;
             break;
         
         // Position x- and y-sensor to start-positions on respectively x- and y-axes
-        case STOP_MOVING:
-            enabled = STOP;
+        case RESET:
+            zDirection = BW;
+            enabled = RESET_AXIS;
             break;
-            
+        
+        // Unidentified command
         default:
+            updateStatus(WRONG_COMMAND);
             break;
     }
 }
 
-/*CY_ISR(pwm_isr_1)
+CY_ISR(pwm_isr_1)
 {
     PWM_1_ReadStatusRegister();
-    uint8 step;
-    step = stepindex_1_Read();
+    
     if(zDirection == FW) {
-        if(step >= 0x01) {
-            stepindex_1_Write(0x00);
-        }
-        else {
-            stepindex_1_Write(step + 0x01);
-        }
         ++zStepCount;
     }
     else { //direction == BW
-        if(step <= 0x00) {
-            stepindex_1_Write(0x01);
-        }
-        else {
-            stepindex_1_Write(step-0x01);
-        }
         --zStepCount;
     }
-    //CyDelay(2);
-}*/
+}
 
 int main(void)
 {
+    updateStatus(DEFAULT);
     CyGlobalIntEnable;
-
-    UART_1_Start();
-    isr_RxD_StartEx(isr_RxD);
-    stepindex_1_Write(0b01); //Start på 1, fordi fullstep.
+    
+    SPIS_1_Start();
+	SPIS_1_EnableRxInt();
+    isr_1_StartEx(isr_1);
+	SPIS_1_ClearFIFO();
+	SPIS_1_ClearTxBuffer();
+    
+    PWM_1_Start();
+    pwm_isr_1_StartEx(pwm_isr_1);
+    pwm_isr_1_Disable();
 
     for(;;)
     {
         switch(enabled) {
             
             // Position x-sensor to just under top of bottle
-            case CLOCK:
-                moveC();
+            case POSITION_Z_1:
+                updateStatus(IN_PROCESS);
+                moveZ(BELOW_TOP);
+                updateStatus(MOVED_Z_1);
                 break;
             
             // Position x-sensor to just over top of bottle
-            case COUNTERCLOCK:
-                moveCC();
+            case POSITION_Z_2:
+                updateStatus(IN_PROCESS);
+                moveZ(ABOVE_TOP);
+                updateStatus(MOVED_Z_2);
                 break;
             
             // Reset to start-position
-            case STOP:
-                stop();
+            case RESET_AXIS:
+                updateStatus(IN_PROCESS);
+                reset();
                 break;
             
             default:
@@ -132,61 +142,44 @@ int main(void)
     return 0;
 }
 
-void moveC()
+void moveZ(uint8 bound)
 {
-    /*zDirection = FW;
+    Direction_1_Write(FW);
     
-    Enable_1_Write(1);
+    pwm_isr_1_Enable();
     
-    //PWM_1_Start();
-    //pwm_isr_1_StartEx(pwm_isr_1);
-    stepindex_1_Write(1); //Start på 1, fordi fullstep.*/
-    
-    //zDirection = BW;
-    uint8 step;
-    
-    Enable_1_Write(1);
-    while(zDirection == BW) {
-        
-        step = stepindex_1_Read();
-        if(step <= 0b00) {
-            stepindex_1_Write(0b11);
-        }
-        else {
-            stepindex_1_Write(step - 0b01);
-        }
-        --zStepCount;
-        CyDelay(2);
-    }
     Enable_1_Write(0);
+    
+    while(zDirection == FW) {}
+    
+    Enable_1_Write(1);
+    pwm_isr_1_Disable();
+    
+    enabled = DEFAULT;
 }
 
-void moveCC()
+void reset()
 {
-    //zDirection = FW;
-    uint8 step;
+    Direction_1_Write(BW);
+    
+    pwm_isr_1_Enable();
+    
+    Enable_1_Write(0);
+    
+    while(zDirection == BW) {}
     
     Enable_1_Write(1);
-    stepindex_1_Write(0b01); //Start på 1, fordi fullstep.
-    while(zDirection == FW) {
-        
-        step = stepindex_1_Read();
-        if(step >= 0b11) {
-            stepindex_1_Write(0b00);
-        }
-        else {
-            stepindex_1_Write(step + 0b01);
-        }
-        ++zStepCount;
-        CyDelay(2);
-    }
-    Enable_1_Write(0);
+    pwm_isr_1_Disable();
+    
+    enabled = DEFAULT;
 }
 
-void stop()
+// Update status of slave-PSoC/message to be sent to master-PSoC
+void updateStatus(uint8 stat)
 {
-    //PWM_1_Stop();
-    Enable_1_Write(0);
+    status = stat;
+    SPIS_1_ClearTxBuffer();
+    SPIS_1_WriteTxData(status);
 }
 
 /* [] END OF FILE */
