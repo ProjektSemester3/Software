@@ -1,0 +1,50 @@
+--------------- Rebuild Started: 11/16/2016 16:59:11 Project: main.c, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c main.c -o .\CortexM3\ARM_GCC_493\Debug\main.o
+main.c: In function 'locateX':
+main.c:162:5: warning: implicit declaration of function 'ADC_SAR_Seq_X_Start' [-Wimplicit-function-declaration]
+     ADC_SAR_Seq_X_Start();
+     ^
+main.c:163:5: warning: implicit declaration of function 'ADC_SAR_Seq_X_StartConvert' [-Wimplicit-function-declaration]
+     ADC_SAR_Seq_X_StartConvert();
+     ^
+main.c:164:5: warning: implicit declaration of function 'ADC_SAR_Seq_X_IsEndConversion' [-Wimplicit-function-declaration]
+     ADC_SAR_Seq_X_IsEndConversion(ADC_SAR_Seq_X_WAIT_FOR_RESULT);
+     ^
+main.c:164:35: error: 'ADC_SAR_Seq_X_WAIT_FOR_RESULT' undeclared (first use in this function)
+     ADC_SAR_Seq_X_IsEndConversion(ADC_SAR_Seq_X_WAIT_FOR_RESULT);
+                                   ^
+main.c:164:35: note: each undeclared identifier is reported only once for each function it appears in
+main.c:168:9: warning: implicit declaration of function 'ADC_SAR_Seq_X_GetResult16' [-Wimplicit-function-declaration]
+         ADCResultX = ADC_SAR_Seq_X_GetResult16(0);
+         ^
+main.c:174:9: warning: implicit declaration of function 'ADC_SAR_Seq_X_Stop' [-Wimplicit-function-declaration]
+         ADC_SAR_Seq_X_Stop();
+         ^
+main.c: In function 'locateY':
+main.c:224:5: warning: implicit declaration of function 'ADC_SAR_Seq_Y_Start' [-Wimplicit-function-declaration]
+     ADC_SAR_Seq_Y_Start();
+     ^
+main.c:225:5: warning: implicit declaration of function 'ADC_SAR_Seq_Y_StartConvert' [-Wimplicit-function-declaration]
+     ADC_SAR_Seq_Y_StartConvert();
+     ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+main.c:226:5: warning: implicit declaration of function 'ADC_SAR_Seq_Y_IsEndConversion' [-Wimplicit-function-declaration]
+     ADC_SAR_Seq_Y_IsEndConversion(ADC_SAR_Seq_Y_WAIT_FOR_RESULT);
+     ^
+main.c:226:35: error: 'ADC_SAR_Seq_Y_WAIT_FOR_RESULT' undeclared (first use in this function)
+     ADC_SAR_Seq_Y_IsEndConversion(ADC_SAR_Seq_Y_WAIT_FOR_RESULT);
+                                   ^
+main.c:230:9: warning: implicit declaration of function 'ADC_SAR_Seq_Y_GetResult16' [-Wimplicit-function-declaration]
+         ADCResultY = ADC_SAR_Seq_Y_GetResult16(0);
+         ^
+main.c:236:9: warning: implicit declaration of function 'ADC_SAR_Seq_Y_Stop' [-Wimplicit-function-declaration]
+         ADC_SAR_Seq_Y_Stop();
+         ^
+main.c: In function 'motorRunLeft':
+main.c:279:9: warning: implicit declaration of function 'Coils_X_Write' [-Wimplicit-function-declaration]
+         Coils_X_Write(xStep);              // Skriver til pins fra TopDesign (Coils)
+         ^
+main.c:285:9: warning: implicit declaration of function 'Coils_Y_Write' [-Wimplicit-function-declaration]
+         Coils_Y_Write(yStep);              // Skriver til pins fra TopDesign (Coils)
+         ^
+--------------- Rebuild Failed: 11/16/2016 16:59:12 ---------------

@@ -1,5 +1,5 @@
 # Bipolar
-# 2016-11-30 20:12:16Z
+# 2016-12-01 20:27:18Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -12,3 +12,6 @@ set_io "Direction_1(0)" iocell 1 6
 set_io "Enable_1(0)" iocell 1 7
 set_io "Rx_1(0)" iocell 12 6
 set_io "Tx_1(0)" iocell 12 7
+set_io "Pin_1(0)" iocell 0 7
+set_io "Pin_int_x_home(0)" iocell 12 2
+set_location "\ADC_SAR_Seq:SAR:ADC_SAR\" sarcell -1 -1 0

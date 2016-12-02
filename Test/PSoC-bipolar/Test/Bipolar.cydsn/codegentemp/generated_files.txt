@@ -20,6 +20,10 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq.h" value="HEADER;;;;;ADC_SAR_Seq" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_PM.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_INT.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Step_1_aliases.h" value="HEADER;;;;;Step_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Step_1.c" value="SOURCE_C;CortexM3;;;;Step_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Step_1.h" value="HEADER;;;;;Step_1" />
@@ -43,6 +47,26 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\UART_1_PM.c" value="SOURCE_C;CortexM3;;;;UART_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\UART_1_INT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\UART_1_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Pin_1_aliases.h" value="HEADER;;;;;Pin_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Pin_1.c" value="SOURCE_C;CortexM3;;;;Pin_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Pin_1.h" value="HEADER;;;;;Pin_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Pin_int_x_home_aliases.h" value="HEADER;;;;;Pin_int_x_home" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Pin_int_x_home.c" value="SOURCE_C;CortexM3;;;;Pin_int_x_home" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\Pin_int_x_home.h" value="HEADER;;;;;Pin_int_x_home" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\isr_x_home.c" value="SOURCE_C;CortexM3;;;;isr_x_home" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\isr_x_home.h" value="HEADER;;;;;isr_x_home" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_SAR.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_SAR" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_SAR.h" value="HEADER;;;;;ADC_SAR_Seq_SAR" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_SAR_INT.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_SAR" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_SAR_PM.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_SAR" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_IntClock.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_IntClock" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_IntClock.h" value="HEADER;;;;;ADC_SAR_Seq_IntClock" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_TempBuf_dma.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_TempBuf" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_TempBuf_dma.h" value="HEADER;;;;;ADC_SAR_Seq_TempBuf" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_FinalBuf_dma.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_FinalBuf" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_FinalBuf_dma.h" value="HEADER;;;;;ADC_SAR_Seq_FinalBuf" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_IRQ.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_IRQ" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\ADC_SAR_Seq_IRQ.h" value="HEADER;;;;;ADC_SAR_Seq_IRQ" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\UART_1_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_1_IntClock" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\UART_1_IntClock.h" value="HEADER;;;;;UART_1_IntClock" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\codegentemp\cm3gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />

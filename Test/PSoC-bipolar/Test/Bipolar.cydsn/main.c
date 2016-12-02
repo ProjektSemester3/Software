@@ -3,6 +3,7 @@
 uint16 zStepCount = 0;
 uint8 enabled = 0;
 uint8 zDirection;
+uint8 zStop = 0;
 
 uint8 status;
 
@@ -49,7 +50,8 @@ enum dir
 
 CY_ISR(isr_RxD)
 {
-    uint8 rxCmd;
+    enabled = 1;
+    /*uint8 rxCmd;
     
     rxCmd = UART_1_ReadRxData();
     
@@ -68,52 +70,13 @@ CY_ISR(isr_RxD)
     
     //enabled = command;
     command = (command % 4) + 1;
-        
-    //rxCmd -= 0x76;
-    /*
-	switch(rxCmd) {
-        
-        // Write status of bottle to master-PSoC
-		case GET_STATUS:
-			updateStatus(status);
-			break;
-        
-        // Position x-sensor to just under top of bottle
-        case LOCATE_Z_1:
-            zDirection = FW;
-            enabled = POSITION_Z_1;
-            break;
-        
-        // Position x-sensor to just over top of bottle
-        case LOCATE_Z_2:
-            zDirection = FW;
-            enabled = POSITION_Z_2;
-            break;
-        
-        // Position x- and y-sensor to start-positions on respectively x- and y-axes
-        case RESET:
-            zDirection = BW;
-            enabled = RESET_AXIS;
-            break;
-        
-        // Unidentified command
-        default:
-            updateStatus(WRONG_COMMAND);
-            break;
-    }
     */
 }
 
-CY_ISR(pwm_isr_1)
+CY_ISR(isr_x_home)
 {
-    PWM_1_ReadStatusRegister();
-    
-    if(zDirection == FW) {
-        ++zStepCount;
-    }
-    else { //direction == BW
-        --zStepCount;
-    }
+    zStop = 1;
+    Pin_int_x_home_ClearInterrupt();
 }
 
 int main(void)
@@ -123,38 +86,76 @@ int main(void)
 
     UART_1_Start();
     isr_RxD_StartEx(isr_RxD);
+    isr_x_home_StartEx(isr_x_home);
     
     PWM_1_Start();
-    //pwm_isr_1_StartEx(pwm_isr_1);
-    //pwm_isr_1_Disable();
     enabled = DEFAULT;
 
     for(;;)
     {
         switch(enabled) {
+            case 1: {
+            uint16 ADCResultX;
+            uint8 i;
+            uint16 zPosRight;
+            uint16 zPosLeft;
+            uint16 zWidth;
+            Direction_1_Write(FW);
             
-            // Position x-sensor to just under top of bottle
-            case POSITION_Z_1:
-                updateStatus(IN_PROCESS);
-                moveZ(BELOW_TOP);
-                updateStatus(MOVED_Z_1);
-                break;
+            // Start sensor
+            ADC_SAR_Seq_Start();
+            ADC_SAR_Seq_StartConvert();
+            ADC_SAR_Seq_IsEndConversion(ADC_SAR_Seq_WAIT_FOR_RESULT);
             
-            // Position x-sensor to just over top of bottle
-            case POSITION_Z_2:
-                updateStatus(IN_PROCESS);
-                moveZ(ABOVE_TOP);
-                updateStatus(MOVED_Z_2);
-                break;
+            // Find right edge of bottle
+            Enable_1_Write(0);
+            do {
+                ADCResultX = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(0));
+                CyDelay(25);
+                zStepCount++;
+            } while((ADCResultX < 100) && (zStop == 0));
+            Enable_1_Write(1);
             
-            // Reset to start-position
-            case RESET_AXIS:
-                updateStatus(IN_PROCESS);
-                reset();
-                break;
+            zPosRight = zStepCount;
             
-            default:
+            /*if(zStop == 1) {
+                zStop = 0;
+                enabled = 0;
                 break;
+            }*/
+            
+            if(!isr_x_home_GetState()) {
+                isr_x_home_Enable();
+            }
+            
+            // Find left edge of bottle
+            Enable_1_Write(0);
+            do {
+                ADCResultX = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(0));
+                CyDelay(25);
+                zStepCount++;
+            } while((ADCResultX > 100) && (zStop == 0));
+            Enable_1_Write(1);
+            
+            zPosLeft = zStepCount;
+            
+            UART_1_WriteTxData(zPosLeft);
+            
+            ADC_SAR_Seq_Stop();
+            
+            zWidth = (zPosLeft - zPosRight)/2;
+            
+            Direction_1_Write(BW);
+            
+            // Find centre of bottle
+            Enable_1_Write(0);
+            for(i = zWidth; i > 0; --i) {
+                CyDelay(25);
+            }
+            Enable_1_Write(1);
+            
+            enabled = 0;
+        }
         }
     }
     

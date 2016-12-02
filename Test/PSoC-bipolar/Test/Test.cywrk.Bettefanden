@@ -34,6 +34,28 @@
 <v>Test\Bipolar\Source Files\main.c</v>
 <v>Test\Bipolar\Generated_Source</v>
 <v>Test\Bipolar\Generated_Source\PSoC5</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq\ADC_SAR_Seq.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq\ADC_SAR_Seq.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq\ADC_SAR_Seq_INT.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq\ADC_SAR_Seq_PM.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf\ADC_SAR_Seq_FinalBuf_dma.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf\ADC_SAR_Seq_FinalBuf_dma.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock\ADC_SAR_Seq_IntClock.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock\ADC_SAR_Seq_IntClock.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IRQ</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IRQ\ADC_SAR_Seq_IRQ.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IRQ\ADC_SAR_Seq_IRQ.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_SAR</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_SAR\ADC_SAR_Seq_SAR.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_SAR\ADC_SAR_Seq_SAR.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_SAR\ADC_SAR_Seq_SAR_INT.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_SAR\ADC_SAR_Seq_SAR_PM.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_TempBuf</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_TempBuf\ADC_SAR_Seq_TempBuf_dma.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_TempBuf\ADC_SAR_Seq_TempBuf_dma.h</v>
 <v>Test\Bipolar\Generated_Source\PSoC5\Clock_1</v>
 <v>Test\Bipolar\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
 <v>Test\Bipolar\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
@@ -75,6 +97,17 @@
 <v>Test\Bipolar\Generated_Source\PSoC5\isr_RxD</v>
 <v>Test\Bipolar\Generated_Source\PSoC5\isr_RxD\isr_RxD.c</v>
 <v>Test\Bipolar\Generated_Source\PSoC5\isr_RxD\isr_RxD.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\isr_x_home</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\isr_x_home\isr_x_home.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\isr_x_home\isr_x_home.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\Pin_1</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\Pin_1\Pin_1.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\Pin_1\Pin_1.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\Pin_1\Pin_1_aliases.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\Pin_int_x_home</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\Pin_int_x_home\Pin_int_x_home.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\Pin_int_x_home\Pin_int_x_home.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\Pin_int_x_home\Pin_int_x_home_aliases.h</v>
 <v>Test\Bipolar\Generated_Source\PSoC5\PWM_1</v>
 <v>Test\Bipolar\Generated_Source\PSoC5\PWM_1\PWM_1.c</v>
 <v>Test\Bipolar\Generated_Source\PSoC5\PWM_1\PWM_1.h</v>
@@ -136,18 +169,18 @@
 <v>Test\Bipolar\Source Files\main.c</v>
 <v>Test\Bipolar\Generated_Source</v>
 <v>Test\Bipolar\Generated_Source\PSoC5</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\Clock_1</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot\cmsis_armcc.h</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot\cmsis_gcc.h</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-<v>Test\Bipolar\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq\ADC_SAR_Seq.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq\ADC_SAR_Seq.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq\ADC_SAR_Seq_INT.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq\ADC_SAR_Seq_PM.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf\ADC_SAR_Seq_FinalBuf_dma.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf\ADC_SAR_Seq_FinalBuf_dma.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock\ADC_SAR_Seq_IntClock.c</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock\ADC_SAR_Seq_IntClock.h</v>
+<v>Test\Bipolar\Generated_Source\PSoC5\ADC_SAR_Seq_IRQ</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -172,6 +205,16 @@
 <v>Test\Bipolar\CortexM3\ARM_GCC_493</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_FinalBuf_dma.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_INT.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_IntClock.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_IRQ.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_PM.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_SAR.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_SAR_INT.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_SAR_PM.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_TempBuf_dma.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -186,7 +229,10 @@
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Direction_1.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Enable_1.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_RxD.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_x_home.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_1.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_int_x_home.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_1.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_1_PM.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\pwm_isr_1.lst</v>
@@ -210,6 +256,16 @@
 <v>Test\Bipolar\CortexM3\ARM_GCC_493</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_FinalBuf_dma.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_INT.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_IntClock.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_IRQ.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_PM.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_SAR.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_SAR_INT.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_SAR_PM.lst</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_TempBuf_dma.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_1.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -224,17 +280,7 @@
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Direction_1.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Enable_1.lst</v>
 <v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_RxD.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_1.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_1_PM.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\pwm_isr_1.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Step_1.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1_BOOT.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1_INT.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1_IntClock.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1_PM.lst</v>
-<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Bipolar.elf</v>
+<v>Test\Bipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_x_home.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -250,6 +296,7 @@
 <v>Test\Bipolar\CY8C58LP Family Datasheet</v>
 <v>Test\Bipolar\System Reference Guides</v>
 <v>Test\Bipolar\System Reference Guides\cy_boot_v5_50</v>
+<v>Test\Bipolar\ADC_SAR_SEQ_v2_0.pdf</v>
 <v>Test\Bipolar\cy_clock_v2_20.pdf</v>
 <v>Test\Bipolar\cy_constant_v1_0.pdf</v>
 <v>Test\Bipolar\cy_isr_v1_70</v>
@@ -266,6 +313,7 @@
 <v>Test\Bipolar\CY8C58LP Family Datasheet</v>
 <v>Test\Bipolar\System Reference Guides</v>
 <v>Test\Bipolar\System Reference Guides\cy_boot_v5_50</v>
+<v>Test\Bipolar\ADC_SAR_SEQ_v2_0.pdf</v>
 <v>Test\Bipolar\cy_clock_v2_20.pdf</v>
 <v>Test\Bipolar\cy_constant_v1_0.pdf</v>
 <v>Test\Bipolar\cy_isr_v1_70</v>
@@ -282,7 +330,18 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\Bipolar.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Bipolar.cydsn\main.c" />
+<name v=".\Bipolar.cydsn\Bipolar.cydwr" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="908, 403" SelectedTabbedMdiWindow="9bdb0919-4154-4707-9749-ab24951b0cbd"><DocumentWindow Key="cdc9a43f-029a-41cf-a372-acb9dfd717a8" Guid="c3f211d3-8e4e-4154-8fac-f5a8543ecc3a" /><DocumentWindow Key="6c82ea09-24ef-47b9-af57-a5d3ca227d8d" Guid="9bdb0919-4154-4707-9749-ab24951b0cbd" /><DocumentWindow Key="f91d8b43-6d24-4b64-9935-855477ed1f4e" Guid="ad74ed57-3e57-465b-ab04-60c14236bb35" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

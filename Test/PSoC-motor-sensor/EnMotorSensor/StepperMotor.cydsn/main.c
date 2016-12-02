@@ -55,7 +55,7 @@ int main()
     for(;;)
     {
         if(enabled) {
-            
+            /*
             // Find right edge of bottle
             do {
                 //ADCResult = ADC_SAR_Seq_1_GetResult16(0);
@@ -85,6 +85,15 @@ int main()
             }
             
             // Stop bottle-search
+            enabled = 0;*/
+            int a, b;
+            
+            for(a = 0; a < 100000; a++) {
+                motorRunLeft();
+            }
+            for(b = 0; b < 100000; b++) {
+                motorRunRight();
+            }
             enabled = 0;
         }
     }

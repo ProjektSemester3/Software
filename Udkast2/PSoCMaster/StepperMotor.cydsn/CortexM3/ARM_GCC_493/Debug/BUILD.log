@@ -1,0 +1,155 @@
+--------------- Build Started: 12/02/2016 02:34:54 Project: StepperMotor, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\Bettefanden\AppData\Local\Cypress Semiconductor\PSoC Creator\4.0" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\StepperMotor.cyprj" -d CY8C5888LTI-LP097 -s "C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0065: information: Analog terminal "vdac_ref" on ADC_SAR_SEQ_v2_0 is unconnected.
+ * C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_0\PSoC5\ADC_SAR_SEQ_v2_0.cysch (Signal: vdac_ref)
+ * C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_0\PSoC5\ADC_SAR_SEQ_v2_0.cysch (Shape_798)
+ * C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_0\PSoC5\ADC_SAR_SEQ_v2_0.cysch (Shape_885)
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Info: apr.M0002: Analog signal "Net_942" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_943" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_945" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_947" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_948" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_950" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_952" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_953" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_955" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_957" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_958" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_960" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_962" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_963" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_965" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_967" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_968" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_970" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_972" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_973" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_975" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_977" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_978" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_980" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_982" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_983" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_985" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_987" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_988" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_990" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_992" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_993" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_995" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_997" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_998" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1000" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1002" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1003" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1005" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1007" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1008" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1010" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1012" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1013" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1015" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1017" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1018" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1019" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1020" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1021" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1022" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1023" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1024" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1025" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1026" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1027" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1028" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1029" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1030" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1031" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1032" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_1033" is connected to one terminal only. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 35% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 93% done. (App=cydsfit)
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_493\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c main.c -o .\CortexM3\ARM_GCC_493\Debug\main.o
+main.c: In function 'locateX':
+main.c:184:5: warning: implicit declaration of function 'Direction_1_Write' [-Wimplicit-function-declaration]
+     Direction_1_Write(FW);
+     ^
+main.c:185:5: warning: implicit declaration of function 'Enable_1_Write' [-Wimplicit-function-declaration]
+     Enable_1_Write(MOTOR_RUN);
+     ^
+main.c: In function 'openBottle':
+main.c:315:5: warning: implicit declaration of function 'pwm_isr_1_StartEx' [-Wimplicit-function-declaration]
+     pwm_isr_1_StartEx(pwm_isr_1);
+     ^
+main.c:315:23: error: 'pwm_isr_1' undeclared (first use in this function)
+     pwm_isr_1_StartEx(pwm_isr_1);
+                       ^
+main.c:315:23: note: each undeclared identifier is reported only once for each function it appears in
+main.c:316:5: warning: implicit declaration of function 'stepindex_1_Write' [-Wimplicit-function-declaration]
+     stepindex_1_Write(1); //Start pÃ¥ 1, fordi fullstep.
+     ^
+main.c:326:5: warning: implicit declaration of function 'Enable_2_Write' [-Wimplicit-function-declaration]
+     Enable_2_Write(1);
+     ^
+main.c:329:5: warning: implicit declaration of function 'pwm_isr_2_StartEx' [-Wimplicit-function-declaration]
+     pwm_isr_2_StartEx(pwm_isr_2);
+     ^
+main.c:329:23: error: 'pwm_isr_2' undeclared (first use in this function)
+     pwm_isr_2_StartEx(pwm_isr_2);
+                       ^
+main.c:330:5: warning: implicit declaration of function 'stepindex_2_Write' [-Wimplicit-function-declaration]
+     stepindex_2_Write(1); //Start pÃ¥ 1, fordi fullstep.
+     ^
+main.c:337:18: error: 'OPENING_SUCCESSFUL' undeclared (first use in this function)
+     updateStatus(OPENING_SUCCESSFUL);
+                  ^
+main.c: At top level:
+main.c:340:6: error: conflicting types for 'reset'
+ void reset(uint8 axis)
+      ^
+main.c:341:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+ {
+ ^
+main.c:22:6: note: previous declaration of 'reset' was here
+ void reset();
+      ^
+main.c: In function 'dispenseCork':
+main.c:373:23: error: 'pwm_isr_1' undeclared (first use in this function)
+     pwm_isr_1_StartEx(pwm_isr_1);
+                       ^
+main.c:387:23: error: 'pwm_isr_2' undeclared (first use in this function)
+     pwm_isr_2_StartEx(pwm_isr_2);
+                       ^
+main.c:395:18: error: 'CORK_DISPENSED' undeclared (first use in this function)
+     updateStatus(CORK_DISPENSED);
+                  ^
+main.c: In function 'motorRunLeft':
+main.c:403:13: warning: implicit declaration of function 'rotateLeft' [-Wimplicit-function-declaration]
+             xStep = rotateLeft(xStep);
+             ^
+main.c:404:13: warning: implicit declaration of function 'Coils_X_Write' [-Wimplicit-function-declaration]
+             Coils_X_Write(xStep);               // Skriver til pins fra TopDesign (Coils)
+             ^
+main.c:412:13: warning: implicit declaration of function 'Coils_Y_Write' [-Wimplicit-function-declaration]
+             Coils_Y_Write(yStep);               // Skriver til pins fra TopDesign (Coils)
+             ^
+main.c: In function 'motorRunRight':
+main.c:424:13: warning: implicit declaration of function 'rotateRight' [-Wimplicit-function-declaration]
+             xStep = rotateRight(xStep);
+             ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Build Failed: 12/02/2016 02:35:31 ---------------

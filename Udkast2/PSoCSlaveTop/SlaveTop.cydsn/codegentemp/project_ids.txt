@@ -1,0 +1,5 @@
+C:\Users\Bettefanden\Documents\PSoC Creator\Semesterprojekt3\MotorControl\SlaveTop\SlaveTop.cydsn\SlaveTop.cyprj|ec5fba8d-ceff-4d49-bfff-bf19ca00bca9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|780ca9c7-01dd-4baa-82b0-d64347ce3516
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|0f76d582-8f30-4872-a97f-35c04df3cbe7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e17cbc65-e498-472a-be94-77e8b688e3b1
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|07fd349c-cc55-47c2-8bba-f601600c5f1b
