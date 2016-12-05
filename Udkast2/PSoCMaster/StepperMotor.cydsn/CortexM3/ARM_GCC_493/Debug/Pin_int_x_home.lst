@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
   29:Generated_Source\PSoC5/Pin_int_x_home.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/Pin_int_x_home.c **** *  and shifting the bits appropriately. 
   31:Generated_Source\PSoC5/Pin_int_x_home.c **** *
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 2
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 2
 
 
   32:Generated_Source\PSoC5/Pin_int_x_home.c **** * The data output register controls the signal applied to the physical pin in 
@@ -98,27 +98,27 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
   33              		.loc 1 59 0
   34 0000 044A     		ldr	r2, .L2
   35 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  36 0004 03F0FD03 		and	r3, r3, #253
+  36 0004 03F0FB03 		and	r3, r3, #251
   37              	.LVL1:
   60:Generated_Source\PSoC5/Pin_int_x_home.c ****     Pin_int_x_home_DR = staticBits | ((uint8)(value << Pin_int_x_home_SHIFT) & Pin_int_x_home_MASK)
   38              		.loc 1 60 0
-  39 0008 4000     		lsls	r0, r0, #1
+  39 0008 8000     		lsls	r0, r0, #2
   40              	.LVL2:
-  41 000a 00F00200 		and	r0, r0, #2
+  41 000a 00F00400 		and	r0, r0, #4
   42 000e 1843     		orrs	r0, r0, r3
   43 0010 1070     		strb	r0, [r2]
   44 0012 7047     		bx	lr
   45              	.L3:
   46              		.align	2
   47              	.L2:
-  48 0014 00510040 		.word	1073762560
+  48 0014 30510040 		.word	1073762608
   49              		.cfi_endproc
   50              	.LFE0:
   51              		.size	Pin_int_x_home_Write, .-Pin_int_x_home_Write
   52              		.section	.text.Pin_int_x_home_SetDriveMode,"ax",%progbits
   53              		.align	2
   54              		.global	Pin_int_x_home_SetDriveMode
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 3
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 3
 
 
   55              		.thumb
@@ -176,9 +176,9 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
   75              	.L6:
   76 0012 00BF     		.align	2
   77              	.L5:
-  78 0014 01500040 		.word	1073762305
+  78 0014 1A500040 		.word	1073762330
   79              		.cfi_endproc
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 4
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 4
 
 
   80              	.LFE1:
@@ -224,12 +224,12 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
   97 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  116:Generated_Source\PSoC5/Pin_int_x_home.c **** }
   98              		.loc 1 116 0
-  99 0004 C0F34000 		ubfx	r0, r0, #1, #1
+  99 0004 C0F38000 		ubfx	r0, r0, #2, #1
  100 0008 7047     		bx	lr
  101              	.L9:
  102 000a 00BF     		.align	2
  103              	.L8:
- 104 000c 01510040 		.word	1073762561
+ 104 000c 31510040 		.word	1073762609
  105              		.cfi_endproc
  106              	.LFE2:
  107              		.size	Pin_int_x_home_Read, .-Pin_int_x_home_Read
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  110              		.global	Pin_int_x_home_ReadDataReg
  111              		.thumb
  112              		.thumb_func
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 5
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 5
 
 
  113              		.type	Pin_int_x_home_ReadDataReg, %function
@@ -281,12 +281,12 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  123 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  144:Generated_Source\PSoC5/Pin_int_x_home.c **** }
  124              		.loc 1 144 0
- 125 0004 C0F34000 		ubfx	r0, r0, #1, #1
+ 125 0004 C0F38000 		ubfx	r0, r0, #2, #1
  126 0008 7047     		bx	lr
  127              	.L12:
  128 000a 00BF     		.align	2
  129              	.L11:
- 130 000c 00510040 		.word	1073762560
+ 130 000c 30510040 		.word	1073762608
  131              		.cfi_endproc
  132              	.LFE3:
  133              		.size	Pin_int_x_home_ReadDataReg, .-Pin_int_x_home_ReadDataReg
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  139              		.type	Pin_int_x_home_SetInterruptMode, %function
  140              	Pin_int_x_home_SetInterruptMode:
  141              	.LFB4:
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 6
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 6
 
 
  145:Generated_Source\PSoC5/Pin_int_x_home.c **** 
@@ -353,12 +353,12 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  147              	.LVL5:
  189:Generated_Source\PSoC5/Pin_int_x_home.c **** 		if((position & Pin_int_x_home_0_INTR) != 0u) 
  148              		.loc 1 189 0
- 149 0000 00F00200 		and	r0, r0, #2
+ 149 0000 00F00400 		and	r0, r0, #4
  150              	.LVL6:
  151 0004 80B2     		uxth	r0, r0
  152 0006 10B1     		cbz	r0, .L13
  190:Generated_Source\PSoC5/Pin_int_x_home.c **** 		{ 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 7
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 7
 
 
  191:Generated_Source\PSoC5/Pin_int_x_home.c **** 			 Pin_int_x_home_0_INTTYPE_REG = (uint8)mode; 
@@ -372,7 +372,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  160              	.L16:
  161              		.align	2
  162              	.L15:
- 163 0010 01450040 		.word	1073759489
+ 163 0010 1A450040 		.word	1073759514
  164              		.cfi_endproc
  165              	.LFE4:
  166              		.size	Pin_int_x_home_SetInterruptMode, .-Pin_int_x_home_SetInterruptMode
@@ -418,18 +418,18 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  218:Generated_Source\PSoC5/Pin_int_x_home.c ****         return (Pin_int_x_home_INTSTAT & Pin_int_x_home_MASK) >> Pin_int_x_home_SHIFT;
  180              		.loc 1 218 0
  181 0000 024B     		ldr	r3, .L18
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 8
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 8
 
 
  182 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  219:Generated_Source\PSoC5/Pin_int_x_home.c ****     }
  183              		.loc 1 219 0
- 184 0004 C0F34000 		ubfx	r0, r0, #1, #1
+ 184 0004 C0F38000 		ubfx	r0, r0, #2, #1
  185 0008 7047     		bx	lr
  186              	.L19:
  187 000a 00BF     		.align	2
  188              	.L18:
- 189 000c 80450040 		.word	1073759616
+ 189 000c 83450040 		.word	1073759619
  190              		.cfi_endproc
  191              	.LFE5:
  192              		.size	Pin_int_x_home_ClearInterrupt, .-Pin_int_x_home_ClearInterrupt
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  235 0050 08       		.byte	0x8
  236 0051 05       		.byte	0x5
  237 0052 0B020000 		.4byte	.LASF6
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 9
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 9
 
 
  238 0056 02       		.uleb128 0x2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  292 00c5 6B000000 		.4byte	0x6b
  293 00c9 00000000 		.4byte	.LLST0
  294 00cd 08       		.uleb128 0x8
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 10
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 10
 
 
  295 00ce 06000000 		.4byte	.LASF27
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  349 0146 77000000 		.4byte	0x77
  350 014a 42000000 		.4byte	.LLST2
  351 014e 07       		.uleb128 0x7
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 11
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 11
 
 
  352 014f EA010000 		.4byte	.LASF18
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  406 0024 0B       		.uleb128 0xb
  407 0025 03       		.uleb128 0x3
  408 0026 08       		.uleb128 0x8
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 12
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 12
 
 
  409 0027 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  463 005e 3B       		.uleb128 0x3b
  464 005f 0B       		.uleb128 0xb
  465 0060 49       		.uleb128 0x49
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 13
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 13
 
 
  466 0061 13       		.uleb128 0x13
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  520 000f 18000000 		.4byte	.LFE0
  521 0013 0400     		.2byte	0x4
  522 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 14
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 14
 
 
  523 0016 01       		.uleb128 0x1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  577 000e 0000     		.2byte	0
  578 0010 00000000 		.4byte	.LFB0
  579 0014 18000000 		.4byte	.LFE0-.LFB0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 15
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 15
 
 
  580 0018 00000000 		.4byte	.LFB1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  619 005a 53656D65 		.ascii	"Semesterprojekt 3\\Software\\Udkast2\\PSoCMaster\\S"
  619      73746572 
  619      70726F6A 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 16
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 16
 
 
  619      656B7420 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  640      2D736563 
  640      74696F6E 
  641              	.LASF8:
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 17
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 17
 
 
  642 017e 756E7369 		.ascii	"unsigned int\000"
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 1
  664      6D655F57 
  664      72697465 
  665              	.LASF0:
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccQdfdyH.s 			page 18
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccWQ8Cpb.s 			page 18
 
 
  666 024c 7369676E 		.ascii	"signed char\000"

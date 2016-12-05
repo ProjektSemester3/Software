@@ -1,6 +1,6 @@
 // ======================================================================
 // Bipolar.v generated from TopDesign.cysch
-// 12/01/2016 at 21:27
+// 12/02/2016 at 12:40
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1513,7 +1513,7 @@ module top ;
 		#(.id("20215fd0-f0ea-47c2-b7f1-ab2f7bc9c965"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("5000000000"),
+		  .period("10000000000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock_1

@@ -304,7 +304,9 @@
 <v>Test\Bipolar\cy_pins_v2_20</v>
 <v>Test\Bipolar\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>Test\Bipolar\PWM_v3_30.pdf</v>
+<v>Test\Bipolar\SPI_Slave_v2_70.pdf</v>
 <v>Test\Bipolar\UART_v2_50.pdf</v>
+<v>Test\Bipolar\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Test</v>
@@ -321,7 +323,9 @@
 <v>Test\Bipolar\cy_pins_v2_20</v>
 <v>Test\Bipolar\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>Test\Bipolar\PWM_v3_30.pdf</v>
+<v>Test\Bipolar\SPI_Slave_v2_70.pdf</v>
 <v>Test\Bipolar\UART_v2_50.pdf</v>
+<v>Test\Bipolar\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -341,7 +345,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="908, 403" SelectedTabbedMdiWindow="9bdb0919-4154-4707-9749-ab24951b0cbd"><DocumentWindow Key="cdc9a43f-029a-41cf-a372-acb9dfd717a8" Guid="c3f211d3-8e4e-4154-8fac-f5a8543ecc3a" /><DocumentWindow Key="6c82ea09-24ef-47b9-af57-a5d3ca227d8d" Guid="9bdb0919-4154-4707-9749-ab24951b0cbd" /><DocumentWindow Key="f91d8b43-6d24-4b64-9935-855477ed1f4e" Guid="ad74ed57-3e57-465b-ab04-60c14236bb35" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="908, 403" SelectedTabbedMdiWindow="63670030-2c01-492c-aabf-dd9c3d4df3a3"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="449e4209-a259-4d7c-bc7f-b69d8d4ad70d" Guid="0b9aa615-d76d-43c4-a176-d16ae1c383c2" /><DocumentWindow Key="f7d60c5b-36d8-4208-9938-13e016488358" Guid="63670030-2c01-492c-aabf-dd9c3d4df3a3" /><DocumentWindow Key="c756d308-7af7-4e67-a26c-b3b722ebd151" Guid="b25e7701-a4cb-47ad-9b0f-75117d97ac24" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

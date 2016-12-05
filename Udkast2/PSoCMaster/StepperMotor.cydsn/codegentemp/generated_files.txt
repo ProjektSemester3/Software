@@ -20,26 +20,13 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\MOSI_1_aliases.h" value="HEADER;;;;;MOSI_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\MOSI_1.c" value="SOURCE_C;CortexM3;;;;MOSI_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\MOSI_1.h" value="HEADER;;;;;MOSI_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SCLK_1_aliases.h" value="HEADER;;;;;SCLK_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SCLK_1.c" value="SOURCE_C;CortexM3;;;;SCLK_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SCLK_1.h" value="HEADER;;;;;SCLK_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\MISO_1_aliases.h" value="HEADER;;;;;MISO_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\MISO_1.c" value="SOURCE_C;CortexM3;;;;MISO_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\MISO_1.h" value="HEADER;;;;;MISO_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SPIS_1.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SPIS_1.h" value="HEADER;;;;;SPIS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SPIS_1_PM.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SPIS_1_INT.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SPIS_1_BOOT.c" value="SOURCE_C;CortexM3;;;;SPIS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SPIS_1_PVT.h" value="HEADER;;;;;SPIS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SS_1_aliases.h" value="HEADER;;;;;SS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SS_1.c" value="SOURCE_C;CortexM3;;;;SS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SS_1.h" value="HEADER;;;;;SS_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_1.c" value="SOURCE_C;CortexM3;;;;isr_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_1.h" value="HEADER;;;;;isr_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\UART_1.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\UART_1.h" value="HEADER;;;;;UART_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\UART_1_PM.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\UART_1_INT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\UART_1_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_RxD.c" value="SOURCE_C;CortexM3;;;;isr_RxD" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_RxD.h" value="HEADER;;;;;isr_RxD" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_X_aliases.h" value="HEADER;;;;;Enable_X" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_X.c" value="SOURCE_C;CortexM3;;;;Enable_X" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_X.h" value="HEADER;;;;;Enable_X" />
@@ -51,15 +38,15 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_z_end_aliases.h" value="HEADER;;;;;Pin_int_z_end" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_z_end.c" value="SOURCE_C;CortexM3;;;;Pin_int_z_end" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_z_end.h" value="HEADER;;;;;Pin_int_z_end" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_3_aliases.h" value="HEADER;;;;;Step_3" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_3.c" value="SOURCE_C;CortexM3;;;;Step_3" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_3.h" value="HEADER;;;;;Step_3" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_Z_aliases.h" value="HEADER;;;;;Step_Z" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_Z.c" value="SOURCE_C;CortexM3;;;;Step_Z" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_Z.h" value="HEADER;;;;;Step_Z" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_z_home_aliases.h" value="HEADER;;;;;Pin_int_z_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_z_home.c" value="SOURCE_C;CortexM3;;;;Pin_int_z_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_z_home.h" value="HEADER;;;;;Pin_int_z_home" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_1.c" value="SOURCE_C;CortexM3;;;;PWM_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_1.h" value="HEADER;;;;;PWM_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_1_PM.c" value="SOURCE_C;CortexM3;;;;PWM_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_X.c" value="SOURCE_C;CortexM3;;;;PWM_X" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_X.h" value="HEADER;;;;;PWM_X" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_X_PM.c" value="SOURCE_C;CortexM3;;;;PWM_X" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_S_aliases.h" value="HEADER;;;;;Enable_S" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_S.c" value="SOURCE_C;CortexM3;;;;Enable_S" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_S.h" value="HEADER;;;;;Enable_S" />
@@ -71,9 +58,9 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_X_aliases.h" value="HEADER;;;;;Direction_X" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_X.c" value="SOURCE_C;CortexM3;;;;Direction_X" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_X.h" value="HEADER;;;;;Direction_X" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_1_aliases.h" value="HEADER;;;;;Step_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_1.c" value="SOURCE_C;CortexM3;;;;Step_1" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_1.h" value="HEADER;;;;;Step_1" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_X_aliases.h" value="HEADER;;;;;Step_X" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_X.c" value="SOURCE_C;CortexM3;;;;Step_X" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_X.h" value="HEADER;;;;;Step_X" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_Z_aliases.h" value="HEADER;;;;;Enable_Z" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_Z.c" value="SOURCE_C;CortexM3;;;;Enable_Z" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_Z.h" value="HEADER;;;;;Enable_Z" />
@@ -92,12 +79,12 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_x_home.h" value="HEADER;;;;;Pin_int_x_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_x_home.c" value="SOURCE_C;CortexM3;;;;isr_x_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_x_home.h" value="HEADER;;;;;isr_x_home" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_3.c" value="SOURCE_C;CortexM3;;;;PWM_3" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_3.h" value="HEADER;;;;;PWM_3" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_3_PM.c" value="SOURCE_C;CortexM3;;;;PWM_3" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_2.c" value="SOURCE_C;CortexM3;;;;PWM_2" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_2.h" value="HEADER;;;;;PWM_2" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_2_PM.c" value="SOURCE_C;CortexM3;;;;PWM_2" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_Z.c" value="SOURCE_C;CortexM3;;;;PWM_Z" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_Z.h" value="HEADER;;;;;PWM_Z" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_Z_PM.c" value="SOURCE_C;CortexM3;;;;PWM_Z" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_Y.c" value="SOURCE_C;CortexM3;;;;PWM_Y" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_Y.h" value="HEADER;;;;;PWM_Y" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_Y_PM.c" value="SOURCE_C;CortexM3;;;;PWM_Y" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_Y_aliases.h" value="HEADER;;;;;Enable_Y" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_Y.c" value="SOURCE_C;CortexM3;;;;Enable_Y" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Enable_Y.h" value="HEADER;;;;;Enable_Y" />
@@ -108,9 +95,9 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_Y_aliases.h" value="HEADER;;;;;Direction_Y" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_Y.c" value="SOURCE_C;CortexM3;;;;Direction_Y" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_Y.h" value="HEADER;;;;;Direction_Y" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_2_aliases.h" value="HEADER;;;;;Step_2" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_2.c" value="SOURCE_C;CortexM3;;;;Step_2" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_2.h" value="HEADER;;;;;Step_2" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_Y_aliases.h" value="HEADER;;;;;Step_Y" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_Y.c" value="SOURCE_C;CortexM3;;;;Step_Y" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_Y.h" value="HEADER;;;;;Step_Y" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_z_home.c" value="SOURCE_C;CortexM3;;;;isr_z_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_z_home.h" value="HEADER;;;;;isr_z_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_cork.c" value="SOURCE_C;CortexM3;;;;isr_cork" />
@@ -123,12 +110,12 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_S_aliases.h" value="HEADER;;;;;Direction_S" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_S.c" value="SOURCE_C;CortexM3;;;;Direction_S" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Direction_S.h" value="HEADER;;;;;Direction_S" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_4_aliases.h" value="HEADER;;;;;Step_4" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_4.c" value="SOURCE_C;CortexM3;;;;Step_4" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_4.h" value="HEADER;;;;;Step_4" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_4.c" value="SOURCE_C;CortexM3;;;;PWM_4" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_4.h" value="HEADER;;;;;PWM_4" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_4_PM.c" value="SOURCE_C;CortexM3;;;;PWM_4" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_S_aliases.h" value="HEADER;;;;;Step_S" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_S.c" value="SOURCE_C;CortexM3;;;;Step_S" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Step_S.h" value="HEADER;;;;;Step_S" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_S.c" value="SOURCE_C;CortexM3;;;;PWM_S" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_S.h" value="HEADER;;;;;PWM_S" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\PWM_S_PM.c" value="SOURCE_C;CortexM3;;;;PWM_S" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_y_home_aliases.h" value="HEADER;;;;;Pin_int_y_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_y_home.c" value="SOURCE_C;CortexM3;;;;Pin_int_y_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\Pin_int_y_home.h" value="HEADER;;;;;Pin_int_y_home" />
@@ -136,8 +123,8 @@
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_y_home.h" value="HEADER;;;;;isr_y_home" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_xy_end.c" value="SOURCE_C;CortexM3;;;;isr_xy_end" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\isr_xy_end.h" value="HEADER;;;;;isr_xy_end" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SPIS_1_IntClock.c" value="SOURCE_C;CortexM3;;;;SPIS_1_IntClock" />
-  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\SPIS_1_IntClock.h" value="HEADER;;;;;SPIS_1_IntClock" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\UART_1_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_1_IntClock" />
+  <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\UART_1_IntClock.h" value="HEADER;;;;;UART_1_IntClock" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\ADC_SAR_Seq_SAR.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_SAR" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\ADC_SAR_Seq_SAR.h" value="HEADER;;;;;ADC_SAR_Seq_SAR" />
   <file name="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\codegentemp\ADC_SAR_Seq_SAR_INT.c" value="SOURCE_C;CortexM3;;;;ADC_SAR_Seq_SAR" />

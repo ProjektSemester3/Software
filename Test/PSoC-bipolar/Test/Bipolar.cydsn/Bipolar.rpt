@@ -1,4 +1,4 @@
-Loading plugins phase: Elapsed time ==> 0s.453ms
+Loading plugins phase: Elapsed time ==> 0s.417ms
 <CYPRESSTAG name="CyDsfit arguments...">
 cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\Bipolar.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
@@ -8,10 +8,10 @@ ADD: sdb.M0065: information: Analog terminal "vdac_ref" on ADC_SAR_SEQ_v2_0 is u
  * C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_0\PSoC5\ADC_SAR_SEQ_v2_0.cysch (Shape_885)
 
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 2s.239ms
+Elaboration phase: Elapsed time ==> 1s.957ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.117ms
+HDL generation phase: Elapsed time ==> 0s.092ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -45,7 +45,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Bette
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Thu Dec 01 21:27:14 2016
+Fri Dec 02 12:40:53 2016
 
 
 ======================================================================
@@ -55,7 +55,7 @@ Options  :    -yv2 -q10 Bipolar.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Thu Dec 01 21:27:14 2016
+Fri Dec 02 12:40:53 2016
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_AMUX_v2_0\ADC_AMUX_v2_0.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.v'
@@ -115,7 +115,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Bette
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Thu Dec 01 21:27:14 2016
+Fri Dec 02 12:40:54 2016
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -157,7 +157,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Bette
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Thu Dec 01 21:27:15 2016
+Fri Dec 02 12:40:55 2016
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -1423,14 +1423,14 @@ CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\wa
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\bin\warp.exe
 Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\Bipolar.cyprj" -dcpsoc3 Bipolar.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 1s.868ms
+Warp synthesis phase: Elapsed time ==> 2s.717ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.0.0.432, Family: PSoC3, Started at: Thursday, 01 December 2016 21:27:15
+cyp3fit: V4.0.0.432, Family: PSoC3, Started at: Friday, 02 December 2016 12:40:56
 Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-bipolar\Test\Bipolar.cydsn\Bipolar.cyprj -d CY8C5888LTI-LP097 Bipolar.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.042ms
+Design parsing phase: Elapsed time ==> 0s.050ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -4102,8 +4102,8 @@ Analog (SC/CT) Blocks         :    0 :    4 :    4 :  0.00 %
 DAC                           :      :      :      :        
   VIDAC                       :    0 :    4 :    4 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.171ms
-Tech Mapping phase: Elapsed time ==> 0s.279ms
+Technology Mapping: Elapsed time ==> 0s.162ms
+Tech Mapping phase: Elapsed time ==> 0s.253ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 Info: apr.M0002: Analog signal "Net_660" is connected to one terminal only. (App=cydsfit)
@@ -4191,10 +4191,10 @@ IO_7@[IOP=(12)][IoId=(7)] : Tx_1(0) (fixed)
 SAR[0]@[FFB(SAR,0)] : \ADC_SAR_Seq:SAR:ADC_SAR\
 Vref[13]@[FFB(Vref,13)] : \ADC_SAR_Seq:SAR:vRef_Vdda_1\
 
-Analog Placement phase: Elapsed time ==> 1s.274ms
+Analog Placement phase: Elapsed time ==> 1s.125ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
-Analog Routing phase: Elapsed time ==> 0s.004ms
+Analog Routing phase: Elapsed time ==> 0s.002ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -4835,11 +4835,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = False
 IsVddaHalfUsedForSar0 = True
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.370ms
+Analog Code Generation phase: Elapsed time ==> 0s.341ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 4.2 sec.
+I2076: Total run-time: 3.9 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -4863,14 +4863,14 @@ PLD Packing Summary
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.004ms
+PLD Packing: Elapsed time ==> 0s.005ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.112ms
+Partitioning: Elapsed time ==> 0s.091ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -8099,31 +8099,31 @@ Port | Pin | Fixed |      Type |       Drive Mode |              Name | Connecti
 </CYPRESSTAG>
 </CYPRESSTAG>
 Digital component placer commit/Report: Elapsed time ==> 0s.004ms
-Digital Placement phase: Elapsed time ==> 4s.705ms
+Digital Placement phase: Elapsed time ==> 4s.479ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
-Digital Routing phase: Elapsed time ==> 4s.698ms
+Digital Routing phase: Elapsed time ==> 4s.695ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.521ms
+Bitstream Generation phase: Elapsed time ==> 0s.488ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.078ms
+Bitstream Verification phase: Elapsed time ==> 0s.066ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in Bipolar_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.747ms
+Static timing analysis phase: Elapsed time ==> 0s.868ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.408ms
+Design database save phase: Elapsed time ==> 0s.360ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 13s.184ms
+cydsfit: Elapsed time ==> 12s.784ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 13s.187ms
-API generation phase: Elapsed time ==> 2s.131ms
-Dependency generation phase: Elapsed time ==> 0s.048ms
-Cleanup phase: Elapsed time ==> 0s.002ms
+Fitter phase: Elapsed time ==> 12s.787ms
+API generation phase: Elapsed time ==> 2s.331ms
+Dependency generation phase: Elapsed time ==> 0s.043ms
+Cleanup phase: Elapsed time ==> 0s.003ms

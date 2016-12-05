@@ -72,12 +72,12 @@ CY_ISR(isr_RxD)
     command = (command % 4) + 1;
     */
 }
-
+/*
 CY_ISR(isr_x_home)
 {
-    zStop = 1;
+    //zStop = 1;
     Pin_int_x_home_ClearInterrupt();
-}
+}*/
 
 int main(void)
 {
@@ -86,7 +86,7 @@ int main(void)
 
     UART_1_Start();
     isr_RxD_StartEx(isr_RxD);
-    isr_x_home_StartEx(isr_x_home);
+    //isr_x_home_StartEx(isr_x_home);
     
     PWM_1_Start();
     enabled = DEFAULT;
@@ -100,7 +100,7 @@ int main(void)
             uint16 zPosRight;
             uint16 zPosLeft;
             uint16 zWidth;
-            Direction_1_Write(FW);
+            Direction_1_Write(BW);
             
             // Start sensor
             ADC_SAR_Seq_Start();
@@ -113,7 +113,7 @@ int main(void)
                 ADCResultX = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(0));
                 CyDelay(25);
                 zStepCount++;
-            } while((ADCResultX < 100) && (zStop == 0));
+            } while((ADCResultX < 2000) && (zStop == 0));
             Enable_1_Write(1);
             
             zPosRight = zStepCount;
@@ -134,7 +134,7 @@ int main(void)
                 ADCResultX = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(0));
                 CyDelay(25);
                 zStepCount++;
-            } while((ADCResultX > 100) && (zStop == 0));
+            } while((ADCResultX > 2000) && (zStop == 0));
             Enable_1_Write(1);
             
             zPosLeft = zStepCount;
@@ -145,7 +145,7 @@ int main(void)
             
             zWidth = (zPosLeft - zPosRight)/2;
             
-            Direction_1_Write(BW);
+            Direction_1_Write(FW);
             
             // Find centre of bottle
             Enable_1_Write(0);

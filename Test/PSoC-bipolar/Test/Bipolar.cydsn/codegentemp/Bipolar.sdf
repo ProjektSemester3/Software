@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2016-12-01T20:27:28Z")
+ (DATE "2016-12-02T11:41:07Z")
  (DESIGN "Bipolar")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -624,7 +624,7 @@
     (INTERCONNECT \\PWM_1\:PWMUDB\:sP16\:pwmdp\:u1\\.cl0_comb Net_182.main_1 (4.144:4.144:4.144))
     (INTERCONNECT \\PWM_1\:PWMUDB\:sP16\:pwmdp\:u1\\.cl0_comb \\PWM_1\:PWMUDB\:prevCompare1\\.main_0 (2.651:2.651:2.651))
     (INTERCONNECT \\PWM_1\:PWMUDB\:sP16\:pwmdp\:u1\\.cl0_comb \\PWM_1\:PWMUDB\:status_0\\.main_1 (2.651:2.651:2.651))
-    (INTERCONNECT \\PWM_1\:PWMUDB\:genblk1\:ctrlreg\\.control_7 \\PWM_1\:PWMUDB\:runmode_enable\\.main_0 (2.941:2.941:2.941))
+    (INTERCONNECT \\PWM_1\:PWMUDB\:genblk1\:ctrlreg\\.control_7 \\PWM_1\:PWMUDB\:runmode_enable\\.main_0 (2.940:2.940:2.940))
     (INTERCONNECT \\PWM_1\:PWMUDB\:prevCompare1\\.q \\PWM_1\:PWMUDB\:status_0\\.main_0 (2.307:2.307:2.307))
     (INTERCONNECT \\PWM_1\:PWMUDB\:runmode_enable\\.q Net_182.main_0 (2.920:2.920:2.920))
     (INTERCONNECT \\PWM_1\:PWMUDB\:runmode_enable\\.q \\PWM_1\:PWMUDB\:sP16\:pwmdp\:u0\\.cs_addr_1 (4.922:4.922:4.922))

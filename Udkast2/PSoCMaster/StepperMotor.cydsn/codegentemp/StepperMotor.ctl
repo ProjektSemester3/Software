@@ -1,10 +1,8 @@
 -- ======================================================================
 -- StepperMotor.ctl generated from StepperMotor
--- 12/02/2016 at 02:35
+-- 12/04/2016 at 17:16
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
-
--- SPIS_1
 
 -- PSoC Clock Editor
 -- Directives Editor

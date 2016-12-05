@@ -6,7 +6,7 @@
 
 #Build Date:         Apr 29 2016 09:00:55
 
-#File Generated:     Dec 1 2016 21:27:18
+#File Generated:     Dec 2 2016 12:40:58
 
 #Purpose:            
 
@@ -82,7 +82,7 @@ analysis after routing.
 Number of clocks: 9
 Clock: ADC_SAR_Seq_IntClock | Frequency:  24.3 MHz | Target:   1.2 MHz
 Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
-Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.1 MHz
 Clock: CyBUS_CLK            | Frequency:  57.8 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
@@ -103,7 +103,7 @@ Phase 7
 Number of clocks: 9
 Clock: ADC_SAR_Seq_IntClock | Frequency:   5.9 MHz | Target:   1.2 MHz
 Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
-Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.1 MHz
 Clock: CyBUS_CLK            | Frequency:   1.4 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
@@ -114,7 +114,7 @@ Clock: UART_1_IntClock      | Frequency:   1.4 MHz | Target:   0.9 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 3.1 (sec)
+D2088: Phase 7, elapsed time : 2.8 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	12
@@ -147,7 +147,7 @@ analysis after routing.
 Number of clocks: 9
 Clock: ADC_SAR_Seq_IntClock | Frequency:   5.9 MHz | Target:   1.2 MHz
 Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
-Clock: Clock_1              | Frequency:  59.6 MHz | Target:   0.2 MHz
+Clock: Clock_1              | Frequency:  59.6 MHz | Target:   0.1 MHz
 Clock: CyBUS_CLK            | Frequency:   1.4 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
@@ -164,5 +164,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 4.2 sec.
+I2076: Total run-time: 3.9 sec.
 
