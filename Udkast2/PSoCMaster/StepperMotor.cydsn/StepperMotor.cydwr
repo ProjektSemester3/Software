@@ -251,17 +251,17 @@
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
       <Data key="0a370fe5-a4f8-48ef-b388-9328ee153b0e" value="SS_2" />
-      <Data key="1e7d70f2-14f4-4985-8bc7-a5ac10f87616" value="Enable_1" />
-      <Data key="2db46219-5071-41cc-ad57-99f7d28fb1c0" value="Direction_4" />
+      <Data key="1e7d70f2-14f4-4985-8bc7-a5ac10f87616" value="Enable_X" />
+      <Data key="2db46219-5071-41cc-ad57-99f7d28fb1c0" value="Direction_S" />
       <Data key="2e2598f4-afde-47aa-8c35-3a87c34844d6" value="Pin_2b" />
-      <Data key="03d62697-2781-4097-91ff-bd2d80a5c3b5" value="Enable_3" />
-      <Data key="3f1d2e38-3f16-4590-b4c3-8a768eaf8004" value="Direction_1" />
-      <Data key="3f1098c8-a31a-4684-b21e-79f2ec2425db" value="Pin_int_x_end" />
+      <Data key="03d62697-2781-4097-91ff-bd2d80a5c3b5" value="Enable_Z" />
+      <Data key="3f1d2e38-3f16-4590-b4c3-8a768eaf8004" value="Direction_X" />
+      <Data key="3f1098c8-a31a-4684-b21e-79f2ec2425db" value="Pin_int_xy_end" />
       <Data key="5a0becf0-fc85-46c5-96af-e13236138d7d" value="Pin_int_y_end" />
       <Data key="5eba9dc9-2284-410c-92f6-eeaff14a1f29" value="Pin_int_y_home" />
       <Data key="7acb2a68-1e04-4b25-8386-6e2d91dcf353" value="MOSI_1" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="SS_1" />
-      <Data key="8e999ebf-b835-4aac-98cc-f931d77d8722" value="Step_3" />
+      <Data key="8e999ebf-b835-4aac-98cc-f931d77d8722" value="Step_Z" />
       <Data key="9e7e6cdc-f904-4e22-89f0-fd2a2d1c4287" value="Coils_Y" />
       <Data key="17d39770-129e-49a4-aff0-5c173da11ba7" value="Coils_X" />
       <Data key="42a1c22f-6008-4c86-b67d-059696ab6bd0" value="SCLK_1" />
@@ -270,28 +270,29 @@
       <Data key="99ca3f2a-2b5e-4d35-a251-1482e34b8a0a" value="Pin_int_cork" />
       <Data key="432eb1e3-d2f2-444c-b1c3-580f67df9a97" value="MISO_1" />
       <Data key="802e5c47-ace4-40a9-b678-3c4e2602de3a" value="Pin_2" />
-      <Data key="900b5879-c926-4a0e-8042-d270e678131f" value="Step_1" />
+      <Data key="900b5879-c926-4a0e-8042-d270e678131f" value="Step_X" />
       <Data key="985ee57a-c2fe-42d3-9194-8fe7f946f32b" value="Pin_int_z_end" />
       <Data key="6134bc21-ffcb-466e-ab87-9c1d3f4a8b2d" value="SCLK_2" />
       <Data key="7874f902-d575-44ed-95cf-812d0c3b93b2" value="Pin_int_z_home" />
-      <Data key="14130e06-249d-4d69-a5b1-d83d6ca9674e" value="Direction_2" />
-      <Data key="77417b92-520c-4ece-b487-70bad8500de4" value="Step_4" />
+      <Data key="14130e06-249d-4d69-a5b1-d83d6ca9674e" value="Direction_Y" />
+      <Data key="77417b92-520c-4ece-b487-70bad8500de4" value="Step_S" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="Rx_1" />
       <Data key="8025111d-3e9e-4aa9-9b49-3b067acc3d99" value="SS_XY" />
       <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="Pin_X" />
       <Data key="a0b7a241-2075-4cf3-be8b-5df93fced73c" value="SS_2" />
       <Data key="a64fa7d4-ffb1-4adb-a276-d67ee0b0858b" value="Pin_int_x_home" />
-      <Data key="a911a429-d5c7-4080-8e86-ef1bd7e967b6" value="Step_2" />
+      <Data key="a911a429-d5c7-4080-8e86-ef1bd7e967b6" value="Step_Y" />
+      <Data key="aa8463b0-1717-448a-83a4-9a38e2c8bf6b" value="LED_1" />
       <Data key="ac9fba92-827e-4cd8-a5a6-8a2569a056ea" value="SS_Z" />
       <Data key="ad886d6e-2dec-4137-b5eb-39c16b9ffba9" value="Pin_Y" />
       <Data key="b6546efb-5d11-4a43-a8da-af829bcf9d55" value="Pin_1b" />
-      <Data key="cb12152b-9e41-46c6-9f0e-ee03981b697d" value="Enable_2" />
+      <Data key="cb12152b-9e41-46c6-9f0e-ee03981b697d" value="Enable_Y" />
       <Data key="d59b35e4-9930-4ac6-bd88-6e70580c7f71" value="Pin_int_y_end" />
       <Data key="dfdc2fb4-fc1c-4192-ae63-1d779f40b3b4" value="Pin_2a" />
-      <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="MOSI_2" />
+      <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="LED_1" />
       <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="Tx_1" />
-      <Data key="f35dbb36-96ec-42c5-9e10-a4492b56e91d" value="Enable_4" />
-      <Data key="f5582917-8f29-4b9a-b01b-aaac05f9bd52" value="Direction_3" />
+      <Data key="f35dbb36-96ec-42c5-9e10-a4492b56e91d" value="Enable_S" />
+      <Data key="f5582917-8f29-4b9a-b01b-aaac05f9bd52" value="Direction_Z" />
     </Group>
   </Group>
   <Group key="EEPROM">
@@ -3556,6 +3557,11 @@
         <Data key="Port Format" value="2,0" />
       </Group>
     </Group>
+    <Group key="aa8463b0-1717-448a-83a4-9a38e2c8bf6b">
+      <Group key="0">
+        <Data key="Port Format" value="2,1" />
+      </Group>
+    </Group>
     <Group key="ac9fba92-827e-4cd8-a5a6-8a2569a056ea">
       <Group key="0">
         <Data key="Port Format" value="12,0" />
@@ -3588,7 +3594,7 @@
     </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
-        <Data key="Port Format" value="12,3" />
+        <Data key="Port Format" value="2,1" />
       </Group>
     </Group>
     <Group key="ed092b9b-d398-4703-be89-cebf998501f6">

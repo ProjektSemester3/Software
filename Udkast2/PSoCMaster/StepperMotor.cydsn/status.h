@@ -9,7 +9,7 @@ enum SPI_protocol {
     // Commands from DK8k to PSoC
     GET_STATUS      = 0x00,
     LOCATE_BOTTLE   = 0x01,
-    OPEN_BOTTLE     = 0x02,
+    OPEN_BOTTLE     = 0x05,
     
     // Feedback messages from PSoC-master to DK8k
     VALID_TYPE      = 0x10,
@@ -29,8 +29,15 @@ enum bottleInfo {
 };
 
 enum motorSensorInfo {
-    LOW             = 1000,     // Output voltage from sensor when not detecting an object
+    LOW             = 1200,     // Output voltage from sensor when not detecting an object
     STEPS           = 25,       // 10 steps
+};
+
+enum openingMechanism {
+    STEPS_X         = 200,
+    STEPS_Y         = 200,
+    STEPS_Z         = 200,
+    STEPS_CORK      = 200,
 };
 
 enum axes {
@@ -52,11 +59,11 @@ enum dir {
 // Update status of master-PSoC/message to be sent to DK8k
 void updateStatus(uint8 stat)
 {
-    status = stat;/*
+    status = stat;
     SPIS_1_ClearTxBuffer();
-    SPIS_1_WriteTxData(status);*/
-    UART_1_ClearTxBuffer();
-    UART_1_WriteTxData(status);
+    SPIS_1_WriteTxData(status);
+    /*UART_1_ClearTxBuffer();
+    UART_1_WriteTxData(status);*/
 }
 
 #endif // _STATUS_H

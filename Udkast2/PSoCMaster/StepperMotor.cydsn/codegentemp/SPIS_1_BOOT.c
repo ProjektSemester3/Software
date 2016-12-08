@@ -1,10 +1,10 @@
 /*******************************************************************************
-* File Name: UART_1_BOOT.c
-* Version 2.50
+* File Name: SPIS_1_BOOT.c
+* Version 2.70
 *
 * Description:
 *  This file provides the source code of bootloader communication APIs for the
-*  UART component.
+*  SPI component.
 *
 * Note:
 *
@@ -15,18 +15,18 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "UART_1.h"
+#include "SPIS_1.h"
 
-#if defined(CYDEV_BOOTLOADER_IO_COMP) && (0u != ((CYDEV_BOOTLOADER_IO_COMP == CyBtldr_UART_1) || \
+#if defined(CYDEV_BOOTLOADER_IO_COMP) && (0u != ((CYDEV_BOOTLOADER_IO_COMP == CyBtldr_SPIS_1) || \
                                           (CYDEV_BOOTLOADER_IO_COMP == CyBtldr_Custom_Interface)))
 
 
 /*******************************************************************************
-* Function Name: UART_1_CyBtldrCommStart
+* Function Name: SPIS_1_CyBtldrCommStart
 ********************************************************************************
 *
 * Summary:
-*  Starts the UART communication component.
+*  Starts the SPIS communication component.
 *
 * Parameters:
 *  None
@@ -38,17 +38,17 @@
 *  This component automatically enables global interrupt.
 *
 *******************************************************************************/
-void UART_1_CyBtldrCommStart(void) CYSMALL 
+void SPIS_1_CyBtldrCommStart(void) CYSMALL 
 {
-    /* Start UART component and clear the Tx,Rx buffers */
-    UART_1_Start();
-    UART_1_ClearRxBuffer();
-    UART_1_ClearTxBuffer();
+    /* Start SPIS component and clear the Tx,Rx buffers */
+    SPIS_1_Start();
+    SPIS_1_ClearRxBuffer();
+    SPIS_1_ClearTxBuffer();
 }
 
 
 /*******************************************************************************
-* Function Name: UART_1_CyBtldrCommStop
+* Function Name: SPIS_1_CyBtldrCommStop
 ********************************************************************************
 *
 * Summary:
@@ -61,15 +61,15 @@ void UART_1_CyBtldrCommStart(void) CYSMALL
 *  None
 *
 *******************************************************************************/
-void UART_1_CyBtldrCommStop(void) CYSMALL 
+void SPIS_1_CyBtldrCommStop(void) CYSMALL 
 {
-    /* Stop UART component */
-    UART_1_Stop();
+    /* Stop SPIS component */
+    SPIS_1_Stop();
 }
 
 
 /*******************************************************************************
-* Function Name: UART_1_CyBtldrCommReset
+* Function Name: SPIS_1_CyBtldrCommReset
 ********************************************************************************
 *
 * Summary:
@@ -82,21 +82,21 @@ void UART_1_CyBtldrCommStop(void) CYSMALL
 *  None
 *
 *******************************************************************************/
-void UART_1_CyBtldrCommReset(void) CYSMALL 
+void SPIS_1_CyBtldrCommReset(void) CYSMALL 
 {
     /* Clear RX and TX buffers */
-    UART_1_ClearRxBuffer();
-    UART_1_ClearTxBuffer();
+    SPIS_1_ClearRxBuffer();
+    SPIS_1_ClearTxBuffer();
 }
 
 
 /*******************************************************************************
-* Function Name: UART_1_CyBtldrCommWrite
+* Function Name: SPIS_1_CyBtldrCommWrite
 ********************************************************************************
 *
 * Summary:
 *  Allows the caller to write data to the boot loader host. This function uses
-* a blocking write function for writing data using UART communication component.
+* a blocking write function for writing data using SPIS communication component.
 *
 * Parameters:
 *  pData:    A pointer to the block of data to send to the device
@@ -107,41 +107,58 @@ void UART_1_CyBtldrCommReset(void) CYSMALL
 *
 * Return:
 *   cystatus: This function will return CYRET_SUCCESS if data is sent
-*             successfully.
+*             succesfully.
 *
 * Side Effects:
 *  This function should be called after command was received .
 *
 *******************************************************************************/
-cystatus UART_1_CyBtldrCommWrite(const uint8 pData[], uint16 size, uint16 * count, uint8 timeOut) CYSMALL
+cystatus SPIS_1_CyBtldrCommWrite(const uint8 pData[], uint16 size, uint16 * count, uint8 timeOut) CYSMALL
          
 {
-    uint16 bufIndex = 0u;
+    cystatus status = CYRET_EMPTY;
+    uint16 buf_index = 0u;
+    uint16 timeoutMs;
 
-    if(0u != timeOut)
-    {
-        /* Suppress compiler warning */
-    }
+    timeoutMs = 10u * (uint16) timeOut;
 
-    /* Clear receive buffers */
-    UART_1_ClearRxBuffer();
+    /* Clear receive TX buffers status from previous transaction */
+    (void) SPIS_1_ReadTxStatus();
 
     /* Write TX data using blocking function */
-    while(bufIndex < size)
+    #if(0u != SPIS_1_MODE_USE_ZERO)
+        SPIS_1_WriteTxDataZero(pData[buf_index]);
+        buf_index++;
+    #endif /* (SPIS_1_MODE_USE_ZERO == 1u) */
+
+    /* Write TX data using blocking function */
+    do
     {
-        UART_1_PutChar(pData[bufIndex]);
-        bufIndex++;
+        SPIS_1_WriteTxData(pData[buf_index]);
+        buf_index++;
+    }while(buf_index < size);
+
+    while(0u != timeoutMs)
+    {
+        if(0u != (SPIS_1_ReadTxStatus() & SPIS_1_STS_SPI_DONE))
+        {
+            /* Return success code */
+            *count = size;
+            status = CYRET_SUCCESS;
+            break;
+         }
+        CyDelay(1u);
+        timeoutMs--;
     }
 
-    /* Return success code */
-    *count = size;
+    SPIS_1_ClearRxBuffer();
 
-    return (CYRET_SUCCESS);
+    return (status);
 }
 
 
 /*******************************************************************************
-* Function Name: UART_1_CyBtldrCommRead
+* Function Name: SPIS_1_CyBtldrCommRead
 ********************************************************************************
 *
 * Summary:
@@ -154,20 +171,19 @@ cystatus UART_1_CyBtldrCommWrite(const uint8 pData[], uint16 size, uint16 * coun
 *  count:    Pointer to an unsigned short variable to write the number
 *             of bytes actually read.
 *  timeOut:  Number of units to wait before returning because of a timeOut.
-*            Time out is measured in 10s of ms.
+*            Timeout is measured in 10s of ms.
 *
 * Return:
-*  cystatus: This function will return CYRET_SUCCESS if at least one byte is
-*            received successfully within the time out interval. If no data is
-*            received  this function will return CYRET_EMPTY.
+*  cystatus: This function will return CYRET_SUCCESS if atleast one byte is
+*            received succesfully within the timeout interval .If no data
+*            is received  this function will return CYRET_EMPTY.
 *
-*  BYTE2BYTE_TIME_OUT is used for detecting time out marking end of block data
-*  from host. This has to be set to a value which is greater than the expected
-*  maximum delay between two bytes during a block/packet transmission from the
-*  host. You have to account for the delay in hardware converters while
-*  calculating this value, if you are using any USB-UART bridges.
+*  BYTE2BYTE_TIME_OUT is used for detecting timeout marking end of block
+*  data from host. This has to be set to a value which is greater than
+*  the expected maximum delay between two bytes during a block/packet
+*  transmission from the host.
 *******************************************************************************/
-cystatus UART_1_CyBtldrCommRead(uint8 pData[], uint16 size, uint16 * count, uint8 timeOut) CYSMALL
+cystatus SPIS_1_CyBtldrCommRead(uint8 pData[], uint16 size, uint16 * count, uint8 timeOut) CYSMALL
          
 {
     uint16 iCntr;
@@ -177,49 +193,46 @@ cystatus UART_1_CyBtldrCommRead(uint8 pData[], uint16 size, uint16 * count, uint
 
     cystatus status = CYRET_EMPTY;
 
-    /* Check whether data is received within the time out period.
-    *  Time out period is in units of 10ms.
-    *  If at least one byte is received within the time out interval, wait for more data */
-    for (iCntr = 0u; iCntr < ((uint16)10u * timeOut); iCntr++)
+    /* Check whether data is received within the timeout period.
+    *  Timeout period is in units of 10ms.
+    *  If atleast one byte is received within the timeout interval, wait for more data */
+    for (iCntr = 0u; iCntr < (10u * (uint16) timeOut); iCntr++)
     {
-        /* If at least one byte is received within the timeout interval
-        *  enter the next loop waiting for more data reception
+        /* If atleast one byte is received within the timeout interval
+         * enter the next loop
+         * waiting for more data reception
         */
-        if(0u != UART_1_GetRxBufferSize())
+        if(0u != SPIS_1_GetRxBufferSize())
         {
-            /* Wait for more data until 25ms byte to byte time out interval.
-            * If no data is received during the last 25 ms(BYTE2BYTE_TIME_OUT)
+            /* Wait for more data until 1ms byte to byte time out interval.
+            * If no data is received during the last 1 ms(BYTE2BYTE_TIME_OUT)
             * then it is considered as end of transmitted data block(packet)
             * from the host and the program execution will break from the
             * data awaiting loop with status=CYRET_SUCCESS
             */
             do
             {
-                oldDataCount = UART_1_GetRxBufferSize();
-                CyDelay(UART_1_BYTE2BYTE_TIME_OUT);
-            }
-            while(UART_1_GetRxBufferSize() > oldDataCount);
-
+                oldDataCount = SPIS_1_GetRxBufferSize();
+                CyDelay(SPIS_1_BYTE2BYTE_TIME_OUT);
+            }while(SPIS_1_GetRxBufferSize() > oldDataCount);
             status = CYRET_SUCCESS;
             break;
         }
-        /* If the data is not received, give a delay of 
-        *  UART_1_BL_CHK_DELAY_MS and check again until the timeOut specified.
-        */
+        /* If not data is received , give a delay of 1ms and check again until the Timeout specified in .cydwr. */
         else
         {
-            CyDelay(UART_1_BL_CHK_DELAY_MS);
+            CyDelay(1u);
         }
     }
 
-    /* Initialize the data read indexes and Count value */
+    /* Initialize the data read indexes and Count value*/
     *count = 0u;
     dataIndexCntr = 0u;
 
     /* If GetRxBufferSize()>0 , move the received data to the pData buffer */
-    while(UART_1_GetRxBufferSize() > 0u)
+    while(SPIS_1_GetRxBufferSize() > 0u)
     {
-        tempCount = UART_1_GetRxBufferSize();
+        tempCount = SPIS_1_GetRxBufferSize();
         *count  =(*count) + tempCount;
 
         /* Check if buffer overflow will occur before moving the data */
@@ -228,16 +241,16 @@ cystatus UART_1_CyBtldrCommRead(uint8 pData[], uint16 size, uint16 * count, uint
             for (iCntr = 0u; iCntr < tempCount; iCntr++)
             {
                 /* Read the data and move it to the pData buffer */
-                pData[dataIndexCntr] = UART_1_ReadRxData();
+                pData[dataIndexCntr] = SPIS_1_ReadRxData();
                 dataIndexCntr++;
             }
 
-            /* Check if the last received byte is end of packet defined by bootloader
-            *  If not wait for additional UART_1_WAIT_EOP_DELAY ms.
+            /* Check if the last data received is End of packet(0x17)
+            *  If not wait for additional 5ms
             */
-            if(pData[dataIndexCntr - 1u] != UART_1_PACKET_EOP)
+            if(pData[dataIndexCntr - 1u] != 0x17u)
             {
-                CyDelay(UART_1_WAIT_EOP_DELAY);
+                CyDelay(1u);
             }
         }
         /* If there is no space to move data, break from the loop */
@@ -251,7 +264,8 @@ cystatus UART_1_CyBtldrCommRead(uint8 pData[], uint16 size, uint16 * count, uint
     return (status);
 }
 
-#endif /* end CYDEV_BOOTLOADER_IO_COMP */
+#endif /* if defined(CYDEV_BOOTLOADER_IO_COMP) && (0u != ((CYDEV_BOOTLOADER_IO_COMP == CyBtldr_SPIS_1) || \
+                                          (CYDEV_BOOTLOADER_IO_COMP == CyBtldr_Custom_Interface)) */
 
 
 /* [] END OF FILE */

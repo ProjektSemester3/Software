@@ -112,12 +112,12 @@ int8 locateY(void)
     Enable_Y_Write(MOTOR_STOP);
     
     // Bottle not detected - stop sensor
-    if(xyEndStop) {
+    /*if(xyEndStop) {
         ADC_SAR_Seq_Stop();
         updateStatus(NO_BOTTLE);
         xyEndStop = 0;
         return -1;
-    }
+    }*/
     
     // Save position
     yPosRight = yStepCount;
@@ -132,12 +132,12 @@ int8 locateY(void)
     Enable_Y_Write(MOTOR_STOP);
     
     // Invalid object inserted - stop sensor
-    if(xyEndStop) {
+    /*if(xyEndStop) {
         ADC_SAR_Seq_Stop();
         updateStatus(INVALID_TYPE);
         xyEndStop = 0;
         return -1;
-    }
+    }*/
     
     // Save position
     yPosLeft = yStepCount;
@@ -177,10 +177,10 @@ int8 confirmHeight(void)
     ADC_SAR_Seq_IsEndConversion(ADC_SAR_Seq_WAIT_FOR_RESULT);
     
     // Find right edge of bottle
-    Direction_Z_Write(FW);
+    Direction_Z_Write(BW);
     Enable_Z_Write(MOTOR_RUN);
     do {
-        ADCResultZ = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(X));
+        ADCResultZ = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(Y));
         CyDelay(STEPS);
         zStepCount++;
     } while((ADCResultZ < LOW) && !zEndStop);
@@ -234,6 +234,58 @@ void reset(void)
     xStepCount = 0;
     yStepCount = 0;
     zStepCount = 0;
+}
+
+void positionX(void)
+{
+    uint8 i;
+    
+    Direction_X_Write(FW);
+    Enable_X_Write(MOTOR_RUN);
+    for(i = STEPS_X; i > 0; --i) {
+        CyDelay(STEPS);
+    }
+    Enable_X_Write(MOTOR_STOP);
+}
+
+void positionY(void)
+{
+    uint8 i;
+    
+    Direction_Y_Write(FW);
+    Enable_Y_Write(MOTOR_RUN);
+    for(i = STEPS_Y; i > 0; --i) {
+        CyDelay(STEPS);
+    }
+    Enable_Y_Write(MOTOR_STOP);
+}
+
+void openBottle(void)
+{
+    uint8 i;
+    
+    Direction_Z_Write(FW);
+    Enable_Z_Write(MOTOR_RUN);
+    for(i = STEPS_Z; i > 0; --i) {
+        CyDelay(STEPS);
+    }
+    Enable_Z_Write(MOTOR_STOP);
+    
+    Direction_S_Write(FW);
+    Enable_Z_Write(MOTOR_RUN);
+    while(!corkStop) {
+        CyDelay(STEPS);
+    }
+    corkStop = 0;
+}
+
+void dispose(void)
+{
+    uint8 i;
+    reset();
+    for(i = STEPS_CORK; i > 0; --i) {
+        CyDelay(STEPS);
+    }
 }
 
 #endif // _MOTORS_H
