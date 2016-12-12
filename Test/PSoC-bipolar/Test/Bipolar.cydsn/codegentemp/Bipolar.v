@@ -1,6 +1,6 @@
 // ======================================================================
 // Bipolar.v generated from TopDesign.cysch
-// 12/02/2016 at 12:40
+// 12/12/2016 at 15:43
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 

@@ -113,6 +113,19 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SS_1_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SS_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SS_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SPIM_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SPIM_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SPIM_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SPIM_1_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SPIM_1_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOSI_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOSI_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOSI_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_2.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_1.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_SAR_Seq.c</File>
@@ -224,6 +237,29 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_1_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Enable_S_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Enable_S_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Enable_S_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_5.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_5.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Direction_S_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Direction_S_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Direction_S_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Step_S_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Step_S_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Step_S_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_S_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_S_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_S_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_3_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_3.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_3.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_4_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_4.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_4.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOSI_3_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOSI_3.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOSI_3.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\Export\ARM_GCC_Generic">

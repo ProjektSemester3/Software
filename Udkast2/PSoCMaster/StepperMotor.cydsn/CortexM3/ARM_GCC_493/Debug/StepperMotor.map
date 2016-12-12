@@ -866,7 +866,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x149e
+.text           0x00000000     0x14c6
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -925,301 +925,301 @@ END GROUP
  .text.CYMEMZERO
                 0x00000584        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x00000590       0xf0 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+                0x00000590       0xf8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x00000680       0x7c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+                0x00000688       0x7c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x000006fc        0x8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+                0x00000704        0x8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
  .text.cyfitter_cfg
-                0x00000704      0x14c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
-                0x00000704                cyfitter_cfg
+                0x0000070c      0x16c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+                0x0000070c                cyfitter_cfg
  .text.CyDmacConfigure
-                0x00000850       0x34 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x00000850                CyDmacConfigure
+                0x00000878       0x34 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x00000878                CyDmacConfigure
  .text.CyDmaChEnable
-                0x00000884       0x38 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x00000884                CyDmaChEnable
+                0x000008ac       0x38 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x000008ac                CyDmaChEnable
  .text.CyDmaChDisable
-                0x000008bc       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x000008bc                CyDmaChDisable
+                0x000008e4       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x000008e4                CyDmaChDisable
  .text.CyDmaClearPendingDrq
-                0x000008e0       0x28 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x000008e0                CyDmaClearPendingDrq
+                0x00000908       0x28 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x00000908                CyDmaClearPendingDrq
  .text.CyDmaChPriority
-                0x00000908       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x00000908                CyDmaChPriority
+                0x00000930       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x00000930                CyDmaChPriority
  .text.CyDmaChSetExtendedAddress
-                0x0000092c       0x34 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x0000092c                CyDmaChSetExtendedAddress
+                0x00000954       0x34 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x00000954                CyDmaChSetExtendedAddress
  .text.CyDmaChSetInitialTd
-                0x00000960       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x00000960                CyDmaChSetInitialTd
+                0x00000988       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x00000988                CyDmaChSetInitialTd
  .text.CyDmaChSetConfiguration
-                0x00000978       0x48 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x00000978                CyDmaChSetConfiguration
+                0x000009a0       0x48 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x000009a0                CyDmaChSetConfiguration
  .text.CyDmaTdAllocate
-                0x000009c0       0x34 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x000009c0                CyDmaTdAllocate
+                0x000009e8       0x34 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x000009e8                CyDmaTdAllocate
  .text.CyDmaTdFree
-                0x000009f4       0x30 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x000009f4                CyDmaTdFree
+                0x00000a1c       0x30 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x00000a1c                CyDmaTdFree
  .text.CyDmaTdSetConfiguration
-                0x00000a24       0x28 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x00000a24                CyDmaTdSetConfiguration
+                0x00000a4c       0x28 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x00000a4c                CyDmaTdSetConfiguration
  .text.CyDmaTdSetAddress
-                0x00000a4c       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
-                0x00000a4c                CyDmaTdSetAddress
- .text.CyHalt   0x00000a68        0x4 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
-                0x00000a68                CyHalt
- .text.CyDelay  0x00000a6c       0x2c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
-                0x00000a6c                CyDelay
+                0x00000a74       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+                0x00000a74                CyDmaTdSetAddress
+ .text.CyHalt   0x00000a90        0x4 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
+                0x00000a90                CyHalt
+ .text.CyDelay  0x00000a94       0x2c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
+                0x00000a94                CyDelay
  .text.CyDelayUs
-                0x00000a98       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
-                0x00000a98                CyDelayUs
+                0x00000ac0       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
+                0x00000ac0                CyDelayUs
  .text.SPIS_1_Enable
-                0x00000aac       0x30 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000aac                SPIS_1_Enable
+                0x00000ad4       0x30 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000ad4                SPIS_1_Enable
  .text.SPIS_1_EnableRxInt
-                0x00000adc        0x4 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000adc                SPIS_1_EnableRxInt
+                0x00000b04        0x4 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000b04                SPIS_1_EnableRxInt
  .text.SPIS_1_ReadTxStatus
-                0x00000ae0        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000ae0                SPIS_1_ReadTxStatus
+                0x00000b08        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000b08                SPIS_1_ReadTxStatus
  .text.SPIS_1_ReadRxStatus
-                0x00000aec        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000aec                SPIS_1_ReadRxStatus
+                0x00000b14        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000b14                SPIS_1_ReadRxStatus
  .text.SPIS_1_WriteTxData
-                0x00000af8       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000af8                SPIS_1_WriteTxData
+                0x00000b20       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000b20                SPIS_1_WriteTxData
  .text.SPIS_1_ReadRxData
-                0x00000b10        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000b10                SPIS_1_ReadRxData
+                0x00000b38        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000b38                SPIS_1_ReadRxData
  .text.SPIS_1_ClearRxBuffer
-                0x00000b1c       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000b1c                SPIS_1_ClearRxBuffer
+                0x00000b44       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000b44                SPIS_1_ClearRxBuffer
  .text.SPIS_1_ClearTxBuffer
-                0x00000b38       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000b38                SPIS_1_ClearTxBuffer
+                0x00000b60       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000b60                SPIS_1_ClearTxBuffer
  .text.SPIS_1_ClearFIFO
-                0x00000b5c       0x3c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000b5c                SPIS_1_ClearFIFO
+                0x00000b84       0x3c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000b84                SPIS_1_ClearFIFO
  .text.SPIS_1_Init
-                0x00000b98       0x2c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000b98                SPIS_1_Init
+                0x00000bc0       0x2c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000bc0                SPIS_1_Init
  .text.SPIS_1_Start
-                0x00000bc4       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
-                0x00000bc4                SPIS_1_Start
+                0x00000bec       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+                0x00000bec                SPIS_1_Start
  .text.isr_1_SetVector
-                0x00000be0        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
-                0x00000be0                isr_1_SetVector
- .text.isr_1_SetPriority
-                0x00000bec       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
-                0x00000bec                isr_1_SetPriority
- .text.isr_1_Enable
-                0x00000bfc        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
-                0x00000bfc                isr_1_Enable
- .text.isr_1_Disable
                 0x00000c08        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
-                0x00000c08                isr_1_Disable
+                0x00000c08                isr_1_SetVector
+ .text.isr_1_SetPriority
+                0x00000c14       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+                0x00000c14                isr_1_SetPriority
+ .text.isr_1_Enable
+                0x00000c24        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+                0x00000c24                isr_1_Enable
+ .text.isr_1_Disable
+                0x00000c30        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+                0x00000c30                isr_1_Disable
  .text.isr_1_StartEx
-                0x00000c14       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
-                0x00000c14                isr_1_StartEx
+                0x00000c3c       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+                0x00000c3c                isr_1_StartEx
  .text.ADC_SAR_Seq_Disable
-                0x00000c30       0x3c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000c30                ADC_SAR_Seq_Disable
+                0x00000c58       0x3c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000c58                ADC_SAR_Seq_Disable
  .text.ADC_SAR_Seq_Init
-                0x00000c6c       0x3c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000c6c                ADC_SAR_Seq_Init
+                0x00000c94       0x3c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000c94                ADC_SAR_Seq_Init
  .text.ADC_SAR_Seq_Enable
-                0x00000ca8       0xcc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000ca8                ADC_SAR_Seq_Enable
+                0x00000cd0       0xcc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000cd0                ADC_SAR_Seq_Enable
  .text.ADC_SAR_Seq_Start
-                0x00000d74       0x28 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000d74                ADC_SAR_Seq_Start
+                0x00000d9c       0x28 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000d9c                ADC_SAR_Seq_Start
  .text.ADC_SAR_Seq_Stop
-                0x00000d9c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000d9c                ADC_SAR_Seq_Stop
+                0x00000dc4        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000dc4                ADC_SAR_Seq_Stop
  .text.ADC_SAR_Seq_StartConvert
-                0x00000da8        0x8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000da8                ADC_SAR_Seq_StartConvert
+                0x00000dd0        0x8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000dd0                ADC_SAR_Seq_StartConvert
  .text.ADC_SAR_Seq_IsEndConversion
-                0x00000db0       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000db0                ADC_SAR_Seq_IsEndConversion
+                0x00000dd8       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000dd8                ADC_SAR_Seq_IsEndConversion
  .text.ADC_SAR_Seq_GetResult16
-                0x00000dc8       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000dc8                ADC_SAR_Seq_GetResult16
+                0x00000df0       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000df0                ADC_SAR_Seq_GetResult16
  .text.ADC_SAR_Seq_CountsTo_mVolts
-                0x00000de4        0x8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
-                0x00000de4                ADC_SAR_Seq_CountsTo_mVolts
+                0x00000e0c        0x8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+                0x00000e0c                ADC_SAR_Seq_CountsTo_mVolts
  .text.ADC_SAR_Seq_ISR
-                0x00000dec        0x4 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
-                0x00000dec                ADC_SAR_Seq_ISR
+                0x00000e14        0x4 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
+                0x00000e14                ADC_SAR_Seq_ISR
  .text.ADC_SAR_Seq_SAR_CalcGain
-                0x00000df0       0x64 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+                0x00000e18       0x64 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
  .text.ADC_SAR_Seq_SAR_Enable
-                0x00000e54       0x78 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
-                0x00000e54                ADC_SAR_Seq_SAR_Enable
+                0x00000e7c       0x78 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+                0x00000e7c                ADC_SAR_Seq_SAR_Enable
  .text.ADC_SAR_Seq_SAR_Stop
-                0x00000ecc       0x34 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
-                0x00000ecc                ADC_SAR_Seq_SAR_Stop
+                0x00000ef4       0x34 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+                0x00000ef4                ADC_SAR_Seq_SAR_Stop
  .text.ADC_SAR_Seq_SAR_SetResolution
-                0x00000f00       0x38 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
-                0x00000f00                ADC_SAR_Seq_SAR_SetResolution
+                0x00000f28       0x38 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+                0x00000f28                ADC_SAR_Seq_SAR_SetResolution
  .text.ADC_SAR_Seq_SAR_Init
-                0x00000f38       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
-                0x00000f38                ADC_SAR_Seq_SAR_Init
+                0x00000f60       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+                0x00000f60                ADC_SAR_Seq_SAR_Init
  .text.ADC_SAR_Seq_SAR_Start
-                0x00000f5c       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
-                0x00000f5c                ADC_SAR_Seq_SAR_Start
+                0x00000f84       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+                0x00000f84                ADC_SAR_Seq_SAR_Start
  .text.ADC_SAR_Seq_SAR_StartConvert
-                0x00000f78       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
-                0x00000f78                ADC_SAR_Seq_SAR_StartConvert
+                0x00000fa0       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+                0x00000fa0                ADC_SAR_Seq_SAR_StartConvert
  .text.ADC_SAR_Seq_SAR_CountsTo_mVolts
-                0x00000f88       0x54 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
-                0x00000f88                ADC_SAR_Seq_SAR_CountsTo_mVolts
+                0x00000fb0       0x54 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+                0x00000fb0                ADC_SAR_Seq_SAR_CountsTo_mVolts
  .text.ADC_SAR_Seq_TempBuf_DmaInitialize
-                0x00000fdc       0x40 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
-                0x00000fdc                ADC_SAR_Seq_TempBuf_DmaInitialize
+                0x00001004       0x40 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
+                0x00001004                ADC_SAR_Seq_TempBuf_DmaInitialize
  .text.ADC_SAR_Seq_FinalBuf_DmaInitialize
-                0x0000101c       0x3c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
-                0x0000101c                ADC_SAR_Seq_FinalBuf_DmaInitialize
+                0x00001044       0x3c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
+                0x00001044                ADC_SAR_Seq_FinalBuf_DmaInitialize
  .text.ADC_SAR_Seq_IRQ_SetVector
-                0x00001058        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
-                0x00001058                ADC_SAR_Seq_IRQ_SetVector
+                0x00001080        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
+                0x00001080                ADC_SAR_Seq_IRQ_SetVector
  .text.ADC_SAR_Seq_IRQ_SetPriority
-                0x00001064       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
-                0x00001064                ADC_SAR_Seq_IRQ_SetPriority
+                0x0000108c       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
+                0x0000108c                ADC_SAR_Seq_IRQ_SetPriority
  .text.Enable_X_Write
-                0x00001074       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
-                0x00001074                Enable_X_Write
+                0x0000109c       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
+                0x0000109c                Enable_X_Write
  .text.Direction_Z_Write
-                0x0000108c       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
-                0x0000108c                Direction_Z_Write
+                0x000010b4       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
+                0x000010b4                Direction_Z_Write
  .text.Direction_X_Write
-                0x000010a4       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
-                0x000010a4                Direction_X_Write
+                0x000010cc       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
+                0x000010cc                Direction_X_Write
  .text.Enable_Z_Write
-                0x000010bc       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
-                0x000010bc                Enable_Z_Write
+                0x000010e4       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
+                0x000010e4                Enable_Z_Write
  .text.Enable_Y_Write
-                0x000010d4       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
-                0x000010d4                Enable_Y_Write
+                0x000010fc       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
+                0x000010fc                Enable_Y_Write
  .text.Direction_Y_Write
-                0x000010ec       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
-                0x000010ec                Direction_Y_Write
+                0x00001114       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
+                0x00001114                Direction_Y_Write
  .text.Direction_S_Write
-                0x00001104       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
-                0x00001104                Direction_S_Write
+                0x0000112c       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
+                0x0000112c                Direction_S_Write
  .text.PWM_X_Enable
-                0x0000111c       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x0000111c                PWM_X_Enable
+                0x00001144       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x00001144                PWM_X_Enable
  .text.PWM_X_WriteCounter
-                0x0000112c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x0000112c                PWM_X_WriteCounter
+                0x00001154        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x00001154                PWM_X_WriteCounter
  .text.PWM_X_WritePeriod
-                0x00001138        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x00001138                PWM_X_WritePeriod
+                0x00001160        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x00001160                PWM_X_WritePeriod
  .text.PWM_X_WriteCompare
-                0x00001144        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x00001144                PWM_X_WriteCompare
+                0x0000116c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x0000116c                PWM_X_WriteCompare
  .text.PWM_X_SetInterruptMode
-                0x00001150        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x00001150                PWM_X_SetInterruptMode
+                0x00001178        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x00001178                PWM_X_SetInterruptMode
  .text.PWM_X_ReadStatusRegister
-                0x0000115c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x0000115c                PWM_X_ReadStatusRegister
+                0x00001184        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x00001184                PWM_X_ReadStatusRegister
  .text.PWM_X_ReadCapture
-                0x00001168        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x00001168                PWM_X_ReadCapture
+                0x00001190        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x00001190                PWM_X_ReadCapture
  .text.PWM_X_ClearFIFO
-                0x00001174       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x00001174                PWM_X_ClearFIFO
+                0x0000119c       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x0000119c                PWM_X_ClearFIFO
  .text.PWM_X_Init
-                0x00001188       0x60 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x00001188                PWM_X_Init
+                0x000011b0       0x60 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x000011b0                PWM_X_Init
  .text.PWM_X_Start
-                0x000011e8       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
-                0x000011e8                PWM_X_Start
+                0x00001210       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+                0x00001210                PWM_X_Start
  .text.PWM_Z_Enable
-                0x00001204       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x00001204                PWM_Z_Enable
+                0x0000122c       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x0000122c                PWM_Z_Enable
  .text.PWM_Z_WriteCounter
-                0x00001214        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x00001214                PWM_Z_WriteCounter
+                0x0000123c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x0000123c                PWM_Z_WriteCounter
  .text.PWM_Z_WritePeriod
-                0x00001220        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x00001220                PWM_Z_WritePeriod
+                0x00001248        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x00001248                PWM_Z_WritePeriod
  .text.PWM_Z_WriteCompare
-                0x0000122c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x0000122c                PWM_Z_WriteCompare
+                0x00001254        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x00001254                PWM_Z_WriteCompare
  .text.PWM_Z_SetInterruptMode
-                0x00001238        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x00001238                PWM_Z_SetInterruptMode
+                0x00001260        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x00001260                PWM_Z_SetInterruptMode
  .text.PWM_Z_ReadStatusRegister
-                0x00001244        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x00001244                PWM_Z_ReadStatusRegister
+                0x0000126c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x0000126c                PWM_Z_ReadStatusRegister
  .text.PWM_Z_ReadCapture
-                0x00001250        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x00001250                PWM_Z_ReadCapture
+                0x00001278        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x00001278                PWM_Z_ReadCapture
  .text.PWM_Z_ClearFIFO
-                0x0000125c       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x0000125c                PWM_Z_ClearFIFO
+                0x00001284       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x00001284                PWM_Z_ClearFIFO
  .text.PWM_Z_Init
-                0x00001270       0x60 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x00001270                PWM_Z_Init
+                0x00001298       0x60 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x00001298                PWM_Z_Init
  .text.PWM_Z_Start
-                0x000012d0       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
-                0x000012d0                PWM_Z_Start
+                0x000012f8       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+                0x000012f8                PWM_Z_Start
  .text.PWM_Y_Enable
-                0x000012ec       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x000012ec                PWM_Y_Enable
+                0x00001314       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x00001314                PWM_Y_Enable
  .text.PWM_Y_WriteCounter
-                0x000012fc        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x000012fc                PWM_Y_WriteCounter
+                0x00001324        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x00001324                PWM_Y_WriteCounter
  .text.PWM_Y_WritePeriod
-                0x00001308        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x00001308                PWM_Y_WritePeriod
+                0x00001330        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x00001330                PWM_Y_WritePeriod
  .text.PWM_Y_WriteCompare
-                0x00001314        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x00001314                PWM_Y_WriteCompare
+                0x0000133c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x0000133c                PWM_Y_WriteCompare
  .text.PWM_Y_SetInterruptMode
-                0x00001320        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x00001320                PWM_Y_SetInterruptMode
+                0x00001348        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x00001348                PWM_Y_SetInterruptMode
  .text.PWM_Y_ReadStatusRegister
-                0x0000132c        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x0000132c                PWM_Y_ReadStatusRegister
+                0x00001354        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x00001354                PWM_Y_ReadStatusRegister
  .text.PWM_Y_ReadCapture
-                0x00001338        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x00001338                PWM_Y_ReadCapture
+                0x00001360        0xc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x00001360                PWM_Y_ReadCapture
  .text.PWM_Y_ClearFIFO
-                0x00001344       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x00001344                PWM_Y_ClearFIFO
+                0x0000136c       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x0000136c                PWM_Y_ClearFIFO
  .text.PWM_Y_Init
-                0x00001358       0x60 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x00001358                PWM_Y_Init
+                0x00001380       0x60 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x00001380                PWM_Y_Init
  .text.PWM_Y_Start
-                0x000013b8       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
-                0x000013b8                PWM_Y_Start
+                0x000013e0       0x1c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+                0x000013e0                PWM_Y_Start
  .text.LED_1_Write
-                0x000013d4       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
-                0x000013d4                LED_1_Write
+                0x000013fc       0x18 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
+                0x000013fc                LED_1_Write
  .text.LED_1_Read
-                0x000013ec       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
-                0x000013ec                LED_1_Read
- *fill*         0x000013fc        0x4 
- .text          0x00001400       0x20 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyBootAsmGnu.o)
-                0x00001400                CyDelayCycles
-                0x00001410                CyEnterCriticalSection
-                0x00001418                CyExitCriticalSection
- .text.__errno  0x00001420        0xc c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
-                0x00001420                __errno
+                0x00001414       0x10 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
+                0x00001414                LED_1_Read
+ *fill*         0x00001424        0x4 
+ .text          0x00001428       0x20 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyBootAsmGnu.o)
+                0x00001428                CyDelayCycles
+                0x00001438                CyEnterCriticalSection
+                0x00001440                CyExitCriticalSection
+ .text.__errno  0x00001448        0xc c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00001448                __errno
  .text.__libc_init_array
-                0x0000142c       0x4c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x0000142c                __libc_init_array
- .text.memcpy   0x00001478       0x16 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
-                0x00001478                memcpy
- .text.memset   0x0000148e       0x10 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x0000148e                memset
+                0x00001454       0x4c c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x00001454                __libc_init_array
+ .text.memcpy   0x000014a0       0x16 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
+                0x000014a0                memcpy
+ .text.memset   0x000014b6       0x10 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x000014b6                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -1232,80 +1232,81 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x000014a0        0x0
+.v4_bx          0x000014c8        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x000014a0        0x0
+.iplt           0x000014c8        0x0
  .iplt          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x000014a0        0x4
+.eh_frame       0x000014c8        0x4
  *(.eh_frame)
- .eh_frame      0x000014a0        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .eh_frame      0x000014a0        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
-                0x000014a4                PROVIDE (__exidx_start, .)
+ .eh_frame      0x000014c8        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .eh_frame      0x000014c8        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtend.o
+                0x000014cc                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000014a4                __exidx_end = .
+                0x000014cc                __exidx_end = .
 
-.rodata         0x000014a4       0x5c
+.rodata         0x000014cc       0x6c
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x000014a4       0x24 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+ .rodata        0x000014cc       0x30 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
  .rodata.str1.1
-                0x000014c8        0x2 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x000014cc                . = ALIGN (0x4)
- *fill*         0x000014ca        0x2 
+                0x000014fc        0x2 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x00001500                . = ALIGN (0x4)
+ *fill*         0x000014fe        0x2 
  *(.init)
- .init          0x000014cc        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x000014cc                _init
- .init          0x000014d0        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x000014d8                . = ALIGN (0x4)
-                0x000014d8                __preinit_array_start = .
+ .init          0x00001500        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00001500                _init
+ .init          0x00001504        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x0000150c                . = ALIGN (0x4)
+                0x0000150c                __preinit_array_start = .
  *(.preinit_array)
-                0x000014d8                __preinit_array_end = .
-                0x000014d8                . = ALIGN (0x4)
-                0x000014d8                __init_array_start = .
+                0x0000150c                __preinit_array_end = .
+                0x0000150c                . = ALIGN (0x4)
+                0x0000150c                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x000014d8        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
- .init_array    0x000014dc        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
-                0x000014e0                __init_array_end = .
-                0x000014e0                . = ALIGN (0x4)
+ .init_array    0x0000150c        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .init_array    0x00001510        0x4 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
+                0x00001514                __init_array_end = .
+                0x00001514                . = ALIGN (0x4)
  *(.fini)
- .fini          0x000014e0        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
-                0x000014e0                _fini
- .fini          0x000014e4        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
-                0x000014ec                . = ALIGN (0x4)
-                0x000014ec                __fini_array_start = .
+ .fini          0x00001514        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crti.o
+                0x00001514                _fini
+ .fini          0x00001518        0x8 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtn.o
+                0x00001520                . = ALIGN (0x4)
+                0x00001520                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x000014ec        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
+ .fini_array    0x00001520        0x4 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x000014f0                __fini_array_end = .
-                0x000014f0                . = ALIGN (0x4)
+                0x00001524                __fini_array_end = .
+                0x00001524                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x000014f0                . = ALIGN (0x4)
+                0x00001524                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x000014f0                . = ALIGN (0x4)
-                0x000014f0                __cy_regions = .
-                0x000014f0        0x4 LONG 0x1500 __cy_region_init_ram
-                0x000014f4        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x000014f8        0x4 LONG 0x88 __cy_region_init_size_ram
-                0x000014fc        0x4 LONG 0x50 __cy_region_zero_size_ram
-                0x00001500                __cy_regions_end = .
-                0x00001500                . = ALIGN (0x8)
-                0x00001500                _etext = .
+                0x00001524                . = ALIGN (0x4)
+                0x00001524                __cy_regions = .
+                0x00001524        0x4 LONG 0x1538 __cy_region_init_ram
+                0x00001528        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x0000152c        0x4 LONG 0x88 __cy_region_init_size_ram
+                0x00001530        0x4 LONG 0x50 __cy_region_zero_size_ram
+                0x00001534                __cy_regions_end = .
+                0x00001538                . = ALIGN (0x8)
+ *fill*         0x00001534        0x4 
+                0x00001538                _etext = .
 
 .cy_checksum_exclude
-                0x00001500        0x0
+                0x00001538        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000      0x100
@@ -1320,7 +1321,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0x88 load address 0x00001500
+.data           0x1fff8108       0x88 load address 0x00001538
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
@@ -1352,10 +1353,10 @@ END GROUP
  *(.ram)
                 0x1fff8190                _edata = .
 
-.igot.plt       0x1fff8190        0x0 load address 0x00001588
+.igot.plt       0x1fff8190        0x0 load address 0x000015c0
  .igot.plt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
-.bss            0x1fff8190       0x50 load address 0x00001588
+.bss            0x1fff8190       0x50 load address 0x000015c0
                 0x1fff8190                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -1389,11 +1390,11 @@ END GROUP
                 0x1fff81e0                __end = .
                 0x1fff81e0                PROVIDE (end, .)
                 0x1fff81e0                PROVIDE (__bss_end__, .)
-                0x00001500                __cy_region_init_ram = LOADADDR (.data)
+                0x00001538                __cy_region_init_ram = LOADADDR (.data)
                 0x00000088                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000050                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff81e0       0x80 load address 0x00001588
+.heap           0x1fff81e0       0x80 load address 0x000015c0
                 0x1fff81e0                . = _end
                 0x1fff8260                . = (. + 0x80)
  *fill*         0x1fff81e0       0x80 
@@ -1413,9 +1414,9 @@ END GROUP
 .cyloadablemeta
  *(.cyloadablemeta)
 
-.cyconfigecc    0x80000000      0xabc
+.cyconfigecc    0x80000000      0xe4c
  *(.cyconfigecc)
- .cyconfigecc   0x80000000      0xabc .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
+ .cyconfigecc   0x80000000      0xe4c .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                 0x80000000                cy_meta_configecc
 
 .cycustnvl      0x90000000        0x4
@@ -1444,7 +1445,7 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00001588        0x0 load address 0x9050000c
+.rel.dyn        0x000015c0        0x0 load address 0x9050000c
  .rel.iplt      0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/crtbegin.o
 
 .stab
@@ -1541,119 +1542,119 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x8287
+.debug_info     0x00000000     0x8352
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xd83 .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_info    0x00000d83      0x13f .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .debug_info    0x00000ec2      0x3c3 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_info    0x00001285      0x5c3 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
- .debug_info    0x00001848      0x944 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
- .debug_info    0x0000218c     0x1385 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
- .debug_info    0x00003511      0xa57 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
- .debug_info    0x00003f68      0x48f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
- .debug_info    0x000043f7      0x2cb .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
- .debug_info    0x000046c2      0x7d5 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
- .debug_info    0x00004e97       0x99 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
- .debug_info    0x00004f30      0x549 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
- .debug_info    0x00005479      0x1fd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
- .debug_info    0x00005676      0x1fd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
- .debug_info    0x00005873      0x2cb .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
- .debug_info    0x00005b3e      0x172 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
- .debug_info    0x00005cb0      0x176 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
- .debug_info    0x00005e26      0x172 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
- .debug_info    0x00005f98      0x174 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
- .debug_info    0x0000610c      0x176 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
- .debug_info    0x00006282      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
- .debug_info    0x000063a1      0x174 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
- .debug_info    0x00006515      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
- .debug_info    0x00006634      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
- .debug_info    0x00006753      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
- .debug_info    0x00006872      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
- .debug_info    0x00006991      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
- .debug_info    0x00006ab0      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
- .debug_info    0x00006bcf      0x34e .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
- .debug_info    0x00006f1d      0x34e .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
- .debug_info    0x0000726b      0x34e .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
- .debug_info    0x000075b9      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
- .debug_info    0x000076d8       0xbd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyBootAsmGnu.o)
- .debug_info    0x00007795      0x608 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
- .debug_info    0x00007d9d      0x4ea .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
+ .debug_info    0x00001285      0x68e .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+ .debug_info    0x00001913      0x944 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+ .debug_info    0x00002257     0x1385 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
+ .debug_info    0x000035dc      0xa57 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
+ .debug_info    0x00004033      0x48f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+ .debug_info    0x000044c2      0x2cb .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+ .debug_info    0x0000478d      0x7d5 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+ .debug_info    0x00004f62       0x99 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
+ .debug_info    0x00004ffb      0x549 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+ .debug_info    0x00005544      0x1fd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
+ .debug_info    0x00005741      0x1fd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
+ .debug_info    0x0000593e      0x2cb .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
+ .debug_info    0x00005c09      0x172 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
+ .debug_info    0x00005d7b      0x176 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
+ .debug_info    0x00005ef1      0x172 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
+ .debug_info    0x00006063      0x174 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
+ .debug_info    0x000061d7      0x176 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
+ .debug_info    0x0000634d      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
+ .debug_info    0x0000646c      0x174 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
+ .debug_info    0x000065e0      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
+ .debug_info    0x000066ff      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
+ .debug_info    0x0000681e      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
+ .debug_info    0x0000693d      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
+ .debug_info    0x00006a5c      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
+ .debug_info    0x00006b7b      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
+ .debug_info    0x00006c9a      0x34e .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+ .debug_info    0x00006fe8      0x34e .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+ .debug_info    0x00007336      0x34e .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+ .debug_info    0x00007684      0x11f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
+ .debug_info    0x000077a3       0xbd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyBootAsmGnu.o)
+ .debug_info    0x00007860      0x608 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
+ .debug_info    0x00007e68      0x4ea .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x264e
+.debug_abbrev   0x00000000     0x265d
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x20d .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_abbrev  0x0000020d       0x77 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .debug_abbrev  0x00000284      0x1f7 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_abbrev  0x0000047b      0x203 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
- .debug_abbrev  0x0000067e      0x1cc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
- .debug_abbrev  0x0000084a      0x296 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
- .debug_abbrev  0x00000ae0      0x1ed .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
- .debug_abbrev  0x00000ccd      0x160 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
- .debug_abbrev  0x00000e2d      0x173 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
- .debug_abbrev  0x00000fa0      0x1a3 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
- .debug_abbrev  0x00001143       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
- .debug_abbrev  0x00001185      0x1d9 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
- .debug_abbrev  0x0000135e       0xeb .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
- .debug_abbrev  0x00001449       0xeb .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
- .debug_abbrev  0x00001534      0x173 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
- .debug_abbrev  0x000016a7       0x9f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
- .debug_abbrev  0x00001746       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
- .debug_abbrev  0x000017d6       0x9f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
- .debug_abbrev  0x00001875       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
- .debug_abbrev  0x00001905       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
- .debug_abbrev  0x00001995       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
- .debug_abbrev  0x00001a25       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
- .debug_abbrev  0x00001ab5       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
- .debug_abbrev  0x00001b45       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
- .debug_abbrev  0x00001bd5       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
- .debug_abbrev  0x00001c65       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
- .debug_abbrev  0x00001cf5       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
- .debug_abbrev  0x00001d85       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
- .debug_abbrev  0x00001e15      0x14d .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
- .debug_abbrev  0x00001f62      0x14d .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
- .debug_abbrev  0x000020af      0x14d .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
- .debug_abbrev  0x000021fc       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
- .debug_abbrev  0x0000228c       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyBootAsmGnu.o)
- .debug_abbrev  0x000022a0      0x1ed .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
- .debug_abbrev  0x0000248d      0x1c1 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
+ .debug_abbrev  0x0000047b      0x212 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+ .debug_abbrev  0x0000068d      0x1cc .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+ .debug_abbrev  0x00000859      0x296 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
+ .debug_abbrev  0x00000aef      0x1ed .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
+ .debug_abbrev  0x00000cdc      0x160 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+ .debug_abbrev  0x00000e3c      0x173 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+ .debug_abbrev  0x00000faf      0x1a3 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+ .debug_abbrev  0x00001152       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
+ .debug_abbrev  0x00001194      0x1d9 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+ .debug_abbrev  0x0000136d       0xeb .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
+ .debug_abbrev  0x00001458       0xeb .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
+ .debug_abbrev  0x00001543      0x173 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
+ .debug_abbrev  0x000016b6       0x9f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
+ .debug_abbrev  0x00001755       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
+ .debug_abbrev  0x000017e5       0x9f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
+ .debug_abbrev  0x00001884       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
+ .debug_abbrev  0x00001914       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
+ .debug_abbrev  0x000019a4       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
+ .debug_abbrev  0x00001a34       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
+ .debug_abbrev  0x00001ac4       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
+ .debug_abbrev  0x00001b54       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
+ .debug_abbrev  0x00001be4       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
+ .debug_abbrev  0x00001c74       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
+ .debug_abbrev  0x00001d04       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
+ .debug_abbrev  0x00001d94       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
+ .debug_abbrev  0x00001e24      0x14d .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+ .debug_abbrev  0x00001f71      0x14d .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+ .debug_abbrev  0x000020be      0x14d .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+ .debug_abbrev  0x0000220b       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
+ .debug_abbrev  0x0000229b       0x14 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x000022af      0x1ed .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
+ .debug_abbrev  0x0000249c      0x1c1 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
 
-.debug_line     0x00000000     0x351c
+.debug_line     0x00000000     0x353a
  *(.debug_line)
  .debug_line    0x00000000      0x57e .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_line    0x0000057e       0x51 .\CortexM3\ARM_GCC_493\Debug\cymetadata.o
  .debug_line    0x000005cf      0x25a .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_line    0x00000829      0x1f9 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
- .debug_line    0x00000a22      0x2e3 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
- .debug_line    0x00000d05      0x816 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
- .debug_line    0x0000151b      0x364 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
- .debug_line    0x0000187f      0x234 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
- .debug_line    0x00001ab3      0x132 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
- .debug_line    0x00001be5      0x22a .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
- .debug_line    0x00001e0f       0x58 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
- .debug_line    0x00001e67      0x20c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
- .debug_line    0x00002073       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
- .debug_line    0x00002103       0x91 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
- .debug_line    0x00002194      0x13c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
- .debug_line    0x000022d0       0xbd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
- .debug_line    0x0000238d       0xbf .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
- .debug_line    0x0000244c       0xbe .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
- .debug_line    0x0000250a       0xbf .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
- .debug_line    0x000025c9       0xbf .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
- .debug_line    0x00002688       0x95 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
- .debug_line    0x0000271d       0xbf .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
- .debug_line    0x000027dc       0x98 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
- .debug_line    0x00002874       0x98 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
- .debug_line    0x0000290c       0x95 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
- .debug_line    0x000029a1       0x95 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
- .debug_line    0x00002a36       0x98 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
- .debug_line    0x00002ace       0x98 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
- .debug_line    0x00002b66      0x188 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
- .debug_line    0x00002cee      0x188 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
- .debug_line    0x00002e76      0x188 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
- .debug_line    0x00002ffe       0x92 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
- .debug_line    0x00003090       0x66 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyBootAsmGnu.o)
- .debug_line    0x000030f6      0x1ea .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
- .debug_line    0x000032e0      0x23c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
+ .debug_line    0x00000829      0x217 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+ .debug_line    0x00000a40      0x2e3 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+ .debug_line    0x00000d23      0x816 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
+ .debug_line    0x00001539      0x364 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
+ .debug_line    0x0000189d      0x234 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+ .debug_line    0x00001ad1      0x132 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+ .debug_line    0x00001c03      0x22a .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+ .debug_line    0x00001e2d       0x58 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
+ .debug_line    0x00001e85      0x20c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+ .debug_line    0x00002091       0x90 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
+ .debug_line    0x00002121       0x91 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
+ .debug_line    0x000021b2      0x13c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
+ .debug_line    0x000022ee       0xbd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
+ .debug_line    0x000023ab       0xbf .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
+ .debug_line    0x0000246a       0xbe .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
+ .debug_line    0x00002528       0xbf .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
+ .debug_line    0x000025e7       0xbf .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
+ .debug_line    0x000026a6       0x95 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
+ .debug_line    0x0000273b       0xbf .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
+ .debug_line    0x000027fa       0x98 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
+ .debug_line    0x00002892       0x98 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
+ .debug_line    0x0000292a       0x95 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
+ .debug_line    0x000029bf       0x95 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
+ .debug_line    0x00002a54       0x98 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
+ .debug_line    0x00002aec       0x98 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
+ .debug_line    0x00002b84      0x188 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+ .debug_line    0x00002d0c      0x188 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+ .debug_line    0x00002e94      0x188 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+ .debug_line    0x0000301c       0x92 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
+ .debug_line    0x000030ae       0x66 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyBootAsmGnu.o)
+ .debug_line    0x00003114      0x1ea .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
+ .debug_line    0x000032fe      0x23c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
 
 .debug_frame    0x00000000     0x2434
  *(.debug_frame)
@@ -1700,7 +1701,7 @@ END GROUP
  .debug_frame   0x000023ec       0x28 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy.o)
  .debug_frame   0x00002414       0x20 c:/program files (x86)/cypress/psoc creator/4.0/psoc creator/import/gnu/arm/4.9.3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x304f
+.debug_str      0x00000000     0x3084
  *(.debug_str)
  .debug_str     0x00000000      0x6af .\CortexM3\ARM_GCC_493\Debug\main.o
                                 0x718 (size before relaxing)
@@ -1708,103 +1709,103 @@ END GROUP
                                 0x217 (size before relaxing)
  .debug_str     0x00000724      0x166 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
                                 0x33b (size before relaxing)
- .debug_str     0x0000088a      0x149 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
-                                0x33a (size before relaxing)
- .debug_str     0x000009d3      0x383 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+ .debug_str     0x0000088a      0x17e .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+                                0x36f (size before relaxing)
+ .debug_str     0x00000a08      0x383 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
                                 0x56b (size before relaxing)
- .debug_str     0x00000d56      0x7e1 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
+ .debug_str     0x00000d8b      0x7e1 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
                                 0xa68 (size before relaxing)
- .debug_str     0x00001537      0x359 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
+ .debug_str     0x0000156c      0x359 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
                                 0x748 (size before relaxing)
- .debug_str     0x00001890      0x1db .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+ .debug_str     0x000018c5      0x1db .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
                                 0x43e (size before relaxing)
- .debug_str     0x00001a6b       0xd8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+ .debug_str     0x00001aa0       0xd8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
                                 0x2c7 (size before relaxing)
- .debug_str     0x00001b43      0x3c6 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+ .debug_str     0x00001b78      0x3c6 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
                                 0x707 (size before relaxing)
- .debug_str     0x00001f09       0x39 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
+ .debug_str     0x00001f3e       0x39 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_INT.o)
                                 0x1d5 (size before relaxing)
- .debug_str     0x00001f42      0x14f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+ .debug_str     0x00001f77      0x14f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
                                 0x51f (size before relaxing)
- .debug_str     0x00002091       0xa9 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
+ .debug_str     0x000020c6       0xa9 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
                                 0x2ce (size before relaxing)
- .debug_str     0x0000213a       0x71 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
+ .debug_str     0x0000216f       0x71 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
                                 0x2d2 (size before relaxing)
- .debug_str     0x000021ab      0x13c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
+ .debug_str     0x000021e0      0x13c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
                                 0x353 (size before relaxing)
- .debug_str     0x000022e7       0xb0 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
+ .debug_str     0x0000231c       0xb0 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
                                 0x27c (size before relaxing)
- .debug_str     0x00002397       0xa8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
+ .debug_str     0x000023cc       0xa8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
                                 0x28a (size before relaxing)
- .debug_str     0x0000243f       0xa2 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
+ .debug_str     0x00002474       0xa2 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
                                 0x283 (size before relaxing)
- .debug_str     0x000024e1       0xa8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
+ .debug_str     0x00002516       0xa8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
                                 0x28a (size before relaxing)
- .debug_str     0x00002589       0xa8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
+ .debug_str     0x000025be       0xa8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
                                 0x28a (size before relaxing)
- .debug_str     0x00002631       0x5b .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
+ .debug_str     0x00002666       0x5b .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
                                 0x21e (size before relaxing)
- .debug_str     0x0000268c       0xa8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
+ .debug_str     0x000026c1       0xa8 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
                                 0x28a (size before relaxing)
- .debug_str     0x00002734       0x67 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
+ .debug_str     0x00002769       0x67 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
                                 0x22d (size before relaxing)
- .debug_str     0x0000279b       0x67 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
+ .debug_str     0x000027d0       0x67 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
                                 0x22d (size before relaxing)
- .debug_str     0x00002802       0x5b .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
+ .debug_str     0x00002837       0x5b .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
                                 0x21e (size before relaxing)
- .debug_str     0x0000285d       0x5b .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
+ .debug_str     0x00002892       0x5b .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
                                 0x21e (size before relaxing)
- .debug_str     0x000028b8       0x67 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
+ .debug_str     0x000028ed       0x67 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
                                 0x22d (size before relaxing)
- .debug_str     0x0000291f       0x67 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
+ .debug_str     0x00002954       0x67 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
                                 0x22d (size before relaxing)
- .debug_str     0x00002986      0x192 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+ .debug_str     0x000029bb      0x192 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
                                 0x37f (size before relaxing)
- .debug_str     0x00002b18      0x159 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+ .debug_str     0x00002b4d      0x159 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
                                 0x37f (size before relaxing)
- .debug_str     0x00002c71      0x159 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+ .debug_str     0x00002ca6      0x159 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
                                 0x37f (size before relaxing)
- .debug_str     0x00002dca       0x44 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
+ .debug_str     0x00002dff       0x44 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
                                 0x20f (size before relaxing)
- .debug_str     0x00002e0e      0x195 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
+ .debug_str     0x00002e43      0x195 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
                                 0x3c2 (size before relaxing)
- .debug_str     0x00002fa3       0xac .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
+ .debug_str     0x00002fd8       0xac .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
                                 0x34b (size before relaxing)
 
-.debug_loc      0x00000000     0x31a4
+.debug_loc      0x00000000     0x3226
  *(.debug_loc)
  .debug_loc     0x00000000      0x1ca .\CortexM3\ARM_GCC_493\Debug\main.o
  .debug_loc     0x000001ca      0x144 .\CortexM3\ARM_GCC_493\Debug\Cm3Start.o
- .debug_loc     0x0000030e      0x1fd .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
- .debug_loc     0x0000050b      0xb83 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
- .debug_loc     0x0000108e      0xa11 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
- .debug_loc     0x00001a9f      0x1e4 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
- .debug_loc     0x00001c83       0xf3 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
- .debug_loc     0x00001d76       0x56 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
- .debug_loc     0x00001dcc      0x13c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
- .debug_loc     0x00001f08      0x273 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
- .debug_loc     0x0000217b       0x84 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
- .debug_loc     0x000021ff       0x84 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
- .debug_loc     0x00002283       0x56 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
- .debug_loc     0x000022d9       0x63 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
- .debug_loc     0x0000233c       0x97 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
- .debug_loc     0x000023d3       0x63 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
- .debug_loc     0x00002436       0x84 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
- .debug_loc     0x000024ba       0x97 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
- .debug_loc     0x00002551       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
- .debug_loc     0x00002593       0x84 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
- .debug_loc     0x00002617       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
- .debug_loc     0x00002659       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
- .debug_loc     0x0000269b       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
- .debug_loc     0x000026dd       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
- .debug_loc     0x0000271f       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
- .debug_loc     0x00002761       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
- .debug_loc     0x000027a3       0x26 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
- .debug_loc     0x000027c9       0x26 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
- .debug_loc     0x000027ef       0x26 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
- .debug_loc     0x00002815       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
- .debug_loc     0x00002857      0x300 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
- .debug_loc     0x00002b57      0x64d .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
+ .debug_loc     0x0000030e      0x27f .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyfitter_cfg.o)
+ .debug_loc     0x0000058d      0xb83 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyDmac.o)
+ .debug_loc     0x00001110      0xa11 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyLib.o)
+ .debug_loc     0x00001b21      0x1e4 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(cyPm.o)
+ .debug_loc     0x00001d05       0xf3 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(SPIS_1.o)
+ .debug_loc     0x00001df8       0x56 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(isr_1.o)
+ .debug_loc     0x00001e4e      0x13c .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq.o)
+ .debug_loc     0x00001f8a      0x273 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_SAR.o)
+ .debug_loc     0x000021fd       0x84 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_TempBuf_dma.o)
+ .debug_loc     0x00002281       0x84 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_FinalBuf_dma.o)
+ .debug_loc     0x00002305       0x56 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(ADC_SAR_Seq_IRQ.o)
+ .debug_loc     0x0000235b       0x63 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_cork.o)
+ .debug_loc     0x000023be       0x97 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_y_home.o)
+ .debug_loc     0x00002455       0x63 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_end.o)
+ .debug_loc     0x000024b8       0x84 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_x_home.o)
+ .debug_loc     0x0000253c       0x97 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_z_home.o)
+ .debug_loc     0x000025d3       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_X.o)
+ .debug_loc     0x00002615       0x84 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Pin_int_xy_end.o)
+ .debug_loc     0x00002699       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Z.o)
+ .debug_loc     0x000026db       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_X.o)
+ .debug_loc     0x0000271d       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Z.o)
+ .debug_loc     0x0000275f       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Enable_Y.o)
+ .debug_loc     0x000027a1       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_Y.o)
+ .debug_loc     0x000027e3       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(Direction_S.o)
+ .debug_loc     0x00002825       0x26 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_X.o)
+ .debug_loc     0x0000284b       0x26 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Z.o)
+ .debug_loc     0x00002871       0x26 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(PWM_Y.o)
+ .debug_loc     0x00002897       0x42 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(LED_1.o)
+ .debug_loc     0x000028d9      0x300 .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CyFlash.o)
+ .debug_loc     0x00002bd9      0x64d .\CortexM3\ARM_GCC_493\Debug\StepperMotor.a(CySpc.o)
 
 .debug_macinfo
  *(.debug_macinfo)

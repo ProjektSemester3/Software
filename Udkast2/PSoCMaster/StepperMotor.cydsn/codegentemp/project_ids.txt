@@ -1,5 +1,5 @@
-C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\StepperMotor.cyprj|0d3628f8-3105-4e5a-a0f9-8e3764fc80cc
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|83523e1b-ea44-4987-bb8e-5d052fde6c60
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|c6d1894a-deb9-4396-aeca-7543f62929a9
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|44ff0017-fd81-4859-8dbe-4d09f34ac72b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2b914db5-aa98-4e8f-8609-4fe45b51f43c
+C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\StepperMotor.cyprj|6e3d4e1c-8bff-4d75-b23e-a1521df0d463
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|b5f7d827-ee32-4116-b604-91d5c5b042a4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|2937e8d7-ffcf-4768-a88c-c9de3dc953a3
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|7411fdef-0e67-4a40-9b9b-3e44ba423a54
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|64018618-7798-4dc1-b6a1-470f046a5b1d

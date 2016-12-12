@@ -1,0 +1,5 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d5ec84f3-79cf-4c55-8c7c-11caa14b11f8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a2a5cd89-3cd1-4a79-b4fe-1d3619001bc7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|7e6b678d-fd0d-46e2-a05c-73aa15c3417f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|eae3b40d-10f4-44cb-b023-910c78d2a0f9
+C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Test\PSoC-unipolar\Unipolar\Unipolar.cydsn\Unipolar.cyprj|aa795f18-5148-451b-aefa-e2fdee664b2b

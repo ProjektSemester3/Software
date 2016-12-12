@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="StepperMotor-000\StepperMotor\Header Files\status.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="StepperMotor-000\StepperMotor\Header Files">
 <ExpandedNodeIds>
 <v>StepperMotor-000</v>
 <v>StepperMotor-000\StepperMotor</v>
@@ -76,6 +76,9 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Clock_4</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Clock_4\Clock_4.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Clock_4\Clock_4.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Clock_5</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Clock_5\Clock_5.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Clock_5\Clock_5.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\cy_boot</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
@@ -107,6 +110,10 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_S\Direction_S.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_S\Direction_S.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_S\Direction_S_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_S_1</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_S_1\Direction_S_1.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_S_1\Direction_S_1.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_S_1\Direction_S_1_aliases.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_X</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_X\Direction_X.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Direction_X\Direction_X.h</v>
@@ -123,6 +130,10 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_S\Enable_S.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_S\Enable_S.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_S\Enable_S_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_S_1</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_S_1\Enable_S_1.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_S_1\Enable_S_1.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_S_1\Enable_S_1_aliases.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_X</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_X\Enable_X.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Enable_X\Enable_X.h</v>
@@ -138,6 +149,9 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_1</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_1\isr_1.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_1\isr_1.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_2</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_2\isr_2.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_2\isr_2.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_cork</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_cork\isr_cork.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\isr_cork\isr_cork.h</v>
@@ -164,10 +178,30 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_1\MISO_1.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_1\MISO_1.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_1\MISO_1_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_2</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_2\MISO_2.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_2\MISO_2.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_2\MISO_2_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_3</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_3\MISO_3.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_3\MISO_3.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_3\MISO_3_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_4</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_4\MISO_4.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_4\MISO_4.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MISO_4\MISO_4_aliases.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_1</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_1\MOSI_1.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_1\MOSI_1.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_1\MOSI_1_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_2</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_2\MOSI_2.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_2\MOSI_2.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_2\MOSI_2_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_3</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_3\MOSI_3.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_3\MOSI_3.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\MOSI_3\MOSI_3_aliases.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Pin_int_cork</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Pin_int_cork\Pin_int_cork.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Pin_int_cork\Pin_int_cork.h</v>
@@ -204,6 +238,10 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_S\PWM_S.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_S\PWM_S.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_S\PWM_S_PM.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_S_1</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_S_1\PWM_S_1.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_S_1\PWM_S_1.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_S_1\PWM_S_1_PM.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_X</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_X\PWM_X.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\PWM_X\PWM_X.h</v>
@@ -220,6 +258,12 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SCLK_1\SCLK_1.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SCLK_1\SCLK_1.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SCLK_1\SCLK_1_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIM_1</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIM_1\SPIM_1.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIM_1\SPIM_1.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIM_1\SPIM_1_INT.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIM_1\SPIM_1_PM.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIM_1\SPIM_1_PVT.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIS_1</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIS_1\SPIS_1.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\SPIS_1\SPIS_1.h</v>
@@ -238,6 +282,10 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_S\Step_S.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_S\Step_S.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_S\Step_S_aliases.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_S_1</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_S_1\Step_S_1.c</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_S_1\Step_S_1.h</v>
+<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_S_1\Step_S_1_aliases.h</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_X</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_X\Step_X.c</v>
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\Step_X\Step_X.h</v>
@@ -341,6 +389,7 @@
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_2.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_3.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_4.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_5.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
@@ -352,14 +401,17 @@
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Direction_S.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Direction_S_1.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Direction_X.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Direction_Y.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Direction_Z.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Enable_S.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Enable_S_1.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Enable_X.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Enable_Y.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Enable_Z.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_1.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_2.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_cork.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_x_home.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_xy_end.lst</v>
@@ -369,7 +421,12 @@
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\LED_1.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\MISO_1.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\MISO_2.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\MISO_3.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\MISO_4.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\MOSI_1.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\MOSI_2.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\MOSI_3.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_int_cork.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_int_x_home.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_int_xy_end.lst</v>
@@ -379,6 +436,8 @@
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_X.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_Y.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_S.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_S_1.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_S_1_PM.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_S_PM.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_X.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_X_PM.lst</v>
@@ -387,6 +446,9 @@
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_Z.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_Z_PM.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SCLK_1.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SPIM_1.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SPIM_1_INT.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SPIM_1_PM.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SPIS_1.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SPIS_1_BOOT.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SPIS_1_INT.lst</v>
@@ -394,6 +456,7 @@
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SPIS_1_PM.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\SS_1.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Step_S.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Step_S_1.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Step_X.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Step_Y.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Step_Z.lst</v>
@@ -425,6 +488,7 @@
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_2.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_3.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_4.lst</v>
+<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_5.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
@@ -435,7 +499,6 @@
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
 <v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Direction_S.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -462,6 +525,7 @@
 <v>StepperMotor-000\StepperMotor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>StepperMotor-000\StepperMotor\PWM_v3_30</v>
 <v>StepperMotor-000\StepperMotor\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>StepperMotor-000\StepperMotor\SPI_Master_v2_50.pdf</v>
 <v>StepperMotor-000\StepperMotor\SPI_Slave_v2_70.pdf</v>
 <v>StepperMotor-000\StepperMotor\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
@@ -483,6 +547,7 @@
 <v>StepperMotor-000\StepperMotor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>StepperMotor-000\StepperMotor\PWM_v3_30</v>
 <v>StepperMotor-000\StepperMotor\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>StepperMotor-000\StepperMotor\SPI_Master_v2_50.pdf</v>
 <v>StepperMotor-000\StepperMotor\SPI_Slave_v2_70.pdf</v>
 <v>StepperMotor-000\StepperMotor\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
@@ -507,7 +572,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="908, 403" SelectedTabbedMdiWindow="433e00e2-0ef4-4a93-8a86-9953dac7b0b3"><DocumentWindow Key="4474d5d2-7492-460e-af82-3386e153a834" Guid="f5210ce0-228a-4d05-858a-644562dc0f9e" /><DocumentWindow Key="0c7d77ce-54b4-49be-894d-20044ccc8155" Guid="562d3450-8df4-45c6-bfdd-14e2f1b42d49" /><DocumentWindow Key="3cca370f-fceb-42bf-ae34-8b6ca5b99437" Guid="de676003-9148-4a15-b04c-2f2b0df3541d" /><DocumentWindow Key="3b71ae34-e6d1-49d5-953d-e342029ae00e" Guid="0ec582de-66e6-42e3-a59b-43bf9a2e1a75" /><DocumentWindow Key="511248c4-4335-4812-9eba-01aa536fdd32" Guid="e399eb37-bed4-4adc-b138-8de0c6409f36" /><DocumentWindow Key="e4051f7f-f6c4-43fa-ae9c-6d17df79022f" Guid="433e00e2-0ef4-4a93-8a86-9953dac7b0b3" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="969, 403" SelectedTabbedMdiWindow="24def0c8-7fc5-4fcb-a0ce-ad10487910dd"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="f6958daa-2cc3-4af7-9348-21e972fec191" Guid="1320e23e-df04-4f2c-ab3d-abc833ad55f8" /><DocumentWindow Key="fdb497df-e651-43c2-a368-26029ea61823" Guid="24def0c8-7fc5-4fcb-a0ce-ad10487910dd" /><DocumentWindow Key="a668e678-2b53-4b73-8104-e21b344b93f4" Guid="6e124334-c951-4ae4-98d6-0fee9ac9acff" /><DocumentWindow Key="fdd8a26f-d4e2-4d40-9366-b8ad801ae73a" Guid="e4c25472-4cfa-498f-bd12-aefb9351f458" /><DocumentWindow Key="0e546bab-0e13-405e-bfc9-4dc45acf95f8" Guid="be1e9057-8ce5-4190-a984-7ab82835497a" /><DocumentWindow Key="d81c9f50-e090-443c-ac5d-7d764b83d2c1" Guid="608fcd6f-75aa-4118-8df6-2665bb27496b" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

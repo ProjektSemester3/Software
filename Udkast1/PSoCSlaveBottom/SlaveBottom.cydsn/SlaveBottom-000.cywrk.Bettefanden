@@ -275,16 +275,6 @@
 <v>SlaveBottom-000\SlaveBottom\PSoC 5LP Architecture TRM</v>
 <v>SlaveBottom-000\SlaveBottom\CY8C58LP Family Datasheet</v>
 <v>SlaveBottom-000\SlaveBottom\System Reference Guides</v>
-<v>SlaveBottom-000\SlaveBottom\System Reference Guides\cy_boot_v5_50</v>
-<v>SlaveBottom-000\SlaveBottom\cy_clock_v2_20.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\cy_constant_v1_0.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\cy_isr_v1_70</v>
-<v>SlaveBottom-000\SlaveBottom\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\cy_pins_v2_20</v>
-<v>SlaveBottom-000\SlaveBottom\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\PWM_v3_30.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\SPI_Slave_v2_70.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>SlaveBottom-000</v>
@@ -292,16 +282,6 @@
 <v>SlaveBottom-000\SlaveBottom\PSoC 5LP Architecture TRM</v>
 <v>SlaveBottom-000\SlaveBottom\CY8C58LP Family Datasheet</v>
 <v>SlaveBottom-000\SlaveBottom\System Reference Guides</v>
-<v>SlaveBottom-000\SlaveBottom\System Reference Guides\cy_boot_v5_50</v>
-<v>SlaveBottom-000\SlaveBottom\cy_clock_v2_20.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\cy_constant_v1_0.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\cy_isr_v1_70</v>
-<v>SlaveBottom-000\SlaveBottom\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\cy_pins_v2_20</v>
-<v>SlaveBottom-000\SlaveBottom\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\PWM_v3_30.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\SPI_Slave_v2_70.pdf</v>
-<v>SlaveBottom-000\SlaveBottom\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -321,7 +301,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1162, 403" SelectedTabbedMdiWindow="051f98ee-34ee-4320-9ed0-7b550073e579"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="f8554dd7-390e-43e3-b8f0-5891597ea388" Guid="97d5239c-926f-486d-aa41-6186af559a01" /><DocumentWindow Key="17b611eb-0b1c-4766-b15d-63f58caee318" Guid="5b88dd68-c91a-42f9-952d-b30d6d2f0a56" /><DocumentWindow Key="cfd3c02e-ea81-4f8e-a02d-f5284fa88a48" Guid="051f98ee-34ee-4320-9ed0-7b550073e579" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="969, 403" SelectedTabbedMdiWindow="d96147bc-159e-4f20-87bf-361b58fffbbe"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="eca2770c-b928-4824-8fdd-58c85221a403" Guid="be972f78-f1b2-4fdd-9bf3-c14cb9140623" /><DocumentWindow Key="b01aa423-5aa1-4041-805a-2c925707f40a" Guid="d96147bc-159e-4f20-87bf-361b58fffbbe" /><DocumentWindow Key="31d20cf5-2506-4669-8d76-1a0bcca6004c" Guid="f53e9e5e-de7d-49b7-865b-8fdd14e5fcb6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

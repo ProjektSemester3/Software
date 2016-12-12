@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 1
   29:main.c        ****     IN_PROCESS = 0x33,
   30:main.c        **** };
   31:main.c        **** 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 2
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 2
 
 
   32:main.c        **** enum bottleInfo {
@@ -86,2271 +86,1569 @@ ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 1
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
-  31              		@ link register save eliminated.
-  53:main.c        ****     enabled = 1;
-  32              		.loc 1 53 0
-  33 0000 0122     		movs	r2, #1
-  34 0002 014B     		ldr	r3, .L2
-  35 0004 1A70     		strb	r2, [r3]
-  36 0006 7047     		bx	lr
-  37              	.L3:
-  38              		.align	2
-  39              	.L2:
-  40 0008 00000000 		.word	.LANCHOR0
-  41              		.cfi_endproc
-  42              	.LFE63:
-  43              		.size	isr_RxD, .-isr_RxD
-  44              		.section	.text.moveZ,"ax",%progbits
-  45              		.align	2
-  46              		.global	moveZ
-  47              		.thumb
-  48              		.thumb_func
-  49              		.type	moveZ, %function
-  50              	moveZ:
-  51              	.LFB65:
-  54:main.c        ****     /*uint8 rxCmd;
-  55:main.c        ****     
-  56:main.c        ****     rxCmd = UART_1_ReadRxData();
+  31 0000 08B5     		push	{r3, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 3, -8
+  34              		.cfi_offset 14, -4
+  53:main.c        ****     
+  54:main.c        ****     enabled = !enabled;
+  35              		.loc 1 54 0
+  36 0002 044B     		ldr	r3, .L3
+  37 0004 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  38 0006 B0FA80F0 		clz	r0, r0
+  39 000a 4009     		lsrs	r0, r0, #5
+  40 000c 1870     		strb	r0, [r3]
+  55:main.c        ****     Enable_1_Write(enabled);
+  41              		.loc 1 55 0
+  42 000e FFF7FEFF 		bl	Enable_1_Write
+  43              	.LVL0:
+  44 0012 08BD     		pop	{r3, pc}
+  45              	.L4:
+  46              		.align	2
+  47              	.L3:
+  48 0014 00000000 		.word	.LANCHOR0
+  49              		.cfi_endproc
+  50              	.LFE63:
+  51              		.size	isr_RxD, .-isr_RxD
+  52              		.section	.text.moveZ,"ax",%progbits
+  53              		.align	2
+  54              		.global	moveZ
+  55              		.thumb
+  56              		.thumb_func
+  57              		.type	moveZ, %function
+  58              	moveZ:
+  59              	.LFB65:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 3
+
+
+  56:main.c        ****     /*uint8 rxCmd;
   57:main.c        ****     
-  58:main.c        ****     if(command == STOP_1 || command == STOP_2) {
-  59:main.c        ****         Enable_1_Write(1);
-  60:main.c        ****     }
-  61:main.c        ****     else if(command == POSITION_Z_1) {
-  62:main.c        ****         Direction_1_Write(FW);
-  63:main.c        ****         Enable_1_Write(0);
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 3
-
-
-  64:main.c        ****     }
-  65:main.c        ****     else {
-  66:main.c        ****         Direction_1_Write(BW);
-  67:main.c        ****         Enable_1_Write(0);
-  68:main.c        ****     }
-  69:main.c        ****     //enabled = POSITION_Z_1;
-  70:main.c        ****     
-  71:main.c        ****     //enabled = command;
-  72:main.c        ****     command = (command % 4) + 1;
-  73:main.c        ****     */
-  74:main.c        **** }
-  75:main.c        **** /*
-  76:main.c        **** CY_ISR(isr_x_home)
-  77:main.c        **** {
-  78:main.c        ****     //zStop = 1;
-  79:main.c        ****     Pin_int_x_home_ClearInterrupt();
-  80:main.c        **** }*/
-  81:main.c        **** 
-  82:main.c        **** int main(void)
-  83:main.c        **** {
-  84:main.c        ****     updateStatus(DEFAULT);
-  85:main.c        ****     CyGlobalIntEnable;
-  86:main.c        **** 
-  87:main.c        ****     UART_1_Start();
-  88:main.c        ****     isr_RxD_StartEx(isr_RxD);
-  89:main.c        ****     //isr_x_home_StartEx(isr_x_home);
-  90:main.c        ****     
-  91:main.c        ****     PWM_1_Start();
-  92:main.c        ****     enabled = DEFAULT;
-  93:main.c        **** 
-  94:main.c        ****     for(;;)
-  95:main.c        ****     {
-  96:main.c        ****         switch(enabled) {
-  97:main.c        ****             case 1: {
-  98:main.c        ****             uint16 ADCResultX;
-  99:main.c        ****             uint8 i;
- 100:main.c        ****             uint16 zPosRight;
- 101:main.c        ****             uint16 zPosLeft;
- 102:main.c        ****             uint16 zWidth;
- 103:main.c        ****             Direction_1_Write(BW);
- 104:main.c        ****             
- 105:main.c        ****             // Start sensor
- 106:main.c        ****             ADC_SAR_Seq_Start();
- 107:main.c        ****             ADC_SAR_Seq_StartConvert();
- 108:main.c        ****             ADC_SAR_Seq_IsEndConversion(ADC_SAR_Seq_WAIT_FOR_RESULT);
+  58:main.c        ****     rxCmd = UART_1_ReadRxData();
+  59:main.c        ****     
+  60:main.c        ****     if(command == STOP_1 || command == STOP_2) {
+  61:main.c        ****         Enable_1_Write(1);
+  62:main.c        ****     }
+  63:main.c        ****     else if(command == POSITION_Z_1) {
+  64:main.c        ****         Direction_1_Write(FW);
+  65:main.c        ****         Enable_1_Write(0);
+  66:main.c        ****     }
+  67:main.c        ****     else {
+  68:main.c        ****         Direction_1_Write(BW);
+  69:main.c        ****         Enable_1_Write(0);
+  70:main.c        ****     }
+  71:main.c        ****     //enabled = POSITION_Z_1;
+  72:main.c        ****     
+  73:main.c        ****     //enabled = command;
+  74:main.c        ****     command = (command % 4) + 1;
+  75:main.c        ****     */
+  76:main.c        **** }
+  77:main.c        **** /*
+  78:main.c        **** CY_ISR(isr_x_home)
+  79:main.c        **** {
+  80:main.c        ****     //zStop = 1;
+  81:main.c        ****     Pin_int_x_home_ClearInterrupt();
+  82:main.c        **** }*/
+  83:main.c        **** 
+  84:main.c        **** int main(void)
+  85:main.c        **** {
+  86:main.c        ****     updateStatus(DEFAULT);
+  87:main.c        ****     CyGlobalIntEnable;
+  88:main.c        **** 
+  89:main.c        ****     UART_1_Start();
+  90:main.c        ****     isr_RxD_StartEx(isr_RxD);
+  91:main.c        ****     //isr_x_home_StartEx(isr_x_home);
+  92:main.c        ****     
+  93:main.c        ****     PWM_1_Start();
+  94:main.c        ****     enabled = 0;
+  95:main.c        ****     Direction_1_Write(FW);
+  96:main.c        ****     
+  97:main.c        ****     for(;;)
+  98:main.c        ****     {
+  99:main.c        ****         //while(enabled) {
+ 100:main.c        ****             
+ 101:main.c        ****         /*switch(enabled) {
+ 102:main.c        ****             case 1: {
+ 103:main.c        ****             uint16 ADCResultX;
+ 104:main.c        ****             uint8 i;
+ 105:main.c        ****             uint16 zPosRight;
+ 106:main.c        ****             uint16 zPosLeft;
+ 107:main.c        ****             uint16 zWidth;
+ 108:main.c        ****             Direction_1_Write(BW);
  109:main.c        ****             
- 110:main.c        ****             // Find right edge of bottle
- 111:main.c        ****             Enable_1_Write(0);
- 112:main.c        ****             do {
- 113:main.c        ****                 ADCResultX = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(0));
- 114:main.c        ****                 CyDelay(25);
- 115:main.c        ****                 zStepCount++;
- 116:main.c        ****             } while((ADCResultX < 2000) && (zStop == 0));
- 117:main.c        ****             Enable_1_Write(1);
- 118:main.c        ****             
- 119:main.c        ****             zPosRight = zStepCount;
- 120:main.c        ****             
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 4
+ 110:main.c        ****             // Start sensor
+ 111:main.c        ****             ADC_SAR_Seq_Start();
+ 112:main.c        ****             ADC_SAR_Seq_StartConvert();
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 4
 
 
- 121:main.c        ****             /*if(zStop == 1) {
- 122:main.c        ****                 zStop = 0;
- 123:main.c        ****                 enabled = 0;
- 124:main.c        ****                 break;
- 125:main.c        ****             }*/
- 126:main.c        ****             
- 127:main.c        ****             if(!isr_x_home_GetState()) {
- 128:main.c        ****                 isr_x_home_Enable();
- 129:main.c        ****             }
- 130:main.c        ****             
- 131:main.c        ****             // Find left edge of bottle
- 132:main.c        ****             Enable_1_Write(0);
- 133:main.c        ****             do {
- 134:main.c        ****                 ADCResultX = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(0));
- 135:main.c        ****                 CyDelay(25);
- 136:main.c        ****                 zStepCount++;
- 137:main.c        ****             } while((ADCResultX > 2000) && (zStop == 0));
- 138:main.c        ****             Enable_1_Write(1);
- 139:main.c        ****             
- 140:main.c        ****             zPosLeft = zStepCount;
- 141:main.c        ****             
- 142:main.c        ****             UART_1_WriteTxData(zPosLeft);
- 143:main.c        ****             
- 144:main.c        ****             ADC_SAR_Seq_Stop();
- 145:main.c        ****             
- 146:main.c        ****             zWidth = (zPosLeft - zPosRight)/2;
- 147:main.c        ****             
- 148:main.c        ****             Direction_1_Write(FW);
- 149:main.c        ****             
- 150:main.c        ****             // Find centre of bottle
- 151:main.c        ****             Enable_1_Write(0);
- 152:main.c        ****             for(i = zWidth; i > 0; --i) {
- 153:main.c        ****                 CyDelay(25);
- 154:main.c        ****             }
- 155:main.c        ****             Enable_1_Write(1);
- 156:main.c        ****             
- 157:main.c        ****             enabled = 0;
- 158:main.c        ****         }
- 159:main.c        ****         }
- 160:main.c        ****     }
- 161:main.c        ****     
- 162:main.c        ****     return 0;
- 163:main.c        **** }
- 164:main.c        **** 
- 165:main.c        **** void moveZ(uint8 bound)
- 166:main.c        **** {
-  52              		.loc 1 166 0
-  53              		.cfi_startproc
-  54              		@ args = 0, pretend = 0, frame = 0
-  55              		@ frame_needed = 0, uses_anonymous_args = 0
-  56              	.LVL0:
-  57 0000 08B5     		push	{r3, lr}
-  58              		.cfi_def_cfa_offset 8
-  59              		.cfi_offset 3, -8
-  60              		.cfi_offset 14, -4
- 167:main.c        ****     Direction_1_Write(FW);
-  61              		.loc 1 167 0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 5
-
-
-  62 0002 0020     		movs	r0, #0
-  63              	.LVL1:
-  64 0004 FFF7FEFF 		bl	Direction_1_Write
-  65              	.LVL2:
- 168:main.c        ****     
- 169:main.c        ****     //pwm_isr_1_Enable();
- 170:main.c        ****     
- 171:main.c        ****     Enable_1_Write(0);
-  66              		.loc 1 171 0
-  67 0008 0020     		movs	r0, #0
-  68 000a FFF7FEFF 		bl	Enable_1_Write
-  69              	.LVL3:
-  70              	.L5:
- 172:main.c        ****     
- 173:main.c        ****     while(zDirection == FW) {}
-  71              		.loc 1 173 0 discriminator 1
-  72 000e 054B     		ldr	r3, .L7
-  73 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  74 0012 002B     		cmp	r3, #0
-  75 0014 FBD0     		beq	.L5
- 174:main.c        ****     
- 175:main.c        ****     Enable_1_Write(1);
-  76              		.loc 1 175 0
-  77 0016 0120     		movs	r0, #1
-  78 0018 FFF7FEFF 		bl	Enable_1_Write
-  79              	.LVL4:
- 176:main.c        ****     //pwm_isr_1_Disable();
- 177:main.c        ****     
- 178:main.c        ****     enabled = DEFAULT;
-  80              		.loc 1 178 0
-  81 001c 3022     		movs	r2, #48
-  82 001e 024B     		ldr	r3, .L7+4
-  83 0020 1A70     		strb	r2, [r3]
-  84 0022 08BD     		pop	{r3, pc}
-  85              	.L8:
-  86              		.align	2
-  87              	.L7:
-  88 0024 00000000 		.word	zDirection
-  89 0028 00000000 		.word	.LANCHOR0
-  90              		.cfi_endproc
-  91              	.LFE65:
-  92              		.size	moveZ, .-moveZ
-  93              		.section	.text.reset,"ax",%progbits
-  94              		.align	2
-  95              		.global	reset
-  96              		.thumb
-  97              		.thumb_func
-  98              		.type	reset, %function
-  99              	reset:
- 100              	.LFB66:
- 179:main.c        **** }
- 180:main.c        **** 
- 181:main.c        **** void reset()
- 182:main.c        **** {
- 101              		.loc 1 182 0
- 102              		.cfi_startproc
- 103              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 6
-
-
- 104              		@ frame_needed = 0, uses_anonymous_args = 0
- 105 0000 08B5     		push	{r3, lr}
- 106              		.cfi_def_cfa_offset 8
- 107              		.cfi_offset 3, -8
- 108              		.cfi_offset 14, -4
- 183:main.c        ****     Direction_1_Write(BW);
- 109              		.loc 1 183 0
- 110 0002 0120     		movs	r0, #1
- 111 0004 FFF7FEFF 		bl	Direction_1_Write
- 112              	.LVL5:
- 184:main.c        ****     
- 185:main.c        ****     //pwm_isr_1_Enable();
- 186:main.c        ****     
- 187:main.c        ****     Enable_1_Write(0);
- 113              		.loc 1 187 0
- 114 0008 0020     		movs	r0, #0
- 115 000a FFF7FEFF 		bl	Enable_1_Write
- 116              	.LVL6:
- 117              	.L10:
- 188:main.c        ****     
- 189:main.c        ****     while(zDirection == BW) {}
- 118              		.loc 1 189 0 discriminator 1
- 119 000e 054B     		ldr	r3, .L12
- 120 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 121 0012 012B     		cmp	r3, #1
- 122 0014 FBD0     		beq	.L10
- 190:main.c        ****     
- 191:main.c        ****     Enable_1_Write(1);
- 123              		.loc 1 191 0
- 124 0016 0120     		movs	r0, #1
- 125 0018 FFF7FEFF 		bl	Enable_1_Write
- 126              	.LVL7:
- 192:main.c        ****     //pwm_isr_1_Disable();
- 193:main.c        ****     
- 194:main.c        ****     enabled = DEFAULT;
- 127              		.loc 1 194 0
- 128 001c 3022     		movs	r2, #48
- 129 001e 024B     		ldr	r3, .L12+4
- 130 0020 1A70     		strb	r2, [r3]
- 131 0022 08BD     		pop	{r3, pc}
- 132              	.L13:
- 133              		.align	2
- 134              	.L12:
- 135 0024 00000000 		.word	zDirection
- 136 0028 00000000 		.word	.LANCHOR0
- 137              		.cfi_endproc
- 138              	.LFE66:
- 139              		.size	reset, .-reset
- 140              		.section	.text.updateStatus,"ax",%progbits
- 141              		.align	2
- 142              		.global	updateStatus
- 143              		.thumb
- 144              		.thumb_func
- 145              		.type	updateStatus, %function
- 146              	updateStatus:
- 147              	.LFB67:
- 195:main.c        **** }
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 7
-
-
- 196:main.c        **** 
- 197:main.c        **** // Update status of slave-PSoC/message to be sent to master-PSoC
- 198:main.c        **** void updateStatus(uint8 stat)
- 199:main.c        **** {
- 148              		.loc 1 199 0
- 149              		.cfi_startproc
- 150              		@ args = 0, pretend = 0, frame = 0
- 151              		@ frame_needed = 0, uses_anonymous_args = 0
- 152              	.LVL8:
- 153 0000 10B5     		push	{r4, lr}
- 154              		.cfi_def_cfa_offset 8
- 155              		.cfi_offset 4, -8
- 156              		.cfi_offset 14, -4
- 200:main.c        ****     status = stat;
- 157              		.loc 1 200 0
- 158 0002 044C     		ldr	r4, .L16
- 159 0004 2070     		strb	r0, [r4]
- 201:main.c        ****     UART_1_ClearTxBuffer();
- 160              		.loc 1 201 0
- 161 0006 FFF7FEFF 		bl	UART_1_ClearTxBuffer
- 162              	.LVL9:
- 202:main.c        ****     UART_1_WriteTxData(status);
- 163              		.loc 1 202 0
- 164 000a 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
- 165 000c FFF7FEFF 		bl	UART_1_WriteTxData
- 166              	.LVL10:
- 167 0010 10BD     		pop	{r4, pc}
- 168              	.L17:
- 169 0012 00BF     		.align	2
- 170              	.L16:
- 171 0014 00000000 		.word	status
- 172              		.cfi_endproc
- 173              	.LFE67:
- 174              		.size	updateStatus, .-updateStatus
- 175              		.section	.text.main,"ax",%progbits
- 176              		.align	2
- 177              		.global	main
- 178              		.thumb
- 179              		.thumb_func
- 180              		.type	main, %function
- 181              	main:
- 182              	.LFB64:
-  83:main.c        ****     updateStatus(DEFAULT);
- 183              		.loc 1 83 0
- 184              		.cfi_startproc
- 185              		@ args = 0, pretend = 0, frame = 0
- 186              		@ frame_needed = 0, uses_anonymous_args = 0
- 187 0000 70B5     		push	{r4, r5, r6, lr}
- 188              		.cfi_def_cfa_offset 16
- 189              		.cfi_offset 4, -16
- 190              		.cfi_offset 5, -12
- 191              		.cfi_offset 6, -8
- 192              		.cfi_offset 14, -4
-  84:main.c        ****     CyGlobalIntEnable;
- 193              		.loc 1 84 0
- 194 0002 3020     		movs	r0, #48
- 195 0004 FFF7FEFF 		bl	updateStatus
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 8
-
-
- 196              	.LVL11:
-  85:main.c        **** 
- 197              		.loc 1 85 0
- 198              	@ 85 "main.c" 1
- 199 0008 62B6     		CPSIE   i
- 200              	@ 0 "" 2
-  87:main.c        ****     isr_RxD_StartEx(isr_RxD);
- 201              		.loc 1 87 0
- 202              		.thumb
- 203 000a FFF7FEFF 		bl	UART_1_Start
- 204              	.LVL12:
-  88:main.c        ****     //isr_x_home_StartEx(isr_x_home);
- 205              		.loc 1 88 0
- 206 000e 3848     		ldr	r0, .L30
- 207 0010 FFF7FEFF 		bl	isr_RxD_StartEx
- 208              	.LVL13:
-  91:main.c        ****     enabled = DEFAULT;
- 209              		.loc 1 91 0
- 210 0014 FFF7FEFF 		bl	PWM_1_Start
- 211              	.LVL14:
-  92:main.c        **** 
- 212              		.loc 1 92 0
- 213 0018 3022     		movs	r2, #48
- 214 001a 364B     		ldr	r3, .L30+4
- 215 001c 1A70     		strb	r2, [r3]
- 216              	.L19:
-  96:main.c        ****             case 1: {
- 217              		.loc 1 96 0
- 218 001e 354B     		ldr	r3, .L30+4
- 219 0020 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 220 0022 012B     		cmp	r3, #1
- 221 0024 FBD1     		bne	.L19
- 222              	.LBB2:
- 103:main.c        ****             
- 223              		.loc 1 103 0
- 224 0026 0120     		movs	r0, #1
- 225 0028 FFF7FEFF 		bl	Direction_1_Write
- 226              	.LVL15:
- 106:main.c        ****             ADC_SAR_Seq_StartConvert();
- 227              		.loc 1 106 0
- 228 002c FFF7FEFF 		bl	ADC_SAR_Seq_Start
- 229              	.LVL16:
- 107:main.c        ****             ADC_SAR_Seq_IsEndConversion(ADC_SAR_Seq_WAIT_FOR_RESULT);
- 230              		.loc 1 107 0
- 231 0030 FFF7FEFF 		bl	ADC_SAR_Seq_StartConvert
- 232              	.LVL17:
- 108:main.c        ****             
- 233              		.loc 1 108 0
- 234 0034 0020     		movs	r0, #0
- 235 0036 FFF7FEFF 		bl	ADC_SAR_Seq_IsEndConversion
- 236              	.LVL18:
- 111:main.c        ****             do {
- 237              		.loc 1 111 0
- 238 003a 0020     		movs	r0, #0
- 239 003c FFF7FEFF 		bl	Enable_1_Write
- 240              	.LVL19:
- 241              	.L22:
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 9
-
-
- 113:main.c        ****                 CyDelay(25);
- 242              		.loc 1 113 0 discriminator 2
- 243 0040 0020     		movs	r0, #0
- 244 0042 FFF7FEFF 		bl	ADC_SAR_Seq_GetResult16
- 245              	.LVL20:
- 246 0046 FFF7FEFF 		bl	ADC_SAR_Seq_CountsTo_mVolts
- 247              	.LVL21:
- 248 004a 84B2     		uxth	r4, r0
- 249              	.LVL22:
- 114:main.c        ****                 zStepCount++;
- 250              		.loc 1 114 0 discriminator 2
- 251 004c 1920     		movs	r0, #25
- 252 004e FFF7FEFF 		bl	CyDelay
- 253              	.LVL23:
- 115:main.c        ****             } while((ADCResultX < 2000) && (zStop == 0));
- 254              		.loc 1 115 0 discriminator 2
- 255 0052 284A     		ldr	r2, .L30+4
- 256 0054 5388     		ldrh	r3, [r2, #2]
- 257 0056 0133     		adds	r3, r3, #1
- 258 0058 5380     		strh	r3, [r2, #2]	@ movhi
- 116:main.c        ****             Enable_1_Write(1);
- 259              		.loc 1 116 0 discriminator 2
- 260 005a B4F5FA6F 		cmp	r4, #2000
- 261 005e 02D2     		bcs	.L21
- 116:main.c        ****             Enable_1_Write(1);
- 262              		.loc 1 116 0 is_stmt 0 discriminator 1
- 263 0060 1379     		ldrb	r3, [r2, #4]	@ zero_extendqisi2
- 264 0062 002B     		cmp	r3, #0
- 265 0064 ECD0     		beq	.L22
- 266              	.L21:
- 117:main.c        ****             
- 267              		.loc 1 117 0 is_stmt 1
- 268 0066 0120     		movs	r0, #1
- 269 0068 FFF7FEFF 		bl	Enable_1_Write
- 270              	.LVL24:
- 119:main.c        ****             
- 271              		.loc 1 119 0
- 272 006c 214B     		ldr	r3, .L30+4
- 273 006e 5E88     		ldrh	r6, [r3, #2]
- 274              	.LVL25:
- 127:main.c        ****                 isr_x_home_Enable();
- 275              		.loc 1 127 0
- 276 0070 FFF7FEFF 		bl	isr_x_home_GetState
- 277              	.LVL26:
- 278 0074 08B9     		cbnz	r0, .L23
- 128:main.c        ****             }
- 279              		.loc 1 128 0
- 280 0076 FFF7FEFF 		bl	isr_x_home_Enable
- 281              	.LVL27:
- 282              	.L23:
- 132:main.c        ****             do {
- 283              		.loc 1 132 0
- 284 007a 0020     		movs	r0, #0
- 285 007c FFF7FEFF 		bl	Enable_1_Write
- 286              	.LVL28:
- 287              	.L25:
- 134:main.c        ****                 CyDelay(25);
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 10
-
-
- 288              		.loc 1 134 0 discriminator 2
- 289 0080 0020     		movs	r0, #0
- 290 0082 FFF7FEFF 		bl	ADC_SAR_Seq_GetResult16
- 291              	.LVL29:
- 292 0086 FFF7FEFF 		bl	ADC_SAR_Seq_CountsTo_mVolts
- 293              	.LVL30:
- 294 008a 85B2     		uxth	r5, r0
- 295              	.LVL31:
- 135:main.c        ****                 zStepCount++;
- 296              		.loc 1 135 0 discriminator 2
- 297 008c 1920     		movs	r0, #25
- 298 008e FFF7FEFF 		bl	CyDelay
- 299              	.LVL32:
- 136:main.c        ****             } while((ADCResultX > 2000) && (zStop == 0));
- 300              		.loc 1 136 0 discriminator 2
- 301 0092 184A     		ldr	r2, .L30+4
- 302 0094 5388     		ldrh	r3, [r2, #2]
- 303 0096 0133     		adds	r3, r3, #1
- 304 0098 5380     		strh	r3, [r2, #2]	@ movhi
- 137:main.c        ****             Enable_1_Write(1);
- 305              		.loc 1 137 0 discriminator 2
- 306 009a B5F5FA6F 		cmp	r5, #2000
- 307 009e 02D9     		bls	.L24
- 137:main.c        ****             Enable_1_Write(1);
- 308              		.loc 1 137 0 is_stmt 0 discriminator 1
- 309 00a0 1379     		ldrb	r3, [r2, #4]	@ zero_extendqisi2
- 310 00a2 002B     		cmp	r3, #0
- 311 00a4 ECD0     		beq	.L25
- 312              	.L24:
- 138:main.c        ****             
- 313              		.loc 1 138 0 is_stmt 1
- 314 00a6 0120     		movs	r0, #1
- 315 00a8 FFF7FEFF 		bl	Enable_1_Write
- 316              	.LVL33:
- 140:main.c        ****             
- 317              		.loc 1 140 0
- 318 00ac 114B     		ldr	r3, .L30+4
- 319 00ae 5C88     		ldrh	r4, [r3, #2]
- 320              	.LVL34:
- 142:main.c        ****             
- 321              		.loc 1 142 0
- 322 00b0 E0B2     		uxtb	r0, r4
- 323 00b2 FFF7FEFF 		bl	UART_1_WriteTxData
- 324              	.LVL35:
+ 113:main.c        ****             ADC_SAR_Seq_IsEndConversion(ADC_SAR_Seq_WAIT_FOR_RESULT);
+ 114:main.c        ****             
+ 115:main.c        ****             // Find right edge of bottle
+ 116:main.c        ****             Enable_1_Write(0);
+ 117:main.c        ****             do {
+ 118:main.c        ****                 ADCResultX = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(0));
+ 119:main.c        ****                 CyDelay(25);
+ 120:main.c        ****                 zStepCount++;
+ 121:main.c        ****             } while((ADCResultX < 2000) && (zStop == 0));
+ 122:main.c        ****             Enable_1_Write(1);
+ 123:main.c        ****             
+ 124:main.c        ****             zPosRight = zStepCount;
+ 125:main.c        ****             
+ 126:main.c        ****             if(zStop == 1) {
+ 127:main.c        ****                 zStop = 0;
+ 128:main.c        ****                 enabled = 0;
+ 129:main.c        ****                 break;
+ 130:main.c        ****             }
+ 131:main.c        ****             
+ 132:main.c        ****             if(!isr_x_home_GetState()) {
+ 133:main.c        ****                 isr_x_home_Enable();
+ 134:main.c        ****             }
+ 135:main.c        ****             
+ 136:main.c        ****             // Find left edge of bottle
+ 137:main.c        ****             Enable_1_Write(0);
+ 138:main.c        ****             do {
+ 139:main.c        ****                 ADCResultX = ADC_SAR_Seq_CountsTo_mVolts(ADC_SAR_Seq_GetResult16(0));
+ 140:main.c        ****                 CyDelay(25);
+ 141:main.c        ****                 zStepCount++;
+ 142:main.c        ****             } while((ADCResultX > 2000) && (zStop == 0));
+ 143:main.c        ****             Enable_1_Write(1);
  144:main.c        ****             
- 325              		.loc 1 144 0
- 326 00b6 FFF7FEFF 		bl	ADC_SAR_Seq_Stop
- 327              	.LVL36:
+ 145:main.c        ****             zPosLeft = zStepCount;
  146:main.c        ****             
- 328              		.loc 1 146 0
- 329 00ba A41B     		subs	r4, r4, r6
- 330              	.LVL37:
- 331 00bc 04EBD474 		add	r4, r4, r4, lsr #31
- 332 00c0 6410     		asrs	r4, r4, #1
- 333              	.LVL38:
+ 147:main.c        ****             UART_1_WriteTxData(zPosLeft);
  148:main.c        ****             
- 334              		.loc 1 148 0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 11
+ 149:main.c        ****             ADC_SAR_Seq_Stop();
+ 150:main.c        ****             
+ 151:main.c        ****             zWidth = (zPosLeft - zPosRight)/2;
+ 152:main.c        ****             
+ 153:main.c        ****             Direction_1_Write(FW);
+ 154:main.c        ****             
+ 155:main.c        ****             // Find centre of bottle
+ 156:main.c        ****             Enable_1_Write(0);
+ 157:main.c        ****             for(i = zWidth; i > 0; --i) {
+ 158:main.c        ****                 CyDelay(25);
+ 159:main.c        ****             }
+ 160:main.c        ****             Enable_1_Write(1);
+ 161:main.c        ****             
+ 162:main.c        ****             enabled = 0;
+ 163:main.c        ****             }
+ 164:main.c        ****         }*/
+ 165:main.c        ****     }
+ 166:main.c        ****     
+ 167:main.c        ****     return 0;
+ 168:main.c        **** }
+ 169:main.c        **** 
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 5
 
 
- 335 00c2 0020     		movs	r0, #0
- 336 00c4 FFF7FEFF 		bl	Direction_1_Write
- 337              	.LVL39:
- 151:main.c        ****             for(i = zWidth; i > 0; --i) {
- 338              		.loc 1 151 0
- 339 00c8 0020     		movs	r0, #0
- 340 00ca FFF7FEFF 		bl	Enable_1_Write
- 341              	.LVL40:
- 152:main.c        ****                 CyDelay(25);
- 342              		.loc 1 152 0
- 343 00ce E4B2     		uxtb	r4, r4
- 344              	.LVL41:
- 345 00d0 04E0     		b	.L26
- 346              	.L27:
- 153:main.c        ****             }
- 347              		.loc 1 153 0 discriminator 3
- 348 00d2 1920     		movs	r0, #25
- 349 00d4 FFF7FEFF 		bl	CyDelay
- 350              	.LVL42:
- 152:main.c        ****                 CyDelay(25);
- 351              		.loc 1 152 0 discriminator 3
- 352 00d8 013C     		subs	r4, r4, #1
- 353              	.LVL43:
- 354 00da E4B2     		uxtb	r4, r4
- 355              	.LVL44:
- 356              	.L26:
- 152:main.c        ****                 CyDelay(25);
- 357              		.loc 1 152 0 is_stmt 0 discriminator 1
- 358 00dc 002C     		cmp	r4, #0
- 359 00de F8D1     		bne	.L27
- 155:main.c        ****             
- 360              		.loc 1 155 0 is_stmt 1
- 361 00e0 0120     		movs	r0, #1
- 362 00e2 FFF7FEFF 		bl	Enable_1_Write
- 363              	.LVL45:
- 157:main.c        ****         }
- 364              		.loc 1 157 0
- 365 00e6 0022     		movs	r2, #0
- 366 00e8 024B     		ldr	r3, .L30+4
- 367 00ea 1A70     		strb	r2, [r3]
- 368 00ec 97E7     		b	.L19
- 369              	.L31:
- 370 00ee 00BF     		.align	2
- 371              	.L30:
- 372 00f0 00000000 		.word	isr_RxD
- 373 00f4 00000000 		.word	.LANCHOR0
- 374              	.LBE2:
- 375              		.cfi_endproc
- 376              	.LFE64:
- 377              		.size	main, .-main
- 378              		.global	command
- 379              		.comm	status,1,1
- 380              		.global	zStop
- 381              		.comm	zDirection,1,1
- 382              		.global	enabled
- 383              		.global	zStepCount
- 384              		.data
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 12
+ 170:main.c        **** void moveZ(uint8 bound)
+ 171:main.c        **** {
+  60              		.loc 1 171 0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              	.LVL1:
+  65 0000 08B5     		push	{r3, lr}
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 3, -8
+  68              		.cfi_offset 14, -4
+ 172:main.c        ****     Direction_1_Write(FW);
+  69              		.loc 1 172 0
+  70 0002 0020     		movs	r0, #0
+  71              	.LVL2:
+  72 0004 FFF7FEFF 		bl	Direction_1_Write
+  73              	.LVL3:
+ 173:main.c        ****     
+ 174:main.c        ****     //pwm_isr_1_Enable();
+ 175:main.c        ****     
+ 176:main.c        ****     Enable_1_Write(0);
+  74              		.loc 1 176 0
+  75 0008 0020     		movs	r0, #0
+  76 000a FFF7FEFF 		bl	Enable_1_Write
+  77              	.LVL4:
+  78              	.L6:
+ 177:main.c        ****     
+ 178:main.c        ****     while(zDirection == FW) {}
+  79              		.loc 1 178 0 discriminator 1
+  80 000e 054B     		ldr	r3, .L8
+  81 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  82 0012 002B     		cmp	r3, #0
+  83 0014 FBD0     		beq	.L6
+ 179:main.c        ****     
+ 180:main.c        ****     Enable_1_Write(1);
+  84              		.loc 1 180 0
+  85 0016 0120     		movs	r0, #1
+  86 0018 FFF7FEFF 		bl	Enable_1_Write
+  87              	.LVL5:
+ 181:main.c        ****     //pwm_isr_1_Disable();
+ 182:main.c        ****     
+ 183:main.c        ****     enabled = DEFAULT;
+  88              		.loc 1 183 0
+  89 001c 3022     		movs	r2, #48
+  90 001e 024B     		ldr	r3, .L8+4
+  91 0020 1A70     		strb	r2, [r3]
+  92 0022 08BD     		pop	{r3, pc}
+  93              	.L9:
+  94              		.align	2
+  95              	.L8:
+  96 0024 00000000 		.word	zDirection
+  97 0028 00000000 		.word	.LANCHOR0
+  98              		.cfi_endproc
+  99              	.LFE65:
+ 100              		.size	moveZ, .-moveZ
+ 101              		.section	.text.reset,"ax",%progbits
+ 102              		.align	2
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 6
 
 
- 385              		.type	command, %object
- 386              		.size	command, 1
- 387              	command:
- 388 0000 01       		.byte	1
- 389              		.bss
- 390              		.align	1
- 391              		.set	.LANCHOR0,. + 0
- 392              		.type	enabled, %object
- 393              		.size	enabled, 1
- 394              	enabled:
- 395 0000 00       		.space	1
- 396 0001 00       		.space	1
- 397              		.type	zStepCount, %object
- 398              		.size	zStepCount, 2
- 399              	zStepCount:
- 400 0002 0000     		.space	2
- 401              		.type	zStop, %object
- 402              		.size	zStop, 1
- 403              	zStop:
- 404 0004 00       		.space	1
- 405 0005 00       		.text
- 406              	.Letext0:
- 407              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
- 408              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
- 409              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 410              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 411              		.file 6 "Generated_Source\\PSoC5/Direction_1.h"
- 412              		.file 7 "Generated_Source\\PSoC5/Enable_1.h"
- 413              		.file 8 "Generated_Source\\PSoC5/UART_1.h"
- 414              		.file 9 "Generated_Source\\PSoC5/ADC_SAR_Seq.h"
- 415              		.file 10 "Generated_Source\\PSoC5/CyLib.h"
- 416              		.file 11 "Generated_Source\\PSoC5/isr_x_home.h"
- 417              		.file 12 "Generated_Source\\PSoC5/isr_RxD.h"
- 418              		.file 13 "Generated_Source\\PSoC5/PWM_1.h"
- 419              		.section	.debug_info,"",%progbits
- 420              	.Ldebug_info0:
- 421 0000 8E050000 		.4byte	0x58e
- 422 0004 0400     		.2byte	0x4
- 423 0006 00000000 		.4byte	.Ldebug_abbrev0
- 424 000a 04       		.byte	0x4
- 425 000b 01       		.uleb128 0x1
- 426 000c 01020000 		.4byte	.LASF63
- 427 0010 01       		.byte	0x1
- 428 0011 D0020000 		.4byte	.LASF64
- 429 0015 A3030000 		.4byte	.LASF65
- 430 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 431 001d 00000000 		.4byte	0
- 432 0021 00000000 		.4byte	.Ldebug_line0
- 433 0025 02       		.uleb128 0x2
- 434 0026 01       		.byte	0x1
- 435 0027 06       		.byte	0x6
- 436 0028 70010000 		.4byte	.LASF0
- 437 002c 02       		.uleb128 0x2
- 438 002d 01       		.byte	0x1
- 439 002e 08       		.byte	0x8
- 440 002f 48010000 		.4byte	.LASF1
- 441 0033 02       		.uleb128 0x2
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 13
+ 103              		.global	reset
+ 104              		.thumb
+ 105              		.thumb_func
+ 106              		.type	reset, %function
+ 107              	reset:
+ 108              	.LFB66:
+ 184:main.c        **** }
+ 185:main.c        **** 
+ 186:main.c        **** void reset()
+ 187:main.c        **** {
+ 109              		.loc 1 187 0
+ 110              		.cfi_startproc
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113 0000 08B5     		push	{r3, lr}
+ 114              		.cfi_def_cfa_offset 8
+ 115              		.cfi_offset 3, -8
+ 116              		.cfi_offset 14, -4
+ 188:main.c        ****     Direction_1_Write(BW);
+ 117              		.loc 1 188 0
+ 118 0002 0120     		movs	r0, #1
+ 119 0004 FFF7FEFF 		bl	Direction_1_Write
+ 120              	.LVL6:
+ 189:main.c        ****     
+ 190:main.c        ****     //pwm_isr_1_Enable();
+ 191:main.c        ****     
+ 192:main.c        ****     Enable_1_Write(0);
+ 121              		.loc 1 192 0
+ 122 0008 0020     		movs	r0, #0
+ 123 000a FFF7FEFF 		bl	Enable_1_Write
+ 124              	.LVL7:
+ 125              	.L11:
+ 193:main.c        ****     
+ 194:main.c        ****     while(zDirection == BW) {}
+ 126              		.loc 1 194 0 discriminator 1
+ 127 000e 054B     		ldr	r3, .L13
+ 128 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 129 0012 012B     		cmp	r3, #1
+ 130 0014 FBD0     		beq	.L11
+ 195:main.c        ****     
+ 196:main.c        ****     Enable_1_Write(1);
+ 131              		.loc 1 196 0
+ 132 0016 0120     		movs	r0, #1
+ 133 0018 FFF7FEFF 		bl	Enable_1_Write
+ 134              	.LVL8:
+ 197:main.c        ****     //pwm_isr_1_Disable();
+ 198:main.c        ****     
+ 199:main.c        ****     enabled = DEFAULT;
+ 135              		.loc 1 199 0
+ 136 001c 3022     		movs	r2, #48
+ 137 001e 024B     		ldr	r3, .L13+4
+ 138 0020 1A70     		strb	r2, [r3]
+ 139 0022 08BD     		pop	{r3, pc}
+ 140              	.L14:
+ 141              		.align	2
+ 142              	.L13:
+ 143 0024 00000000 		.word	zDirection
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 7
 
 
- 442 0034 02       		.byte	0x2
- 443 0035 05       		.byte	0x5
- 444 0036 38000000 		.4byte	.LASF2
- 445 003a 02       		.uleb128 0x2
- 446 003b 02       		.byte	0x2
- 447 003c 07       		.byte	0x7
- 448 003d C6010000 		.4byte	.LASF3
- 449 0041 03       		.uleb128 0x3
- 450 0042 46030000 		.4byte	.LASF9
- 451 0046 02       		.byte	0x2
- 452 0047 3F       		.byte	0x3f
- 453 0048 4C000000 		.4byte	0x4c
- 454 004c 02       		.uleb128 0x2
- 455 004d 04       		.byte	0x4
- 456 004e 05       		.byte	0x5
- 457 004f EA000000 		.4byte	.LASF4
- 458 0053 02       		.uleb128 0x2
- 459 0054 04       		.byte	0x4
- 460 0055 07       		.byte	0x7
- 461 0056 D7020000 		.4byte	.LASF5
- 462 005a 02       		.uleb128 0x2
- 463 005b 08       		.byte	0x8
- 464 005c 05       		.byte	0x5
- 465 005d C2000000 		.4byte	.LASF6
- 466 0061 02       		.uleb128 0x2
- 467 0062 08       		.byte	0x8
- 468 0063 07       		.byte	0x7
- 469 0064 7C010000 		.4byte	.LASF7
- 470 0068 04       		.uleb128 0x4
- 471 0069 04       		.byte	0x4
- 472 006a 05       		.byte	0x5
- 473 006b 696E7400 		.ascii	"int\000"
- 474 006f 02       		.uleb128 0x2
- 475 0070 04       		.byte	0x4
- 476 0071 07       		.byte	0x7
- 477 0072 93010000 		.4byte	.LASF8
- 478 0076 03       		.uleb128 0x3
- 479 0077 8F020000 		.4byte	.LASF10
- 480 007b 03       		.byte	0x3
- 481 007c 2C       		.byte	0x2c
- 482 007d 41000000 		.4byte	0x41
- 483 0081 05       		.uleb128 0x5
- 484 0082 84000000 		.4byte	.LASF11
- 485 0086 04       		.byte	0x4
- 486 0087 9201     		.2byte	0x192
- 487 0089 2C000000 		.4byte	0x2c
- 488 008d 05       		.uleb128 0x5
- 489 008e 77000000 		.4byte	.LASF12
- 490 0092 04       		.byte	0x4
- 491 0093 9301     		.2byte	0x193
- 492 0095 3A000000 		.4byte	0x3a
- 493 0099 05       		.uleb128 0x5
- 494 009a C9020000 		.4byte	.LASF13
- 495 009e 04       		.byte	0x4
- 496 009f 9401     		.2byte	0x194
- 497 00a1 53000000 		.4byte	0x53
- 498 00a5 05       		.uleb128 0x5
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 14
+ 144 0028 00000000 		.word	.LANCHOR0
+ 145              		.cfi_endproc
+ 146              	.LFE66:
+ 147              		.size	reset, .-reset
+ 148              		.section	.text.updateStatus,"ax",%progbits
+ 149              		.align	2
+ 150              		.global	updateStatus
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.type	updateStatus, %function
+ 154              	updateStatus:
+ 155              	.LFB67:
+ 200:main.c        **** }
+ 201:main.c        **** 
+ 202:main.c        **** // Update status of slave-PSoC/message to be sent to master-PSoC
+ 203:main.c        **** void updateStatus(uint8 stat)
+ 204:main.c        **** {
+ 156              		.loc 1 204 0
+ 157              		.cfi_startproc
+ 158              		@ args = 0, pretend = 0, frame = 0
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 160              	.LVL9:
+ 161 0000 10B5     		push	{r4, lr}
+ 162              		.cfi_def_cfa_offset 8
+ 163              		.cfi_offset 4, -8
+ 164              		.cfi_offset 14, -4
+ 205:main.c        ****     status = stat;
+ 165              		.loc 1 205 0
+ 166 0002 044C     		ldr	r4, .L17
+ 167 0004 2070     		strb	r0, [r4]
+ 206:main.c        ****     UART_1_ClearTxBuffer();
+ 168              		.loc 1 206 0
+ 169 0006 FFF7FEFF 		bl	UART_1_ClearTxBuffer
+ 170              	.LVL10:
+ 207:main.c        ****     UART_1_WriteTxData(status);
+ 171              		.loc 1 207 0
+ 172 000a 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 173 000c FFF7FEFF 		bl	UART_1_WriteTxData
+ 174              	.LVL11:
+ 175 0010 10BD     		pop	{r4, pc}
+ 176              	.L18:
+ 177 0012 00BF     		.align	2
+ 178              	.L17:
+ 179 0014 00000000 		.word	status
+ 180              		.cfi_endproc
+ 181              	.LFE67:
+ 182              		.size	updateStatus, .-updateStatus
+ 183              		.section	.text.main,"ax",%progbits
+ 184              		.align	2
+ 185              		.global	main
+ 186              		.thumb
+ 187              		.thumb_func
+ 188              		.type	main, %function
+ 189              	main:
+ 190              	.LFB64:
+  85:main.c        ****     updateStatus(DEFAULT);
+ 191              		.loc 1 85 0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 8
 
 
- 499 00a6 D0000000 		.4byte	.LASF14
- 500 00aa 04       		.byte	0x4
- 501 00ab 9501     		.2byte	0x195
- 502 00ad 25000000 		.4byte	0x25
- 503 00b1 05       		.uleb128 0x5
- 504 00b2 7E000000 		.4byte	.LASF15
- 505 00b6 04       		.byte	0x4
- 506 00b7 9601     		.2byte	0x196
- 507 00b9 33000000 		.4byte	0x33
- 508 00bd 05       		.uleb128 0x5
- 509 00be E9020000 		.4byte	.LASF16
- 510 00c2 04       		.byte	0x4
- 511 00c3 9701     		.2byte	0x197
- 512 00c5 4C000000 		.4byte	0x4c
- 513 00c9 02       		.uleb128 0x2
- 514 00ca 04       		.byte	0x4
- 515 00cb 04       		.byte	0x4
- 516 00cc BC000000 		.4byte	.LASF17
- 517 00d0 02       		.uleb128 0x2
- 518 00d1 08       		.byte	0x8
- 519 00d2 04       		.byte	0x4
- 520 00d3 EF020000 		.4byte	.LASF18
- 521 00d7 02       		.uleb128 0x2
- 522 00d8 01       		.byte	0x1
- 523 00d9 08       		.byte	0x8
- 524 00da FC010000 		.4byte	.LASF19
- 525 00de 05       		.uleb128 0x5
- 526 00df 56010000 		.4byte	.LASF20
- 527 00e3 04       		.byte	0x4
- 528 00e4 4E02     		.2byte	0x24e
- 529 00e6 EA000000 		.4byte	0xea
- 530 00ea 06       		.uleb128 0x6
- 531 00eb 04       		.byte	0x4
- 532 00ec F0000000 		.4byte	0xf0
- 533 00f0 07       		.uleb128 0x7
- 534 00f1 02       		.uleb128 0x2
- 535 00f2 04       		.byte	0x4
- 536 00f3 07       		.byte	0x7
- 537 00f4 42000000 		.4byte	.LASF21
- 538 00f8 08       		.uleb128 0x8
- 539 00f9 90000000 		.4byte	.LASF32
- 540 00fd 01       		.byte	0x1
- 541 00fe 01       		.byte	0x1
- 542 00ff 0F       		.byte	0xf
- 543 0100 41010000 		.4byte	0x141
- 544 0104 09       		.uleb128 0x9
- 545 0105 B4020000 		.4byte	.LASF22
- 546 0109 00       		.sleb128 0
- 547 010a 09       		.uleb128 0x9
- 548 010b F6020000 		.4byte	.LASF23
- 549 010f 02       		.sleb128 2
- 550 0110 09       		.uleb128 0x9
- 551 0111 01030000 		.4byte	.LASF24
- 552 0115 03       		.sleb128 3
- 553 0116 09       		.uleb128 0x9
- 554 0117 A0010000 		.4byte	.LASF25
- 555 011b 05       		.sleb128 5
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 15
+ 192              		.cfi_startproc
+ 193              		@ Volatile: function does not return.
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196 0000 08B5     		push	{r3, lr}
+ 197              		.cfi_def_cfa_offset 8
+ 198              		.cfi_offset 3, -8
+ 199              		.cfi_offset 14, -4
+  86:main.c        ****     CyGlobalIntEnable;
+ 200              		.loc 1 86 0
+ 201 0002 3020     		movs	r0, #48
+ 202 0004 FFF7FEFF 		bl	updateStatus
+ 203              	.LVL12:
+  87:main.c        **** 
+ 204              		.loc 1 87 0
+ 205              	@ 87 "main.c" 1
+ 206 0008 62B6     		CPSIE   i
+ 207              	@ 0 "" 2
+  89:main.c        ****     isr_RxD_StartEx(isr_RxD);
+ 208              		.loc 1 89 0
+ 209              		.thumb
+ 210 000a FFF7FEFF 		bl	UART_1_Start
+ 211              	.LVL13:
+  90:main.c        ****     //isr_x_home_StartEx(isr_x_home);
+ 212              		.loc 1 90 0
+ 213 000e 0548     		ldr	r0, .L22
+ 214 0010 FFF7FEFF 		bl	isr_RxD_StartEx
+ 215              	.LVL14:
+  93:main.c        ****     enabled = 0;
+ 216              		.loc 1 93 0
+ 217 0014 FFF7FEFF 		bl	PWM_1_Start
+ 218              	.LVL15:
+  94:main.c        ****     Direction_1_Write(FW);
+ 219              		.loc 1 94 0
+ 220 0018 0020     		movs	r0, #0
+ 221 001a 034B     		ldr	r3, .L22+4
+ 222 001c 1870     		strb	r0, [r3]
+  95:main.c        ****     
+ 223              		.loc 1 95 0
+ 224 001e FFF7FEFF 		bl	Direction_1_Write
+ 225              	.LVL16:
+ 226              	.L20:
+ 165:main.c        ****     
+ 227              		.loc 1 165 0 discriminator 1
+ 228 0022 FEE7     		b	.L20
+ 229              	.L23:
+ 230              		.align	2
+ 231              	.L22:
+ 232 0024 00000000 		.word	isr_RxD
+ 233 0028 00000000 		.word	.LANCHOR0
+ 234              		.cfi_endproc
+ 235              	.LFE64:
+ 236              		.size	main, .-main
+ 237              		.global	command
+ 238              		.comm	status,1,1
+ 239              		.global	zStop
+ 240              		.comm	zDirection,1,1
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 9
 
 
- 556 011c 09       		.uleb128 0x9
- 557 011d 50030000 		.4byte	.LASF26
- 558 0121 11       		.sleb128 17
- 559 0122 09       		.uleb128 0x9
- 560 0123 5A030000 		.4byte	.LASF27
- 561 0127 12       		.sleb128 18
- 562 0128 09       		.uleb128 0x9
- 563 0129 00000000 		.4byte	.LASF28
- 564 012d 34       		.sleb128 52
- 565 012e 09       		.uleb128 0x9
- 566 012f 56000000 		.4byte	.LASF29
- 567 0133 30       		.sleb128 48
- 568 0134 09       		.uleb128 0x9
- 569 0135 21010000 		.4byte	.LASF30
- 570 0139 31       		.sleb128 49
- 571 013a 09       		.uleb128 0x9
- 572 013b 71030000 		.4byte	.LASF31
- 573 013f 33       		.sleb128 51
- 574 0140 00       		.byte	0
- 575 0141 0A       		.uleb128 0xa
- 576 0142 64697200 		.ascii	"dir\000"
- 577 0146 01       		.byte	0x1
- 578 0147 01       		.byte	0x1
- 579 0148 2D       		.byte	0x2d
- 580 0149 58010000 		.4byte	0x158
- 581 014d 0B       		.uleb128 0xb
- 582 014e 465700   		.ascii	"FW\000"
- 583 0151 00       		.sleb128 0
- 584 0152 0B       		.uleb128 0xb
- 585 0153 425700   		.ascii	"BW\000"
- 586 0156 01       		.sleb128 1
- 587 0157 00       		.byte	0
- 588 0158 0C       		.uleb128 0xc
- 589 0159 08000000 		.4byte	.LASF66
- 590 015d 01       		.byte	0x1
- 591 015e 33       		.byte	0x33
- 592 015f 00000000 		.4byte	.LFB63
- 593 0163 0C000000 		.4byte	.LFE63-.LFB63
- 594 0167 01       		.uleb128 0x1
- 595 0168 9C       		.byte	0x9c
- 596 0169 0D       		.uleb128 0xd
- 597 016a B1010000 		.4byte	.LASF33
- 598 016e 01       		.byte	0x1
- 599 016f A5       		.byte	0xa5
- 600 0170 00000000 		.4byte	.LFB65
- 601 0174 2C000000 		.4byte	.LFE65-.LFB65
- 602 0178 01       		.uleb128 0x1
- 603 0179 9C       		.byte	0x9c
- 604 017a C3010000 		.4byte	0x1c3
- 605 017e 0E       		.uleb128 0xe
- 606 017f 03010000 		.4byte	.LASF35
- 607 0183 01       		.byte	0x1
- 608 0184 A5       		.byte	0xa5
- 609 0185 81000000 		.4byte	0x81
- 610 0189 00000000 		.4byte	.LLST0
- 611 018d 0F       		.uleb128 0xf
- 612 018e 08000000 		.4byte	.LVL2
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 16
+ 241              		.global	enabled
+ 242              		.global	zStepCount
+ 243              		.data
+ 244              		.type	command, %object
+ 245              		.size	command, 1
+ 246              	command:
+ 247 0000 01       		.byte	1
+ 248              		.bss
+ 249              		.align	1
+ 250              		.set	.LANCHOR0,. + 0
+ 251              		.type	enabled, %object
+ 252              		.size	enabled, 1
+ 253              	enabled:
+ 254 0000 00       		.space	1
+ 255              		.type	zStop, %object
+ 256              		.size	zStop, 1
+ 257              	zStop:
+ 258 0001 00       		.space	1
+ 259              		.type	zStepCount, %object
+ 260              		.size	zStepCount, 2
+ 261              	zStepCount:
+ 262 0002 0000     		.space	2
+ 263              		.text
+ 264              	.Letext0:
+ 265              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 266              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.0\\psoc creator\\import\\gnu\\arm\\4.9.
+ 267              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 268              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 269              		.file 6 "Generated_Source\\PSoC5/Enable_1.h"
+ 270              		.file 7 "Generated_Source\\PSoC5/Direction_1.h"
+ 271              		.file 8 "Generated_Source\\PSoC5/UART_1.h"
+ 272              		.file 9 "Generated_Source\\PSoC5/isr_RxD.h"
+ 273              		.file 10 "Generated_Source\\PSoC5/PWM_1.h"
+ 274              		.section	.debug_info,"",%progbits
+ 275              	.Ldebug_info0:
+ 276 0000 62030000 		.4byte	0x362
+ 277 0004 0400     		.2byte	0x4
+ 278 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 279 000a 04       		.byte	0x4
+ 280 000b 01       		.uleb128 0x1
+ 281 000c 92010000 		.4byte	.LASF49
+ 282 0010 01       		.byte	0x1
+ 283 0011 9C020000 		.4byte	.LASF50
+ 284 0015 EE000000 		.4byte	.LASF51
+ 285 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 286 001d 00000000 		.4byte	0
+ 287 0021 00000000 		.4byte	.Ldebug_line0
+ 288 0025 02       		.uleb128 0x2
+ 289 0026 01       		.byte	0x1
+ 290 0027 06       		.byte	0x6
+ 291 0028 F1020000 		.4byte	.LASF0
+ 292 002c 02       		.uleb128 0x2
+ 293 002d 01       		.byte	0x1
+ 294 002e 08       		.byte	0x8
+ 295 002f 96000000 		.4byte	.LASF1
+ 296 0033 02       		.uleb128 0x2
+ 297 0034 02       		.byte	0x2
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 10
 
 
- 613 0192 C1040000 		.4byte	0x4c1
- 614 0196 A0010000 		.4byte	0x1a0
- 615 019a 10       		.uleb128 0x10
- 616 019b 01       		.uleb128 0x1
- 617 019c 50       		.byte	0x50
- 618 019d 01       		.uleb128 0x1
- 619 019e 30       		.byte	0x30
- 620 019f 00       		.byte	0
- 621 01a0 0F       		.uleb128 0xf
- 622 01a1 0E000000 		.4byte	.LVL3
- 623 01a5 D2040000 		.4byte	0x4d2
- 624 01a9 B3010000 		.4byte	0x1b3
- 625 01ad 10       		.uleb128 0x10
- 626 01ae 01       		.uleb128 0x1
- 627 01af 50       		.byte	0x50
- 628 01b0 01       		.uleb128 0x1
- 629 01b1 30       		.byte	0x30
- 630 01b2 00       		.byte	0
- 631 01b3 11       		.uleb128 0x11
- 632 01b4 1C000000 		.4byte	.LVL4
- 633 01b8 D2040000 		.4byte	0x4d2
- 634 01bc 10       		.uleb128 0x10
- 635 01bd 01       		.uleb128 0x1
- 636 01be 50       		.byte	0x50
- 637 01bf 01       		.uleb128 0x1
- 638 01c0 31       		.byte	0x31
- 639 01c1 00       		.byte	0
- 640 01c2 00       		.byte	0
- 641 01c3 12       		.uleb128 0x12
- 642 01c4 8A000000 		.4byte	.LASF67
- 643 01c8 01       		.byte	0x1
- 644 01c9 B5       		.byte	0xb5
- 645 01ca 00000000 		.4byte	.LFB66
- 646 01ce 2C000000 		.4byte	.LFE66-.LFB66
- 647 01d2 01       		.uleb128 0x1
- 648 01d3 9C       		.byte	0x9c
- 649 01d4 0E020000 		.4byte	0x20e
- 650 01d8 0F       		.uleb128 0xf
- 651 01d9 08000000 		.4byte	.LVL5
- 652 01dd C1040000 		.4byte	0x4c1
- 653 01e1 EB010000 		.4byte	0x1eb
- 654 01e5 10       		.uleb128 0x10
- 655 01e6 01       		.uleb128 0x1
- 656 01e7 50       		.byte	0x50
- 657 01e8 01       		.uleb128 0x1
- 658 01e9 31       		.byte	0x31
- 659 01ea 00       		.byte	0
- 660 01eb 0F       		.uleb128 0xf
- 661 01ec 0E000000 		.4byte	.LVL6
- 662 01f0 D2040000 		.4byte	0x4d2
- 663 01f4 FE010000 		.4byte	0x1fe
- 664 01f8 10       		.uleb128 0x10
- 665 01f9 01       		.uleb128 0x1
- 666 01fa 50       		.byte	0x50
- 667 01fb 01       		.uleb128 0x1
- 668 01fc 30       		.byte	0x30
- 669 01fd 00       		.byte	0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 17
+ 298 0035 05       		.byte	0x5
+ 299 0036 AE020000 		.4byte	.LASF2
+ 300 003a 02       		.uleb128 0x2
+ 301 003b 02       		.byte	0x2
+ 302 003c 07       		.byte	0x7
+ 303 003d 7B020000 		.4byte	.LASF3
+ 304 0041 03       		.uleb128 0x3
+ 305 0042 35000000 		.4byte	.LASF9
+ 306 0046 02       		.byte	0x2
+ 307 0047 3F       		.byte	0x3f
+ 308 0048 4C000000 		.4byte	0x4c
+ 309 004c 02       		.uleb128 0x2
+ 310 004d 04       		.byte	0x4
+ 311 004e 05       		.byte	0x5
+ 312 004f E8020000 		.4byte	.LASF4
+ 313 0053 02       		.uleb128 0x2
+ 314 0054 04       		.byte	0x4
+ 315 0055 07       		.byte	0x7
+ 316 0056 BD000000 		.4byte	.LASF5
+ 317 005a 02       		.uleb128 0x2
+ 318 005b 08       		.byte	0x8
+ 319 005c 05       		.byte	0x5
+ 320 005d 8E020000 		.4byte	.LASF6
+ 321 0061 02       		.uleb128 0x2
+ 322 0062 08       		.byte	0x8
+ 323 0063 07       		.byte	0x7
+ 324 0064 2D020000 		.4byte	.LASF7
+ 325 0068 04       		.uleb128 0x4
+ 326 0069 04       		.byte	0x4
+ 327 006a 05       		.byte	0x5
+ 328 006b 696E7400 		.ascii	"int\000"
+ 329 006f 02       		.uleb128 0x2
+ 330 0070 04       		.byte	0x4
+ 331 0071 07       		.byte	0x7
+ 332 0072 20020000 		.4byte	.LASF8
+ 333 0076 03       		.uleb128 0x3
+ 334 0077 6A020000 		.4byte	.LASF10
+ 335 007b 03       		.byte	0x3
+ 336 007c 2C       		.byte	0x2c
+ 337 007d 41000000 		.4byte	0x41
+ 338 0081 05       		.uleb128 0x5
+ 339 0082 75000000 		.4byte	.LASF11
+ 340 0086 04       		.byte	0x4
+ 341 0087 9201     		.2byte	0x192
+ 342 0089 2C000000 		.4byte	0x2c
+ 343 008d 05       		.uleb128 0x5
+ 344 008e 6C010000 		.4byte	.LASF12
+ 345 0092 04       		.byte	0x4
+ 346 0093 9301     		.2byte	0x193
+ 347 0095 3A000000 		.4byte	0x3a
+ 348 0099 05       		.uleb128 0x5
+ 349 009a 73010000 		.4byte	.LASF13
+ 350 009e 04       		.byte	0x4
+ 351 009f 9501     		.2byte	0x195
+ 352 00a1 25000000 		.4byte	0x25
+ 353 00a5 02       		.uleb128 0x2
+ 354 00a6 04       		.byte	0x4
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 11
 
 
- 670 01fe 11       		.uleb128 0x11
- 671 01ff 1C000000 		.4byte	.LVL7
- 672 0203 D2040000 		.4byte	0x4d2
- 673 0207 10       		.uleb128 0x10
- 674 0208 01       		.uleb128 0x1
- 675 0209 50       		.byte	0x50
- 676 020a 01       		.uleb128 0x1
- 677 020b 31       		.byte	0x31
- 678 020c 00       		.byte	0
- 679 020d 00       		.byte	0
- 680 020e 0D       		.uleb128 0xd
- 681 020f 28030000 		.4byte	.LASF34
- 682 0213 01       		.byte	0x1
- 683 0214 C6       		.byte	0xc6
- 684 0215 00000000 		.4byte	.LFB67
- 685 0219 18000000 		.4byte	.LFE67-.LFB67
- 686 021d 01       		.uleb128 0x1
- 687 021e 9C       		.byte	0x9c
- 688 021f 45020000 		.4byte	0x245
- 689 0223 0E       		.uleb128 0xe
- 690 0224 6C030000 		.4byte	.LASF36
- 691 0228 01       		.byte	0x1
- 692 0229 C6       		.byte	0xc6
- 693 022a 81000000 		.4byte	0x81
- 694 022e 21000000 		.4byte	.LLST1
- 695 0232 13       		.uleb128 0x13
- 696 0233 0A000000 		.4byte	.LVL9
- 697 0237 E3040000 		.4byte	0x4e3
- 698 023b 13       		.uleb128 0x13
- 699 023c 10000000 		.4byte	.LVL10
- 700 0240 EA040000 		.4byte	0x4ea
- 701 0244 00       		.byte	0
- 702 0245 14       		.uleb128 0x14
- 703 0246 5E000000 		.4byte	.LASF68
- 704 024a 01       		.byte	0x1
- 705 024b 52       		.byte	0x52
- 706 024c 68000000 		.4byte	0x68
- 707 0250 00000000 		.4byte	.LFB64
- 708 0254 F8000000 		.4byte	.LFE64-.LFB64
- 709 0258 01       		.uleb128 0x1
- 710 0259 9C       		.byte	0x9c
- 711 025a 4A040000 		.4byte	0x44a
- 712 025e 15       		.uleb128 0x15
- 713 025f 26000000 		.4byte	.LBB2
- 714 0263 D2000000 		.4byte	.LBE2-.LBB2
- 715 0267 0C040000 		.4byte	0x40c
- 716 026b 16       		.uleb128 0x16
- 717 026c A6010000 		.4byte	.LASF37
- 718 0270 01       		.byte	0x1
- 719 0271 62       		.byte	0x62
- 720 0272 8D000000 		.4byte	0x8d
- 721 0276 42000000 		.4byte	.LLST2
- 722 027a 17       		.uleb128 0x17
- 723 027b 6900     		.ascii	"i\000"
- 724 027d 01       		.byte	0x1
- 725 027e 63       		.byte	0x63
- 726 027f 81000000 		.4byte	0x81
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 18
+ 355 00a7 04       		.byte	0x4
+ 356 00a8 82000000 		.4byte	.LASF14
+ 357 00ac 02       		.uleb128 0x2
+ 358 00ad 08       		.byte	0x8
+ 359 00ae 04       		.byte	0x4
+ 360 00af 6E000000 		.4byte	.LASF15
+ 361 00b3 02       		.uleb128 0x2
+ 362 00b4 01       		.byte	0x1
+ 363 00b5 08       		.byte	0x8
+ 364 00b6 A3020000 		.4byte	.LASF16
+ 365 00ba 05       		.uleb128 0x5
+ 366 00bb 4E020000 		.4byte	.LASF17
+ 367 00bf 04       		.byte	0x4
+ 368 00c0 4E02     		.2byte	0x24e
+ 369 00c2 C6000000 		.4byte	0xc6
+ 370 00c6 06       		.uleb128 0x6
+ 371 00c7 04       		.byte	0x4
+ 372 00c8 CC000000 		.4byte	0xcc
+ 373 00cc 07       		.uleb128 0x7
+ 374 00cd 02       		.uleb128 0x2
+ 375 00ce 04       		.byte	0x4
+ 376 00cf 07       		.byte	0x7
+ 377 00d0 72020000 		.4byte	.LASF18
+ 378 00d4 08       		.uleb128 0x8
+ 379 00d5 78010000 		.4byte	.LASF29
+ 380 00d9 01       		.byte	0x1
+ 381 00da 01       		.byte	0x1
+ 382 00db 0F       		.byte	0xf
+ 383 00dc 1D010000 		.4byte	0x11d
+ 384 00e0 09       		.uleb128 0x9
+ 385 00e1 B2000000 		.4byte	.LASF19
+ 386 00e5 00       		.sleb128 0
+ 387 00e6 09       		.uleb128 0x9
+ 388 00e7 FD020000 		.4byte	.LASF20
+ 389 00eb 02       		.sleb128 2
+ 390 00ec 09       		.uleb128 0x9
+ 391 00ed 08030000 		.4byte	.LASF21
+ 392 00f1 03       		.sleb128 3
+ 393 00f2 09       		.uleb128 0x9
+ 394 00f3 21030000 		.4byte	.LASF22
+ 395 00f7 05       		.sleb128 5
+ 396 00f8 09       		.uleb128 0x9
+ 397 00f9 00000000 		.4byte	.LASF23
+ 398 00fd 11       		.sleb128 17
+ 399 00fe 09       		.uleb128 0x9
+ 400 00ff 44020000 		.4byte	.LASF24
+ 401 0103 12       		.sleb128 18
+ 402 0104 09       		.uleb128 0x9
+ 403 0105 22000000 		.4byte	.LASF25
+ 404 0109 34       		.sleb128 52
+ 405 010a 09       		.uleb128 0x9
+ 406 010b 51000000 		.4byte	.LASF26
+ 407 010f 30       		.sleb128 48
+ 408 0110 09       		.uleb128 0x9
+ 409 0111 88000000 		.4byte	.LASF27
+ 410 0115 31       		.sleb128 49
+ 411 0116 09       		.uleb128 0x9
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 12
 
 
- 727 0283 60000000 		.4byte	.LLST3
- 728 0287 18       		.uleb128 0x18
- 729 0288 BF020000 		.4byte	.LASF38
- 730 028c 01       		.byte	0x1
- 731 028d 64       		.byte	0x64
- 732 028e 8D000000 		.4byte	0x8d
- 733 0292 01       		.uleb128 0x1
- 734 0293 56       		.byte	0x56
- 735 0294 16       		.uleb128 0x16
- 736 0295 0C030000 		.4byte	.LASF39
- 737 0299 01       		.byte	0x1
- 738 029a 65       		.byte	0x65
- 739 029b 8D000000 		.4byte	0x8d
- 740 029f 7E000000 		.4byte	.LLST4
- 741 02a3 16       		.uleb128 0x16
- 742 02a4 69010000 		.4byte	.LASF40
- 743 02a8 01       		.byte	0x1
- 744 02a9 66       		.byte	0x66
- 745 02aa 8D000000 		.4byte	0x8d
- 746 02ae 91000000 		.4byte	.LLST5
- 747 02b2 0F       		.uleb128 0xf
- 748 02b3 2C000000 		.4byte	.LVL15
- 749 02b7 C1040000 		.4byte	0x4c1
- 750 02bb C5020000 		.4byte	0x2c5
- 751 02bf 10       		.uleb128 0x10
- 752 02c0 01       		.uleb128 0x1
- 753 02c1 50       		.byte	0x50
- 754 02c2 01       		.uleb128 0x1
- 755 02c3 31       		.byte	0x31
- 756 02c4 00       		.byte	0
- 757 02c5 13       		.uleb128 0x13
- 758 02c6 30000000 		.4byte	.LVL16
- 759 02ca FB040000 		.4byte	0x4fb
- 760 02ce 13       		.uleb128 0x13
- 761 02cf 34000000 		.4byte	.LVL17
- 762 02d3 02050000 		.4byte	0x502
- 763 02d7 0F       		.uleb128 0xf
- 764 02d8 3A000000 		.4byte	.LVL18
- 765 02dc 09050000 		.4byte	0x509
- 766 02e0 EA020000 		.4byte	0x2ea
- 767 02e4 10       		.uleb128 0x10
- 768 02e5 01       		.uleb128 0x1
- 769 02e6 50       		.byte	0x50
- 770 02e7 01       		.uleb128 0x1
- 771 02e8 30       		.byte	0x30
- 772 02e9 00       		.byte	0
- 773 02ea 0F       		.uleb128 0xf
- 774 02eb 40000000 		.4byte	.LVL19
- 775 02ef D2040000 		.4byte	0x4d2
- 776 02f3 FD020000 		.4byte	0x2fd
- 777 02f7 10       		.uleb128 0x10
- 778 02f8 01       		.uleb128 0x1
- 779 02f9 50       		.byte	0x50
- 780 02fa 01       		.uleb128 0x1
- 781 02fb 30       		.byte	0x30
- 782 02fc 00       		.byte	0
- 783 02fd 0F       		.uleb128 0xf
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 19
+ 412 0117 2A000000 		.4byte	.LASF28
+ 413 011b 33       		.sleb128 51
+ 414 011c 00       		.byte	0
+ 415 011d 0A       		.uleb128 0xa
+ 416 011e 64697200 		.ascii	"dir\000"
+ 417 0122 01       		.byte	0x1
+ 418 0123 01       		.byte	0x1
+ 419 0124 2D       		.byte	0x2d
+ 420 0125 34010000 		.4byte	0x134
+ 421 0129 0B       		.uleb128 0xb
+ 422 012a 465700   		.ascii	"FW\000"
+ 423 012d 00       		.sleb128 0
+ 424 012e 0B       		.uleb128 0xb
+ 425 012f 425700   		.ascii	"BW\000"
+ 426 0132 01       		.sleb128 1
+ 427 0133 00       		.byte	0
+ 428 0134 0C       		.uleb128 0xc
+ 429 0135 19030000 		.4byte	.LASF30
+ 430 0139 01       		.byte	0x1
+ 431 013a 33       		.byte	0x33
+ 432 013b 00000000 		.4byte	.LFB63
+ 433 013f 18000000 		.4byte	.LFE63-.LFB63
+ 434 0143 01       		.uleb128 0x1
+ 435 0144 9C       		.byte	0x9c
+ 436 0145 53010000 		.4byte	0x153
+ 437 0149 0D       		.uleb128 0xd
+ 438 014a 12000000 		.4byte	.LVL0
+ 439 014e 0C030000 		.4byte	0x30c
+ 440 0152 00       		.byte	0
+ 441 0153 0C       		.uleb128 0xc
+ 442 0154 13030000 		.4byte	.LASF31
+ 443 0158 01       		.byte	0x1
+ 444 0159 AA       		.byte	0xaa
+ 445 015a 00000000 		.4byte	.LFB65
+ 446 015e 2C000000 		.4byte	.LFE65-.LFB65
+ 447 0162 01       		.uleb128 0x1
+ 448 0163 9C       		.byte	0x9c
+ 449 0164 AD010000 		.4byte	0x1ad
+ 450 0168 0E       		.uleb128 0xe
+ 451 0169 A4000000 		.4byte	.LASF33
+ 452 016d 01       		.byte	0x1
+ 453 016e AA       		.byte	0xaa
+ 454 016f 81000000 		.4byte	0x81
+ 455 0173 00000000 		.4byte	.LLST0
+ 456 0177 0F       		.uleb128 0xf
+ 457 0178 08000000 		.4byte	.LVL3
+ 458 017c 1D030000 		.4byte	0x31d
+ 459 0180 8A010000 		.4byte	0x18a
+ 460 0184 10       		.uleb128 0x10
+ 461 0185 01       		.uleb128 0x1
+ 462 0186 50       		.byte	0x50
+ 463 0187 01       		.uleb128 0x1
+ 464 0188 30       		.byte	0x30
+ 465 0189 00       		.byte	0
+ 466 018a 0F       		.uleb128 0xf
+ 467 018b 0E000000 		.4byte	.LVL4
+ 468 018f 0C030000 		.4byte	0x30c
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 13
 
 
- 784 02fe 46000000 		.4byte	.LVL20
- 785 0302 1E050000 		.4byte	0x51e
- 786 0306 10030000 		.4byte	0x310
- 787 030a 10       		.uleb128 0x10
- 788 030b 01       		.uleb128 0x1
- 789 030c 50       		.byte	0x50
- 790 030d 01       		.uleb128 0x1
- 791 030e 30       		.byte	0x30
- 792 030f 00       		.byte	0
- 793 0310 13       		.uleb128 0x13
- 794 0311 4A000000 		.4byte	.LVL21
- 795 0315 33050000 		.4byte	0x533
- 796 0319 0F       		.uleb128 0xf
- 797 031a 52000000 		.4byte	.LVL23
- 798 031e 48050000 		.4byte	0x548
- 799 0322 2C030000 		.4byte	0x32c
- 800 0326 10       		.uleb128 0x10
- 801 0327 01       		.uleb128 0x1
- 802 0328 50       		.byte	0x50
- 803 0329 01       		.uleb128 0x1
- 804 032a 49       		.byte	0x49
- 805 032b 00       		.byte	0
- 806 032c 0F       		.uleb128 0xf
- 807 032d 6C000000 		.4byte	.LVL24
- 808 0331 D2040000 		.4byte	0x4d2
- 809 0335 3F030000 		.4byte	0x33f
- 810 0339 10       		.uleb128 0x10
- 811 033a 01       		.uleb128 0x1
- 812 033b 50       		.byte	0x50
- 813 033c 01       		.uleb128 0x1
- 814 033d 31       		.byte	0x31
- 815 033e 00       		.byte	0
- 816 033f 13       		.uleb128 0x13
- 817 0340 74000000 		.4byte	.LVL26
- 818 0344 59050000 		.4byte	0x559
- 819 0348 13       		.uleb128 0x13
- 820 0349 7A000000 		.4byte	.LVL27
- 821 034d 64050000 		.4byte	0x564
- 822 0351 0F       		.uleb128 0xf
- 823 0352 80000000 		.4byte	.LVL28
- 824 0356 D2040000 		.4byte	0x4d2
- 825 035a 64030000 		.4byte	0x364
- 826 035e 10       		.uleb128 0x10
- 827 035f 01       		.uleb128 0x1
- 828 0360 50       		.byte	0x50
- 829 0361 01       		.uleb128 0x1
- 830 0362 30       		.byte	0x30
- 831 0363 00       		.byte	0
- 832 0364 0F       		.uleb128 0xf
- 833 0365 86000000 		.4byte	.LVL29
- 834 0369 1E050000 		.4byte	0x51e
- 835 036d 77030000 		.4byte	0x377
- 836 0371 10       		.uleb128 0x10
- 837 0372 01       		.uleb128 0x1
- 838 0373 50       		.byte	0x50
- 839 0374 01       		.uleb128 0x1
- 840 0375 30       		.byte	0x30
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 20
+ 469 0193 9D010000 		.4byte	0x19d
+ 470 0197 10       		.uleb128 0x10
+ 471 0198 01       		.uleb128 0x1
+ 472 0199 50       		.byte	0x50
+ 473 019a 01       		.uleb128 0x1
+ 474 019b 30       		.byte	0x30
+ 475 019c 00       		.byte	0
+ 476 019d 11       		.uleb128 0x11
+ 477 019e 1C000000 		.4byte	.LVL5
+ 478 01a2 0C030000 		.4byte	0x30c
+ 479 01a6 10       		.uleb128 0x10
+ 480 01a7 01       		.uleb128 0x1
+ 481 01a8 50       		.byte	0x50
+ 482 01a9 01       		.uleb128 0x1
+ 483 01aa 31       		.byte	0x31
+ 484 01ab 00       		.byte	0
+ 485 01ac 00       		.byte	0
+ 486 01ad 12       		.uleb128 0x12
+ 487 01ae 1C000000 		.4byte	.LASF52
+ 488 01b2 01       		.byte	0x1
+ 489 01b3 BA       		.byte	0xba
+ 490 01b4 00000000 		.4byte	.LFB66
+ 491 01b8 2C000000 		.4byte	.LFE66-.LFB66
+ 492 01bc 01       		.uleb128 0x1
+ 493 01bd 9C       		.byte	0x9c
+ 494 01be F8010000 		.4byte	0x1f8
+ 495 01c2 0F       		.uleb128 0xf
+ 496 01c3 08000000 		.4byte	.LVL6
+ 497 01c7 1D030000 		.4byte	0x31d
+ 498 01cb D5010000 		.4byte	0x1d5
+ 499 01cf 10       		.uleb128 0x10
+ 500 01d0 01       		.uleb128 0x1
+ 501 01d1 50       		.byte	0x50
+ 502 01d2 01       		.uleb128 0x1
+ 503 01d3 31       		.byte	0x31
+ 504 01d4 00       		.byte	0
+ 505 01d5 0F       		.uleb128 0xf
+ 506 01d6 0E000000 		.4byte	.LVL7
+ 507 01da 0C030000 		.4byte	0x30c
+ 508 01de E8010000 		.4byte	0x1e8
+ 509 01e2 10       		.uleb128 0x10
+ 510 01e3 01       		.uleb128 0x1
+ 511 01e4 50       		.byte	0x50
+ 512 01e5 01       		.uleb128 0x1
+ 513 01e6 30       		.byte	0x30
+ 514 01e7 00       		.byte	0
+ 515 01e8 11       		.uleb128 0x11
+ 516 01e9 1C000000 		.4byte	.LVL8
+ 517 01ed 0C030000 		.4byte	0x30c
+ 518 01f1 10       		.uleb128 0x10
+ 519 01f2 01       		.uleb128 0x1
+ 520 01f3 50       		.byte	0x50
+ 521 01f4 01       		.uleb128 0x1
+ 522 01f5 31       		.byte	0x31
+ 523 01f6 00       		.byte	0
+ 524 01f7 00       		.byte	0
+ 525 01f8 0C       		.uleb128 0xc
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 14
 
 
- 841 0376 00       		.byte	0
- 842 0377 13       		.uleb128 0x13
- 843 0378 8A000000 		.4byte	.LVL30
- 844 037c 33050000 		.4byte	0x533
- 845 0380 0F       		.uleb128 0xf
- 846 0381 92000000 		.4byte	.LVL32
- 847 0385 48050000 		.4byte	0x548
- 848 0389 93030000 		.4byte	0x393
- 849 038d 10       		.uleb128 0x10
- 850 038e 01       		.uleb128 0x1
- 851 038f 50       		.byte	0x50
- 852 0390 01       		.uleb128 0x1
- 853 0391 49       		.byte	0x49
- 854 0392 00       		.byte	0
- 855 0393 0F       		.uleb128 0xf
- 856 0394 AC000000 		.4byte	.LVL33
- 857 0398 D2040000 		.4byte	0x4d2
- 858 039c A6030000 		.4byte	0x3a6
- 859 03a0 10       		.uleb128 0x10
- 860 03a1 01       		.uleb128 0x1
- 861 03a2 50       		.byte	0x50
- 862 03a3 01       		.uleb128 0x1
- 863 03a4 31       		.byte	0x31
- 864 03a5 00       		.byte	0
- 865 03a6 0F       		.uleb128 0xf
- 866 03a7 B6000000 		.4byte	.LVL35
- 867 03ab EA040000 		.4byte	0x4ea
- 868 03af BA030000 		.4byte	0x3ba
- 869 03b3 10       		.uleb128 0x10
- 870 03b4 01       		.uleb128 0x1
- 871 03b5 50       		.byte	0x50
- 872 03b6 02       		.uleb128 0x2
- 873 03b7 74       		.byte	0x74
- 874 03b8 00       		.sleb128 0
- 875 03b9 00       		.byte	0
- 876 03ba 13       		.uleb128 0x13
- 877 03bb BA000000 		.4byte	.LVL36
- 878 03bf 6B050000 		.4byte	0x56b
- 879 03c3 0F       		.uleb128 0xf
- 880 03c4 C8000000 		.4byte	.LVL39
- 881 03c8 C1040000 		.4byte	0x4c1
- 882 03cc D6030000 		.4byte	0x3d6
- 883 03d0 10       		.uleb128 0x10
- 884 03d1 01       		.uleb128 0x1
- 885 03d2 50       		.byte	0x50
- 886 03d3 01       		.uleb128 0x1
- 887 03d4 30       		.byte	0x30
- 888 03d5 00       		.byte	0
- 889 03d6 0F       		.uleb128 0xf
- 890 03d7 CE000000 		.4byte	.LVL40
- 891 03db D2040000 		.4byte	0x4d2
- 892 03df E9030000 		.4byte	0x3e9
- 893 03e3 10       		.uleb128 0x10
- 894 03e4 01       		.uleb128 0x1
- 895 03e5 50       		.byte	0x50
- 896 03e6 01       		.uleb128 0x1
- 897 03e7 30       		.byte	0x30
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 21
+ 526 01f9 61000000 		.4byte	.LASF32
+ 527 01fd 01       		.byte	0x1
+ 528 01fe CB       		.byte	0xcb
+ 529 01ff 00000000 		.4byte	.LFB67
+ 530 0203 18000000 		.4byte	.LFE67-.LFB67
+ 531 0207 01       		.uleb128 0x1
+ 532 0208 9C       		.byte	0x9c
+ 533 0209 2F020000 		.4byte	0x22f
+ 534 020d 0E       		.uleb128 0xe
+ 535 020e 17000000 		.4byte	.LASF34
+ 536 0212 01       		.byte	0x1
+ 537 0213 CB       		.byte	0xcb
+ 538 0214 81000000 		.4byte	0x81
+ 539 0218 21000000 		.4byte	.LLST1
+ 540 021c 0D       		.uleb128 0xd
+ 541 021d 0A000000 		.4byte	.LVL10
+ 542 0221 2E030000 		.4byte	0x32e
+ 543 0225 0D       		.uleb128 0xd
+ 544 0226 10000000 		.4byte	.LVL11
+ 545 022a 35030000 		.4byte	0x335
+ 546 022e 00       		.byte	0
+ 547 022f 13       		.uleb128 0x13
+ 548 0230 5C010000 		.4byte	.LASF53
+ 549 0234 01       		.byte	0x1
+ 550 0235 54       		.byte	0x54
+ 551 0236 68000000 		.4byte	0x68
+ 552 023a 00000000 		.4byte	.LFB64
+ 553 023e 2C000000 		.4byte	.LFE64-.LFB64
+ 554 0242 01       		.uleb128 0x1
+ 555 0243 9C       		.byte	0x9c
+ 556 0244 95020000 		.4byte	0x295
+ 557 0248 0F       		.uleb128 0xf
+ 558 0249 08000000 		.4byte	.LVL12
+ 559 024d F8010000 		.4byte	0x1f8
+ 560 0251 5C020000 		.4byte	0x25c
+ 561 0255 10       		.uleb128 0x10
+ 562 0256 01       		.uleb128 0x1
+ 563 0257 50       		.byte	0x50
+ 564 0258 02       		.uleb128 0x2
+ 565 0259 08       		.byte	0x8
+ 566 025a 30       		.byte	0x30
+ 567 025b 00       		.byte	0
+ 568 025c 0D       		.uleb128 0xd
+ 569 025d 0E000000 		.4byte	.LVL13
+ 570 0261 46030000 		.4byte	0x346
+ 571 0265 0F       		.uleb128 0xf
+ 572 0266 14000000 		.4byte	.LVL14
+ 573 026a 4D030000 		.4byte	0x34d
+ 574 026e 7C020000 		.4byte	0x27c
+ 575 0272 10       		.uleb128 0x10
+ 576 0273 01       		.uleb128 0x1
+ 577 0274 50       		.byte	0x50
+ 578 0275 05       		.uleb128 0x5
+ 579 0276 03       		.byte	0x3
+ 580 0277 00000000 		.4byte	isr_RxD
+ 581 027b 00       		.byte	0
+ 582 027c 0D       		.uleb128 0xd
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 15
 
 
- 898 03e8 00       		.byte	0
- 899 03e9 0F       		.uleb128 0xf
- 900 03ea D8000000 		.4byte	.LVL42
- 901 03ee 48050000 		.4byte	0x548
- 902 03f2 FC030000 		.4byte	0x3fc
- 903 03f6 10       		.uleb128 0x10
- 904 03f7 01       		.uleb128 0x1
- 905 03f8 50       		.byte	0x50
- 906 03f9 01       		.uleb128 0x1
- 907 03fa 49       		.byte	0x49
- 908 03fb 00       		.byte	0
- 909 03fc 11       		.uleb128 0x11
- 910 03fd E6000000 		.4byte	.LVL45
- 911 0401 D2040000 		.4byte	0x4d2
- 912 0405 10       		.uleb128 0x10
- 913 0406 01       		.uleb128 0x1
- 914 0407 50       		.byte	0x50
- 915 0408 01       		.uleb128 0x1
- 916 0409 31       		.byte	0x31
- 917 040a 00       		.byte	0
- 918 040b 00       		.byte	0
- 919 040c 0F       		.uleb128 0xf
- 920 040d 08000000 		.4byte	.LVL11
- 921 0411 0E020000 		.4byte	0x20e
- 922 0415 20040000 		.4byte	0x420
- 923 0419 10       		.uleb128 0x10
- 924 041a 01       		.uleb128 0x1
- 925 041b 50       		.byte	0x50
- 926 041c 02       		.uleb128 0x2
- 927 041d 08       		.byte	0x8
- 928 041e 30       		.byte	0x30
- 929 041f 00       		.byte	0
- 930 0420 13       		.uleb128 0x13
- 931 0421 0E000000 		.4byte	.LVL12
- 932 0425 72050000 		.4byte	0x572
- 933 0429 0F       		.uleb128 0xf
- 934 042a 14000000 		.4byte	.LVL13
- 935 042e 79050000 		.4byte	0x579
- 936 0432 40040000 		.4byte	0x440
- 937 0436 10       		.uleb128 0x10
- 938 0437 01       		.uleb128 0x1
- 939 0438 50       		.byte	0x50
- 940 0439 05       		.uleb128 0x5
- 941 043a 03       		.byte	0x3
- 942 043b 00000000 		.4byte	isr_RxD
- 943 043f 00       		.byte	0
- 944 0440 13       		.uleb128 0x13
- 945 0441 18000000 		.4byte	.LVL14
- 946 0445 8A050000 		.4byte	0x58a
- 947 0449 00       		.byte	0
- 948 044a 19       		.uleb128 0x19
- 949 044b 7C030000 		.4byte	.LASF41
- 950 044f 05       		.byte	0x5
- 951 0450 9606     		.2byte	0x696
- 952 0452 56040000 		.4byte	0x456
- 953 0456 1A       		.uleb128 0x1a
- 954 0457 76000000 		.4byte	0x76
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 22
+ 583 027d 18000000 		.4byte	.LVL15
+ 584 0281 5E030000 		.4byte	0x35e
+ 585 0285 11       		.uleb128 0x11
+ 586 0286 22000000 		.4byte	.LVL16
+ 587 028a 1D030000 		.4byte	0x31d
+ 588 028e 10       		.uleb128 0x10
+ 589 028f 01       		.uleb128 0x1
+ 590 0290 50       		.byte	0x50
+ 591 0291 01       		.uleb128 0x1
+ 592 0292 30       		.byte	0x30
+ 593 0293 00       		.byte	0
+ 594 0294 00       		.byte	0
+ 595 0295 14       		.uleb128 0x14
+ 596 0296 85010000 		.4byte	.LASF35
+ 597 029a 05       		.byte	0x5
+ 598 029b 9606     		.2byte	0x696
+ 599 029d A1020000 		.4byte	0x2a1
+ 600 02a1 15       		.uleb128 0x15
+ 601 02a2 76000000 		.4byte	0x76
+ 602 02a6 16       		.uleb128 0x16
+ 603 02a7 61010000 		.4byte	.LASF36
+ 604 02ab 01       		.byte	0x1
+ 605 02ac 03       		.byte	0x3
+ 606 02ad 8D000000 		.4byte	0x8d
+ 607 02b1 05       		.uleb128 0x5
+ 608 02b2 03       		.byte	0x3
+ 609 02b3 00000000 		.4byte	zStepCount
+ 610 02b7 16       		.uleb128 0x16
+ 611 02b8 AA000000 		.4byte	.LASF37
+ 612 02bc 01       		.byte	0x1
+ 613 02bd 04       		.byte	0x4
+ 614 02be 81000000 		.4byte	0x81
+ 615 02c2 05       		.uleb128 0x5
+ 616 02c3 03       		.byte	0x3
+ 617 02c4 00000000 		.4byte	enabled
+ 618 02c8 16       		.uleb128 0x16
+ 619 02c9 CD020000 		.4byte	.LASF38
+ 620 02cd 01       		.byte	0x1
+ 621 02ce 05       		.byte	0x5
+ 622 02cf 81000000 		.4byte	0x81
+ 623 02d3 05       		.uleb128 0x5
+ 624 02d4 03       		.byte	0x3
+ 625 02d5 00000000 		.4byte	zDirection
+ 626 02d9 16       		.uleb128 0x16
+ 627 02da A8020000 		.4byte	.LASF39
+ 628 02de 01       		.byte	0x1
+ 629 02df 06       		.byte	0x6
+ 630 02e0 81000000 		.4byte	0x81
+ 631 02e4 05       		.uleb128 0x5
+ 632 02e5 03       		.byte	0x3
+ 633 02e6 00000000 		.4byte	zStop
+ 634 02ea 16       		.uleb128 0x16
+ 635 02eb 7B000000 		.4byte	.LASF40
+ 636 02ef 01       		.byte	0x1
+ 637 02f0 08       		.byte	0x8
+ 638 02f1 81000000 		.4byte	0x81
+ 639 02f5 05       		.uleb128 0x5
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 16
 
 
- 955 045b 1B       		.uleb128 0x1b
- 956 045c A9020000 		.4byte	.LASF42
- 957 0460 01       		.byte	0x1
- 958 0461 03       		.byte	0x3
- 959 0462 8D000000 		.4byte	0x8d
- 960 0466 05       		.uleb128 0x5
- 961 0467 03       		.byte	0x3
- 962 0468 00000000 		.4byte	zStepCount
- 963 046c 1B       		.uleb128 0x1b
- 964 046d 64030000 		.4byte	.LASF43
- 965 0471 01       		.byte	0x1
- 966 0472 04       		.byte	0x4
- 967 0473 81000000 		.4byte	0x81
- 968 0477 05       		.uleb128 0x5
- 969 0478 03       		.byte	0x3
- 970 0479 00000000 		.4byte	enabled
- 971 047d 1B       		.uleb128 0x1b
- 972 047e 4B000000 		.4byte	.LASF44
- 973 0482 01       		.byte	0x1
- 974 0483 05       		.byte	0x5
- 975 0484 81000000 		.4byte	0x81
- 976 0488 05       		.uleb128 0x5
- 977 0489 03       		.byte	0x3
- 978 048a 00000000 		.4byte	zDirection
- 979 048e 1B       		.uleb128 0x1b
- 980 048f 63010000 		.4byte	.LASF45
- 981 0493 01       		.byte	0x1
- 982 0494 06       		.byte	0x6
- 983 0495 81000000 		.4byte	0x81
- 984 0499 05       		.uleb128 0x5
- 985 049a 03       		.byte	0x3
- 986 049b 00000000 		.4byte	zStop
- 987 049f 1B       		.uleb128 0x1b
- 988 04a0 F5010000 		.4byte	.LASF46
- 989 04a4 01       		.byte	0x1
- 990 04a5 08       		.byte	0x8
- 991 04a6 81000000 		.4byte	0x81
- 992 04aa 05       		.uleb128 0x5
- 993 04ab 03       		.byte	0x3
- 994 04ac 00000000 		.4byte	status
- 995 04b0 1B       		.uleb128 0x1b
- 996 04b1 11040000 		.4byte	.LASF47
- 997 04b5 01       		.byte	0x1
- 998 04b6 0D       		.byte	0xd
- 999 04b7 A5000000 		.4byte	0xa5
- 1000 04bb 05       		.uleb128 0x5
- 1001 04bc 03       		.byte	0x3
- 1002 04bd 00000000 		.4byte	command
- 1003 04c1 1C       		.uleb128 0x1c
- 1004 04c2 9D000000 		.4byte	.LASF48
- 1005 04c6 06       		.byte	0x6
- 1006 04c7 26       		.byte	0x26
- 1007 04c8 D2040000 		.4byte	0x4d2
- 1008 04cc 1D       		.uleb128 0x1d
- 1009 04cd 81000000 		.4byte	0x81
- 1010 04d1 00       		.byte	0
- 1011 04d2 1C       		.uleb128 0x1c
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 23
+ 640 02f6 03       		.byte	0x3
+ 641 02f7 00000000 		.4byte	status
+ 642 02fb 16       		.uleb128 0x16
+ 643 02fc 59000000 		.4byte	.LASF41
+ 644 0300 01       		.byte	0x1
+ 645 0301 0D       		.byte	0xd
+ 646 0302 99000000 		.4byte	0x99
+ 647 0306 05       		.uleb128 0x5
+ 648 0307 03       		.byte	0x3
+ 649 0308 00000000 		.4byte	command
+ 650 030c 17       		.uleb128 0x17
+ 651 030d 5B020000 		.4byte	.LASF42
+ 652 0311 06       		.byte	0x6
+ 653 0312 26       		.byte	0x26
+ 654 0313 1D030000 		.4byte	0x31d
+ 655 0317 18       		.uleb128 0x18
+ 656 0318 81000000 		.4byte	0x81
+ 657 031c 00       		.byte	0
+ 658 031d 17       		.uleb128 0x17
+ 659 031e 3F000000 		.4byte	.LASF43
+ 660 0322 07       		.byte	0x7
+ 661 0323 26       		.byte	0x26
+ 662 0324 2E030000 		.4byte	0x32e
+ 663 0328 18       		.uleb128 0x18
+ 664 0329 81000000 		.4byte	0x81
+ 665 032d 00       		.byte	0
+ 666 032e 19       		.uleb128 0x19
+ 667 032f B8020000 		.4byte	.LASF45
+ 668 0333 08       		.byte	0x8
+ 669 0334 8F       		.byte	0x8f
+ 670 0335 17       		.uleb128 0x17
+ 671 0336 DB000000 		.4byte	.LASF44
+ 672 033a 08       		.byte	0x8
+ 673 033b 88       		.byte	0x88
+ 674 033c 46030000 		.4byte	0x346
+ 675 0340 18       		.uleb128 0x18
+ 676 0341 81000000 		.4byte	0x81
+ 677 0345 00       		.byte	0
+ 678 0346 19       		.uleb128 0x19
+ 679 0347 0A000000 		.4byte	.LASF46
+ 680 034b 08       		.byte	0x8
+ 681 034c 54       		.byte	0x54
+ 682 034d 17       		.uleb128 0x17
+ 683 034e D8020000 		.4byte	.LASF47
+ 684 0352 09       		.byte	0x9
+ 685 0353 18       		.byte	0x18
+ 686 0354 5E030000 		.4byte	0x35e
+ 687 0358 18       		.uleb128 0x18
+ 688 0359 BA000000 		.4byte	0xba
+ 689 035d 00       		.byte	0
+ 690 035e 19       		.uleb128 0x19
+ 691 035f CF000000 		.4byte	.LASF48
+ 692 0363 0A       		.byte	0xa
+ 693 0364 92       		.byte	0x92
+ 694 0365 00       		.byte	0
+ 695              		.section	.debug_abbrev,"",%progbits
+ 696              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 17
 
 
- 1012 04d3 B7010000 		.4byte	.LASF49
- 1013 04d7 07       		.byte	0x7
- 1014 04d8 26       		.byte	0x26
- 1015 04d9 E3040000 		.4byte	0x4e3
- 1016 04dd 1D       		.uleb128 0x1d
- 1017 04de 81000000 		.4byte	0x81
- 1018 04e2 00       		.byte	0
- 1019 04e3 1E       		.uleb128 0x1e
- 1020 04e4 D5000000 		.4byte	.LASF51
- 1021 04e8 08       		.byte	0x8
- 1022 04e9 8F       		.byte	0x8f
- 1023 04ea 1C       		.uleb128 0x1c
- 1024 04eb 15030000 		.4byte	.LASF50
- 1025 04ef 08       		.byte	0x8
- 1026 04f0 88       		.byte	0x88
- 1027 04f1 FB040000 		.4byte	0x4fb
- 1028 04f5 1D       		.uleb128 0x1d
- 1029 04f6 81000000 		.4byte	0x81
- 1030 04fa 00       		.byte	0
- 1031 04fb 1E       		.uleb128 0x1e
- 1032 04fc 97020000 		.4byte	.LASF52
- 1033 0500 09       		.byte	0x9
- 1034 0501 31       		.byte	0x31
- 1035 0502 1E       		.uleb128 0x1e
- 1036 0503 2F010000 		.4byte	.LASF53
- 1037 0507 09       		.byte	0x9
- 1038 0508 A1       		.byte	0xa1
- 1039 0509 1F       		.uleb128 0x1f
- 1040 050a 10000000 		.4byte	.LASF54
- 1041 050e 09       		.byte	0x9
- 1042 050f 34       		.byte	0x34
- 1043 0510 99000000 		.4byte	0x99
- 1044 0514 1E050000 		.4byte	0x51e
- 1045 0518 1D       		.uleb128 0x1d
- 1046 0519 81000000 		.4byte	0x81
- 1047 051d 00       		.byte	0
- 1048 051e 1F       		.uleb128 0x1f
- 1049 051f 09010000 		.4byte	.LASF55
- 1050 0523 09       		.byte	0x9
- 1051 0524 35       		.byte	0x35
- 1052 0525 B1000000 		.4byte	0xb1
- 1053 0529 33050000 		.4byte	0x533
- 1054 052d 1D       		.uleb128 0x1d
- 1055 052e 8D000000 		.4byte	0x8d
- 1056 0532 00       		.byte	0
- 1057 0533 1F       		.uleb128 0x1f
- 1058 0534 D9010000 		.4byte	.LASF56
- 1059 0538 09       		.byte	0x9
- 1060 0539 3A       		.byte	0x3a
- 1061 053a BD000000 		.4byte	0xbd
- 1062 053e 48050000 		.4byte	0x548
- 1063 0542 1D       		.uleb128 0x1d
- 1064 0543 B1000000 		.4byte	0xb1
- 1065 0547 00       		.byte	0
- 1066 0548 1C       		.uleb128 0x1c
- 1067 0549 89030000 		.4byte	.LASF57
- 1068 054d 0A       		.byte	0xa
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 24
+ 697 0000 01       		.uleb128 0x1
+ 698 0001 11       		.uleb128 0x11
+ 699 0002 01       		.byte	0x1
+ 700 0003 25       		.uleb128 0x25
+ 701 0004 0E       		.uleb128 0xe
+ 702 0005 13       		.uleb128 0x13
+ 703 0006 0B       		.uleb128 0xb
+ 704 0007 03       		.uleb128 0x3
+ 705 0008 0E       		.uleb128 0xe
+ 706 0009 1B       		.uleb128 0x1b
+ 707 000a 0E       		.uleb128 0xe
+ 708 000b 55       		.uleb128 0x55
+ 709 000c 17       		.uleb128 0x17
+ 710 000d 11       		.uleb128 0x11
+ 711 000e 01       		.uleb128 0x1
+ 712 000f 10       		.uleb128 0x10
+ 713 0010 17       		.uleb128 0x17
+ 714 0011 00       		.byte	0
+ 715 0012 00       		.byte	0
+ 716 0013 02       		.uleb128 0x2
+ 717 0014 24       		.uleb128 0x24
+ 718 0015 00       		.byte	0
+ 719 0016 0B       		.uleb128 0xb
+ 720 0017 0B       		.uleb128 0xb
+ 721 0018 3E       		.uleb128 0x3e
+ 722 0019 0B       		.uleb128 0xb
+ 723 001a 03       		.uleb128 0x3
+ 724 001b 0E       		.uleb128 0xe
+ 725 001c 00       		.byte	0
+ 726 001d 00       		.byte	0
+ 727 001e 03       		.uleb128 0x3
+ 728 001f 16       		.uleb128 0x16
+ 729 0020 00       		.byte	0
+ 730 0021 03       		.uleb128 0x3
+ 731 0022 0E       		.uleb128 0xe
+ 732 0023 3A       		.uleb128 0x3a
+ 733 0024 0B       		.uleb128 0xb
+ 734 0025 3B       		.uleb128 0x3b
+ 735 0026 0B       		.uleb128 0xb
+ 736 0027 49       		.uleb128 0x49
+ 737 0028 13       		.uleb128 0x13
+ 738 0029 00       		.byte	0
+ 739 002a 00       		.byte	0
+ 740 002b 04       		.uleb128 0x4
+ 741 002c 24       		.uleb128 0x24
+ 742 002d 00       		.byte	0
+ 743 002e 0B       		.uleb128 0xb
+ 744 002f 0B       		.uleb128 0xb
+ 745 0030 3E       		.uleb128 0x3e
+ 746 0031 0B       		.uleb128 0xb
+ 747 0032 03       		.uleb128 0x3
+ 748 0033 08       		.uleb128 0x8
+ 749 0034 00       		.byte	0
+ 750 0035 00       		.byte	0
+ 751 0036 05       		.uleb128 0x5
+ 752 0037 16       		.uleb128 0x16
+ 753 0038 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 18
 
 
- 1069 054e 76       		.byte	0x76
- 1070 054f 59050000 		.4byte	0x559
- 1071 0553 1D       		.uleb128 0x1d
- 1072 0554 99000000 		.4byte	0x99
- 1073 0558 00       		.byte	0
- 1074 0559 20       		.uleb128 0x20
- 1075 055a 63000000 		.4byte	.LASF69
- 1076 055e 0B       		.byte	0xb
- 1077 055f 24       		.byte	0x24
- 1078 0560 81000000 		.4byte	0x81
- 1079 0564 1E       		.uleb128 0x1e
- 1080 0565 91030000 		.4byte	.LASF58
- 1081 0569 0B       		.byte	0xb
- 1082 056a 23       		.byte	0x23
- 1083 056b 1E       		.uleb128 0x1e
- 1084 056c 35030000 		.4byte	.LASF59
- 1085 0570 09       		.byte	0x9
- 1086 0571 32       		.byte	0x32
- 1087 0572 1E       		.uleb128 0x1e
- 1088 0573 AF000000 		.4byte	.LASF60
- 1089 0577 08       		.byte	0x8
- 1090 0578 54       		.byte	0x54
- 1091 0579 1C       		.uleb128 0x1c
- 1092 057a F3000000 		.4byte	.LASF61
- 1093 057e 0C       		.byte	0xc
- 1094 057f 18       		.byte	0x18
- 1095 0580 8A050000 		.4byte	0x58a
- 1096 0584 1D       		.uleb128 0x1d
- 1097 0585 DE000000 		.4byte	0xde
- 1098 0589 00       		.byte	0
- 1099 058a 1E       		.uleb128 0x1e
- 1100 058b 2C000000 		.4byte	.LASF62
- 1101 058f 0D       		.byte	0xd
- 1102 0590 92       		.byte	0x92
- 1103 0591 00       		.byte	0
- 1104              		.section	.debug_abbrev,"",%progbits
- 1105              	.Ldebug_abbrev0:
- 1106 0000 01       		.uleb128 0x1
- 1107 0001 11       		.uleb128 0x11
- 1108 0002 01       		.byte	0x1
- 1109 0003 25       		.uleb128 0x25
- 1110 0004 0E       		.uleb128 0xe
- 1111 0005 13       		.uleb128 0x13
- 1112 0006 0B       		.uleb128 0xb
- 1113 0007 03       		.uleb128 0x3
- 1114 0008 0E       		.uleb128 0xe
- 1115 0009 1B       		.uleb128 0x1b
- 1116 000a 0E       		.uleb128 0xe
- 1117 000b 55       		.uleb128 0x55
- 1118 000c 17       		.uleb128 0x17
- 1119 000d 11       		.uleb128 0x11
- 1120 000e 01       		.uleb128 0x1
- 1121 000f 10       		.uleb128 0x10
- 1122 0010 17       		.uleb128 0x17
- 1123 0011 00       		.byte	0
- 1124 0012 00       		.byte	0
- 1125 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 25
+ 754 0039 03       		.uleb128 0x3
+ 755 003a 0E       		.uleb128 0xe
+ 756 003b 3A       		.uleb128 0x3a
+ 757 003c 0B       		.uleb128 0xb
+ 758 003d 3B       		.uleb128 0x3b
+ 759 003e 05       		.uleb128 0x5
+ 760 003f 49       		.uleb128 0x49
+ 761 0040 13       		.uleb128 0x13
+ 762 0041 00       		.byte	0
+ 763 0042 00       		.byte	0
+ 764 0043 06       		.uleb128 0x6
+ 765 0044 0F       		.uleb128 0xf
+ 766 0045 00       		.byte	0
+ 767 0046 0B       		.uleb128 0xb
+ 768 0047 0B       		.uleb128 0xb
+ 769 0048 49       		.uleb128 0x49
+ 770 0049 13       		.uleb128 0x13
+ 771 004a 00       		.byte	0
+ 772 004b 00       		.byte	0
+ 773 004c 07       		.uleb128 0x7
+ 774 004d 15       		.uleb128 0x15
+ 775 004e 00       		.byte	0
+ 776 004f 27       		.uleb128 0x27
+ 777 0050 19       		.uleb128 0x19
+ 778 0051 00       		.byte	0
+ 779 0052 00       		.byte	0
+ 780 0053 08       		.uleb128 0x8
+ 781 0054 04       		.uleb128 0x4
+ 782 0055 01       		.byte	0x1
+ 783 0056 03       		.uleb128 0x3
+ 784 0057 0E       		.uleb128 0xe
+ 785 0058 0B       		.uleb128 0xb
+ 786 0059 0B       		.uleb128 0xb
+ 787 005a 3A       		.uleb128 0x3a
+ 788 005b 0B       		.uleb128 0xb
+ 789 005c 3B       		.uleb128 0x3b
+ 790 005d 0B       		.uleb128 0xb
+ 791 005e 01       		.uleb128 0x1
+ 792 005f 13       		.uleb128 0x13
+ 793 0060 00       		.byte	0
+ 794 0061 00       		.byte	0
+ 795 0062 09       		.uleb128 0x9
+ 796 0063 28       		.uleb128 0x28
+ 797 0064 00       		.byte	0
+ 798 0065 03       		.uleb128 0x3
+ 799 0066 0E       		.uleb128 0xe
+ 800 0067 1C       		.uleb128 0x1c
+ 801 0068 0D       		.uleb128 0xd
+ 802 0069 00       		.byte	0
+ 803 006a 00       		.byte	0
+ 804 006b 0A       		.uleb128 0xa
+ 805 006c 04       		.uleb128 0x4
+ 806 006d 01       		.byte	0x1
+ 807 006e 03       		.uleb128 0x3
+ 808 006f 08       		.uleb128 0x8
+ 809 0070 0B       		.uleb128 0xb
+ 810 0071 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 19
 
 
- 1126 0014 24       		.uleb128 0x24
- 1127 0015 00       		.byte	0
- 1128 0016 0B       		.uleb128 0xb
- 1129 0017 0B       		.uleb128 0xb
- 1130 0018 3E       		.uleb128 0x3e
- 1131 0019 0B       		.uleb128 0xb
- 1132 001a 03       		.uleb128 0x3
- 1133 001b 0E       		.uleb128 0xe
- 1134 001c 00       		.byte	0
- 1135 001d 00       		.byte	0
- 1136 001e 03       		.uleb128 0x3
- 1137 001f 16       		.uleb128 0x16
- 1138 0020 00       		.byte	0
- 1139 0021 03       		.uleb128 0x3
- 1140 0022 0E       		.uleb128 0xe
- 1141 0023 3A       		.uleb128 0x3a
- 1142 0024 0B       		.uleb128 0xb
- 1143 0025 3B       		.uleb128 0x3b
- 1144 0026 0B       		.uleb128 0xb
- 1145 0027 49       		.uleb128 0x49
- 1146 0028 13       		.uleb128 0x13
- 1147 0029 00       		.byte	0
- 1148 002a 00       		.byte	0
- 1149 002b 04       		.uleb128 0x4
- 1150 002c 24       		.uleb128 0x24
- 1151 002d 00       		.byte	0
- 1152 002e 0B       		.uleb128 0xb
- 1153 002f 0B       		.uleb128 0xb
- 1154 0030 3E       		.uleb128 0x3e
- 1155 0031 0B       		.uleb128 0xb
- 1156 0032 03       		.uleb128 0x3
- 1157 0033 08       		.uleb128 0x8
- 1158 0034 00       		.byte	0
- 1159 0035 00       		.byte	0
- 1160 0036 05       		.uleb128 0x5
- 1161 0037 16       		.uleb128 0x16
- 1162 0038 00       		.byte	0
- 1163 0039 03       		.uleb128 0x3
- 1164 003a 0E       		.uleb128 0xe
- 1165 003b 3A       		.uleb128 0x3a
- 1166 003c 0B       		.uleb128 0xb
- 1167 003d 3B       		.uleb128 0x3b
- 1168 003e 05       		.uleb128 0x5
- 1169 003f 49       		.uleb128 0x49
- 1170 0040 13       		.uleb128 0x13
- 1171 0041 00       		.byte	0
- 1172 0042 00       		.byte	0
- 1173 0043 06       		.uleb128 0x6
- 1174 0044 0F       		.uleb128 0xf
- 1175 0045 00       		.byte	0
- 1176 0046 0B       		.uleb128 0xb
- 1177 0047 0B       		.uleb128 0xb
- 1178 0048 49       		.uleb128 0x49
- 1179 0049 13       		.uleb128 0x13
- 1180 004a 00       		.byte	0
- 1181 004b 00       		.byte	0
- 1182 004c 07       		.uleb128 0x7
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 26
+ 811 0072 3A       		.uleb128 0x3a
+ 812 0073 0B       		.uleb128 0xb
+ 813 0074 3B       		.uleb128 0x3b
+ 814 0075 0B       		.uleb128 0xb
+ 815 0076 01       		.uleb128 0x1
+ 816 0077 13       		.uleb128 0x13
+ 817 0078 00       		.byte	0
+ 818 0079 00       		.byte	0
+ 819 007a 0B       		.uleb128 0xb
+ 820 007b 28       		.uleb128 0x28
+ 821 007c 00       		.byte	0
+ 822 007d 03       		.uleb128 0x3
+ 823 007e 08       		.uleb128 0x8
+ 824 007f 1C       		.uleb128 0x1c
+ 825 0080 0D       		.uleb128 0xd
+ 826 0081 00       		.byte	0
+ 827 0082 00       		.byte	0
+ 828 0083 0C       		.uleb128 0xc
+ 829 0084 2E       		.uleb128 0x2e
+ 830 0085 01       		.byte	0x1
+ 831 0086 3F       		.uleb128 0x3f
+ 832 0087 19       		.uleb128 0x19
+ 833 0088 03       		.uleb128 0x3
+ 834 0089 0E       		.uleb128 0xe
+ 835 008a 3A       		.uleb128 0x3a
+ 836 008b 0B       		.uleb128 0xb
+ 837 008c 3B       		.uleb128 0x3b
+ 838 008d 0B       		.uleb128 0xb
+ 839 008e 27       		.uleb128 0x27
+ 840 008f 19       		.uleb128 0x19
+ 841 0090 11       		.uleb128 0x11
+ 842 0091 01       		.uleb128 0x1
+ 843 0092 12       		.uleb128 0x12
+ 844 0093 06       		.uleb128 0x6
+ 845 0094 40       		.uleb128 0x40
+ 846 0095 18       		.uleb128 0x18
+ 847 0096 9742     		.uleb128 0x2117
+ 848 0098 19       		.uleb128 0x19
+ 849 0099 01       		.uleb128 0x1
+ 850 009a 13       		.uleb128 0x13
+ 851 009b 00       		.byte	0
+ 852 009c 00       		.byte	0
+ 853 009d 0D       		.uleb128 0xd
+ 854 009e 898201   		.uleb128 0x4109
+ 855 00a1 00       		.byte	0
+ 856 00a2 11       		.uleb128 0x11
+ 857 00a3 01       		.uleb128 0x1
+ 858 00a4 31       		.uleb128 0x31
+ 859 00a5 13       		.uleb128 0x13
+ 860 00a6 00       		.byte	0
+ 861 00a7 00       		.byte	0
+ 862 00a8 0E       		.uleb128 0xe
+ 863 00a9 05       		.uleb128 0x5
+ 864 00aa 00       		.byte	0
+ 865 00ab 03       		.uleb128 0x3
+ 866 00ac 0E       		.uleb128 0xe
+ 867 00ad 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 20
 
 
- 1183 004d 15       		.uleb128 0x15
- 1184 004e 00       		.byte	0
- 1185 004f 27       		.uleb128 0x27
- 1186 0050 19       		.uleb128 0x19
- 1187 0051 00       		.byte	0
- 1188 0052 00       		.byte	0
- 1189 0053 08       		.uleb128 0x8
- 1190 0054 04       		.uleb128 0x4
- 1191 0055 01       		.byte	0x1
- 1192 0056 03       		.uleb128 0x3
- 1193 0057 0E       		.uleb128 0xe
- 1194 0058 0B       		.uleb128 0xb
- 1195 0059 0B       		.uleb128 0xb
- 1196 005a 3A       		.uleb128 0x3a
- 1197 005b 0B       		.uleb128 0xb
- 1198 005c 3B       		.uleb128 0x3b
- 1199 005d 0B       		.uleb128 0xb
- 1200 005e 01       		.uleb128 0x1
- 1201 005f 13       		.uleb128 0x13
- 1202 0060 00       		.byte	0
- 1203 0061 00       		.byte	0
- 1204 0062 09       		.uleb128 0x9
- 1205 0063 28       		.uleb128 0x28
- 1206 0064 00       		.byte	0
- 1207 0065 03       		.uleb128 0x3
- 1208 0066 0E       		.uleb128 0xe
- 1209 0067 1C       		.uleb128 0x1c
- 1210 0068 0D       		.uleb128 0xd
- 1211 0069 00       		.byte	0
- 1212 006a 00       		.byte	0
- 1213 006b 0A       		.uleb128 0xa
- 1214 006c 04       		.uleb128 0x4
- 1215 006d 01       		.byte	0x1
- 1216 006e 03       		.uleb128 0x3
- 1217 006f 08       		.uleb128 0x8
- 1218 0070 0B       		.uleb128 0xb
- 1219 0071 0B       		.uleb128 0xb
- 1220 0072 3A       		.uleb128 0x3a
- 1221 0073 0B       		.uleb128 0xb
- 1222 0074 3B       		.uleb128 0x3b
- 1223 0075 0B       		.uleb128 0xb
- 1224 0076 01       		.uleb128 0x1
- 1225 0077 13       		.uleb128 0x13
- 1226 0078 00       		.byte	0
- 1227 0079 00       		.byte	0
- 1228 007a 0B       		.uleb128 0xb
- 1229 007b 28       		.uleb128 0x28
- 1230 007c 00       		.byte	0
- 1231 007d 03       		.uleb128 0x3
- 1232 007e 08       		.uleb128 0x8
- 1233 007f 1C       		.uleb128 0x1c
- 1234 0080 0D       		.uleb128 0xd
- 1235 0081 00       		.byte	0
- 1236 0082 00       		.byte	0
- 1237 0083 0C       		.uleb128 0xc
- 1238 0084 2E       		.uleb128 0x2e
- 1239 0085 00       		.byte	0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 27
+ 868 00ae 0B       		.uleb128 0xb
+ 869 00af 3B       		.uleb128 0x3b
+ 870 00b0 0B       		.uleb128 0xb
+ 871 00b1 49       		.uleb128 0x49
+ 872 00b2 13       		.uleb128 0x13
+ 873 00b3 02       		.uleb128 0x2
+ 874 00b4 17       		.uleb128 0x17
+ 875 00b5 00       		.byte	0
+ 876 00b6 00       		.byte	0
+ 877 00b7 0F       		.uleb128 0xf
+ 878 00b8 898201   		.uleb128 0x4109
+ 879 00bb 01       		.byte	0x1
+ 880 00bc 11       		.uleb128 0x11
+ 881 00bd 01       		.uleb128 0x1
+ 882 00be 31       		.uleb128 0x31
+ 883 00bf 13       		.uleb128 0x13
+ 884 00c0 01       		.uleb128 0x1
+ 885 00c1 13       		.uleb128 0x13
+ 886 00c2 00       		.byte	0
+ 887 00c3 00       		.byte	0
+ 888 00c4 10       		.uleb128 0x10
+ 889 00c5 8A8201   		.uleb128 0x410a
+ 890 00c8 00       		.byte	0
+ 891 00c9 02       		.uleb128 0x2
+ 892 00ca 18       		.uleb128 0x18
+ 893 00cb 9142     		.uleb128 0x2111
+ 894 00cd 18       		.uleb128 0x18
+ 895 00ce 00       		.byte	0
+ 896 00cf 00       		.byte	0
+ 897 00d0 11       		.uleb128 0x11
+ 898 00d1 898201   		.uleb128 0x4109
+ 899 00d4 01       		.byte	0x1
+ 900 00d5 11       		.uleb128 0x11
+ 901 00d6 01       		.uleb128 0x1
+ 902 00d7 31       		.uleb128 0x31
+ 903 00d8 13       		.uleb128 0x13
+ 904 00d9 00       		.byte	0
+ 905 00da 00       		.byte	0
+ 906 00db 12       		.uleb128 0x12
+ 907 00dc 2E       		.uleb128 0x2e
+ 908 00dd 01       		.byte	0x1
+ 909 00de 3F       		.uleb128 0x3f
+ 910 00df 19       		.uleb128 0x19
+ 911 00e0 03       		.uleb128 0x3
+ 912 00e1 0E       		.uleb128 0xe
+ 913 00e2 3A       		.uleb128 0x3a
+ 914 00e3 0B       		.uleb128 0xb
+ 915 00e4 3B       		.uleb128 0x3b
+ 916 00e5 0B       		.uleb128 0xb
+ 917 00e6 11       		.uleb128 0x11
+ 918 00e7 01       		.uleb128 0x1
+ 919 00e8 12       		.uleb128 0x12
+ 920 00e9 06       		.uleb128 0x6
+ 921 00ea 40       		.uleb128 0x40
+ 922 00eb 18       		.uleb128 0x18
+ 923 00ec 9742     		.uleb128 0x2117
+ 924 00ee 19       		.uleb128 0x19
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 21
 
 
- 1240 0086 3F       		.uleb128 0x3f
- 1241 0087 19       		.uleb128 0x19
- 1242 0088 03       		.uleb128 0x3
- 1243 0089 0E       		.uleb128 0xe
- 1244 008a 3A       		.uleb128 0x3a
- 1245 008b 0B       		.uleb128 0xb
- 1246 008c 3B       		.uleb128 0x3b
- 1247 008d 0B       		.uleb128 0xb
- 1248 008e 27       		.uleb128 0x27
- 1249 008f 19       		.uleb128 0x19
- 1250 0090 11       		.uleb128 0x11
- 1251 0091 01       		.uleb128 0x1
- 1252 0092 12       		.uleb128 0x12
- 1253 0093 06       		.uleb128 0x6
- 1254 0094 40       		.uleb128 0x40
- 1255 0095 18       		.uleb128 0x18
- 1256 0096 9742     		.uleb128 0x2117
- 1257 0098 19       		.uleb128 0x19
- 1258 0099 00       		.byte	0
- 1259 009a 00       		.byte	0
- 1260 009b 0D       		.uleb128 0xd
- 1261 009c 2E       		.uleb128 0x2e
- 1262 009d 01       		.byte	0x1
- 1263 009e 3F       		.uleb128 0x3f
- 1264 009f 19       		.uleb128 0x19
- 1265 00a0 03       		.uleb128 0x3
- 1266 00a1 0E       		.uleb128 0xe
- 1267 00a2 3A       		.uleb128 0x3a
- 1268 00a3 0B       		.uleb128 0xb
- 1269 00a4 3B       		.uleb128 0x3b
- 1270 00a5 0B       		.uleb128 0xb
- 1271 00a6 27       		.uleb128 0x27
- 1272 00a7 19       		.uleb128 0x19
- 1273 00a8 11       		.uleb128 0x11
- 1274 00a9 01       		.uleb128 0x1
- 1275 00aa 12       		.uleb128 0x12
- 1276 00ab 06       		.uleb128 0x6
- 1277 00ac 40       		.uleb128 0x40
- 1278 00ad 18       		.uleb128 0x18
- 1279 00ae 9742     		.uleb128 0x2117
- 1280 00b0 19       		.uleb128 0x19
- 1281 00b1 01       		.uleb128 0x1
- 1282 00b2 13       		.uleb128 0x13
- 1283 00b3 00       		.byte	0
- 1284 00b4 00       		.byte	0
- 1285 00b5 0E       		.uleb128 0xe
- 1286 00b6 05       		.uleb128 0x5
- 1287 00b7 00       		.byte	0
- 1288 00b8 03       		.uleb128 0x3
- 1289 00b9 0E       		.uleb128 0xe
- 1290 00ba 3A       		.uleb128 0x3a
- 1291 00bb 0B       		.uleb128 0xb
- 1292 00bc 3B       		.uleb128 0x3b
- 1293 00bd 0B       		.uleb128 0xb
- 1294 00be 49       		.uleb128 0x49
- 1295 00bf 13       		.uleb128 0x13
- 1296 00c0 02       		.uleb128 0x2
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 28
+ 925 00ef 01       		.uleb128 0x1
+ 926 00f0 13       		.uleb128 0x13
+ 927 00f1 00       		.byte	0
+ 928 00f2 00       		.byte	0
+ 929 00f3 13       		.uleb128 0x13
+ 930 00f4 2E       		.uleb128 0x2e
+ 931 00f5 01       		.byte	0x1
+ 932 00f6 3F       		.uleb128 0x3f
+ 933 00f7 19       		.uleb128 0x19
+ 934 00f8 03       		.uleb128 0x3
+ 935 00f9 0E       		.uleb128 0xe
+ 936 00fa 3A       		.uleb128 0x3a
+ 937 00fb 0B       		.uleb128 0xb
+ 938 00fc 3B       		.uleb128 0x3b
+ 939 00fd 0B       		.uleb128 0xb
+ 940 00fe 27       		.uleb128 0x27
+ 941 00ff 19       		.uleb128 0x19
+ 942 0100 49       		.uleb128 0x49
+ 943 0101 13       		.uleb128 0x13
+ 944 0102 11       		.uleb128 0x11
+ 945 0103 01       		.uleb128 0x1
+ 946 0104 12       		.uleb128 0x12
+ 947 0105 06       		.uleb128 0x6
+ 948 0106 40       		.uleb128 0x40
+ 949 0107 18       		.uleb128 0x18
+ 950 0108 9742     		.uleb128 0x2117
+ 951 010a 19       		.uleb128 0x19
+ 952 010b 01       		.uleb128 0x1
+ 953 010c 13       		.uleb128 0x13
+ 954 010d 00       		.byte	0
+ 955 010e 00       		.byte	0
+ 956 010f 14       		.uleb128 0x14
+ 957 0110 34       		.uleb128 0x34
+ 958 0111 00       		.byte	0
+ 959 0112 03       		.uleb128 0x3
+ 960 0113 0E       		.uleb128 0xe
+ 961 0114 3A       		.uleb128 0x3a
+ 962 0115 0B       		.uleb128 0xb
+ 963 0116 3B       		.uleb128 0x3b
+ 964 0117 05       		.uleb128 0x5
+ 965 0118 49       		.uleb128 0x49
+ 966 0119 13       		.uleb128 0x13
+ 967 011a 3F       		.uleb128 0x3f
+ 968 011b 19       		.uleb128 0x19
+ 969 011c 3C       		.uleb128 0x3c
+ 970 011d 19       		.uleb128 0x19
+ 971 011e 00       		.byte	0
+ 972 011f 00       		.byte	0
+ 973 0120 15       		.uleb128 0x15
+ 974 0121 35       		.uleb128 0x35
+ 975 0122 00       		.byte	0
+ 976 0123 49       		.uleb128 0x49
+ 977 0124 13       		.uleb128 0x13
+ 978 0125 00       		.byte	0
+ 979 0126 00       		.byte	0
+ 980 0127 16       		.uleb128 0x16
+ 981 0128 34       		.uleb128 0x34
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 22
 
 
- 1297 00c1 17       		.uleb128 0x17
- 1298 00c2 00       		.byte	0
- 1299 00c3 00       		.byte	0
- 1300 00c4 0F       		.uleb128 0xf
- 1301 00c5 898201   		.uleb128 0x4109
- 1302 00c8 01       		.byte	0x1
- 1303 00c9 11       		.uleb128 0x11
- 1304 00ca 01       		.uleb128 0x1
- 1305 00cb 31       		.uleb128 0x31
- 1306 00cc 13       		.uleb128 0x13
- 1307 00cd 01       		.uleb128 0x1
- 1308 00ce 13       		.uleb128 0x13
- 1309 00cf 00       		.byte	0
- 1310 00d0 00       		.byte	0
- 1311 00d1 10       		.uleb128 0x10
- 1312 00d2 8A8201   		.uleb128 0x410a
- 1313 00d5 00       		.byte	0
- 1314 00d6 02       		.uleb128 0x2
- 1315 00d7 18       		.uleb128 0x18
- 1316 00d8 9142     		.uleb128 0x2111
- 1317 00da 18       		.uleb128 0x18
- 1318 00db 00       		.byte	0
- 1319 00dc 00       		.byte	0
- 1320 00dd 11       		.uleb128 0x11
- 1321 00de 898201   		.uleb128 0x4109
- 1322 00e1 01       		.byte	0x1
- 1323 00e2 11       		.uleb128 0x11
- 1324 00e3 01       		.uleb128 0x1
- 1325 00e4 31       		.uleb128 0x31
- 1326 00e5 13       		.uleb128 0x13
- 1327 00e6 00       		.byte	0
- 1328 00e7 00       		.byte	0
- 1329 00e8 12       		.uleb128 0x12
- 1330 00e9 2E       		.uleb128 0x2e
- 1331 00ea 01       		.byte	0x1
- 1332 00eb 3F       		.uleb128 0x3f
- 1333 00ec 19       		.uleb128 0x19
- 1334 00ed 03       		.uleb128 0x3
- 1335 00ee 0E       		.uleb128 0xe
- 1336 00ef 3A       		.uleb128 0x3a
- 1337 00f0 0B       		.uleb128 0xb
- 1338 00f1 3B       		.uleb128 0x3b
- 1339 00f2 0B       		.uleb128 0xb
- 1340 00f3 11       		.uleb128 0x11
- 1341 00f4 01       		.uleb128 0x1
- 1342 00f5 12       		.uleb128 0x12
- 1343 00f6 06       		.uleb128 0x6
- 1344 00f7 40       		.uleb128 0x40
- 1345 00f8 18       		.uleb128 0x18
- 1346 00f9 9742     		.uleb128 0x2117
- 1347 00fb 19       		.uleb128 0x19
- 1348 00fc 01       		.uleb128 0x1
- 1349 00fd 13       		.uleb128 0x13
- 1350 00fe 00       		.byte	0
- 1351 00ff 00       		.byte	0
- 1352 0100 13       		.uleb128 0x13
- 1353 0101 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 29
+ 982 0129 00       		.byte	0
+ 983 012a 03       		.uleb128 0x3
+ 984 012b 0E       		.uleb128 0xe
+ 985 012c 3A       		.uleb128 0x3a
+ 986 012d 0B       		.uleb128 0xb
+ 987 012e 3B       		.uleb128 0x3b
+ 988 012f 0B       		.uleb128 0xb
+ 989 0130 49       		.uleb128 0x49
+ 990 0131 13       		.uleb128 0x13
+ 991 0132 3F       		.uleb128 0x3f
+ 992 0133 19       		.uleb128 0x19
+ 993 0134 02       		.uleb128 0x2
+ 994 0135 18       		.uleb128 0x18
+ 995 0136 00       		.byte	0
+ 996 0137 00       		.byte	0
+ 997 0138 17       		.uleb128 0x17
+ 998 0139 2E       		.uleb128 0x2e
+ 999 013a 01       		.byte	0x1
+ 1000 013b 3F       		.uleb128 0x3f
+ 1001 013c 19       		.uleb128 0x19
+ 1002 013d 03       		.uleb128 0x3
+ 1003 013e 0E       		.uleb128 0xe
+ 1004 013f 3A       		.uleb128 0x3a
+ 1005 0140 0B       		.uleb128 0xb
+ 1006 0141 3B       		.uleb128 0x3b
+ 1007 0142 0B       		.uleb128 0xb
+ 1008 0143 27       		.uleb128 0x27
+ 1009 0144 19       		.uleb128 0x19
+ 1010 0145 3C       		.uleb128 0x3c
+ 1011 0146 19       		.uleb128 0x19
+ 1012 0147 01       		.uleb128 0x1
+ 1013 0148 13       		.uleb128 0x13
+ 1014 0149 00       		.byte	0
+ 1015 014a 00       		.byte	0
+ 1016 014b 18       		.uleb128 0x18
+ 1017 014c 05       		.uleb128 0x5
+ 1018 014d 00       		.byte	0
+ 1019 014e 49       		.uleb128 0x49
+ 1020 014f 13       		.uleb128 0x13
+ 1021 0150 00       		.byte	0
+ 1022 0151 00       		.byte	0
+ 1023 0152 19       		.uleb128 0x19
+ 1024 0153 2E       		.uleb128 0x2e
+ 1025 0154 00       		.byte	0
+ 1026 0155 3F       		.uleb128 0x3f
+ 1027 0156 19       		.uleb128 0x19
+ 1028 0157 03       		.uleb128 0x3
+ 1029 0158 0E       		.uleb128 0xe
+ 1030 0159 3A       		.uleb128 0x3a
+ 1031 015a 0B       		.uleb128 0xb
+ 1032 015b 3B       		.uleb128 0x3b
+ 1033 015c 0B       		.uleb128 0xb
+ 1034 015d 27       		.uleb128 0x27
+ 1035 015e 19       		.uleb128 0x19
+ 1036 015f 3C       		.uleb128 0x3c
+ 1037 0160 19       		.uleb128 0x19
+ 1038 0161 00       		.byte	0
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 23
 
 
- 1354 0104 00       		.byte	0
- 1355 0105 11       		.uleb128 0x11
- 1356 0106 01       		.uleb128 0x1
- 1357 0107 31       		.uleb128 0x31
- 1358 0108 13       		.uleb128 0x13
- 1359 0109 00       		.byte	0
- 1360 010a 00       		.byte	0
- 1361 010b 14       		.uleb128 0x14
- 1362 010c 2E       		.uleb128 0x2e
- 1363 010d 01       		.byte	0x1
- 1364 010e 3F       		.uleb128 0x3f
- 1365 010f 19       		.uleb128 0x19
- 1366 0110 03       		.uleb128 0x3
- 1367 0111 0E       		.uleb128 0xe
- 1368 0112 3A       		.uleb128 0x3a
- 1369 0113 0B       		.uleb128 0xb
- 1370 0114 3B       		.uleb128 0x3b
- 1371 0115 0B       		.uleb128 0xb
- 1372 0116 27       		.uleb128 0x27
- 1373 0117 19       		.uleb128 0x19
- 1374 0118 49       		.uleb128 0x49
- 1375 0119 13       		.uleb128 0x13
- 1376 011a 11       		.uleb128 0x11
- 1377 011b 01       		.uleb128 0x1
- 1378 011c 12       		.uleb128 0x12
- 1379 011d 06       		.uleb128 0x6
- 1380 011e 40       		.uleb128 0x40
- 1381 011f 18       		.uleb128 0x18
- 1382 0120 9742     		.uleb128 0x2117
- 1383 0122 19       		.uleb128 0x19
- 1384 0123 01       		.uleb128 0x1
- 1385 0124 13       		.uleb128 0x13
- 1386 0125 00       		.byte	0
- 1387 0126 00       		.byte	0
- 1388 0127 15       		.uleb128 0x15
- 1389 0128 0B       		.uleb128 0xb
- 1390 0129 01       		.byte	0x1
- 1391 012a 11       		.uleb128 0x11
- 1392 012b 01       		.uleb128 0x1
- 1393 012c 12       		.uleb128 0x12
- 1394 012d 06       		.uleb128 0x6
- 1395 012e 01       		.uleb128 0x1
- 1396 012f 13       		.uleb128 0x13
- 1397 0130 00       		.byte	0
- 1398 0131 00       		.byte	0
- 1399 0132 16       		.uleb128 0x16
- 1400 0133 34       		.uleb128 0x34
- 1401 0134 00       		.byte	0
- 1402 0135 03       		.uleb128 0x3
- 1403 0136 0E       		.uleb128 0xe
- 1404 0137 3A       		.uleb128 0x3a
- 1405 0138 0B       		.uleb128 0xb
- 1406 0139 3B       		.uleb128 0x3b
- 1407 013a 0B       		.uleb128 0xb
- 1408 013b 49       		.uleb128 0x49
- 1409 013c 13       		.uleb128 0x13
- 1410 013d 02       		.uleb128 0x2
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 30
+ 1039 0162 00       		.byte	0
+ 1040 0163 00       		.byte	0
+ 1041              		.section	.debug_loc,"",%progbits
+ 1042              	.Ldebug_loc0:
+ 1043              	.LLST0:
+ 1044 0000 00000000 		.4byte	.LVL1
+ 1045 0004 04000000 		.4byte	.LVL2
+ 1046 0008 0100     		.2byte	0x1
+ 1047 000a 50       		.byte	0x50
+ 1048 000b 04000000 		.4byte	.LVL2
+ 1049 000f 2C000000 		.4byte	.LFE65
+ 1050 0013 0400     		.2byte	0x4
+ 1051 0015 F3       		.byte	0xf3
+ 1052 0016 01       		.uleb128 0x1
+ 1053 0017 50       		.byte	0x50
+ 1054 0018 9F       		.byte	0x9f
+ 1055 0019 00000000 		.4byte	0
+ 1056 001d 00000000 		.4byte	0
+ 1057              	.LLST1:
+ 1058 0021 00000000 		.4byte	.LVL9
+ 1059 0025 09000000 		.4byte	.LVL10-1
+ 1060 0029 0100     		.2byte	0x1
+ 1061 002b 50       		.byte	0x50
+ 1062 002c 09000000 		.4byte	.LVL10-1
+ 1063 0030 18000000 		.4byte	.LFE67
+ 1064 0034 0400     		.2byte	0x4
+ 1065 0036 F3       		.byte	0xf3
+ 1066 0037 01       		.uleb128 0x1
+ 1067 0038 50       		.byte	0x50
+ 1068 0039 9F       		.byte	0x9f
+ 1069 003a 00000000 		.4byte	0
+ 1070 003e 00000000 		.4byte	0
+ 1071              		.section	.debug_aranges,"",%progbits
+ 1072 0000 3C000000 		.4byte	0x3c
+ 1073 0004 0200     		.2byte	0x2
+ 1074 0006 00000000 		.4byte	.Ldebug_info0
+ 1075 000a 04       		.byte	0x4
+ 1076 000b 00       		.byte	0
+ 1077 000c 0000     		.2byte	0
+ 1078 000e 0000     		.2byte	0
+ 1079 0010 00000000 		.4byte	.LFB63
+ 1080 0014 18000000 		.4byte	.LFE63-.LFB63
+ 1081 0018 00000000 		.4byte	.LFB65
+ 1082 001c 2C000000 		.4byte	.LFE65-.LFB65
+ 1083 0020 00000000 		.4byte	.LFB66
+ 1084 0024 2C000000 		.4byte	.LFE66-.LFB66
+ 1085 0028 00000000 		.4byte	.LFB67
+ 1086 002c 18000000 		.4byte	.LFE67-.LFB67
+ 1087 0030 00000000 		.4byte	.LFB64
+ 1088 0034 2C000000 		.4byte	.LFE64-.LFB64
+ 1089 0038 00000000 		.4byte	0
+ 1090 003c 00000000 		.4byte	0
+ 1091              		.section	.debug_ranges,"",%progbits
+ 1092              	.Ldebug_ranges0:
+ 1093 0000 00000000 		.4byte	.LFB63
+ 1094 0004 18000000 		.4byte	.LFE63
+ 1095 0008 00000000 		.4byte	.LFB65
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 24
 
 
- 1411 013e 17       		.uleb128 0x17
- 1412 013f 00       		.byte	0
- 1413 0140 00       		.byte	0
- 1414 0141 17       		.uleb128 0x17
- 1415 0142 34       		.uleb128 0x34
- 1416 0143 00       		.byte	0
- 1417 0144 03       		.uleb128 0x3
- 1418 0145 08       		.uleb128 0x8
- 1419 0146 3A       		.uleb128 0x3a
- 1420 0147 0B       		.uleb128 0xb
- 1421 0148 3B       		.uleb128 0x3b
- 1422 0149 0B       		.uleb128 0xb
- 1423 014a 49       		.uleb128 0x49
- 1424 014b 13       		.uleb128 0x13
- 1425 014c 02       		.uleb128 0x2
- 1426 014d 17       		.uleb128 0x17
- 1427 014e 00       		.byte	0
- 1428 014f 00       		.byte	0
- 1429 0150 18       		.uleb128 0x18
- 1430 0151 34       		.uleb128 0x34
- 1431 0152 00       		.byte	0
- 1432 0153 03       		.uleb128 0x3
- 1433 0154 0E       		.uleb128 0xe
- 1434 0155 3A       		.uleb128 0x3a
- 1435 0156 0B       		.uleb128 0xb
- 1436 0157 3B       		.uleb128 0x3b
- 1437 0158 0B       		.uleb128 0xb
- 1438 0159 49       		.uleb128 0x49
- 1439 015a 13       		.uleb128 0x13
- 1440 015b 02       		.uleb128 0x2
- 1441 015c 18       		.uleb128 0x18
- 1442 015d 00       		.byte	0
- 1443 015e 00       		.byte	0
- 1444 015f 19       		.uleb128 0x19
- 1445 0160 34       		.uleb128 0x34
- 1446 0161 00       		.byte	0
- 1447 0162 03       		.uleb128 0x3
- 1448 0163 0E       		.uleb128 0xe
- 1449 0164 3A       		.uleb128 0x3a
- 1450 0165 0B       		.uleb128 0xb
- 1451 0166 3B       		.uleb128 0x3b
- 1452 0167 05       		.uleb128 0x5
- 1453 0168 49       		.uleb128 0x49
- 1454 0169 13       		.uleb128 0x13
- 1455 016a 3F       		.uleb128 0x3f
- 1456 016b 19       		.uleb128 0x19
- 1457 016c 3C       		.uleb128 0x3c
- 1458 016d 19       		.uleb128 0x19
- 1459 016e 00       		.byte	0
- 1460 016f 00       		.byte	0
- 1461 0170 1A       		.uleb128 0x1a
- 1462 0171 35       		.uleb128 0x35
- 1463 0172 00       		.byte	0
- 1464 0173 49       		.uleb128 0x49
- 1465 0174 13       		.uleb128 0x13
- 1466 0175 00       		.byte	0
- 1467 0176 00       		.byte	0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 31
+ 1096 000c 2C000000 		.4byte	.LFE65
+ 1097 0010 00000000 		.4byte	.LFB66
+ 1098 0014 2C000000 		.4byte	.LFE66
+ 1099 0018 00000000 		.4byte	.LFB67
+ 1100 001c 18000000 		.4byte	.LFE67
+ 1101 0020 00000000 		.4byte	.LFB64
+ 1102 0024 2C000000 		.4byte	.LFE64
+ 1103 0028 00000000 		.4byte	0
+ 1104 002c 00000000 		.4byte	0
+ 1105              		.section	.debug_line,"",%progbits
+ 1106              	.Ldebug_line0:
+ 1107 0000 05020000 		.section	.debug_str,"MS",%progbits,1
+ 1107      02008A01 
+ 1107      00000201 
+ 1107      FB0E0D00 
+ 1107      01010101 
+ 1108              	.LASF23:
+ 1109 0000 4D4F5645 		.ascii	"MOVED_Z_1\000"
+ 1109      445F5A5F 
+ 1109      3100
+ 1110              	.LASF46:
+ 1111 000a 55415254 		.ascii	"UART_1_Start\000"
+ 1111      5F315F53 
+ 1111      74617274 
+ 1111      00
+ 1112              	.LASF34:
+ 1113 0017 73746174 		.ascii	"stat\000"
+ 1113      00
+ 1114              	.LASF52:
+ 1115 001c 72657365 		.ascii	"reset\000"
+ 1115      7400
+ 1116              	.LASF25:
+ 1117 0022 52455345 		.ascii	"RESET_Z\000"
+ 1117      545F5A00 
+ 1118              	.LASF28:
+ 1119 002a 494E5F50 		.ascii	"IN_PROCESS\000"
+ 1119      524F4345 
+ 1119      535300
+ 1120              	.LASF9:
+ 1121 0035 5F5F696E 		.ascii	"__int32_t\000"
+ 1121      7433325F 
+ 1121      7400
+ 1122              	.LASF43:
+ 1123 003f 44697265 		.ascii	"Direction_1_Write\000"
+ 1123      6374696F 
+ 1123      6E5F315F 
+ 1123      57726974 
+ 1123      6500
+ 1124              	.LASF26:
+ 1125 0051 44454641 		.ascii	"DEFAULT\000"
+ 1125      554C5400 
+ 1126              	.LASF41:
+ 1127 0059 636F6D6D 		.ascii	"command\000"
+ 1127      616E6400 
+ 1128              	.LASF32:
+ 1129 0061 75706461 		.ascii	"updateStatus\000"
+ 1129      74655374 
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 25
 
 
- 1468 0177 1B       		.uleb128 0x1b
- 1469 0178 34       		.uleb128 0x34
- 1470 0179 00       		.byte	0
- 1471 017a 03       		.uleb128 0x3
- 1472 017b 0E       		.uleb128 0xe
- 1473 017c 3A       		.uleb128 0x3a
- 1474 017d 0B       		.uleb128 0xb
- 1475 017e 3B       		.uleb128 0x3b
- 1476 017f 0B       		.uleb128 0xb
- 1477 0180 49       		.uleb128 0x49
- 1478 0181 13       		.uleb128 0x13
- 1479 0182 3F       		.uleb128 0x3f
- 1480 0183 19       		.uleb128 0x19
- 1481 0184 02       		.uleb128 0x2
- 1482 0185 18       		.uleb128 0x18
- 1483 0186 00       		.byte	0
- 1484 0187 00       		.byte	0
- 1485 0188 1C       		.uleb128 0x1c
- 1486 0189 2E       		.uleb128 0x2e
- 1487 018a 01       		.byte	0x1
- 1488 018b 3F       		.uleb128 0x3f
- 1489 018c 19       		.uleb128 0x19
- 1490 018d 03       		.uleb128 0x3
- 1491 018e 0E       		.uleb128 0xe
- 1492 018f 3A       		.uleb128 0x3a
- 1493 0190 0B       		.uleb128 0xb
- 1494 0191 3B       		.uleb128 0x3b
- 1495 0192 0B       		.uleb128 0xb
- 1496 0193 27       		.uleb128 0x27
- 1497 0194 19       		.uleb128 0x19
- 1498 0195 3C       		.uleb128 0x3c
- 1499 0196 19       		.uleb128 0x19
- 1500 0197 01       		.uleb128 0x1
- 1501 0198 13       		.uleb128 0x13
- 1502 0199 00       		.byte	0
- 1503 019a 00       		.byte	0
- 1504 019b 1D       		.uleb128 0x1d
- 1505 019c 05       		.uleb128 0x5
- 1506 019d 00       		.byte	0
- 1507 019e 49       		.uleb128 0x49
- 1508 019f 13       		.uleb128 0x13
- 1509 01a0 00       		.byte	0
- 1510 01a1 00       		.byte	0
- 1511 01a2 1E       		.uleb128 0x1e
- 1512 01a3 2E       		.uleb128 0x2e
- 1513 01a4 00       		.byte	0
- 1514 01a5 3F       		.uleb128 0x3f
- 1515 01a6 19       		.uleb128 0x19
- 1516 01a7 03       		.uleb128 0x3
- 1517 01a8 0E       		.uleb128 0xe
- 1518 01a9 3A       		.uleb128 0x3a
- 1519 01aa 0B       		.uleb128 0xb
- 1520 01ab 3B       		.uleb128 0x3b
- 1521 01ac 0B       		.uleb128 0xb
- 1522 01ad 27       		.uleb128 0x27
- 1523 01ae 19       		.uleb128 0x19
- 1524 01af 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 32
+ 1129      61747573 
+ 1129      00
+ 1130              	.LASF15:
+ 1131 006e 646F7562 		.ascii	"double\000"
+ 1131      6C6500
+ 1132              	.LASF11:
+ 1133 0075 75696E74 		.ascii	"uint8\000"
+ 1133      3800
+ 1134              	.LASF40:
+ 1135 007b 73746174 		.ascii	"status\000"
+ 1135      757300
+ 1136              	.LASF14:
+ 1137 0082 666C6F61 		.ascii	"float\000"
+ 1137      7400
+ 1138              	.LASF27:
+ 1139 0088 57524F4E 		.ascii	"WRONG_COMMAND\000"
+ 1139      475F434F 
+ 1139      4D4D414E 
+ 1139      4400
+ 1140              	.LASF1:
+ 1141 0096 756E7369 		.ascii	"unsigned char\000"
+ 1141      676E6564 
+ 1141      20636861 
+ 1141      7200
+ 1142              	.LASF33:
+ 1143 00a4 626F756E 		.ascii	"bound\000"
+ 1143      6400
+ 1144              	.LASF37:
+ 1145 00aa 656E6162 		.ascii	"enabled\000"
+ 1145      6C656400 
+ 1146              	.LASF19:
+ 1147 00b2 4745545F 		.ascii	"GET_STATUS\000"
+ 1147      53544154 
+ 1147      555300
+ 1148              	.LASF5:
+ 1149 00bd 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1149      20756E73 
+ 1149      69676E65 
+ 1149      6420696E 
+ 1149      7400
+ 1150              	.LASF48:
+ 1151 00cf 50574D5F 		.ascii	"PWM_1_Start\000"
+ 1151      315F5374 
+ 1151      61727400 
+ 1152              	.LASF44:
+ 1153 00db 55415254 		.ascii	"UART_1_WriteTxData\000"
+ 1153      5F315F57 
+ 1153      72697465 
+ 1153      54784461 
+ 1153      746100
+ 1154              	.LASF51:
+ 1155 00ee 433A5C55 		.ascii	"C:\\Users\\Bettefanden\\Documents\\IHA\\Semester 3\\"
+ 1155      73657273 
+ 1155      5C426574 
+ 1155      74656661 
+ 1155      6E64656E 
+ 1156 011c 53656D65 		.ascii	"Semesterprojekt 3\\Software\\Test\\PSoC-bipolar\\Te"
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 26
 
 
- 1525 01b0 19       		.uleb128 0x19
- 1526 01b1 00       		.byte	0
- 1527 01b2 00       		.byte	0
- 1528 01b3 1F       		.uleb128 0x1f
- 1529 01b4 2E       		.uleb128 0x2e
- 1530 01b5 01       		.byte	0x1
- 1531 01b6 3F       		.uleb128 0x3f
- 1532 01b7 19       		.uleb128 0x19
- 1533 01b8 03       		.uleb128 0x3
- 1534 01b9 0E       		.uleb128 0xe
- 1535 01ba 3A       		.uleb128 0x3a
- 1536 01bb 0B       		.uleb128 0xb
- 1537 01bc 3B       		.uleb128 0x3b
- 1538 01bd 0B       		.uleb128 0xb
- 1539 01be 27       		.uleb128 0x27
- 1540 01bf 19       		.uleb128 0x19
- 1541 01c0 49       		.uleb128 0x49
- 1542 01c1 13       		.uleb128 0x13
- 1543 01c2 3C       		.uleb128 0x3c
- 1544 01c3 19       		.uleb128 0x19
- 1545 01c4 01       		.uleb128 0x1
- 1546 01c5 13       		.uleb128 0x13
- 1547 01c6 00       		.byte	0
- 1548 01c7 00       		.byte	0
- 1549 01c8 20       		.uleb128 0x20
- 1550 01c9 2E       		.uleb128 0x2e
- 1551 01ca 00       		.byte	0
- 1552 01cb 3F       		.uleb128 0x3f
- 1553 01cc 19       		.uleb128 0x19
- 1554 01cd 03       		.uleb128 0x3
- 1555 01ce 0E       		.uleb128 0xe
- 1556 01cf 3A       		.uleb128 0x3a
- 1557 01d0 0B       		.uleb128 0xb
- 1558 01d1 3B       		.uleb128 0x3b
- 1559 01d2 0B       		.uleb128 0xb
- 1560 01d3 27       		.uleb128 0x27
- 1561 01d4 19       		.uleb128 0x19
- 1562 01d5 49       		.uleb128 0x49
- 1563 01d6 13       		.uleb128 0x13
- 1564 01d7 3C       		.uleb128 0x3c
- 1565 01d8 19       		.uleb128 0x19
- 1566 01d9 00       		.byte	0
- 1567 01da 00       		.byte	0
- 1568 01db 00       		.byte	0
- 1569              		.section	.debug_loc,"",%progbits
- 1570              	.Ldebug_loc0:
- 1571              	.LLST0:
- 1572 0000 00000000 		.4byte	.LVL0
- 1573 0004 04000000 		.4byte	.LVL1
- 1574 0008 0100     		.2byte	0x1
- 1575 000a 50       		.byte	0x50
- 1576 000b 04000000 		.4byte	.LVL1
- 1577 000f 2C000000 		.4byte	.LFE65
- 1578 0013 0400     		.2byte	0x4
- 1579 0015 F3       		.byte	0xf3
- 1580 0016 01       		.uleb128 0x1
- 1581 0017 50       		.byte	0x50
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 33
+ 1156      73746572 
+ 1156      70726F6A 
+ 1156      656B7420 
+ 1156      335C536F 
+ 1157 014b 73745C42 		.ascii	"st\\Bipolar.cydsn\000"
+ 1157      69706F6C 
+ 1157      61722E63 
+ 1157      7964736E 
+ 1157      00
+ 1158              	.LASF53:
+ 1159 015c 6D61696E 		.ascii	"main\000"
+ 1159      00
+ 1160              	.LASF36:
+ 1161 0161 7A537465 		.ascii	"zStepCount\000"
+ 1161      70436F75 
+ 1161      6E7400
+ 1162              	.LASF12:
+ 1163 016c 75696E74 		.ascii	"uint16\000"
+ 1163      313600
+ 1164              	.LASF13:
+ 1165 0173 696E7438 		.ascii	"int8\000"
+ 1165      00
+ 1166              	.LASF29:
+ 1167 0178 5350495F 		.ascii	"SPI_protocol\000"
+ 1167      70726F74 
+ 1167      6F636F6C 
+ 1167      00
+ 1168              	.LASF35:
+ 1169 0185 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1169      52784275 
+ 1169      66666572 
+ 1169      00
+ 1170              	.LASF49:
+ 1171 0192 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1171      4320342E 
+ 1171      392E3320 
+ 1171      32303135 
+ 1171      30333033 
+ 1172 01c5 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1172      20726576 
+ 1172      6973696F 
+ 1172      6E203232 
+ 1172      31323230 
+ 1173 01f8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1173      66756E63 
+ 1173      74696F6E 
+ 1173      2D736563 
+ 1173      74696F6E 
+ 1174              	.LASF8:
+ 1175 0220 756E7369 		.ascii	"unsigned int\000"
+ 1175      676E6564 
+ 1175      20696E74 
+ 1175      00
+ 1176              	.LASF7:
+ 1177 022d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1177      206C6F6E 
+ 1177      6720756E 
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 27
 
 
- 1582 0018 9F       		.byte	0x9f
- 1583 0019 00000000 		.4byte	0
- 1584 001d 00000000 		.4byte	0
- 1585              	.LLST1:
- 1586 0021 00000000 		.4byte	.LVL8
- 1587 0025 09000000 		.4byte	.LVL9-1
- 1588 0029 0100     		.2byte	0x1
- 1589 002b 50       		.byte	0x50
- 1590 002c 09000000 		.4byte	.LVL9-1
- 1591 0030 18000000 		.4byte	.LFE67
- 1592 0034 0400     		.2byte	0x4
- 1593 0036 F3       		.byte	0xf3
- 1594 0037 01       		.uleb128 0x1
- 1595 0038 50       		.byte	0x50
- 1596 0039 9F       		.byte	0x9f
- 1597 003a 00000000 		.4byte	0
- 1598 003e 00000000 		.4byte	0
- 1599              	.LLST2:
- 1600 0042 4C000000 		.4byte	.LVL22
- 1601 0046 80000000 		.4byte	.LVL28
- 1602 004a 0100     		.2byte	0x1
- 1603 004c 54       		.byte	0x54
- 1604 004d 8C000000 		.4byte	.LVL31
- 1605 0051 F8000000 		.4byte	.LFE64
- 1606 0055 0100     		.2byte	0x1
- 1607 0057 55       		.byte	0x55
- 1608 0058 00000000 		.4byte	0
- 1609 005c 00000000 		.4byte	0
- 1610              	.LLST3:
- 1611 0060 D0000000 		.4byte	.LVL41
- 1612 0064 DA000000 		.4byte	.LVL43
- 1613 0068 0100     		.2byte	0x1
- 1614 006a 54       		.byte	0x54
- 1615 006b DC000000 		.4byte	.LVL44
- 1616 006f F8000000 		.4byte	.LFE64
- 1617 0073 0100     		.2byte	0x1
- 1618 0075 54       		.byte	0x54
- 1619 0076 00000000 		.4byte	0
- 1620 007a 00000000 		.4byte	0
- 1621              	.LLST4:
- 1622 007e B0000000 		.4byte	.LVL34
- 1623 0082 BC000000 		.4byte	.LVL37
- 1624 0086 0100     		.2byte	0x1
- 1625 0088 54       		.byte	0x54
- 1626 0089 00000000 		.4byte	0
- 1627 008d 00000000 		.4byte	0
- 1628              	.LLST5:
- 1629 0091 C2000000 		.4byte	.LVL38
- 1630 0095 D0000000 		.4byte	.LVL41
- 1631 0099 0100     		.2byte	0x1
- 1632 009b 54       		.byte	0x54
- 1633 009c 00000000 		.4byte	0
- 1634 00a0 00000000 		.4byte	0
- 1635              		.section	.debug_aranges,"",%progbits
- 1636 0000 3C000000 		.4byte	0x3c
- 1637 0004 0200     		.2byte	0x2
- 1638 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 34
+ 1177      7369676E 
+ 1177      65642069 
+ 1178              	.LASF24:
+ 1179 0244 4D4F5645 		.ascii	"MOVED_Z_2\000"
+ 1179      445F5A5F 
+ 1179      3200
+ 1180              	.LASF17:
+ 1181 024e 63796973 		.ascii	"cyisraddress\000"
+ 1181      72616464 
+ 1181      72657373 
+ 1181      00
+ 1182              	.LASF42:
+ 1183 025b 456E6162 		.ascii	"Enable_1_Write\000"
+ 1183      6C655F31 
+ 1183      5F577269 
+ 1183      746500
+ 1184              	.LASF10:
+ 1185 026a 696E7433 		.ascii	"int32_t\000"
+ 1185      325F7400 
+ 1186              	.LASF18:
+ 1187 0272 73697A65 		.ascii	"sizetype\000"
+ 1187      74797065 
+ 1187      00
+ 1188              	.LASF3:
+ 1189 027b 73686F72 		.ascii	"short unsigned int\000"
+ 1189      7420756E 
+ 1189      7369676E 
+ 1189      65642069 
+ 1189      6E7400
+ 1190              	.LASF6:
+ 1191 028e 6C6F6E67 		.ascii	"long long int\000"
+ 1191      206C6F6E 
+ 1191      6720696E 
+ 1191      7400
+ 1192              	.LASF50:
+ 1193 029c 6D61696E 		.ascii	"main.c\000"
+ 1193      2E6300
+ 1194              	.LASF16:
+ 1195 02a3 63686172 		.ascii	"char\000"
+ 1195      00
+ 1196              	.LASF39:
+ 1197 02a8 7A53746F 		.ascii	"zStop\000"
+ 1197      7000
+ 1198              	.LASF2:
+ 1199 02ae 73686F72 		.ascii	"short int\000"
+ 1199      7420696E 
+ 1199      7400
+ 1200              	.LASF45:
+ 1201 02b8 55415254 		.ascii	"UART_1_ClearTxBuffer\000"
+ 1201      5F315F43 
+ 1201      6C656172 
+ 1201      54784275 
+ 1201      66666572 
+ 1202              	.LASF38:
+ 1203 02cd 7A446972 		.ascii	"zDirection\000"
+ 1203      65637469 
+ 1203      6F6E00
+ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\ccnJOCO9.s 			page 28
 
 
- 1639 000a 04       		.byte	0x4
- 1640 000b 00       		.byte	0
- 1641 000c 0000     		.2byte	0
- 1642 000e 0000     		.2byte	0
- 1643 0010 00000000 		.4byte	.LFB63
- 1644 0014 0C000000 		.4byte	.LFE63-.LFB63
- 1645 0018 00000000 		.4byte	.LFB65
- 1646 001c 2C000000 		.4byte	.LFE65-.LFB65
- 1647 0020 00000000 		.4byte	.LFB66
- 1648 0024 2C000000 		.4byte	.LFE66-.LFB66
- 1649 0028 00000000 		.4byte	.LFB67
- 1650 002c 18000000 		.4byte	.LFE67-.LFB67
- 1651 0030 00000000 		.4byte	.LFB64
- 1652 0034 F8000000 		.4byte	.LFE64-.LFB64
- 1653 0038 00000000 		.4byte	0
- 1654 003c 00000000 		.4byte	0
- 1655              		.section	.debug_ranges,"",%progbits
- 1656              	.Ldebug_ranges0:
- 1657 0000 00000000 		.4byte	.LFB63
- 1658 0004 0C000000 		.4byte	.LFE63
- 1659 0008 00000000 		.4byte	.LFB65
- 1660 000c 2C000000 		.4byte	.LFE65
- 1661 0010 00000000 		.4byte	.LFB66
- 1662 0014 2C000000 		.4byte	.LFE66
- 1663 0018 00000000 		.4byte	.LFB67
- 1664 001c 18000000 		.4byte	.LFE67
- 1665 0020 00000000 		.4byte	.LFB64
- 1666 0024 F8000000 		.4byte	.LFE64
- 1667 0028 00000000 		.4byte	0
- 1668 002c 00000000 		.4byte	0
- 1669              		.section	.debug_line,"",%progbits
- 1670              	.Ldebug_line0:
- 1671 0000 83020000 		.section	.debug_str,"MS",%progbits,1
- 1671      0200B601 
- 1671      00000201 
- 1671      FB0E0D00 
- 1671      01010101 
- 1672              	.LASF28:
- 1673 0000 52455345 		.ascii	"RESET_Z\000"
- 1673      545F5A00 
- 1674              	.LASF66:
- 1675 0008 6973725F 		.ascii	"isr_RxD\000"
- 1675      52784400 
- 1676              	.LASF54:
- 1677 0010 4144435F 		.ascii	"ADC_SAR_Seq_IsEndConversion\000"
- 1677      5341525F 
- 1677      5365715F 
- 1677      4973456E 
- 1677      64436F6E 
- 1678              	.LASF62:
- 1679 002c 50574D5F 		.ascii	"PWM_1_Start\000"
- 1679      315F5374 
- 1679      61727400 
- 1680              	.LASF2:
- 1681 0038 73686F72 		.ascii	"short int\000"
- 1681      7420696E 
- 1681      7400
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 35
-
-
- 1682              	.LASF21:
- 1683 0042 73697A65 		.ascii	"sizetype\000"
- 1683      74797065 
- 1683      00
- 1684              	.LASF44:
- 1685 004b 7A446972 		.ascii	"zDirection\000"
- 1685      65637469 
- 1685      6F6E00
- 1686              	.LASF29:
- 1687 0056 44454641 		.ascii	"DEFAULT\000"
- 1687      554C5400 
- 1688              	.LASF68:
- 1689 005e 6D61696E 		.ascii	"main\000"
- 1689      00
- 1690              	.LASF69:
- 1691 0063 6973725F 		.ascii	"isr_x_home_GetState\000"
- 1691      785F686F 
- 1691      6D655F47 
- 1691      65745374 
- 1691      61746500 
- 1692              	.LASF12:
- 1693 0077 75696E74 		.ascii	"uint16\000"
- 1693      313600
- 1694              	.LASF15:
- 1695 007e 696E7431 		.ascii	"int16\000"
- 1695      3600
- 1696              	.LASF11:
- 1697 0084 75696E74 		.ascii	"uint8\000"
- 1697      3800
- 1698              	.LASF67:
- 1699 008a 72657365 		.ascii	"reset\000"
- 1699      7400
- 1700              	.LASF32:
- 1701 0090 5350495F 		.ascii	"SPI_protocol\000"
- 1701      70726F74 
- 1701      6F636F6C 
- 1701      00
- 1702              	.LASF48:
- 1703 009d 44697265 		.ascii	"Direction_1_Write\000"
- 1703      6374696F 
- 1703      6E5F315F 
- 1703      57726974 
- 1703      6500
- 1704              	.LASF60:
- 1705 00af 55415254 		.ascii	"UART_1_Start\000"
- 1705      5F315F53 
- 1705      74617274 
- 1705      00
- 1706              	.LASF17:
- 1707 00bc 666C6F61 		.ascii	"float\000"
- 1707      7400
- 1708              	.LASF6:
- 1709 00c2 6C6F6E67 		.ascii	"long long int\000"
- 1709      206C6F6E 
- 1709      6720696E 
- 1709      7400
- 1710              	.LASF14:
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 36
-
-
- 1711 00d0 696E7438 		.ascii	"int8\000"
- 1711      00
- 1712              	.LASF51:
- 1713 00d5 55415254 		.ascii	"UART_1_ClearTxBuffer\000"
- 1713      5F315F43 
- 1713      6C656172 
- 1713      54784275 
- 1713      66666572 
- 1714              	.LASF4:
- 1715 00ea 6C6F6E67 		.ascii	"long int\000"
- 1715      20696E74 
- 1715      00
- 1716              	.LASF61:
- 1717 00f3 6973725F 		.ascii	"isr_RxD_StartEx\000"
- 1717      5278445F 
- 1717      53746172 
- 1717      74457800 
- 1718              	.LASF35:
- 1719 0103 626F756E 		.ascii	"bound\000"
- 1719      6400
- 1720              	.LASF55:
- 1721 0109 4144435F 		.ascii	"ADC_SAR_Seq_GetResult16\000"
- 1721      5341525F 
- 1721      5365715F 
- 1721      47657452 
- 1721      6573756C 
- 1722              	.LASF30:
- 1723 0121 57524F4E 		.ascii	"WRONG_COMMAND\000"
- 1723      475F434F 
- 1723      4D4D414E 
- 1723      4400
- 1724              	.LASF53:
- 1725 012f 4144435F 		.ascii	"ADC_SAR_Seq_StartConvert\000"
- 1725      5341525F 
- 1725      5365715F 
- 1725      53746172 
- 1725      74436F6E 
- 1726              	.LASF1:
- 1727 0148 756E7369 		.ascii	"unsigned char\000"
- 1727      676E6564 
- 1727      20636861 
- 1727      7200
- 1728              	.LASF20:
- 1729 0156 63796973 		.ascii	"cyisraddress\000"
- 1729      72616464 
- 1729      72657373 
- 1729      00
- 1730              	.LASF45:
- 1731 0163 7A53746F 		.ascii	"zStop\000"
- 1731      7000
- 1732              	.LASF40:
- 1733 0169 7A576964 		.ascii	"zWidth\000"
- 1733      746800
- 1734              	.LASF0:
- 1735 0170 7369676E 		.ascii	"signed char\000"
- 1735      65642063 
- 1735      68617200 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 37
-
-
- 1736              	.LASF7:
- 1737 017c 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1737      206C6F6E 
- 1737      6720756E 
- 1737      7369676E 
- 1737      65642069 
- 1738              	.LASF8:
- 1739 0193 756E7369 		.ascii	"unsigned int\000"
- 1739      676E6564 
- 1739      20696E74 
- 1739      00
- 1740              	.LASF25:
- 1741 01a0 52455345 		.ascii	"RESET\000"
- 1741      5400
- 1742              	.LASF37:
- 1743 01a6 41444352 		.ascii	"ADCResultX\000"
- 1743      6573756C 
- 1743      745800
- 1744              	.LASF33:
- 1745 01b1 6D6F7665 		.ascii	"moveZ\000"
- 1745      5A00
- 1746              	.LASF49:
- 1747 01b7 456E6162 		.ascii	"Enable_1_Write\000"
- 1747      6C655F31 
- 1747      5F577269 
- 1747      746500
- 1748              	.LASF3:
- 1749 01c6 73686F72 		.ascii	"short unsigned int\000"
- 1749      7420756E 
- 1749      7369676E 
- 1749      65642069 
- 1749      6E7400
- 1750              	.LASF56:
- 1751 01d9 4144435F 		.ascii	"ADC_SAR_Seq_CountsTo_mVolts\000"
- 1751      5341525F 
- 1751      5365715F 
- 1751      436F756E 
- 1751      7473546F 
- 1752              	.LASF46:
- 1753 01f5 73746174 		.ascii	"status\000"
- 1753      757300
- 1754              	.LASF19:
- 1755 01fc 63686172 		.ascii	"char\000"
- 1755      00
- 1756              	.LASF63:
- 1757 0201 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1757      4320342E 
- 1757      392E3320 
- 1757      32303135 
- 1757      30333033 
- 1758 0234 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1758      20726576 
- 1758      6973696F 
- 1758      6E203232 
- 1758      31323230 
- 1759 0267 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1759      66756E63 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 38
-
-
- 1759      74696F6E 
- 1759      2D736563 
- 1759      74696F6E 
- 1760              	.LASF10:
- 1761 028f 696E7433 		.ascii	"int32_t\000"
- 1761      325F7400 
- 1762              	.LASF52:
- 1763 0297 4144435F 		.ascii	"ADC_SAR_Seq_Start\000"
- 1763      5341525F 
- 1763      5365715F 
- 1763      53746172 
- 1763      7400
- 1764              	.LASF42:
- 1765 02a9 7A537465 		.ascii	"zStepCount\000"
- 1765      70436F75 
- 1765      6E7400
- 1766              	.LASF22:
- 1767 02b4 4745545F 		.ascii	"GET_STATUS\000"
- 1767      53544154 
- 1767      555300
- 1768              	.LASF38:
- 1769 02bf 7A506F73 		.ascii	"zPosRight\000"
- 1769      52696768 
- 1769      7400
- 1770              	.LASF13:
- 1771 02c9 75696E74 		.ascii	"uint32\000"
- 1771      333200
- 1772              	.LASF64:
- 1773 02d0 6D61696E 		.ascii	"main.c\000"
- 1773      2E6300
- 1774              	.LASF5:
- 1775 02d7 6C6F6E67 		.ascii	"long unsigned int\000"
- 1775      20756E73 
- 1775      69676E65 
- 1775      6420696E 
- 1775      7400
- 1776              	.LASF16:
- 1777 02e9 696E7433 		.ascii	"int32\000"
- 1777      3200
- 1778              	.LASF18:
- 1779 02ef 646F7562 		.ascii	"double\000"
- 1779      6C6500
- 1780              	.LASF23:
- 1781 02f6 4C4F4341 		.ascii	"LOCATE_Z_1\000"
- 1781      54455F5A 
- 1781      5F3100
- 1782              	.LASF24:
- 1783 0301 4C4F4341 		.ascii	"LOCATE_Z_2\000"
- 1783      54455F5A 
- 1783      5F3200
- 1784              	.LASF39:
- 1785 030c 7A506F73 		.ascii	"zPosLeft\000"
- 1785      4C656674 
- 1785      00
- 1786              	.LASF50:
- 1787 0315 55415254 		.ascii	"UART_1_WriteTxData\000"
- 1787      5F315F57 
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 39
-
-
- 1787      72697465 
- 1787      54784461 
- 1787      746100
- 1788              	.LASF34:
- 1789 0328 75706461 		.ascii	"updateStatus\000"
- 1789      74655374 
- 1789      61747573 
- 1789      00
- 1790              	.LASF59:
- 1791 0335 4144435F 		.ascii	"ADC_SAR_Seq_Stop\000"
- 1791      5341525F 
- 1791      5365715F 
- 1791      53746F70 
- 1791      00
- 1792              	.LASF9:
- 1793 0346 5F5F696E 		.ascii	"__int32_t\000"
- 1793      7433325F 
- 1793      7400
- 1794              	.LASF26:
- 1795 0350 4D4F5645 		.ascii	"MOVED_Z_1\000"
- 1795      445F5A5F 
- 1795      3100
- 1796              	.LASF27:
- 1797 035a 4D4F5645 		.ascii	"MOVED_Z_2\000"
- 1797      445F5A5F 
- 1797      3200
- 1798              	.LASF43:
- 1799 0364 656E6162 		.ascii	"enabled\000"
- 1799      6C656400 
- 1800              	.LASF36:
- 1801 036c 73746174 		.ascii	"stat\000"
- 1801      00
- 1802              	.LASF31:
- 1803 0371 494E5F50 		.ascii	"IN_PROCESS\000"
- 1803      524F4345 
- 1803      535300
- 1804              	.LASF41:
- 1805 037c 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1805      52784275 
- 1805      66666572 
- 1805      00
- 1806              	.LASF57:
- 1807 0389 43794465 		.ascii	"CyDelay\000"
- 1807      6C617900 
- 1808              	.LASF58:
- 1809 0391 6973725F 		.ascii	"isr_x_home_Enable\000"
- 1809      785F686F 
- 1809      6D655F45 
- 1809      6E61626C 
- 1809      6500
- 1810              	.LASF65:
- 1811 03a3 433A5C55 		.ascii	"C:\\Users\\Bettefanden\\Documents\\IHA\\Semester 3\\"
- 1811      73657273 
- 1811      5C426574 
- 1811      74656661 
- 1811      6E64656E 
- 1812 03d1 53656D65 		.ascii	"Semesterprojekt 3\\Software\\Test\\PSoC-bipolar\\Te"
-ARM GAS  C:\Users\BETTEF~1\AppData\Local\Temp\cc7Po0OJ.s 			page 40
-
-
- 1812      73746572 
- 1812      70726F6A 
- 1812      656B7420 
- 1812      335C536F 
- 1813 0400 73745C42 		.ascii	"st\\Bipolar.cydsn\000"
- 1813      69706F6C 
- 1813      61722E63 
- 1813      7964736E 
- 1813      00
- 1814              	.LASF47:
- 1815 0411 636F6D6D 		.ascii	"command\000"
- 1815      616E6400 
- 1816              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1204              	.LASF47:
+ 1205 02d8 6973725F 		.ascii	"isr_RxD_StartEx\000"
+ 1205      5278445F 
+ 1205      53746172 
+ 1205      74457800 
+ 1206              	.LASF4:
+ 1207 02e8 6C6F6E67 		.ascii	"long int\000"
+ 1207      20696E74 
+ 1207      00
+ 1208              	.LASF0:
+ 1209 02f1 7369676E 		.ascii	"signed char\000"
+ 1209      65642063 
+ 1209      68617200 
+ 1210              	.LASF20:
+ 1211 02fd 4C4F4341 		.ascii	"LOCATE_Z_1\000"
+ 1211      54455F5A 
+ 1211      5F3100
+ 1212              	.LASF21:
+ 1213 0308 4C4F4341 		.ascii	"LOCATE_Z_2\000"
+ 1213      54455F5A 
+ 1213      5F3200
+ 1214              	.LASF31:
+ 1215 0313 6D6F7665 		.ascii	"moveZ\000"
+ 1215      5A00
+ 1216              	.LASF30:
+ 1217 0319 6973725F 		.ascii	"isr_RxD\000"
+ 1217      52784400 
+ 1218              	.LASF22:
+ 1219 0321 52455345 		.ascii	"RESET\000"
+ 1219      5400
+ 1220              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1487,6 +1487,420 @@
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\SPI_Master_v2_50.cysch</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\SPI_Master_v2_50.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\SPI_Master_v2_50.pdf</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\SPI_Master_v2_50.cystate</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\API\SPI_Master.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\API\SPI_Master.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\API\SPI_Master_PM.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\API\SPI_MasterINT.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\API\SPI_Master_PVT.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\Properties\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyadditional.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyspimcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyspimcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyspimcontroladv.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyspimcontroladv.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyspimcustomizer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyspimparameters.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\Properties\Resources.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyspimcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\Custom\cyspimcontroladv.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_SPI_Master_v2_50\B_SPI_Master_v2_50.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_isr_v1_70\cy_isr_v1_70.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_isr_v1_70\cy_isr_v1_70.primitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_isr_v1_70\cy_isr_v1_70.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_isr_v1_70\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_isr_v1_70\PSoC5\API\intc.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_isr_v1_70\PSoC5\API\intc.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyenums.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinsdata.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinpicture.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinutils.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cygeneralcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyinputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cymappingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyoutputcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinaliasdialog.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cypinscontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyporcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\Resource1.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\Custom\cyclockingcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\API\clk.c</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\API\clk.h</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_clock_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cystate</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cycdx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM_PM.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcustomizer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\pwmparameters.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\tabwrapper.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\Resources.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\tabwrapper.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\PWM_v3_30\PSoC5\PWM_v3_30.cysch</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.cystate</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0</v>
+<v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\Custom\custom.cs</v>
 <v>.\StepperMotor.cydwr</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_50\PSoC5\API\cm3gcc.ld</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_50\PSoC5\API\Cm3RealView.scat</v>
@@ -1911,6 +2325,29 @@
 <v>Generated_Source\PSoC5\LED_1_aliases.h</v>
 <v>Generated_Source\PSoC5\LED_1.c</v>
 <v>Generated_Source\PSoC5\LED_1.h</v>
+<v>Generated_Source\PSoC5\Enable_S_1_aliases.h</v>
+<v>Generated_Source\PSoC5\Enable_S_1.c</v>
+<v>Generated_Source\PSoC5\Enable_S_1.h</v>
+<v>Generated_Source\PSoC5\Clock_5.c</v>
+<v>Generated_Source\PSoC5\Clock_5.h</v>
+<v>Generated_Source\PSoC5\Direction_S_1_aliases.h</v>
+<v>Generated_Source\PSoC5\Direction_S_1.c</v>
+<v>Generated_Source\PSoC5\Direction_S_1.h</v>
+<v>Generated_Source\PSoC5\Step_S_1_aliases.h</v>
+<v>Generated_Source\PSoC5\Step_S_1.c</v>
+<v>Generated_Source\PSoC5\Step_S_1.h</v>
+<v>Generated_Source\PSoC5\PWM_S_1.c</v>
+<v>Generated_Source\PSoC5\PWM_S_1.h</v>
+<v>Generated_Source\PSoC5\PWM_S_1_PM.c</v>
+<v>Generated_Source\PSoC5\MISO_3_aliases.h</v>
+<v>Generated_Source\PSoC5\MISO_3.c</v>
+<v>Generated_Source\PSoC5\MISO_3.h</v>
+<v>Generated_Source\PSoC5\MISO_4_aliases.h</v>
+<v>Generated_Source\PSoC5\MISO_4.c</v>
+<v>Generated_Source\PSoC5\MISO_4.h</v>
+<v>Generated_Source\PSoC5\MOSI_3_aliases.h</v>
+<v>Generated_Source\PSoC5\MOSI_3.c</v>
+<v>Generated_Source\PSoC5\MOSI_3.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -1920,7 +2357,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="131254295162682098" />
+<deps_time v="131257827608096939" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 <pdl_path v="C:\Users\Bettefanden\Documents\Cypress\PDL\2.1.0" />
@@ -1932,204 +2369,6 @@
 <CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
-<file name=".\CortexM3\ARM_GCC_493\Debug\main.o">
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf_dma.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_SAR.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_TempBuf_dma.h" />
-<dep name=".\Generated_Source\PSoC5\CYDMAC.H" />
-<dep name=".\Generated_Source\PSoC5\CYFITTER.H" />
-<dep name=".\Generated_Source\PSoC5\Clock_1.h" />
-<dep name=".\Generated_Source\PSoC5\Clock_2.h" />
-<dep name=".\Generated_Source\PSoC5\Clock_3.h" />
-<dep name=".\Generated_Source\PSoC5\Clock_4.h" />
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\Direction_S.h" />
-<dep name=".\Generated_Source\PSoC5\Direction_S_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Direction_X.h" />
-<dep name=".\Generated_Source\PSoC5\Direction_X_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Direction_Y.h" />
-<dep name=".\Generated_Source\PSoC5\Direction_Y_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Direction_Z.h" />
-<dep name=".\Generated_Source\PSoC5\Direction_Z_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Enable_S.h" />
-<dep name=".\Generated_Source\PSoC5\Enable_S_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Enable_X.h" />
-<dep name=".\Generated_Source\PSoC5\Enable_X_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Enable_Y.h" />
-<dep name=".\Generated_Source\PSoC5\Enable_Y_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Enable_Z.h" />
-<dep name=".\Generated_Source\PSoC5\Enable_Z_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\LED_1.h" />
-<dep name=".\Generated_Source\PSoC5\LED_1_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MISO_1.h" />
-<dep name=".\Generated_Source\PSoC5\MISO_1_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI_1.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI_1_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\PWM_S.h" />
-<dep name=".\Generated_Source\PSoC5\PWM_X.h" />
-<dep name=".\Generated_Source\PSoC5\PWM_Y.h" />
-<dep name=".\Generated_Source\PSoC5\PWM_Z.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_X.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_X_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_Y.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_Y_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_cork.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_cork_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_x_home.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_x_home_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_xy_end.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_xy_end_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_y_home.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_y_home_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_z_end.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_z_end_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_z_home.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_int_z_home_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\SCLK_1.h" />
-<dep name=".\Generated_Source\PSoC5\SCLK_1_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\SPIS_1.h" />
-<dep name=".\Generated_Source\PSoC5\SPIS_1_IntClock.h" />
-<dep name=".\Generated_Source\PSoC5\SPIS_1_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\SS_1.h" />
-<dep name=".\Generated_Source\PSoC5\SS_1_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Step_S.h" />
-<dep name=".\Generated_Source\PSoC5\Step_S_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Step_X.h" />
-<dep name=".\Generated_Source\PSoC5\Step_X_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Step_Y.h" />
-<dep name=".\Generated_Source\PSoC5\Step_Y_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Step_Z.h" />
-<dep name=".\Generated_Source\PSoC5\Step_Z_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
-<dep name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
-<dep name=".\Generated_Source\PSoC5\core_cm3.h" />
-<dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
-<dep name=".\Generated_Source\PSoC5\core_cmFunc.h" />
-<dep name=".\Generated_Source\PSoC5\core_cmInstr.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\Generated_Source\PSoC5\isr_1.h" />
-<dep name=".\Generated_Source\PSoC5\isr_cork.h" />
-<dep name=".\Generated_Source\PSoC5\isr_x_home.h" />
-<dep name=".\Generated_Source\PSoC5\isr_xy_end.h" />
-<dep name=".\Generated_Source\PSoC5\isr_y_home.h" />
-<dep name=".\Generated_Source\PSoC5\isr_z_end.h" />
-<dep name=".\Generated_Source\PSoC5\isr_z_home.h" />
-<dep name=".\Generated_Source\PSoC5\project.h" />
-<dep name=".\main.c" />
-<dep name=".\motors.h" />
-<dep name=".\status.h" />
-<dep name=".\switches.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq.h" />
-<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf_dma.h" />
-<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IRQ.h" />
-<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock.h" />
-<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_SAR.h" />
-<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_TempBuf_dma.h" />
-<file name=".\Generated_Source\PSoC5\CYDMAC.H" />
-<file name=".\Generated_Source\PSoC5\CYFITTER.H" />
-<file name=".\Generated_Source\PSoC5\Clock_1.h" />
-<file name=".\Generated_Source\PSoC5\Clock_2.h" />
-<file name=".\Generated_Source\PSoC5\Clock_3.h" />
-<file name=".\Generated_Source\PSoC5\Clock_4.h" />
-<file name=".\Generated_Source\PSoC5\CyFlash.h" />
-<file name=".\Generated_Source\PSoC5\CyLib.h" />
-<file name=".\Generated_Source\PSoC5\CySpc.h" />
-<file name=".\Generated_Source\PSoC5\Direction_S.h" />
-<file name=".\Generated_Source\PSoC5\Direction_S_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Direction_X.h" />
-<file name=".\Generated_Source\PSoC5\Direction_X_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Direction_Y.h" />
-<file name=".\Generated_Source\PSoC5\Direction_Y_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Direction_Z.h" />
-<file name=".\Generated_Source\PSoC5\Direction_Z_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Enable_S.h" />
-<file name=".\Generated_Source\PSoC5\Enable_S_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Enable_X.h" />
-<file name=".\Generated_Source\PSoC5\Enable_X_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Enable_Y.h" />
-<file name=".\Generated_Source\PSoC5\Enable_Y_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Enable_Z.h" />
-<file name=".\Generated_Source\PSoC5\Enable_Z_aliases.h" />
-<file name=".\Generated_Source\PSoC5\LED_1.h" />
-<file name=".\Generated_Source\PSoC5\LED_1_aliases.h" />
-<file name=".\Generated_Source\PSoC5\MISO_1.h" />
-<file name=".\Generated_Source\PSoC5\MISO_1_aliases.h" />
-<file name=".\Generated_Source\PSoC5\MOSI_1.h" />
-<file name=".\Generated_Source\PSoC5\MOSI_1_aliases.h" />
-<file name=".\Generated_Source\PSoC5\PWM_S.h" />
-<file name=".\Generated_Source\PSoC5\PWM_X.h" />
-<file name=".\Generated_Source\PSoC5\PWM_Y.h" />
-<file name=".\Generated_Source\PSoC5\PWM_Z.h" />
-<file name=".\Generated_Source\PSoC5\Pin_X.h" />
-<file name=".\Generated_Source\PSoC5\Pin_X_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Pin_Y.h" />
-<file name=".\Generated_Source\PSoC5\Pin_Y_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_cork.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_cork_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_x_home.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_x_home_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_xy_end.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_xy_end_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_y_home.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_y_home_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_z_end.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_z_end_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_z_home.h" />
-<file name=".\Generated_Source\PSoC5\Pin_int_z_home_aliases.h" />
-<file name=".\Generated_Source\PSoC5\SCLK_1.h" />
-<file name=".\Generated_Source\PSoC5\SCLK_1_aliases.h" />
-<file name=".\Generated_Source\PSoC5\SPIS_1.h" />
-<file name=".\Generated_Source\PSoC5\SPIS_1_IntClock.h" />
-<file name=".\Generated_Source\PSoC5\SPIS_1_PVT.h" />
-<file name=".\Generated_Source\PSoC5\SS_1.h" />
-<file name=".\Generated_Source\PSoC5\SS_1_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Step_S.h" />
-<file name=".\Generated_Source\PSoC5\Step_S_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Step_X.h" />
-<file name=".\Generated_Source\PSoC5\Step_X_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Step_Y.h" />
-<file name=".\Generated_Source\PSoC5\Step_Y_aliases.h" />
-<file name=".\Generated_Source\PSoC5\Step_Z.h" />
-<file name=".\Generated_Source\PSoC5\Step_Z_aliases.h" />
-<file name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
-<file name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
-<file name=".\Generated_Source\PSoC5\core_cm3.h" />
-<file name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
-<file name=".\Generated_Source\PSoC5\core_cmFunc.h" />
-<file name=".\Generated_Source\PSoC5\core_cmInstr.h" />
-<file name=".\Generated_Source\PSoC5\cyPm.h" />
-<file name=".\Generated_Source\PSoC5\cydevice.h" />
-<file name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<file name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
-<file name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<file name=".\Generated_Source\PSoC5\cypins.h" />
-<file name=".\Generated_Source\PSoC5\cytypes.h" />
-<file name=".\Generated_Source\PSoC5\isr_1.h" />
-<file name=".\Generated_Source\PSoC5\isr_cork.h" />
-<file name=".\Generated_Source\PSoC5\isr_x_home.h" />
-<file name=".\Generated_Source\PSoC5\isr_xy_end.h" />
-<file name=".\Generated_Source\PSoC5\isr_y_home.h" />
-<file name=".\Generated_Source\PSoC5\isr_z_end.h" />
-<file name=".\Generated_Source\PSoC5\isr_z_home.h" />
-<file name=".\Generated_Source\PSoC5\project.h" />
-<file name=".\main.c" />
-<file name=".\motors.h" />
-<file name=".\status.h" />
-<file name=".\switches.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_Seq.o">
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq.c" />
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq.h" />
@@ -2149,6 +2388,20 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\ADC_SAR_Seq.c" />
+<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq.h" />
+<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf_dma.h" />
+<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IRQ.h" />
+<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_SAR.h" />
+<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_TempBuf_dma.h" />
+<file name=".\Generated_Source\PSoC5\CYDMAC.H" />
+<file name=".\Generated_Source\PSoC5\CYFITTER.H" />
+<file name=".\Generated_Source\PSoC5\CyFlash.h" />
+<file name=".\Generated_Source\PSoC5\CyLib.h" />
+<file name=".\Generated_Source\PSoC5\CySpc.h" />
+<file name=".\Generated_Source\PSoC5\cyPm.h" />
+<file name=".\Generated_Source\PSoC5\cydevice.h" />
+<file name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<file name=".\Generated_Source\PSoC5\cytypes.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_Seq_FinalBuf_dma.o">
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf_dma.H" />
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf_dma.c" />
@@ -2208,6 +2461,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock.c" />
+<file name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_Seq_PM.o">
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf_dma.h" />
@@ -2284,6 +2538,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Clock_1.c" />
+<file name=".\Generated_Source\PSoC5\Clock_1.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Clock_2.o">
 <dep name=".\Generated_Source\PSoC5\Clock_2.c" />
 <dep name=".\Generated_Source\PSoC5\Clock_2.h" />
@@ -2293,6 +2548,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Clock_2.c" />
+<file name=".\Generated_Source\PSoC5\Clock_2.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Clock_3.o">
 <dep name=".\Generated_Source\PSoC5\Clock_3.c" />
 <dep name=".\Generated_Source\PSoC5\Clock_3.h" />
@@ -2302,6 +2558,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Clock_3.c" />
+<file name=".\Generated_Source\PSoC5\Clock_3.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Clock_4.o">
 <dep name=".\Generated_Source\PSoC5\Clock_4.c" />
 <dep name=".\Generated_Source\PSoC5\Clock_4.h" />
@@ -2311,6 +2568,17 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Clock_4.c" />
+<file name=".\Generated_Source\PSoC5\Clock_4.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\Clock_5.o">
+<dep name=".\Generated_Source\PSoC5\Clock_5.c" />
+<dep name=".\Generated_Source\PSoC5\Clock_5.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\Clock_5.c" />
+<file name=".\Generated_Source\PSoC5\Clock_5.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Cm3Start.o">
 <dep name=".\Generated_Source\PSoC5\Cm3Start.c" />
 <dep name=".\Generated_Source\PSoC5\CyDmac.h" />
@@ -2326,6 +2594,7 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Cm3Start.c" />
+<file name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\CyDmac.o">
 <dep name=".\Generated_Source\PSoC5\CyDmac.c" />
 <dep name=".\Generated_Source\PSoC5\CyDmac.h" />
@@ -2386,6 +2655,22 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Direction_S.c" />
+<file name=".\Generated_Source\PSoC5\Direction_S.h" />
+<file name=".\Generated_Source\PSoC5\Direction_S_aliases.h" />
+<file name=".\Generated_Source\PSoC5\cypins.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\Direction_S_1.o">
+<dep name=".\Generated_Source\PSoC5\Direction_S_1.c" />
+<dep name=".\Generated_Source\PSoC5\Direction_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_S_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\Direction_S_1.c" />
+<file name=".\Generated_Source\PSoC5\Direction_S_1.h" />
+<file name=".\Generated_Source\PSoC5\Direction_S_1_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Direction_X.o">
 <dep name=".\Generated_Source\PSoC5\Direction_X.c" />
 <dep name=".\Generated_Source\PSoC5\Direction_X.h" />
@@ -2397,6 +2682,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Direction_X.c" />
+<file name=".\Generated_Source\PSoC5\Direction_X.h" />
+<file name=".\Generated_Source\PSoC5\Direction_X_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Direction_Y.o">
 <dep name=".\Generated_Source\PSoC5\Direction_Y.c" />
 <dep name=".\Generated_Source\PSoC5\Direction_Y.h" />
@@ -2408,6 +2695,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Direction_Y.c" />
+<file name=".\Generated_Source\PSoC5\Direction_Y.h" />
+<file name=".\Generated_Source\PSoC5\Direction_Y_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Direction_Z.o">
 <dep name=".\Generated_Source\PSoC5\Direction_Z.c" />
 <dep name=".\Generated_Source\PSoC5\Direction_Z.h" />
@@ -2419,6 +2708,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Direction_Z.c" />
+<file name=".\Generated_Source\PSoC5\Direction_Z.h" />
+<file name=".\Generated_Source\PSoC5\Direction_Z_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Enable_S.o">
 <dep name=".\Generated_Source\PSoC5\Enable_S.c" />
 <dep name=".\Generated_Source\PSoC5\Enable_S.h" />
@@ -2430,6 +2721,21 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Enable_S.c" />
+<file name=".\Generated_Source\PSoC5\Enable_S.h" />
+<file name=".\Generated_Source\PSoC5\Enable_S_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\Enable_S_1.o">
+<dep name=".\Generated_Source\PSoC5\Enable_S_1.c" />
+<dep name=".\Generated_Source\PSoC5\Enable_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_S_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\Enable_S_1.c" />
+<file name=".\Generated_Source\PSoC5\Enable_S_1.h" />
+<file name=".\Generated_Source\PSoC5\Enable_S_1_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Enable_X.o">
 <dep name=".\Generated_Source\PSoC5\Enable_X.c" />
 <dep name=".\Generated_Source\PSoC5\Enable_X.h" />
@@ -2441,6 +2747,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Enable_X.c" />
+<file name=".\Generated_Source\PSoC5\Enable_X.h" />
+<file name=".\Generated_Source\PSoC5\Enable_X_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Enable_Y.o">
 <dep name=".\Generated_Source\PSoC5\Enable_Y.c" />
 <dep name=".\Generated_Source\PSoC5\Enable_Y.h" />
@@ -2452,6 +2760,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Enable_Y.c" />
+<file name=".\Generated_Source\PSoC5\Enable_Y.h" />
+<file name=".\Generated_Source\PSoC5\Enable_Y_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Enable_Z.o">
 <dep name=".\Generated_Source\PSoC5\Enable_Z.c" />
 <dep name=".\Generated_Source\PSoC5\Enable_Z.h" />
@@ -2463,6 +2773,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Enable_Z.c" />
+<file name=".\Generated_Source\PSoC5\Enable_Z.h" />
+<file name=".\Generated_Source\PSoC5\Enable_Z_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\LED_1.o">
 <dep name=".\Generated_Source\PSoC5\LED_1.c" />
 <dep name=".\Generated_Source\PSoC5\LED_1.h" />
@@ -2474,6 +2786,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\LED_1.c" />
+<file name=".\Generated_Source\PSoC5\LED_1.h" />
+<file name=".\Generated_Source\PSoC5\LED_1_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\MISO_1.o">
 <dep name=".\Generated_Source\PSoC5\MISO_1.c" />
 <dep name=".\Generated_Source\PSoC5\MISO_1.h" />
@@ -2485,6 +2799,47 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\MISO_1.c" />
+<file name=".\Generated_Source\PSoC5\MISO_1.h" />
+<file name=".\Generated_Source\PSoC5\MISO_1_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\MISO_2.o">
+<dep name=".\Generated_Source\PSoC5\MISO_2.c" />
+<dep name=".\Generated_Source\PSoC5\MISO_2.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\MISO_2.c" />
+<file name=".\Generated_Source\PSoC5\MISO_2.h" />
+<file name=".\Generated_Source\PSoC5\MISO_2_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\MISO_3.o">
+<dep name=".\Generated_Source\PSoC5\MISO_3.c" />
+<dep name=".\Generated_Source\PSoC5\MISO_3.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\MISO_3.c" />
+<file name=".\Generated_Source\PSoC5\MISO_3.h" />
+<file name=".\Generated_Source\PSoC5\MISO_3_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\MISO_4.o">
+<dep name=".\Generated_Source\PSoC5\MISO_4.c" />
+<dep name=".\Generated_Source\PSoC5\MISO_4.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_4_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\MISO_4.c" />
+<file name=".\Generated_Source\PSoC5\MISO_4.h" />
+<file name=".\Generated_Source\PSoC5\MISO_4_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\MOSI_1.o">
 <dep name=".\Generated_Source\PSoC5\MOSI_1.c" />
 <dep name=".\Generated_Source\PSoC5\MOSI_1.h" />
@@ -2496,6 +2851,34 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\MOSI_1.c" />
+<file name=".\Generated_Source\PSoC5\MOSI_1.h" />
+<file name=".\Generated_Source\PSoC5\MOSI_1_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\MOSI_2.o">
+<dep name=".\Generated_Source\PSoC5\MOSI_2.c" />
+<dep name=".\Generated_Source\PSoC5\MOSI_2.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\MOSI_2.c" />
+<file name=".\Generated_Source\PSoC5\MOSI_2.h" />
+<file name=".\Generated_Source\PSoC5\MOSI_2_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\MOSI_3.o">
+<dep name=".\Generated_Source\PSoC5\MOSI_3.c" />
+<dep name=".\Generated_Source\PSoC5\MOSI_3.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\MOSI_3.c" />
+<file name=".\Generated_Source\PSoC5\MOSI_3.h" />
+<file name=".\Generated_Source\PSoC5\MOSI_3_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\PWM_S.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2509,6 +2892,34 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\PWM_S.c" />
+<file name=".\Generated_Source\PSoC5\PWM_S.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\PWM_S_1.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\PWM_S_1.c" />
+<dep name=".\Generated_Source\PSoC5\PWM_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\PWM_S_1.c" />
+<file name=".\Generated_Source\PSoC5\PWM_S_1.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\PWM_S_1_PM.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\PWM_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\PWM_S_1_PM.c" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\PWM_S_1_PM.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\PWM_S_PM.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2535,6 +2946,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\PWM_X.c" />
+<file name=".\Generated_Source\PSoC5\PWM_X.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\PWM_X_PM.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2561,6 +2973,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\PWM_Y.c" />
+<file name=".\Generated_Source\PSoC5\PWM_Y.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\PWM_Y_PM.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2587,6 +3000,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\PWM_Z.c" />
+<file name=".\Generated_Source\PSoC5\PWM_Z.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\PWM_Z_PM.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2611,6 +3025,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_X.c" />
+<file name=".\Generated_Source\PSoC5\Pin_X.h" />
+<file name=".\Generated_Source\PSoC5\Pin_X_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Pin_Y.o">
 <dep name=".\Generated_Source\PSoC5\Pin_Y.c" />
 <dep name=".\Generated_Source\PSoC5\Pin_Y.h" />
@@ -2622,6 +3038,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_Y.c" />
+<file name=".\Generated_Source\PSoC5\Pin_Y.h" />
+<file name=".\Generated_Source\PSoC5\Pin_Y_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Pin_int_cork.o">
 <dep name=".\Generated_Source\PSoC5\Pin_int_cork.c" />
 <dep name=".\Generated_Source\PSoC5\Pin_int_cork.h" />
@@ -2633,6 +3051,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_int_cork.c" />
+<file name=".\Generated_Source\PSoC5\Pin_int_cork.h" />
+<file name=".\Generated_Source\PSoC5\Pin_int_cork_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Pin_int_x_home.o">
 <dep name=".\Generated_Source\PSoC5\Pin_int_x_home.c" />
 <dep name=".\Generated_Source\PSoC5\Pin_int_x_home.h" />
@@ -2644,6 +3064,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_int_x_home.c" />
+<file name=".\Generated_Source\PSoC5\Pin_int_x_home.h" />
+<file name=".\Generated_Source\PSoC5\Pin_int_x_home_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Pin_int_xy_end.o">
 <dep name=".\Generated_Source\PSoC5\Pin_int_xy_end.c" />
 <dep name=".\Generated_Source\PSoC5\Pin_int_xy_end.h" />
@@ -2655,6 +3077,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_int_xy_end.c" />
+<file name=".\Generated_Source\PSoC5\Pin_int_xy_end.h" />
+<file name=".\Generated_Source\PSoC5\Pin_int_xy_end_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Pin_int_y_home.o">
 <dep name=".\Generated_Source\PSoC5\Pin_int_y_home.c" />
 <dep name=".\Generated_Source\PSoC5\Pin_int_y_home.h" />
@@ -2666,6 +3090,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_int_y_home.c" />
+<file name=".\Generated_Source\PSoC5\Pin_int_y_home.h" />
+<file name=".\Generated_Source\PSoC5\Pin_int_y_home_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Pin_int_z_end.o">
 <dep name=".\Generated_Source\PSoC5\Pin_int_z_end.c" />
 <dep name=".\Generated_Source\PSoC5\Pin_int_z_end.h" />
@@ -2677,6 +3103,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_int_z_end.c" />
+<file name=".\Generated_Source\PSoC5\Pin_int_z_end.h" />
+<file name=".\Generated_Source\PSoC5\Pin_int_z_end_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Pin_int_z_home.o">
 <dep name=".\Generated_Source\PSoC5\Pin_int_z_home.c" />
 <dep name=".\Generated_Source\PSoC5\Pin_int_z_home.h" />
@@ -2688,6 +3116,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Pin_int_z_home.c" />
+<file name=".\Generated_Source\PSoC5\Pin_int_z_home.h" />
+<file name=".\Generated_Source\PSoC5\Pin_int_z_home_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\SCLK_1.o">
 <dep name=".\Generated_Source\PSoC5\SCLK_1.c" />
 <dep name=".\Generated_Source\PSoC5\SCLK_1.h" />
@@ -2699,6 +3129,57 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\SCLK_1.c" />
+<file name=".\Generated_Source\PSoC5\SCLK_1.h" />
+<file name=".\Generated_Source\PSoC5\SCLK_1_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1.c" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\SPIM_1.c" />
+<file name=".\Generated_Source\PSoC5\SPIM_1.h" />
+<file name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
+<file name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_INT.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_INT.c" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\SPIM_1_INT.c" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_PM.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_PM.c" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\SPIM_1_PM.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\SPIS_1.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2713,6 +3194,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\SPIS_1.c" />
+<file name=".\Generated_Source\PSoC5\SPIS_1.h" />
+<file name=".\Generated_Source\PSoC5\SPIS_1_PVT.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\SPIS_1_BOOT.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2750,6 +3233,7 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\SPIS_1_IntClock.c" />
+<file name=".\Generated_Source\PSoC5\SPIS_1_IntClock.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\SPIS_1_PM.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2775,6 +3259,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\SS_1.c" />
+<file name=".\Generated_Source\PSoC5\SS_1.h" />
+<file name=".\Generated_Source\PSoC5\SS_1_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Step_S.o">
 <dep name=".\Generated_Source\PSoC5\Step_S.c" />
 <dep name=".\Generated_Source\PSoC5\Step_S.h" />
@@ -2786,6 +3272,21 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Step_S.c" />
+<file name=".\Generated_Source\PSoC5\Step_S.h" />
+<file name=".\Generated_Source\PSoC5\Step_S_aliases.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\Step_S_1.o">
+<dep name=".\Generated_Source\PSoC5\Step_S_1.c" />
+<dep name=".\Generated_Source\PSoC5\Step_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\Step_S_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\Step_S_1.c" />
+<file name=".\Generated_Source\PSoC5\Step_S_1.h" />
+<file name=".\Generated_Source\PSoC5\Step_S_1_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Step_X.o">
 <dep name=".\Generated_Source\PSoC5\Step_X.c" />
 <dep name=".\Generated_Source\PSoC5\Step_X.h" />
@@ -2797,6 +3298,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Step_X.c" />
+<file name=".\Generated_Source\PSoC5\Step_X.h" />
+<file name=".\Generated_Source\PSoC5\Step_X_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Step_Y.o">
 <dep name=".\Generated_Source\PSoC5\Step_Y.c" />
 <dep name=".\Generated_Source\PSoC5\Step_Y.h" />
@@ -2808,6 +3311,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Step_Y.c" />
+<file name=".\Generated_Source\PSoC5\Step_Y.h" />
+<file name=".\Generated_Source\PSoC5\Step_Y_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Step_Z.o">
 <dep name=".\Generated_Source\PSoC5\Step_Z.c" />
 <dep name=".\Generated_Source\PSoC5\Step_Z.h" />
@@ -2819,6 +3324,8 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\Step_Z.c" />
+<file name=".\Generated_Source\PSoC5\Step_Z.h" />
+<file name=".\Generated_Source\PSoC5\Step_Z_aliases.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\cyPm.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2876,6 +3383,22 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\isr_1.c" />
+<file name=".\Generated_Source\PSoC5\isr_1.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\isr_2.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\isr_2.c" />
+<dep name=".\Generated_Source\PSoC5\isr_2.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\isr_2.c" />
+<file name=".\Generated_Source\PSoC5\isr_2.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\isr_cork.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2890,6 +3413,7 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\isr_cork.c" />
+<file name=".\Generated_Source\PSoC5\isr_cork.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\isr_x_home.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2904,6 +3428,7 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\isr_x_home.c" />
+<file name=".\Generated_Source\PSoC5\isr_x_home.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\isr_xy_end.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2918,6 +3443,7 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\isr_xy_end.c" />
+<file name=".\Generated_Source\PSoC5\isr_xy_end.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\isr_y_home.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2932,6 +3458,7 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\isr_y_home.c" />
+<file name=".\Generated_Source\PSoC5\isr_y_home.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\isr_z_end.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2946,6 +3473,7 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\isr_z_end.c" />
+<file name=".\Generated_Source\PSoC5\isr_z_end.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\isr_z_home.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -2960,6 +3488,142 @@
 <dep name=".\cyapicallbacks.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\isr_z_home.c" />
+<file name=".\Generated_Source\PSoC5\isr_z_home.h" />
+<file name=".\CortexM3\ARM_GCC_493\Debug\main.o">
+<dep name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
+<dep name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
+<dep name=".\Generated_Source\PSoC5\core_cm3.h" />
+<dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
+<dep name=".\Generated_Source\PSoC5\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC5\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_FinalBuf_dma.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_IntClock.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_SAR.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_Seq_TempBuf_dma.h" />
+<dep name=".\Generated_Source\PSoC5\CYDMAC.H" />
+<dep name=".\Generated_Source\PSoC5\CYFITTER.H" />
+<dep name=".\Generated_Source\PSoC5\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC5\Clock_2.h" />
+<dep name=".\Generated_Source\PSoC5\Clock_3.h" />
+<dep name=".\Generated_Source\PSoC5\Clock_4.h" />
+<dep name=".\Generated_Source\PSoC5\Clock_5.h" />
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_S.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_S_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_S_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_X.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_X_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_Y.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_Y_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_Z.h" />
+<dep name=".\Generated_Source\PSoC5\Direction_Z_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_S.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_S_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_S_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_X.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_X_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_Y.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_Y_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_Z.h" />
+<dep name=".\Generated_Source\PSoC5\Enable_Z_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\LED_1.h" />
+<dep name=".\Generated_Source\PSoC5\LED_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_1.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_2.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_3.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_4.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_4_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_1.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_2.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_3.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\PWM_S.h" />
+<dep name=".\Generated_Source\PSoC5\PWM_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\PWM_X.h" />
+<dep name=".\Generated_Source\PSoC5\PWM_Y.h" />
+<dep name=".\Generated_Source\PSoC5\PWM_Z.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_X.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_X_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_Y.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_Y_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_cork.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_cork_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_x_home.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_x_home_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_xy_end.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_xy_end_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_y_home.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_y_home_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_z_end.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_z_end_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_z_home.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_int_z_home_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\SCLK_1.h" />
+<dep name=".\Generated_Source\PSoC5\SCLK_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\SPIS_1.h" />
+<dep name=".\Generated_Source\PSoC5\SPIS_1_IntClock.h" />
+<dep name=".\Generated_Source\PSoC5\SPIS_1_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\SS_1.h" />
+<dep name=".\Generated_Source\PSoC5\SS_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Step_S.h" />
+<dep name=".\Generated_Source\PSoC5\Step_S_1.h" />
+<dep name=".\Generated_Source\PSoC5\Step_S_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Step_S_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Step_X.h" />
+<dep name=".\Generated_Source\PSoC5\Step_X_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Step_Y.h" />
+<dep name=".\Generated_Source\PSoC5\Step_Y_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Step_Z.h" />
+<dep name=".\Generated_Source\PSoC5\Step_Z_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\isr_1.h" />
+<dep name=".\Generated_Source\PSoC5\isr_2.h" />
+<dep name=".\Generated_Source\PSoC5\isr_cork.h" />
+<dep name=".\Generated_Source\PSoC5\isr_x_home.h" />
+<dep name=".\Generated_Source\PSoC5\isr_xy_end.h" />
+<dep name=".\Generated_Source\PSoC5\isr_y_home.h" />
+<dep name=".\Generated_Source\PSoC5\isr_z_end.h" />
+<dep name=".\Generated_Source\PSoC5\isr_z_home.h" />
+<dep name=".\main.c" />
+<dep name=".\motors.h" />
+<dep name=".\status.h" />
+<dep name=".\switches.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
+<file name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
+<file name=".\Generated_Source\PSoC5\core_cm3.h" />
+<file name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
+<file name=".\Generated_Source\PSoC5\core_cmFunc.h" />
+<file name=".\Generated_Source\PSoC5\core_cmInstr.h" />
+<file name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<file name=".\Generated_Source\PSoC5\project.h" />
+<file name=".\main.c" />
+<file name=".\motors.h" />
+<file name=".\status.h" />
+<file name=".\switches.h" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\CyBootAsmGnu.o">
 <dep name=".\Generated_Source\PSoC5\CyBootAsmGnu.s" />
 <dep name=".\Generated_Source\PSoC5\cydevicegnu.inc" />
@@ -3363,46 +4027,16 @@
 </file>
 <file name=".\Generated_Source\PSoC5\isr_y_start.c" />
 <file name=".\Generated_Source\PSoC5\isr_y_start.h" />
-<file name=".\Generated_Source\PSoC5\MISO_2.h" />
-<file name=".\Generated_Source\PSoC5\MISO_2_aliases.h" />
-<file name=".\Generated_Source\PSoC5\MOSI_2.h" />
-<file name=".\Generated_Source\PSoC5\MOSI_2_aliases.h" />
 <file name=".\Generated_Source\PSoC5\Pin_int_x.h" />
 <file name=".\Generated_Source\PSoC5\Pin_int_x_aliases.h" />
 <file name=".\Generated_Source\PSoC5\Pin_int_y.h" />
 <file name=".\Generated_Source\PSoC5\Pin_int_y_aliases.h" />
 <file name=".\Generated_Source\PSoC5\SCLK_2.h" />
 <file name=".\Generated_Source\PSoC5\SCLK_2_aliases.h" />
-<file name=".\Generated_Source\PSoC5\SPIM_1.h" />
-<file name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
-<file name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
 <file name=".\Generated_Source\PSoC5\SS_2.h" />
 <file name=".\Generated_Source\PSoC5\SS_2_aliases.h" />
-<file name=".\Generated_Source\PSoC5\isr_2.h" />
 <file name=".\Generated_Source\PSoC5\isr_x.h" />
 <file name=".\Generated_Source\PSoC5\isr_y.h" />
-<file name=".\CortexM3\ARM_GCC_493\Debug\MISO_2.o">
-<dep name=".\Generated_Source\PSoC5\MISO_2.c" />
-<dep name=".\Generated_Source\PSoC5\MISO_2.h" />
-<dep name=".\Generated_Source\PSoC5\MISO_2_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\MISO_2.c" />
-<file name=".\CortexM3\ARM_GCC_493\Debug\MOSI_2.o">
-<dep name=".\Generated_Source\PSoC5\MOSI_2.c" />
-<dep name=".\Generated_Source\PSoC5\MOSI_2.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI_2_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\MOSI_2.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\Pin_int_x.o">
 <dep name=".\Generated_Source\PSoC5\Pin_int_x.c" />
 <dep name=".\Generated_Source\PSoC5\Pin_int_x.h" />
@@ -3436,37 +4070,6 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\SCLK_2.c" />
-<file name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1.o">
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1.c" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\SPIM_1.c" />
-<file name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_INT.o">
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1_INT.c" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\SPIM_1_INT.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_IntClock.o">
 <dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.c" />
 <dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
@@ -3476,21 +4079,6 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\SPIM_1_IntClock.c" />
-<file name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_PM.o">
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1_IntClock.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1_PM.c" />
-<dep name=".\Generated_Source\PSoC5\SPIM_1_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\SPIM_1_PM.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\SS_2.o">
 <dep name=".\Generated_Source\PSoC5\SS_2.c" />
 <dep name=".\Generated_Source\PSoC5\SS_2.h" />
@@ -3502,20 +4090,6 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\SS_2.c" />
-<file name=".\CortexM3\ARM_GCC_493\Debug\isr_2.o">
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\Generated_Source\PSoC5\isr_2.c" />
-<dep name=".\Generated_Source\PSoC5\isr_2.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\isr_2.c" />
 <file name=".\CortexM3\ARM_GCC_493\Debug\isr_x.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -4181,6 +4755,12 @@
 <dep name=".\CortexM3\ARM_GCC_493\Debug\isr_1.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\SPIS_1_IntClock.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\SS_1.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_PM.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\SPIM_1_INT.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\MISO_2.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\MOSI_2.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\isr_2.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\Clock_1.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_Seq.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\ADC_SAR_Seq_PM.o" />
@@ -4230,6 +4810,15 @@
 <dep name=".\CortexM3\ARM_GCC_493\Debug\PWM_S.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\PWM_S_PM.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\LED_1.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\Enable_S_1.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\Clock_5.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\Direction_S_1.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\Step_S_1.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\PWM_S_1.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\PWM_S_1_PM.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\MISO_3.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\MISO_4.o" />
+<dep name=".\CortexM3\ARM_GCC_493\Debug\MOSI_3.o" />
 <dep name=".\CortexM3\ARM_GCC_493\Debug\StepperMotor.a" />
 <dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_493\Debug\CyComponentLibrary.a" />
 </file>
@@ -4410,6 +4999,15 @@
 <name_val_pair name="Generated_Source\PSoC5\PWM_S.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name="Generated_Source\PSoC5\PWM_S_PM.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name="Generated_Source\PSoC5\LED_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\Enable_S_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\Clock_5.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\Direction_S_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\Step_S_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\PWM_S_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\PWM_S_1_PM.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\MISO_3.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\MISO_4.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC5\MOSI_3.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Bettefanden\AppData\Local\Cypress Semiconductor\PSoC Creator\4.0&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p &quot;C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\StepperMotor.cyprj&quot; -d CY8C5888LTI-LP097 -s &quot;C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\Udkast2\PSoCMaster\StepperMotor.cydsn\Generated_Source\PSoC5&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -4417,7 +5015,7 @@
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="131254302485280927" />
+<deps_time v="131257827797567776" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="718b6b01-68ba-4a17-b632-d38dc61ebb3b">

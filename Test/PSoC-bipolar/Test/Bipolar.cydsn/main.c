@@ -50,7 +50,9 @@ enum dir
 
 CY_ISR(isr_RxD)
 {
-    enabled = 1;
+    
+    enabled = !enabled;
+    Enable_1_Write(enabled);
     /*uint8 rxCmd;
     
     rxCmd = UART_1_ReadRxData();
@@ -89,11 +91,14 @@ int main(void)
     //isr_x_home_StartEx(isr_x_home);
     
     PWM_1_Start();
-    enabled = DEFAULT;
-
+    enabled = 0;
+    Direction_1_Write(FW);
+    
     for(;;)
     {
-        switch(enabled) {
+        //while(enabled) {
+            
+        /*switch(enabled) {
             case 1: {
             uint16 ADCResultX;
             uint8 i;
@@ -118,11 +123,11 @@ int main(void)
             
             zPosRight = zStepCount;
             
-            /*if(zStop == 1) {
+            if(zStop == 1) {
                 zStop = 0;
                 enabled = 0;
                 break;
-            }*/
+            }
             
             if(!isr_x_home_GetState()) {
                 isr_x_home_Enable();
@@ -155,8 +160,8 @@ int main(void)
             Enable_1_Write(1);
             
             enabled = 0;
-        }
-        }
+            }
+        }*/
     }
     
     return 0;

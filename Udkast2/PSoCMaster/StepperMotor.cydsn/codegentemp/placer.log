@@ -6,7 +6,7 @@
 
 #Build Date:         Apr 29 2016 09:00:55
 
-#File Generated:     Dec 5 2016 17:38:19
+#File Generated:     Dec 9 2016 19:45:37
 
 #Purpose:            
 
@@ -44,18 +44,18 @@ Phase 2
 Phase 3
 
 Design Statistics after Packing
-    Number of Combinational MCs 	:	17
-    Number of Sequential MCs    	:	92
-    Number of DPs               	:	9
-    Number of Controls          	:	7
-    Number of Status            	:	7
-    Number of SyncCells         	:	5
-    Number of count7cells       	:	2
+    Number of Combinational MCs 	:	22
+    Number of Sequential MCs    	:	105
+    Number of DPs               	:	12
+    Number of Controls          	:	9
+    Number of Status            	:	10
+    Number of SyncCells         	:	6
+    Number of count7cells       	:	3
 
 Device Utilization Summary after Packing
-    Macrocells                  :	109/192
-    UDBS                        :	21/24
-    IOs                         :	25/72
+    Macrocells                  :	127/192
+    UDBS                        :	24/24
+    IOs                         :	33/72
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -79,64 +79,66 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
-Clock: ADC_SAR_Seq_IntClock | Frequency:  27.9 MHz | Target:   1.2 MHz
+Number of clocks: 14
+Clock: ADC_SAR_Seq_IntClock | Frequency:  30.9 MHz | Target:   1.2 MHz
 Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
 Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.2 MHz
 Clock: Clock_2              | Frequency:  59.7 MHz | Target:   0.2 MHz
 Clock: Clock_3              | Frequency:  59.7 MHz | Target:   0.2 MHz
 Clock: Clock_4              | Frequency:  59.7 MHz | Target:   0.2 MHz
-Clock: CyBUS_CLK            | Frequency:  62.1 MHz | Target:  24.0 MHz
+Clock: Clock_5              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: CyBUS_CLK            | Frequency:  50.3 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: SCLK_1(0)_PAD        | Frequency:  45.2 MHz | Target:   0.1 MHz
-Clock: SPIS_1_IntClock      | Frequency:  53.4 MHz | Target:   2.0 MHz
+Clock: SPIS_1_IntClock      | Frequency:  62.7 MHz | Target:   2.0 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
 
-D2088: Phase 6, elapsed time : 0.1 (sec)
+D2088: Phase 6, elapsed time : 0.2 (sec)
 
 Phase 7
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
+Number of clocks: 14
 Clock: ADC_SAR_Seq_IntClock | Frequency:   5.9 MHz | Target:   1.2 MHz
 Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
 Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.2 MHz
-Clock: Clock_2              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_2              | Frequency:  53.0 MHz | Target:   0.2 MHz
 Clock: Clock_3              | Frequency:  59.7 MHz | Target:   0.2 MHz
 Clock: Clock_4              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_5              | Frequency:  59.7 MHz | Target:   0.2 MHz
 Clock: CyBUS_CLK            | Frequency:   5.9 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
 Clock: SCLK_1(0)_PAD        | Frequency:  45.2 MHz | Target:   0.1 MHz
-Clock: SPIS_1_IntClock      | Frequency:  56.8 MHz | Target:   2.0 MHz
+Clock: SPIS_1_IntClock      | Frequency:  63.6 MHz | Target:   2.0 MHz
 
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 3.8 (sec)
+D2088: Phase 7, elapsed time : 1.2 (sec)
 
 Final Design Statistics
-    Number of Combinational MCs 	:	17
-    Number of Sequential MCs    	:	92
-    Number of DPs               	:	9
-    Number of Controls          	:	7
-    Number of Status            	:	7
-    Number of SyncCells         	:	5
-    Number of count7cells       	:	2
-    Number of IOs       	:	25
+    Number of Combinational MCs 	:	22
+    Number of Sequential MCs    	:	105
+    Number of DPs               	:	12
+    Number of Controls          	:	9
+    Number of Status            	:	10
+    Number of SyncCells         	:	6
+    Number of count7cells       	:	3
+    Number of IOs       	:	33
 
 Device Utilization Summary
-    Macrocells                  :	109/192
-    IOs                         :	25/72
+    Macrocells                  :	127/192
+    IOs                         :	33/72
 
 
 
@@ -152,20 +154,129 @@ analysis after routing.
 ######################################################################
                      Clock Summary 
 ======================================================================
-Number of clocks: 13
+Number of clocks: 14
 Clock: ADC_SAR_Seq_IntClock | Frequency:   5.9 MHz | Target:   1.2 MHz
 Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
-Clock: Clock_1              | Frequency:  57.6 MHz | Target:   0.2 MHz
-Clock: Clock_2              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_2              | Frequency:  53.0 MHz | Target:   0.2 MHz
 Clock: Clock_3              | Frequency:  59.7 MHz | Target:   0.2 MHz
 Clock: Clock_4              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_5              | Frequency:  59.7 MHz | Target:   0.2 MHz
 Clock: CyBUS_CLK            | Frequency:   5.9 MHz | Target:  24.0 MHz
 Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: SCLK_1(0)_PAD        | Frequency:  37.9 MHz | Target:   0.1 MHz
-Clock: SPIS_1_IntClock      | Frequency:  90.3 MHz | Target:   2.0 MHz
+Clock: SCLK_1(0)_PAD        | Frequency:  45.2 MHz | Target:   0.1 MHz
+Clock: SPIS_1_IntClock      | Frequency:  63.6 MHz | Target:   2.0 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+
+Phase 6
+
+######################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+======================================================================
+
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 14
+Clock: ADC_SAR_Seq_IntClock | Frequency:   5.5 MHz | Target:   1.2 MHz
+Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
+Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_2              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_3              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_4              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_5              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: CyBUS_CLK            | Frequency:   5.5 MHz | Target:  24.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
+Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
+Clock: SCLK_1(0)_PAD        | Frequency:  45.2 MHz | Target:   0.1 MHz
+Clock: SPIS_1_IntClock      | Frequency:  61.2 MHz | Target:   2.0 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+
+D2088: Phase 6, elapsed time : 0.2 (sec)
+
+Phase 7
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 14
+Clock: ADC_SAR_Seq_IntClock | Frequency:   5.9 MHz | Target:   1.2 MHz
+Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
+Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_2              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_3              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_4              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_5              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: CyBUS_CLK            | Frequency:   5.9 MHz | Target:  24.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
+Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
+Clock: SCLK_1(0)_PAD        | Frequency:  36.8 MHz | Target:   0.1 MHz
+Clock: SPIS_1_IntClock      | Frequency:  61.2 MHz | Target:   2.0 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+D2088: Phase 7, elapsed time : 5.2 (sec)
+
+Final Design Statistics
+    Number of Combinational MCs 	:	22
+    Number of Sequential MCs    	:	105
+    Number of DPs               	:	12
+    Number of Controls          	:	9
+    Number of Status            	:	10
+    Number of SyncCells         	:	6
+    Number of count7cells       	:	3
+    Number of IOs       	:	33
+
+Device Utilization Summary
+    Macrocells                  :	127/192
+    IOs                         :	33/72
+
+
+
+######################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+======================================================================
+
+
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 14
+Clock: ADC_SAR_Seq_IntClock | Frequency:   5.9 MHz | Target:   1.2 MHz
+Clock: ADC_SAR_Seq_IntClock(routed) | Frequency: N/A       | Target:   1.2 MHz
+Clock: Clock_1              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_2              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_3              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_4              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: Clock_5              | Frequency:  59.7 MHz | Target:   0.2 MHz
+Clock: CyBUS_CLK            | Frequency:   5.9 MHz | Target:  24.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
+Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
+Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
+Clock: SCLK_1(0)_PAD        | Frequency:  32.1 MHz | Target:   0.1 MHz
+Clock: SPIS_1_IntClock      | Frequency:  70.0 MHz | Target:   2.0 MHz
 
 ======================================================================
                      End of Clock Summary
@@ -176,5 +287,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 5.0 sec.
+I2076: Total run-time: 8.0 sec.
 
