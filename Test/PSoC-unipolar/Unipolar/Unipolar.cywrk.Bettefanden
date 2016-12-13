@@ -98,39 +98,7 @@
 <v>Unipolar\Unipolar\Generated_Source\PSoC5\cymetadata.c</v>
 <v>Unipolar\Unipolar\Generated_Source\PSoC5\project.h</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Unipolar</v>
-<v>Unipolar\Unipolar</v>
-<v>Unipolar\Unipolar\TopDesign</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\Pins</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\Analog</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\Clocks</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\Interrupts</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\DMA</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\System</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\Directives</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\Flash Security</v>
-<v>Unipolar\Unipolar\Unipolar.cydwr\EEPROM</v>
-<v>Unipolar\Unipolar\Header Files</v>
-<v>Unipolar\Unipolar\Header Files\cyapicallbacks.h</v>
-<v>Unipolar\Unipolar\Source Files</v>
-<v>Unipolar\Unipolar\Source Files\main.c</v>
-<v>Unipolar\Unipolar\Generated_Source</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\Coils_1</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\Coils_1\Coils_1.c</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\Coils_1\Coils_1.h</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\Coils_1\Coils_1_aliases.h</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\cy_boot</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\cy_boot\cmsis_armcc.h</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\cy_boot\cmsis_gcc.h</v>
-<v>Unipolar\Unipolar\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -139,12 +107,7 @@
 <v>Unipolar\Unipolar\TopDesign</v>
 <v>Unipolar\Unipolar\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Unipolar</v>
-<v>Unipolar\Unipolar</v>
-<v>Unipolar\Unipolar\TopDesign</v>
-<v>Unipolar\Unipolar\TopDesign\TopDesign.cysch</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -179,38 +142,7 @@
 <v>Unipolar\Unipolar\Unipolar.rpt</v>
 <v>Unipolar\Unipolar\Unipolar_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Unipolar</v>
-<v>Unipolar\Unipolar</v>
-<v>Unipolar\Unipolar\CortexM3</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\Coils_1.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_RxD.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1_BOOT.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1_INT.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1_IntClock.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Listing Files\UART_1_PM.lst</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Unipolar.elf</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Unipolar.hex</v>
-<v>Unipolar\Unipolar\CortexM3\ARM_GCC_493\Debug\Unipolar.map</v>
-<v>Unipolar\Unipolar\Unipolar.gpdsc</v>
-<v>Unipolar\Unipolar\Unipolar.rpt</v>
-<v>Unipolar\Unipolar\Unipolar_timing.html</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -230,18 +162,7 @@
 <v>Unipolar\Unipolar\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>Unipolar\Unipolar\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Unipolar</v>
-<v>Unipolar\Unipolar</v>
-<v>Unipolar\Unipolar\PSoC 5LP Architecture TRM</v>
-<v>Unipolar\Unipolar\CY8C58LP Family Datasheet</v>
-<v>Unipolar\Unipolar\System Reference Guides</v>
-<v>Unipolar\Unipolar\System Reference Guides\cy_boot_v5_50</v>
-<v>Unipolar\Unipolar\cy_isr_v1_70.pdf</v>
-<v>Unipolar\Unipolar\cy_pins_v2_20</v>
-<v>Unipolar\Unipolar\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Unipolar\Unipolar\UART_v2_50.pdf</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -249,7 +170,18 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\Unipolar.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Unipolar.cydsn\main.c" />
+<name v=".\Unipolar.cydsn\Unipolar.cydwr" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="908, 403" SelectedTabbedMdiWindow="3aae810e-29ac-4373-9762-3332ea6fe9da"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="3bd36d69-1c75-4820-ba35-8120ca8c4c20" Guid="64a1a1ca-5e4f-4213-a426-c4592fbed81b" /><DocumentWindow Key="619fbd5b-136f-4b3d-be38-ed5eecfbe6cb" Guid="3aae810e-29ac-4373-9762-3332ea6fe9da" /><DocumentWindow Key="8adfb5de-c418-42c3-8811-1a6b165a5628" Guid="7a51198a-bd48-4ce0-b9a6-48e81f21fe26" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

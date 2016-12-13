@@ -340,7 +340,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="908, 403" SelectedTabbedMdiWindow="24291c80-b1e7-46ae-9135-8e61f897c8b2"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="55a80ca4-1d9c-4d86-adf7-31cca3d5a3d9" Guid="24291c80-b1e7-46ae-9135-8e61f897c8b2" /><DocumentWindow Key="ba3a5ad2-5297-4840-9ca3-91c5c4648a63" Guid="00b77d6b-d214-48a0-9a80-cd8eb60c8215" /><DocumentWindow Key="d0748815-3734-434d-9d04-854d10ed3148" Guid="3e053134-5285-42b7-802a-17b7728a42ca" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="969, 403" SelectedTabbedMdiWindow="2f618468-dd1e-4d97-b2e2-7672073240c1"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="70cc5f17-547a-470a-98b0-5b6e2878666b" Guid="61792343-3097-42ac-aa4e-fbc8b665f0c6" /><DocumentWindow Key="878bdcea-50d5-49f3-80b6-dcdba1116be5" Guid="2f618468-dd1e-4d97-b2e2-7672073240c1" /><DocumentWindow Key="73e97ee0-a8c1-4b6d-ad8f-1100b8bd08c8" Guid="d24ad79c-97ab-46d0-8fda-399a26d82aee" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

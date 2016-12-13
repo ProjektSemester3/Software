@@ -132,39 +132,7 @@
 <v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\project.h</v>
 <v>StepperMotor-000\Test2</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>StepperMotor-000</v>
-<v>StepperMotor-000\Master</v>
-<v>StepperMotor-000\StepperMotor</v>
-<v>StepperMotor-000\StepperMotor\TopDesign</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\Pins</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\Analog</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\Clocks</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\Interrupts</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\DMA</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\System</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\Directives</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\Flash Security</v>
-<v>StepperMotor-000\StepperMotor\StepperMotor.cydwr\EEPROM</v>
-<v>StepperMotor-000\StepperMotor\Header Files</v>
-<v>StepperMotor-000\StepperMotor\Header Files\cyapicallbacks.h</v>
-<v>StepperMotor-000\StepperMotor\Header Files\UniMotor.h</v>
-<v>StepperMotor-000\StepperMotor\Source Files</v>
-<v>StepperMotor-000\StepperMotor\Source Files\main.c</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1\ADC_SAR_Seq_1.c</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1\ADC_SAR_Seq_1.h</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1\ADC_SAR_Seq_1_INT.c</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1\ADC_SAR_Seq_1_PM.c</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1_FinalBuf</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1_FinalBuf\ADC_SAR_Seq_1_FinalBuf_dma.c</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1_FinalBuf\ADC_SAR_Seq_1_FinalBuf_dma.h</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1_IntClock</v>
-<v>StepperMotor-000\StepperMotor\Generated_Source\PSoC5\ADC_SAR_Seq_1_IntClock\ADC_SAR_Seq_1_IntClock.c</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -175,14 +143,7 @@
 <v>StepperMotor-000\StepperMotor\TopDesign\TopDesign.cysch</v>
 <v>StepperMotor-000\Test2</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>StepperMotor-000</v>
-<v>StepperMotor-000\Master</v>
-<v>StepperMotor-000\StepperMotor</v>
-<v>StepperMotor-000\StepperMotor\TopDesign</v>
-<v>StepperMotor-000\StepperMotor\TopDesign\TopDesign.cysch</v>
-<v>StepperMotor-000\Test2</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -230,39 +191,7 @@
 <v>StepperMotor-000\StepperMotor\StepperMotor_timing.html</v>
 <v>StepperMotor-000\Test2</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>StepperMotor-000</v>
-<v>StepperMotor-000\Master</v>
-<v>StepperMotor-000\StepperMotor</v>
-<v>StepperMotor-000\StepperMotor\CortexM3</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_FinalBuf_dma.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_INT.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_IntClock.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_IRQ.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_PM.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_SAR.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_SAR_INT.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_SAR_PM.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_Seq_1_TempBuf_dma.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Coils_1.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_RxD.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>StepperMotor-000\StepperMotor\CortexM3\ARM_GCC_493\Debug\Listing Files\Pin_1.lst</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -283,19 +212,7 @@
 <v>StepperMotor-000\StepperMotor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>StepperMotor-000\StepperMotor\UART_v2_50.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>StepperMotor-000</v>
-<v>StepperMotor-000\StepperMotor</v>
-<v>StepperMotor-000\StepperMotor\PSoC 5LP Architecture TRM</v>
-<v>StepperMotor-000\StepperMotor\CY8C58LP Family Datasheet</v>
-<v>StepperMotor-000\StepperMotor\System Reference Guides</v>
-<v>StepperMotor-000\StepperMotor\System Reference Guides\cy_boot_v5_50</v>
-<v>StepperMotor-000\StepperMotor\ADC_SAR_SEQ_v2_0.pdf</v>
-<v>StepperMotor-000\StepperMotor\cy_isr_v1_70.pdf</v>
-<v>StepperMotor-000\StepperMotor\cy_pins_v2_20</v>
-<v>StepperMotor-000\StepperMotor\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>StepperMotor-000\StepperMotor\UART_v2_50.pdf</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -314,7 +231,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="969, 403" SelectedTabbedMdiWindow="f0c73620-f160-4f8d-8b03-5ffc051a50b5"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="3833889b-ecd1-4eeb-9cd3-95e499e4b35a" Guid="285b16e8-53ad-471d-9f45-77d642abb913" /><DocumentWindow Key="f917641e-17bc-485f-ae28-ceb00c24b7c7" Guid="9f7293b2-6fe3-47d1-b7f9-e3448c7c2aaf" /><DocumentWindow Key="0f84c6d2-e80f-419f-843e-ed5805281439" Guid="f0c73620-f160-4f8d-8b03-5ffc051a50b5" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="908, 403" SelectedTabbedMdiWindow="024f2daa-f69b-4499-9150-1e857e805ad7"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b0ed176b-0206-4788-9a23-67a19a7891fc" /><DocumentWindow Key="2a276838-ca1a-43ba-8606-7eb1fd7a6991" Guid="024f2daa-f69b-4499-9150-1e857e805ad7" /><DocumentWindow Key="be84592a-ce17-4729-a2f7-9cbd4dc8630c" Guid="cf9b3857-3859-41cc-a19c-eb3152692087" /><DocumentWindow Key="66d5ca59-a09d-4074-a6cd-7f2acd375980" Guid="a075bc77-5485-4547-a8af-396c8762f4fd" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

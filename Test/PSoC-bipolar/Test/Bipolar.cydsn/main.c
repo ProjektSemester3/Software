@@ -52,7 +52,7 @@ CY_ISR(isr_RxD)
 {
     
     enabled = !enabled;
-    Enable_1_Write(enabled);
+    //Enable_1_Write(enabled);
     /*uint8 rxCmd;
     
     rxCmd = UART_1_ReadRxData();
@@ -83,6 +83,7 @@ CY_ISR(isr_x_home)
 
 int main(void)
 {
+    int i;
     updateStatus(DEFAULT);
     CyGlobalIntEnable;
 
@@ -96,7 +97,14 @@ int main(void)
     
     for(;;)
     {
-        //while(enabled) {
+        while(enabled) {
+            Enable_1_Write(0);
+            for(i = 0; i < 128; i++) {
+                CyDelay(25);
+            }
+            Enable_1_Write(1);
+            enabled = 0;
+        }
             
         /*switch(enabled) {
             case 1: {
