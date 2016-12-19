@@ -8,7 +8,6 @@ enum SPI_protocol {
     
     // Commands from DK8k to PSoC
     GET_STATUS      = 0x00,
-    LOCATE_BOTTLE   = 0x01,
     OPEN_BOTTLE     = 0x05,
     
     // Feedback messages from PSoC-master to DK8k

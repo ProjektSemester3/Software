@@ -1,0 +1,5 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|7c34acbf-ccd0-4fec-832b-df16826338a1
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|9c61e49a-5b72-4dd4-a39d-3a1e3534ecfa
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|ed4e190a-7d56-492c-bb9c-eb438697d165
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9c00e5a4-aaa6-4fbd-b33b-1f275345aae0
+C:\Users\Bettefanden\Documents\IHA\Semester 3\Semesterprojekt 3\Software\EndeligtUdkast\Positionscontroller\Positionscontroller.cydsn\Positionscontroller.cyprj|ce425796-2f80-4b00-8d87-65f0fea39bfc
